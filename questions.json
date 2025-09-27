@@ -360,365 +360,362 @@
     }
   },
   {
-  "id": 11,
-  "q": {
-    "pt": "Qual é o propósito do princípio de 'Menor Privilégio' na Gestão de Acessos?",
-    "en": "What is the purpose of the 'Least Privilege' principle in Access Management?"
+    "id": 11,
+    "q": {
+      "pt": "Qual é o propósito do princípio de 'Menor Privilégio' na Gestão de Acessos?",
+      "en": "What is the purpose of the 'Least Privilege' principle in Access Management?"
+    },
+    "options": {
+      "pt": [
+        "Atribuir a todos os usuários os mesmos privilégios administrativos.",
+        "Limitar o acesso a sistemas estritamente necessários para a função do trabalho.",
+        "Conceder privilégios com base no nível de senioridade do usuário.",
+        "Garantir que todos os dados sejam acessíveis apenas pelo CISO."
+      ],
+      "en": [
+        "Assign all users the same administrative privileges.",
+        "Limit access to systems strictly necessary for the job function.",
+        "Grant privileges based on the user's seniority level.",
+        "Ensure all data is only accessible by the CISO."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "O princípio visa evitar este cenário, que criaria riscos desnecessários.",
+        "O Menor Privilégio determina que aos usuários sejam concedidas apenas as permissões mínimas necessárias para desempenhar suas funções.",
+        "O acesso deve ser baseado no requisito e na função do trabalho, não na senioridade.",
+        "O princípio se aplica a toda a organização, equilibrando segurança com necessidades operacionais."
+      ],
+      "en": [
+        "The principle aims to avoid this scenario, which would create unnecessary risks.",
+        "Least Privilege ensures users are granted only the minimum permissions necessary to perform their functions.",
+        "Access should be based on job requirements, not seniority.",
+        "The principle applies across the organization, balancing security with operational needs."
+      ]
+    }
   },
-  "options": {
-    "pt": [
-      "Atribuir a todos os usuários os mesmos privilégios administrativos.",
-      "Limitar o acesso a sistemas estritamente necessários para a função do trabalho.",
-      "Conceder privilégios com base no nível de senioridade do usuário.",
-      "Garantir que todos os dados sejam acessíveis apenas pelo CISO."
-    ],
-    "en": [
-      "Assign all users the same administrative privileges.",
-      "Limit access to systems strictly necessary for the job function.",
-      "Grant privileges based on the user's seniority level.",
-      "Ensure all data is only accessible by the CISO."
-    ]
+  {
+    "id": 12,
+    "q": {
+      "pt": "No contexto de gerenciamento de riscos, o que é 'Risco Residual'?",
+      "en": "In the context of risk management, what is 'Residual Risk'?"
+    },
+    "options": {
+      "pt": [
+        "O risco que é completamente eliminado após a implementação dos controles.",
+        "O risco que uma organização escolhe ignorar.",
+        "O risco que permanece após todos os controles de segurança terem sido aplicados e formalmente aceitos.",
+        "O risco inicial antes de quaisquer controles de segurança serem implementados."
+      ],
+      "en": [
+        "The risk completely eliminated after implementing controls.",
+        "The risk an organization chooses to ignore.",
+        "The risk remaining after all security controls have been applied and formally accepted.",
+        "The initial risk before any security controls are implemented."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "O objetivo é eliminar o risco, mas o 'Risco Residual' é o que permanece após os esforços.",
+        "O risco ignorado é um risco não gerenciado; o risco residual é gerenciado e formalmente aceito.",
+        "Risco residual é a exposição à ameaça remanescente após as ações de mitigação estarem completas e formalmente reconhecidas pela gestão.",
+        "Isso é tipicamente definido como risco inerente, não risco residual."
+      ],
+      "en": [
+        "The goal is to eliminate risk, but 'Residual Risk' is what remains after mitigation efforts.",
+        "Ignored risk is unmanaged; residual risk is managed and formally accepted.",
+        "Residual risk is the exposure remaining after mitigation actions are complete and formally acknowledged by management.",
+        "This is typically defined as inherent risk, not residual risk."
+      ]
+    }
   },
-  "correctIndex": 1,
-  "rationales": {
-    "pt": [
-      "O princípio visa evitar este cenário, que criaria riscos desnecessários.",
-      "O Menor Privilégio determina que aos usuários sejam concedidas apenas as permissões mínimas necessárias para desempenhar suas funções.",
-      "O acesso deve ser baseado no requisito e na função do trabalho, não na senioridade.",
-      "O princípio se aplica a toda a organização, equilibrando segurança com necessidades operacionais."
-    ],
-    "en": [
-      "The principle aims to avoid this scenario, which would create unnecessary risks.",
-      "Least Privilege ensures users are granted only the minimum permissions necessary to perform their functions.",
-      "Access should be based on job requirements, not seniority.",
-      "The principle applies across the organization, balancing security with operational needs."
-    ]
-  }
-},
-{
-  "id": 12,
-  "q": {
-    "pt": "No contexto de gerenciamento de riscos, o que é 'Risco Residual'?",
-    "en": "In the context of risk management, what is 'Residual Risk'?"
+  {
+    "id": 13,
+    "q": {
+      "pt": "De acordo com a política de IAM, qual processo deve ser realizado periodicamente para sistemas regulados?",
+      "en": "According to IAM policy, which process must be performed periodically for regulated systems?"
+    },
+    "options": {
+      "pt": [
+        "Redefinições de senha em todo o sistema.",
+        "Um backup completo dos dados.",
+        "O processo de revisão de acesso do usuário.",
+        "Um teste de penetração externo."
+      ],
+      "en": [
+        "System-wide password resets.",
+        "A full data backup.",
+        "The user access review process.",
+        "An external penetration test."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Embora importante, esta ação específica não é o processo periódico universalmente obrigatório.",
+        "O backup é crítico para a disponibilidade, mas geralmente é um processo diário, não periódico, obrigatório.",
+        "Revisões periódicas de acesso de usuário são obrigatórias para sistemas regulados para garantir que o Menor Privilégio seja mantido e o acesso seja revogado quando as funções mudam.",
+        "Testes de penetração são geralmente anuais ou orientados por eventos, não o processo periódico de controle de acesso."
+      ],
+      "en": [
+        "While important, this specific action is not the universally required periodic process.",
+        "Backups are critical for availability, but typically daily, not the required periodic control process.",
+        "Periodic user access reviews are mandatory for regulated systems to ensure Least Privilege is maintained and access revoked when roles change.",
+        "Penetration tests are usually annual or event-driven, not the periodic access control process."
+      ]
+    }
   },
-  "options": {
-    "pt": [
-      "O risco que é completamente eliminado após a implementação dos controles.",
-      "O risco que uma organização escolhe ignorar.",
-      "O risco que permanece após todos os controles de segurança terem sido aplicados e formalmente aceitos.",
-      "O risco inicial antes de quaisquer controles de segurança serem implementados."
-    ],
-    "en": [
-      "The risk completely eliminated after implementing controls.",
-      "The risk an organization chooses to ignore.",
-      "The risk remaining after all security controls have been applied and formally accepted.",
-      "The initial risk before any security controls are implemented."
-    ]
+  {
+    "id": 14,
+    "q": {
+      "pt": "O que o Anexo A da ISO 27001:2022 contém?",
+      "en": "What does Annex A of ISO 27001:2022 contain?"
+    },
+    "options": {
+      "pt": [
+        "Um guia de auditoria financeira.",
+        "Uma lista de 93 controles de segurança da informação.",
+        "Um plano completo de recuperação de desastres.",
+        "Apenas a política de uso de e-mail."
+      ],
+      "en": [
+        "A financial audit guide.",
+        "A list of 93 information security controls.",
+        "A complete disaster recovery plan.",
+        "Only the email usage policy."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "A ISO 27001 é para segurança, não para auditoria financeira.",
+        "O Anexo A fornece o conjunto de referência fundamental de controles de segurança que uma organização pode escolher para seu SGSI.",
+        "O DRP é um resultado da implementação da norma, não o conteúdo do Anexo A em si.",
+        "O Anexo A abrange um amplo conjunto de controles, não apenas uma política específica."
+      ],
+      "en": [
+        "ISO 27001 is for security, not financial auditing.",
+        "Annex A provides the fundamental reference set of security controls an organization may choose for its ISMS.",
+        "The DRP is an outcome of implementing the standard, not Annex A itself.",
+        "Annex A covers a broad set of controls, not just a specific policy."
+      ]
+    }
   },
-  "correctIndex": 2,
-  "rationales": {
-    "pt": [
-      "O objetivo é eliminar o risco, mas o 'Risco Residual' é o que permanece após os esforços.",
-      "O risco ignorado é um risco não gerenciado; o risco residual é gerenciado e formalmente aceito.",
-      "Risco residual é a exposição à ameaça remanescente após as ações de mitigação estarem completas e formalmente reconhecidas pela gestão.",
-      "Isso é tipicamente definido como risco inerente, não risco residual."
-    ],
-    "en": [
-      "The goal is to eliminate risk, but 'Residual Risk' is what remains after mitigation efforts.",
-      "Ignored risk is unmanaged; residual risk is managed and formally accepted.",
-      "Residual risk is the exposure remaining after mitigation actions are complete and formally acknowledged by management.",
-      "This is typically defined as inherent risk, not residual risk."
-    ]
-  }
-},
-{
-  "id": 13,
-  "q": {
-    "pt": "De acordo com a política de IAM, qual processo deve ser realizado periodicamente para sistemas regulados?",
-    "en": "According to IAM policy, which process must be performed periodically for regulated systems?"
+  {
+    "id": 15,
+    "q": {
+      "pt": "Qual é o principal propósito de uma 'Declaração de Aplicabilidade' no contexto da ISO 27001?",
+      "en": "What is the main purpose of a 'Statement of Applicability' in the context of ISO 27001?"
+    },
+    "options": {
+      "pt": [
+        "Um contrato com um fornecedor de software.",
+        "Um documento para contratar novos funcionários.",
+        "Um relatório que lista os controles implementados e justifica sua aplicação/exclusão.",
+        "Um guia de boas-vindas para novos funcionários."
+      ],
+      "en": [
+        "A contract with a software vendor.",
+        "A document for hiring new employees.",
+        "A report listing implemented controls and justifying their inclusion/exclusion.",
+        "A welcome guide for new employees."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Este é um documento legal, não um relatório de governança.",
+        "Isso se relaciona com o RH, não com a documentação do SGSI.",
+        "A DdA lista explicitamente os controles do Anexo A que são aplicados, excluídos, e as razões para essas decisões, ligando a avaliação de risco à implementação do controle.",
+        "Isso faz parte da integração, não da documentação formal do SGSI."
+      ],
+      "en": [
+        "This is a legal document, not a governance report.",
+        "This relates to HR, not ISMS documentation.",
+        "The SoA explicitly lists Annex A controls applied, excluded, and the reasons for those decisions, linking risk assessment to control implementation.",
+        "This is part of onboarding, not formal ISMS documentation."
+      ]
+    }
   },
-  "options": {
-    "pt": [
-      "Redefinições de senha em todo o sistema.",
-      "Um backup completo dos dados.",
-      "O processo de revisão de acesso do usuário.",
-      "Um teste de penetração externo."
-    ],
-    "en": [
-      "System-wide password resets.",
-      "A full data backup.",
-      "The user access review process.",
-      "An external penetration test."
-    ]
+  {
+    "id": 16,
+    "q": {
+      "pt": "No processo de TPRM, qual passo tipicamente segue o 'Fluxo de Compras' inicial e a Contratação do Fornecedor?",
+      "en": "In the TPRM process, which step typically follows the initial 'Procurement Flow' and Supplier Engagement?"
+    },
+    "options": {
+      "pt": [
+        "Negociação do Contrato pela Equipe Jurídica.",
+        "Avaliação de Segurança da SegInfo (Due Diligence).",
+        "Abertura de um ticket para rescisão de contrato.",
+        "Seleção da opção de contrato limitado a USD 50K."
+      ],
+      "en": [
+        "Contract negotiation by the Legal team.",
+        "Information Security assessment (Due Diligence).",
+        "Opening a contract termination ticket.",
+        "Selecting the limited contract option up to USD 50K."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "A revisão e negociação jurídica ocorrem simultaneamente com Compras/Risco, mas não como o próximo passo primário de risco imediato.",
+        "Após a contratação inicial, a equipe de risco conduz uma avaliação formal de segurança para determinar a postura de ameaça do fornecedor.",
+        "A rescisão é a fase final, não a fase inicial de due diligence.",
+        "Esta é uma decisão de limite financeiro, não um passo do processo."
+      ],
+      "en": [
+        "Legal review and negotiation occur simultaneously with Procurement/Risk, but not as the immediate next risk step.",
+        "After initial engagement, the risk team conducts a formal security assessment to determine the supplier’s threat posture.",
+        "Termination is the final stage, not the initial due diligence step.",
+        "This is a financial threshold decision, not a process step."
+      ]
+    }
   },
-  "correctIndex": 2,
-  "rationales": {
-    "pt": [
-      "Embora importante, esta ação específica não é o processo periódico universalmente obrigatório.",
-      "O backup é crítico para a disponibilidade, mas geralmente é um processo diário, não periódico, obrigatório.",
-      "Revisões periódicas de acesso de usuário são obrigatórias para sistemas regulados para garantir que o Menor Privilégio seja mantido e o acesso seja revogado quando as funções mudam.",
-      "Testes de penetração são geralmente anuais ou orientados por eventos, não o processo periódico de controle de acesso."
-    ],
-    "en": [
-      "While important, this specific action is not the universally required periodic process.",
-      "Backups are critical for availability, but typically daily, not the required periodic control process.",
-      "Periodic user access reviews are mandatory for regulated systems to ensure Least Privilege is maintained and access revoked when roles change.",
-      "Penetration tests are usually annual or event-driven, not the periodic access control process."
-    ]
-  }
-},
-{
-  "id": 14,
-  "q": {
-    "pt": "O que o Anexo A da ISO 27001:2022 contém?",
-    "en": "What does Annex A of ISO 27001:2022 contain?"
+  {
+    "id": 17,
+    "q": {
+      "pt": "O que o Dono do Contrato deve fazer quando a parceria com um Fornecedor Terceirizado é finalizada (termina)?",
+      "en": "What should the Contract Owner do when the partnership with a Third-Party Supplier ends?"
+    },
+    "options": {
+      "pt": [
+        "Iniciar uma reavaliação.",
+        "Iniciar um novo processo de contratação.",
+        "Abrir um ticket de rescisão.",
+        "Notificar o CISO via Slack."
+      ],
+      "en": [
+        "Initiate a reassessment.",
+        "Start a new procurement process.",
+        "Open a termination ticket.",
+        "Notify the CISO via Slack."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "A reavaliação é para fornecedores contínuos, não para aqueles que estão sendo encerrados.",
+        "Isso seria para um novo fornecedor, não para o encerramento de um existente.",
+        "Um ticket formal é necessário para notificar todas as equipes relevantes (SegInfo, TI, Jurídico) para revogar o acesso e cumprir os requisitos de desligamento.",
+        "Embora a comunicação seja necessária, um processo formal e documentado é obrigatório para auditabilidade."
+      ],
+      "en": [
+        "Reassessment is for ongoing suppliers, not those being terminated.",
+        "This would be for a new supplier, not the closure of an existing one.",
+        "A formal ticket is required to notify all relevant teams (InfoSec, IT, Legal) to revoke access and meet offboarding requirements.",
+        "While communication is necessary, a formal documented process is mandatory for auditability."
+      ]
+    }
   },
-  "options": {
-    "pt": [
-      "Um guia de auditoria financeira.",
-      "Uma lista de 93 controles de segurança da informação.",
-      "Um plano completo de recuperação de desastres.",
-      "Apenas a política de uso de e-mail."
-    ],
-    "en": [
-      "A financial audit guide.",
-      "A list of 93 information security controls.",
-      "A complete disaster recovery plan.",
-      "Only the email usage policy."
-    ]
+  {
+    "id": 18,
+    "q": {
+      "pt": "Qual é o processo para abrir uma Prova de Conceito (PoC) que tem um custo associado?",
+      "en": "What is the process for opening a Proof of Concept (PoC) that has an associated cost?"
+    },
+    "options": {
+      "pt": [
+        "A PoC não pode ter custo.",
+        "Selecionar a opção de contrato limitado a USD 50K.",
+        "Apenas a opção de doação pode ser usada.",
+        "Apenas a opção de patrocínio pode ser usada."
+      ],
+      "en": [
+        "A PoC cannot have cost.",
+        "Select the limited contract option up to USD 50K.",
+        "Only the donation option can be used.",
+        "Only the sponsorship option can be used."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "PoCs frequentemente envolvem despesas e devem ser formalmente gerenciadas.",
+        "PoCs com custos tipicamente usam um contrato simplificado, muitas vezes limitado por valor (ex., $50K) para agilizar a aquisição enquanto se gerencia o risco.",
+        "Doação é para ESG/Caridade, não para PoCs comerciais.",
+        "Patrocínio é para marketing/eventos, não para PoCs comerciais."
+      ],
+      "en": [
+        "PoCs often involve expenses and must be formally managed.",
+        "PoCs with costs typically use a simplified contract, often limited by value (e.g., $50K) to expedite procurement while managing risk.",
+        "Donation is for ESG/Charity, not commercial PoCs.",
+        "Sponsorship is for marketing/events, not commercial PoCs."
+      ]
+    }
   },
-  "correctIndex": 1,
-  "rationales": {
-    "pt": [
-      "A ISO 27001 é para segurança, não para auditoria financeira.",
-      "O Anexo A fornece o conjunto de referência fundamental de controles de segurança que uma organização pode escolher para seu SGSI.",
-      "O DRP é um resultado da implementação da norma, não o conteúdo do Anexo A em si.",
-      "O Anexo A abrange um amplo conjunto de controles, não apenas uma política específica."
-    ],
-    "en": [
-      "ISO 27001 is for security, not financial auditing.",
-      "Annex A provides the fundamental reference set of security controls an organization may choose for its ISMS.",
-      "The DRP is an outcome of implementing the standard, not Annex A itself.",
-      "Annex A covers a broad set of controls, not just a specific policy."
-    ]
-  }
-},
-{
-  "id": 15,
-  "q": {
-    "pt": "Qual é o principal propósito de uma 'Declaração de Aplicabilidade' no contexto da ISO 27001?",
-    "en": "What is the main purpose of a 'Statement of Applicability' in the context of ISO 27001?"
+  {
+    "id": 19,
+    "q": {
+      "pt": "Qual código de prática internacional para gerenciamento de segurança forma a base da Política de Segurança da Informação?",
+      "en": "Which international code of practice for security management forms the basis of the Information Security Policy?"
+    },
+    "options": {
+      "pt": [
+        "ISO 9001 (Gestão da Qualidade)",
+        "ISO 27002 (Gestão da Segurança da Informação)",
+        "ISO 14001 (Gestão Ambiental)",
+        "ISO 45001 (Saúde e Segurança Ocupacional)"
+      ],
+      "en": [
+        "ISO 9001 (Quality Management)",
+        "ISO 27002 (Information Security Management)",
+        "ISO 14001 (Environmental Management)",
+        "ISO 45001 (Occupational Health & Safety)"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "A ISO 9001 aborda Sistemas de Gestão da Qualidade, não Segurança da Informação.",
+        "A ISO 27002 fornece o conjunto abrangente de controles sobre o qual uma política de SegInfo é construída.",
+        "Esta norma cobre a Gestão Ambiental.",
+        "Esta norma foca em Saúde e Segurança Ocupacional."
+      ],
+      "en": [
+        "ISO 9001 covers Quality Management Systems, not Information Security.",
+        "ISO 27002 provides the comprehensive set of controls on which an Information Security policy is built.",
+        "This standard covers Environmental Management.",
+        "This standard focuses on Occupational Health & Safety."
+      ]
+    }
   },
-  "options": {
-    "pt": [
-      "Um contrato com um fornecedor de software.",
-      "Um documento para contratar novos funcionários.",
-      "Um relatório que lista os controles implementados e justifica sua aplicação/exclusão.",
-      "Um guia de boas-vindas para novos funcionários."
-    ],
-    "en": [
-      "A contract with a software vendor.",
-      "A document for hiring new employees.",
-      "A report listing implemented controls and justifying their inclusion/exclusion.",
-      "A welcome guide for new employees."
-    ]
-  },
-  "correctIndex": 2,
-  "rationales": {
-    "pt": [
-      "Este é um documento legal, não um relatório de governança.",
-      "Isso se relaciona com o RH, não com a documentação do SGSI.",
-      "A DdA lista explicitamente os controles do Anexo A que são aplicados, excluídos, e as razões para essas decisões, ligando a avaliação de risco à implementação do controle.",
-      "Isso faz parte da integração, não da documentação formal do SGSI."
-    ],
-    "en": [
-      "This is a legal document, not a governance report.",
-      "This relates to HR, not ISMS documentation.",
-      "The SoA explicitly lists Annex A controls applied, excluded, and the reasons for those decisions, linking risk assessment to control implementation.",
-      "This is part of onboarding, not formal ISMS documentation."
-    ]
-  }
-},
-{
-  "id": 16,
-  "q": {
-    "pt": "No processo de TPRM, qual passo tipicamente segue o 'Fluxo de Compras' inicial e a Contratação do Fornecedor?",
-    "en": "In the TPRM process, which step typically follows the initial 'Procurement Flow' and Supplier Engagement?"
-  },
-  "options": {
-    "pt": [
-      "Negociação do Contrato pela Equipe Jurídica.",
-      "Avaliação de Segurança da SegInfo (Due Diligence).",
-      "Abertura de um ticket para rescisão de contrato.",
-      "Seleção da opção de contrato limitado a USD 50K."
-    ],
-    "en": [
-      "Contract negotiation by the Legal team.",
-      "Information Security assessment (Due Diligence).",
-      "Opening a contract termination ticket.",
-      "Selecting the limited contract option up to USD 50K."
-    ]
-  },
-  "correctIndex": 1,
-  "rationales": {
-    "pt": [
-      "A revisão e negociação jurídica ocorrem simultaneamente com Compras/Risco, mas não como o próximo passo primário de risco imediato.",
-      "Após a contratação inicial, a equipe de risco conduz uma avaliação formal de segurança para determinar a postura de ameaça do fornecedor.",
-      "A rescisão é a fase final, não a fase inicial de due diligence.",
-      "Esta é uma decisão de limite financeiro, não um passo do processo."
-    ],
-    "en": [
-      "Legal review and negotiation occur simultaneously with Procurement/Risk, but not as the immediate next risk step.",
-      "After initial engagement, the risk team conducts a formal security assessment to determine the supplier’s threat posture.",
-      "Termination is the final stage, not the initial due diligence step.",
-      "This is a financial threshold decision, not a process step."
-    ]
-  }
-},
-{
-  "id": 17,
-  "q": {
-    "pt": "O que o Dono do Contrato deve fazer quando a parceria com um Fornecedor Terceirizado é finalizada (termina)?",
-    "en": "What should the Contract Owner do when the partnership with a Third-Party Supplier ends?"
-  },
-  "options": {
-    "pt": [
-      "Iniciar uma reavaliação.",
-      "Iniciar um novo processo de contratação.",
-      "Abrir um ticket de rescisão.",
-      "Notificar o CISO via Slack."
-    ],
-    "en": [
-      "Initiate a reassessment.",
-      "Start a new procurement process.",
-      "Open a termination ticket.",
-      "Notify the CISO via Slack."
-    ]
-  },
-  "correctIndex": 2,
-  "rationales": {
-    "pt": [
-      "A reavaliação é para fornecedores contínuos, não para aqueles que estão sendo encerrados.",
-      "Isso seria para um novo fornecedor, não para o encerramento de um existente.",
-      "Um ticket formal é necessário para notificar todas as equipes relevantes (SegInfo, TI, Jurídico) para revogar o acesso e cumprir os requisitos de desligamento.",
-      "Embora a comunicação seja necessária, um processo formal e documentado é obrigatório para auditabilidade."
-    ],
-    "en": [
-      "Reassessment is for ongoing suppliers, not those being terminated.",
-      "This would be for a new supplier, not the closure of an existing one.",
-      "A formal ticket is required to notify all relevant teams (InfoSec, IT, Legal) to revoke access and meet offboarding requirements.",
-      "While communication is necessary, a formal documented process is mandatory for auditability."
-    ]
-  }
-},
-{
-  "id": 18,
-  "q": {
-    "pt": "Qual é o processo para abrir uma Prova de Conceito (PoC) que tem um custo associado?",
-    "en": "What is the process for opening a Proof of Concept (PoC) that has an associated cost?"
-  },
-  "options": {
-    "pt": [
-      "A PoC não pode ter custo.",
-      "Selecionar a opção de contrato limitado a USD 50K.",
-      "Apenas a opção de doação pode ser usada.",
-      "Apenas a opção de patrocínio pode ser usada."
-    ],
-    "en": [
-      "A PoC cannot have cost.",
-      "Select the limited contract option up to USD 50K.",
-      "Only the donation option can be used.",
-      "Only the sponsorship option can be used."
-    ]
-  },
-  "correctIndex": 1,
-  "rationales": {
-    "pt": [
-      "PoCs frequentemente envolvem despesas e devem ser formalmente gerenciadas.",
-      "PoCs com custos tipicamente usam um contrato simplificado, muitas vezes limitado por valor (ex., $50K) para agilizar a aquisição enquanto se gerencia o risco.",
-      "Doação é para ESG/Caridade, não para PoCs comerciais.",
-      "Patrocínio é para marketing/eventos, não para PoCs comerciais."
-    ],
-    "en": [
-      "PoCs often involve expenses and must be formally managed.",
-      "PoCs with costs typically use a simplified contract, often limited by value (e.g., $50K) to expedite procurement while managing risk.",
-      "Donation is for ESG/Charity, not commercial PoCs.",
-      "Sponsorship is for marketing/events, not commercial PoCs."
-    ]
-  }
-},
-{
-  "id": 19,
-  "q": {
-    "pt": "Qual código de prática internacional para gerenciamento de segurança forma a base da Política de Segurança da Informação?",
-    "en": "Which international code of practice for security management forms the basis of the Information Security Policy?"
-  },
-  "options": {
-    "pt": [
-      "ISO 9001 (Gestão da Qualidade)",
-      "ISO 27002 (Gestão da Segurança da Informação)",
-      "ISO 14001 (Gestão Ambiental)",
-      "ISO 45001 (Saúde e Segurança Ocupacional)"
-    ],
-    "en": [
-      "ISO 9001 (Quality Management)",
-      "ISO 27002 (Information Security Management)",
-      "ISO 14001 (Environmental Management)",
-      "ISO 45001 (Occupational Health & Safety)"
-    ]
-  },
-  "correctIndex": 1,
-  "rationales": {
-    "pt": [
-      "A ISO 9001 aborda Sistemas de Gestão da Qualidade, não Segurança da Informação.",
-      "A ISO 27002 fornece o conjunto abrangente de controles sobre o qual uma política de SegInfo é construída.",
-      "Esta norma cobre a Gestão Ambiental.",
-      "Esta norma foca em Saúde e Segurança Ocupacional."
-    ],
-    "en": [
-      "ISO 9001 covers Quality Management Systems, not Information Security.",
-      "ISO 27002 provides the comprehensive set of controls on which an Information Security policy is built.",
-      "This standard covers Environmental Management.",
-      "This standard focuses on Occupational Health & Safety."
-    ]
-  }
-},
-{
-  "id": 20,
-  "q": {
-    "pt": "Qual é um exemplo chave de 'Controle' no contexto de segurança da informação?",
-    "en": "What is a key example of a 'Control' in the context of information security?"
-  },
-  "options": {
-    "pt": [
-      "Uma porta física com uma fechadura.",
-      "Câmeras de segurança.",
-      "Senhas, permissões e autenticação multifator em sistemas.",
-      "Um guarda na entrada do prédio."
-    ],
-    "en": [
-      "A physical door with a lock.",
-      "Security cameras.",
-      "Passwords, permissions, and multifactor authentication in systems.",
-      "A guard at the building entrance."
-    ]
-  },
-  "correctIndex": 2,
-  "rationales": {
-    "pt": [
-      "Embora seja um controle, um controle digital mais representativo é preferível em exemplos de GRC.",
-      "Este é um controle físico; GRC frequentemente enfatiza controles digitais.",
-      "Estes são exemplos primários de controles lógicos e de acesso que aplicam políticas e mitigam riscos digitais.",
-      "Este é um controle físico."
-    ],
-    "en": [
-      "While it is a control, a more representative digital control is preferable in GRC examples.",
-      "This is a physical control; GRC often emphasizes digital controls.",
-      "These are primary examples of logical and access controls that enforce policies and mitigate digital risks.",
-      "This is a physical control."
-    ]
-  }
-}
+  {
+    "id": 20,
+    "q": {
+      "pt": "Qual é um exemplo chave de 'Controle' no contexto de segurança da informação?",
+      "en": "What is a key example of a 'Control' in the context of information security?"
+    },
+    "options": {
+      "pt": [
+        "Uma porta física com uma fechadura.",
+        "Câmeras de segurança.",
+        "Senhas, permissões e autenticação multifator em sistemas.",
+        "Um guarda na entrada do prédio."
+      ],
+      "en": [
+        "A physical door with a lock.",
+        "Security cameras.",
+        "Passwords, permissions, and multifactor authentication in systems.",
+        "A guard at the building entrance."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Embora seja um controle, um controle digital mais representativo é preferível em exemplos de GRC.",
+        "Este é um controle físico; GRC frequentemente enfatiza controles digitais.",
+        "Estes são exemplos primários de controles lógicos e de acesso que aplicam políticas e mitigam riscos digitais.",
+        "Este é um controle físico."
+      ],
+      "en": [
+        "While it is a control, a more representative digital control is preferable in GRC examples.",
+        "This is a physical control; GRC often emphasizes digital controls.",
+        "These are primary examples of logical and access controls that enforce policies and mitigate digital risks.",
+        "This is a physical control."
       ]
     }
   }
