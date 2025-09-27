@@ -2,12 +2,22 @@
   {
     "id": 1,
     "q": {
-      "pt": "1. Quem detém a responsabilidade primária por estabelecer e executar a estratégia de segurança da informação da Empresa?",
-      "en": "1. Who holds the primary responsibility for establishing and executing the company’s information security strategy?"
+      "pt": "Quem detém a responsabilidade primária por estabelecer e executar a estratégia de segurança da informação da Empresa?",
+      "en": "Who holds the primary responsibility for establishing and executing the company’s information security strategy?"
     },
     "options": {
-      "pt": ["Conselho de Administração", "Gestão Executiva", "Comitê Diretor de Cibersegurança", "CISO"],
-      "en": ["Board of Directors", "Executive Management", "Cybersecurity Steering Committee", "CISO"]
+      "pt": [
+        "O Conselho de Administração",
+        "A Gestão Executiva",
+        "O Comitê Diretor de Cibersegurança",
+        "O Chief Information Security Officer (CISO)"
+      ],
+      "en": [
+        "Board of Directors",
+        "Executive Management",
+        "Cybersecurity Steering Committee",
+        "Chief Information Security Officer (CISO)"
+      ]
     },
     "correctIndex": 3,
     "rationales": {
@@ -21,33 +31,331 @@
         "High-level oversight; execution is delegated.",
         "Supports/approves resources; not day-to-day execution.",
         "Provides strategic guidance, not operations.",
-        "Designated to lead and execute the InfoSec strategy."
+        "Designated to lead and execute the information security strategy."
       ]
     }
   },
   {
     "id": 2,
     "q": {
-      "pt": "2. Qual é a principal responsabilidade do Conselho de Administração em relação à estratégia de Segurança da Informação?",
-      "en": "2. What is the board’s primary responsibility regarding the information security strategy?"
+      "pt": "Qual é a principal responsabilidade do Conselho de Administração em relação à estratégia de Segurança da Informação?",
+      "en": "What is the board’s primary responsibility regarding the information security strategy?"
     },
     "options": {
-      "pt": ["Operações diárias e resposta a incidentes", "Definir tolerância a risco e supervisionar", "Alocar todos os recursos", "Escrever a política de segurança"],
-      "en": ["Daily ops and incident response", "Set risk appetite and provide oversight", "Allocate all resources", "Write the security policy"]
+      "pt": [
+        "Operações diárias e resposta a incidentes",
+        "Definir tolerância a risco e supervisionar",
+        "Alocar todos os recursos",
+        "Escrever a política de segurança"
+      ],
+      "en": [
+        "Daily operations and incident response",
+        "Set risk appetite and provide oversight",
+        "Allocate all resources",
+        "Write the security policy"
+      ]
     },
     "correctIndex": 1,
     "rationales": {
       "pt": [
         "Isso é função da equipe do CISO.",
         "Governança: define apetite a risco e supervisiona.",
-        "A Gestão Executiva, informada pelo CISO, aloca recursos.",
-        "Política detalhada é produzida pela equipe do CISO."
+        "Gestão executiva aloca recursos com base no CISO.",
+        "Política detalhada é produzida pela equipe de SI."
       ],
       "en": [
         "That’s the CISO team’s job.",
         "Governance: sets risk appetite and oversight.",
-        "Executive mgmt allocates resources, informed by the CISO.",
-        "Detailed policy is produced by the CISO’s team."
+        "Executive management allocates resources based on the CISO.",
+        "Detailed policy is produced by the InfoSec team."
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "q": {
+      "pt": "Qual função o Comitê Diretor de Cibersegurança normalmente desempenha?",
+      "en": "What role does the Cybersecurity Steering Committee typically play?"
+    },
+    "options": {
+      "pt": [
+        "Responder a incidentes",
+        "Fornecer orientação estratégica e alinhamento",
+        "Gerenciar patches de software",
+        "Executar testes de penetração"
+      ],
+      "en": [
+        "Responding to incidents",
+        "Providing strategic guidance and alignment",
+        "Managing software patches",
+        "Performing penetration testing"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incidentes são tratados pela equipe de operações de segurança.",
+        "O Comitê fornece orientação e garante alinhamento estratégico.",
+        "Gerenciamento de patches é feito por TI/Segurança.",
+        "Testes técnicos são feitos pela equipe de segurança ou terceiros."
+      ],
+      "en": [
+        "Incidents are handled by the security operations team.",
+        "The Committee provides guidance and ensures strategic alignment.",
+        "Patch management is performed by IT/Security.",
+        "Penetration tests are performed by security staff or vendors."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "q": {
+      "pt": "Qual é a responsabilidade da Gestão Executiva em relação à estratégia de SI?",
+      "en": "What is the executive management’s responsibility regarding InfoSec strategy?"
+    },
+    "options": {
+      "pt": [
+        "Executar diretamente todas as operações de SI",
+        "Fornecer apoio, aprovar recursos e garantir alinhamento com os objetivos de negócio",
+        "Auditar controles de SI",
+        "Definir todos os controles técnicos"
+      ],
+      "en": [
+        "Directly execute all InfoSec operations",
+        "Provide support, approve resources, and ensure business alignment",
+        "Audit InfoSec controls",
+        "Define all technical controls"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Execução diária é responsabilidade do CISO e equipe.",
+        "A gestão executiva garante recursos e alinhamento estratégico.",
+        "Auditoria é função de auditores internos/externos.",
+        "Controles técnicos são definidos pela equipe de SI."
+      ],
+      "en": [
+        "Day-to-day execution is handled by the CISO and team.",
+        "Executive mgmt ensures resources and strategic alignment.",
+        "Auditing is for internal/external auditors.",
+        "Technical controls are defined by InfoSec staff."
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "q": {
+      "pt": "Qual é a consequência de não ter um CISO claramente definido?",
+      "en": "What is the consequence of not having a clearly defined CISO?"
+    },
+    "options": {
+      "pt": [
+        "Maior eficiência operacional",
+        "Lacunas de responsabilidade e falhas de execução",
+        "Menor custo de pessoal",
+        "Mais inovação tecnológica"
+      ],
+      "en": [
+        "Greater operational efficiency",
+        "Gaps in responsibility and execution failures",
+        "Lower staffing cost",
+        "More technological innovation"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Sem liderança, eficiência tende a cair.",
+        "Sem CISO claro, surgem lacunas e falhas na execução.",
+        "Economia de pessoal aumenta riscos.",
+        "Inovação sem governança aumenta vulnerabilidades."
+      ],
+      "en": [
+        "Without leadership, efficiency tends to fall.",
+        "Without a CISO, gaps and failures emerge.",
+        "Lower staffing cost increases risks.",
+        "Innovation without governance increases vulnerabilities."
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "q": {
+      "pt": "Quem deve supervisionar a eficácia da função de SI em alto nível?",
+      "en": "Who should oversee the effectiveness of the InfoSec function at a high level?"
+    },
+    "options": {
+      "pt": [
+        "O Conselho de Administração",
+        "O time de operações de SI",
+        "O time de auditoria interna",
+        "Fornecedores externos"
+      ],
+      "en": [
+        "Board of Directors",
+        "InfoSec operations team",
+        "Internal audit team",
+        "External vendors"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Supervisão é função de governança do Conselho.",
+        "Operações executam, não supervisionam a si mesmas.",
+        "Auditoria avalia, mas não governa.",
+        "Fornecedores não têm autoridade de governança."
+      ],
+      "en": [
+        "Oversight is a governance role of the Board.",
+        "Ops execute, they don’t oversee themselves.",
+        "Auditors assess, not govern.",
+        "Vendors don’t have governance authority."
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "q": {
+      "pt": "Qual é o papel do auditor interno em relação à estratégia de SI?",
+      "en": "What is the internal auditor’s role regarding InfoSec strategy?"
+    },
+    "options": {
+      "pt": [
+        "Executar a estratégia",
+        "Avaliar controles e conformidade",
+        "Definir os objetivos estratégicos",
+        "Aprovar orçamentos"
+      ],
+      "en": [
+        "Execute the strategy",
+        "Assess controls and compliance",
+        "Define strategic objectives",
+        "Approve budgets"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Execução é do CISO e equipe.",
+        "Auditor avalia controles e conformidade.",
+        "Objetivos estratégicos vêm do Conselho e CISO.",
+        "Orçamento é aprovado pela Gestão Executiva."
+      ],
+      "en": [
+        "Execution is the CISO’s role.",
+        "Auditor assesses controls and compliance.",
+        "Strategic objectives come from the Board and CISO.",
+        "Budget is approved by Executive Mgmt."
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "q": {
+      "pt": "Qual função normalmente define políticas detalhadas de SI?",
+      "en": "Which function normally defines detailed InfoSec policies?"
+    },
+    "options": {
+      "pt": [
+        "Conselho de Administração",
+        "Equipe de SI liderada pelo CISO",
+        "Auditoria Externa",
+        "Usuários finais"
+      ],
+      "en": [
+        "Board of Directors",
+        "InfoSec team led by the CISO",
+        "External audit",
+        "End-users"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "O Conselho define diretrizes gerais, não políticas detalhadas.",
+        "A equipe do CISO elabora políticas específicas.",
+        "Auditoria revisa, não escreve políticas.",
+        "Usuários seguem políticas, não as criam."
+      ],
+      "en": [
+        "Board sets high-level direction, not detailed policies.",
+        "CISO’s team drafts detailed policies.",
+        "Auditors review, not write policies.",
+        "Users follow policies, not create them."
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "q": {
+      "pt": "O que deve fazer parte do processo de governança de SI?",
+      "en": "What should be part of the InfoSec governance process?"
+    },
+    "options": {
+      "pt": [
+        "Monitoramento de conformidade e relatórios regulares",
+        "Gerenciamento de patches",
+        "Reset de senhas",
+        "Suporte técnico ao usuário"
+      ],
+      "en": [
+        "Compliance monitoring and regular reporting",
+        "Patch management",
+        "Password resets",
+        "User tech support"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Governança inclui monitoramento e reporting.",
+        "Patches são operacionais.",
+        "Reset de senha é suporte de rotina.",
+        "Suporte é operação, não governança."
+      ],
+      "en": [
+        "Governance includes monitoring and reporting.",
+        "Patches are operational.",
+        "Password resets are routine support.",
+        "Support is operational, not governance."
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "q": {
+      "pt": "Qual é a responsabilidade primária do CISO?",
+      "en": "What is the CISO’s primary responsibility?"
+    },
+    "options": {
+      "pt": [
+        "Gerenciar orçamento de TI",
+        "Definir e executar a estratégia de SI",
+        "Auditar controles internos",
+        "Escrever relatórios financeiros"
+      ],
+      "en": [
+        "Manage IT budget",
+        "Define and execute InfoSec strategy",
+        "Audit internal controls",
+        "Write financial reports"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Orçamento é da gestão de TI.",
+        "CISO lidera a estratégia de segurança.",
+        "Auditoria é papel de auditores.",
+        "Relatórios financeiros são de finanças."
+      ],
+      "en": [
+        "IT budget is handled by IT mgmt.",
+        "CISO leads the security strategy.",
+        "Auditing is done by auditors.",
+        "Financial reporting is done by finance."
       ]
     }
   }
