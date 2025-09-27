@@ -21,12 +21,14 @@
   <div class="w-full max-w-4xl bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-gray-200">
     <header class="text-center mb-8">
       <h1 class="text-3xl font-extrabold text-gray-900">Pescaria de GRC</h1>
-      <p id="header-subtitle" class="mt-2 text-md text-gray-500">Por favor, faça o login para começar.</p>
+      <p id="header-subtitle" class="mt-2 text-md text-gray-500">
+        Selecione uma pergunta para começar.
+      </p>
     </header>
 
     <main>
-      <!-- Login -->
-      <div id="login-page">
+      <!-- (Opcional) Login — deixamos, mas o app abre direto o menu -->
+      <div id="login-page" class="hidden">
         <div class="max-w-sm mx-auto">
           <h2 class="text-xl font-bold mb-6 text-center text-gray-700">Acessar o Quiz</h2>
           <div class="space-y-4">
@@ -51,7 +53,7 @@
         <div class="mb-4 flex items-center justify-between gap-4">
           <h2 class="text-xl font-bold text-gray-700">
             <span id="menu-title">Selecione a Pergunta</span>
-            <span id="menu-range" class="text-gray-500">(1–?)</span>
+            <span id="menu-range" class="text-gray-500">(1–450)</span>
           </h2>
           <label class="flex items-center gap-2 text-sm text-gray-700">
             <span id="lang-label">Idioma</span>
@@ -66,21 +68,35 @@
 
       <!-- Área do Quiz -->
       <div id="quiz-area" class="space-y-6 hidden">
+
+        <!-- NOVO: Top bar com Voltar + seletor de idioma dentro da pergunta -->
+        <div class="flex items-center justify-between gap-4">
+          <button id="back-to-menu-button" class="py-2 px-4 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition">
+            Voltar ao Menu
+          </button>
+
+          <label class="flex items-center gap-2 text-sm text-gray-700">
+            <span id="lang-label-in-question">Idioma</span>
+            <select id="lang-select-in-question" class="border rounded-md px-2 py-1">
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+        </div>
+
         <h2 id="question-text" class="text-xl font-semibold text-gray-800 bg-blue-50 p-4 rounded-lg border border-blue-200"></h2>
+
         <div id="options-container" class="space-y-3"></div>
+
         <div id="feedback-container" class="mt-6 p-4 rounded-lg hidden border-l-4">
           <h3 id="feedback-title" class="text-lg font-bold"></h3>
           <p id="feedback-rationale" class="mt-2 text-gray-700"></p>
         </div>
       </div>
-
-      <button id="back-to-menu-button" class="mt-8 w-full py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition hidden">
-        Voltar ao Menu
-      </button>
     </main>
   </div>
 
-  <!-- Seu JavaScript agora fica num arquivo separado -->
+  <!-- JS -->
   <script src="./app.js"></script>
 </body>
 </html>
