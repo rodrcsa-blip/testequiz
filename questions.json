@@ -356,7 +356,10 @@
         "CISO leads the security strategy.",
         "Auditing is done by auditors.",
         "Financial reporting is done by finance."
-        {
+      ]
+    }
+  },
+  {
   "id": 11,
   "q": {
     "pt": "Qual é o propósito do princípio de 'Menor Privilégio' na Gestão de Acessos?",
