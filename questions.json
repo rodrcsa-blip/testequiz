@@ -1,1 +1,54 @@
-
+[
+  {
+    "id": 1,
+    "q": {
+      "pt": "1. Quem detém a responsabilidade primária por estabelecer e executar a estratégia de segurança da informação da Empresa?",
+      "en": "1. Who holds the primary responsibility for establishing and executing the company’s information security strategy?"
+    },
+    "options": {
+      "pt": ["Conselho de Administração", "Gestão Executiva", "Comitê Diretor de Cibersegurança", "CISO"],
+      "en": ["Board of Directors", "Executive Management", "Cybersecurity Steering Committee", "CISO"]
+    },
+    "correctIndex": 3,
+    "rationales": {
+      "pt": [
+        "Supervisão de alto nível; delega a execução.",
+        "Apoia e aprova recursos; não executa no dia a dia.",
+        "Orienta e alinha, mas não executa.",
+        "Designado para liderar e executar a estratégia de SI."
+      ],
+      "en": [
+        "High-level oversight; execution is delegated.",
+        "Supports/approves resources; not day-to-day execution.",
+        "Provides strategic guidance, not operations.",
+        "Designated to lead and execute the InfoSec strategy."
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "q": {
+      "pt": "2. Qual é a principal responsabilidade do Conselho de Administração em relação à estratégia de Segurança da Informação?",
+      "en": "2. What is the board’s primary responsibility regarding the information security strategy?"
+    },
+    "options": {
+      "pt": ["Operações diárias e resposta a incidentes", "Definir tolerância a risco e supervisionar", "Alocar todos os recursos", "Escrever a política de segurança"],
+      "en": ["Daily ops and incident response", "Set risk appetite and provide oversight", "Allocate all resources", "Write the security policy"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Isso é função da equipe do CISO.",
+        "Governança: define apetite a risco e supervisiona.",
+        "A Gestão Executiva, informada pelo CISO, aloca recursos.",
+        "Política detalhada é produzida pela equipe do CISO."
+      ],
+      "en": [
+        "That’s the CISO team’s job.",
+        "Governance: sets risk appetite and oversight.",
+        "Executive mgmt allocates resources, informed by the CISO.",
+        "Detailed policy is produced by the CISO’s team."
+      ]
+    }
+  }
+]
