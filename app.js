@@ -2,16 +2,14 @@
 // app.js — Quiz PT/EN com JSON
 // ===============================
 
-// Estado global
-let rawQuestions = [];            // Dados como vêm do questions.json
-let currentLang = 'pt';           // 'pt' | 'en'
-let currentQuestionIndex = -1;    // Índice da questão atual
-const answeredQuestions = new Set(); // Guarda índices respondidos nesta sessão
+let rawQuestions = [];
+let currentLang = 'pt';
+let currentQuestionIndex = -1;
+const answeredQuestions = new Set();
 
-// Referências de elementos (cada id precisa existir no index.html)
 const els = {
   headerSubtitle: document.getElementById('header-subtitle'),
-  loginPage: document.getElementById('login-page'),          // pode não existir; tratamos com "?"
+  loginPage: document.getElementById('login-page'),
   startPage: document.getElementById('start-page'),
   quizArea: document.getElementById('quiz-area'),
   menuOptions: document.getElementById('menu-options'),
@@ -20,21 +18,23 @@ const els = {
   feedbackTitle: document.getElementById('feedback-title'),
   feedbackRationale: document.getElementById('feedback-rationale'),
   backBtn: document.getElementById('back-to-menu-button'),
-  loginButton: document.getElementById('login-button'),      // pode não existir; tratamos com "?"
-  loginError: document.getElementById('login-error'),        // pode não existir; tratamos com "?"
+  loginButton: document.getElementById('login-button'),
+  loginError: document.getElementById('login-error'),
   questionText: document.getElementById('question-text'),
   menuTitle: document.getElementById('menu-title'),
   menuRange: document.getElementById('menu-range'),
   langLabel: document.getElementById('lang-label'),
   langSelect: document.getElementById('lang-select'),
+  // NOVOS: seletor de idioma dentro da pergunta
+  langLabelInQuestion: document.getElementById('lang-label-in-question'),
+  langSelectInQuestion: document.getElementById('lang-select-in-question'),
 };
 
-// Textos da interface por idioma
+// Textos de interface por idioma
 function t() {
   return currentLang === 'en'
     ? {
         select: "Select a question",
-        range: rawQuestions.length ? `(1–${rawQuestions.length})` : "(1–?)",
         subtitle: "Pick a question to test your knowledge.",
         correct: "Correct!",
         incorrect: "Incorrect. Review the rationale:",
@@ -45,7 +45,6 @@ function t() {
       }
     : {
         select: "Selecione a Pergunta",
-        range: rawQuestions.length ? `(1–${rawQuestions.length})` : "(1–?)",
         subtitle: "Selecione uma pergunta para testar seus conhecimentos.",
         correct: "Correto!",
         incorrect: "Incorreto. Revise a justificativa:",
@@ -59,13 +58,14 @@ function t() {
 function updateUIStrings() {
   const tt = t();
   if (els.menuTitle) els.menuTitle.textContent = tt.select;
-  if (els.menuRange) els.menuRange.textContent = '(1–450)'; // faixa fixa na página inicial
+  if (els.menuRange) els.menuRange.textContent = '(1–450)'; // faixa fixa
   if (els.headerSubtitle) els.headerSubtitle.textContent = tt.subtitle;
   if (els.backBtn) els.backBtn.textContent = tt.back;
   if (els.langLabel) els.langLabel.textContent = tt.lang;
+  if (els.langLabelInQuestion) els.langLabelInQuestion.textContent = tt.lang;
 }
 
-// Converte 1 questão crua → formato interno para renderização
+// Converte questão crua → formato interno
 function qToInternal(q) {
   const opts = (q.options && (q.options[currentLang] || q.options.pt)) || [];
   const rats = (q.rationales && (q.rationales[currentLang] || q.rationales.pt)) || [];
@@ -80,32 +80,27 @@ function qToInternal(q) {
   };
 }
 
-// Carrega o JSON das questões
+// Carrega JSON
 async function loadQuestions() {
-  // "v" ajuda a forçar o navegador a baixar de novo se você atualizar o arquivo
   const res = await fetch('./questions.json?v=1');
   if (!res.ok) throw new Error('Falha ao carregar questions.json');
   rawQuestions = await res.json();
-
-  // Validação leve (opcional)
-  if (!Array.isArray(rawQuestions)) {
-    throw new Error('questions.json inválido: esperado um array');
-  }
+  if (!Array.isArray(rawQuestions)) throw new Error('questions.json inválido: esperado um array');
 }
 
-// Mostra a tela de seleção: 1..450 botões; habilita só até o número de questões existentes
+// Mostra menu 1..450, habilitando só as existentes
 function showStartPage() {
-  els.loginPage?.classList.add('hidden'); // caso exista, fica escondido
+  els.loginPage?.classList.add('hidden');
   els.quizArea.classList.add('hidden');
   els.startPage.classList.remove('hidden');
   els.feedbackContainer.classList.add('hidden');
-  els.backBtn.classList.add('hidden');
+  // Importante: botão de voltar não some do DOM na página da pergunta,
+  // mas aqui garantimos que o usuário está no menu.
   currentQuestionIndex = -1;
 
   els.menuOptions.innerHTML = '';
-
-  const totalButtons = 450;               // sempre mostra 1..450
-  const available = rawQuestions.length;  // quantas existem de fato no JSON
+  const totalButtons = 450;
+  const available = rawQuestions.length;
   const tt = t();
 
   for (let i = 1; i <= totalButtons; i++) {
@@ -136,33 +131,27 @@ function showStartPage() {
   }
 
   updateUIStrings();
-  // Na página inicial, queremos exibir a faixa fixa (1–450)
-  if (els.menuRange) els.menuRange.textContent = '(1–450)';
 }
 
-// Carrega e exibe uma questão
+// Carrega e exibe a questão
 function loadQuestion(index) {
   currentQuestionIndex = index;
   const currentRaw = rawQuestions[index];
-  if (!currentRaw) {
-    // Se por algum motivo não existir, volta ao menu
-    showStartPage();
-    return;
-  }
+  if (!currentRaw) return showStartPage();
 
   const currentQuiz = qToInternal(currentRaw);
 
   els.startPage.classList.add('hidden');
   els.quizArea.classList.remove('hidden');
 
+  // mantém os seletores de idioma sincronizados
+  syncLanguageSelectors();
+
   els.questionText.textContent = currentQuiz.question;
   els.optionsContainer.innerHTML = '';
   els.feedbackContainer.classList.add('hidden');
-  els.backBtn.classList.add('hidden');
 
-  // Embaralha alternativas ao exibir
   const shuffled = [...currentQuiz.options].sort(() => Math.random() - 0.5);
-
   shuffled.forEach((option) => {
     const btn = document.createElement('button');
     btn.textContent = option.text;
@@ -173,13 +162,12 @@ function loadQuestion(index) {
   });
 }
 
-// Trata o clique em uma alternativa
+// Clicar numa alternativa (aqui sim marca como respondida)
 function checkAnswer(selectedButton, selectedOption, allOptions) {
   if (currentQuestionIndex !== -1) {
     answeredQuestions.add(currentQuestionIndex);
   }
 
-  // Desabilita todas as alternativas
   document.querySelectorAll('.answer-button').forEach((b) => {
     b.disabled = true;
     b.classList.remove('hover:bg-blue-50');
@@ -198,7 +186,6 @@ function checkAnswer(selectedButton, selectedOption, allOptions) {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
 
-    // Destaca a correta
     const correct = allOptions.find((o) => o.isCorrect);
     document.querySelectorAll('.answer-button').forEach((b) => {
       if (b.textContent === correct.text) {
@@ -214,14 +201,12 @@ function checkAnswer(selectedButton, selectedOption, allOptions) {
 
   els.feedbackRationale.textContent = selectedOption.rationale || '';
   els.feedbackContainer.classList.remove('hidden');
-  els.backBtn.classList.remove('hidden');
 }
 
-// Voltar ao menu
+// Botão Voltar ao Menu (não marca como respondida caso não tenha respondido)
 els.backBtn?.addEventListener('click', showStartPage);
 
-// (Opcional) Se você mantiver a tela de login no HTML e quiser usá-la,
-// pode habilitar esta função e o botão de login:
+// (Opcional) Login
 function handleLogin() {
   const username = document.getElementById('username')?.value || '';
   if (username.trim()) {
@@ -236,23 +221,42 @@ function handleLogin() {
 }
 els.loginButton?.addEventListener('click', handleLogin);
 
-// Seleção de idioma
-els.langSelect?.addEventListener('change', (e) => {
-  currentLang = e.target.value;
-  // Se estiver no menu, só atualiza labels; se estiver em uma pergunta, recarrega a questão no novo idioma
+// Sincroniza os dois seletores de idioma e aplica mudança
+function setLanguage(lang) {
+  if (lang !== 'pt' && lang !== 'en') return;
+  currentLang = lang;
+  // Sincroniza selects
+  if (els.langSelect && els.langSelect.value !== lang) els.langSelect.value = lang;
+  if (els.langSelectInQuestion && els.langSelectInQuestion.value !== lang) els.langSelectInQuestion.value = lang;
+
+  // Atualiza labels gerais
+  updateUIStrings();
+
+  // Se estiver no menu, só atualiza; se estiver numa questão, recarrega a questão atual
   if (!els.startPage.classList.contains('hidden')) {
-    updateUIStrings();
+    // nada além das labels
   } else if (!els.quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
     loadQuestion(currentQuestionIndex);
   }
-});
+}
 
-// Inicialização — carrega o JSON e abre o menu diretamente (sem tela de login)
+function syncLanguageSelectors() {
+  if (els.langSelect && els.langSelectInQuestion) {
+    els.langSelect.value = currentLang;
+    els.langSelectInQuestion.value = currentLang;
+  }
+}
+
+// Eventos dos dois seletores
+els.langSelect?.addEventListener('change', (e) => setLanguage(e.target.value));
+els.langSelectInQuestion?.addEventListener('change', (e) => setLanguage(e.target.value));
+
+// Inicialização
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
     updateUIStrings();
-    showStartPage(); // Mostra 1..450 com habilitadas até o total de questões no JSON
+    showStartPage(); // entra direto no menu 1–450
   } catch (e) {
     if (els.headerSubtitle) {
       els.headerSubtitle.textContent =
