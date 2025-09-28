@@ -1051,5 +1051,364 @@
       "Security responsibilities are segmented, not equal."
     ]
   }
+},
+  {
+  "id": 31,
+  "q": {
+    "pt": "Qual objetivo do SGSI se relaciona com a prevenção de modificação ou corrupção não autorizada de dados?",
+    "en": "Which ISMS objective relates to preventing unauthorized modification or corruption of data?"
+  },
+  "options": {
+    "pt": ["Confidencialidade", "Integridade", "Disponibilidade", "Responsabilidade"],
+    "en": ["Confidentiality", "Integrity", "Availability", "Accountability"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Confidencialidade se relaciona com divulgação não autorizada.",
+      "Integridade garante precisão, completude e proteção contra alterações não autorizadas.",
+      "Disponibilidade garante acessibilidade dos dados, não proteção contra alterações.",
+      "Responsabilidade se relaciona a rastreabilidade, não ao estado dos dados."
+    ],
+    "en": [
+      "Confidentiality relates to unauthorized disclosure.",
+      "Integrity ensures accuracy, completeness, and protection against unauthorized changes.",
+      "Availability ensures data accessibility, not integrity.",
+      "Accountability relates to traceability, not the data state itself."
+    ]
+  }
+},
+{
+  "id": 32,
+  "q": {
+    "pt": "Qual é a frequência esperada para realizar avaliações de risco em sistemas críticos e de alto risco?",
+    "en": "What is the expected frequency for conducting risk assessments in critical and high-risk systems?"
+  },
+  "options": {
+    "pt": [
+      "Apenas uma vez na implantação do sistema.",
+      "Apenas após um incidente grave.",
+      "Anualmente ou sempre que houver mudanças significativas.",
+      "Apenas quando o CISO solicitar."
+    ],
+    "en": [
+      "Only once at system deployment.",
+      "Only after a major incident.",
+      "Annually or whenever significant changes occur.",
+      "Only when requested by the CISO."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O risco é dinâmico, exigindo reavaliação periódica.",
+      "As avaliações devem ser proativas, não apenas reativas.",
+      "A prática recomendada é anualmente ou em mudanças significativas.",
+      "A frequência deve ser definida em política, não ad hoc."
+    ],
+    "en": [
+      "Risk is dynamic, requiring periodic reassessment.",
+      "Assessments should be proactive, not just reactive.",
+      "Best practice is annually or when significant changes occur.",
+      "Frequency should be policy-driven, not ad hoc."
+    ]
+  }
+},
+{
+  "id": 33,
+  "q": {
+    "pt": "Quem é responsável por classificar e rotular os ativos de informação de acordo com sua sensibilidade?",
+    "en": "Who is responsible for classifying and labeling information assets according to their sensitivity?"
+  },
+  "options": {
+    "pt": [
+      "O Help Desk de TI.",
+      "O Centro de Operações de Segurança (SOC).",
+      "O Dono do Negócio/Dono dos Dados.",
+      "O auditor externo."
+    ],
+    "en": [
+      "The IT Help Desk.",
+      "The Security Operations Center (SOC).",
+      "The Business Owner/Data Owner.",
+      "The external auditor."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O Help Desk resolve problemas técnicos, não governança.",
+      "O SOC monitora ameaças, não define sensibilidade.",
+      "O Dono dos Dados tem o contexto para definir valor e sensibilidade.",
+      "Auditores verificam conformidade, não atribuem classificações."
+    ],
+    "en": [
+      "The IT Help Desk handles technical issues, not governance.",
+      "The SOC monitors threats, not data sensitivity.",
+      "The Data Owner has the context to define value and sensitivity.",
+      "Auditors verify compliance, they don’t assign classifications."
+    ]
+  }
+},
+{
+  "id": 34,
+  "q": {
+    "pt": "Qual é o principal propósito de uma Análise de Impacto no Negócio (BIA)?",
+    "en": "What is the main purpose of a Business Impact Analysis (BIA)?"
+  },
+  "options": {
+    "pt": [
+      "Determinar orçamento para novo software de segurança.",
+      "Identificar processos críticos e o tempo máximo de inatividade aceitável (RTO).",
+      "Listar vulnerabilidades da rede.",
+      "Definir complexidade de senhas."
+    ],
+    "en": [
+      "Determine budget for new security software.",
+      "Identify critical processes and maximum acceptable downtime (RTO).",
+      "List network vulnerabilities.",
+      "Define password complexity."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "A BIA está ligada à continuidade, não a orçamento.",
+      "A BIA identifica processos críticos e define RTO/RPO.",
+      "Listar vulnerabilidades é tarefa de avaliação de vulnerabilidade.",
+      "Complexidade de senhas pertence a política de acesso."
+    ],
+    "en": [
+      "BIA is tied to continuity, not budgeting.",
+      "BIA identifies critical processes and defines RTO/RPO.",
+      "Listing vulnerabilities is part of vulnerability assessment.",
+      "Password complexity is part of access control policy."
+    ]
+  }
+},
+{
+  "id": 35,
+  "q": {
+    "pt": "No Gerenciamento de Riscos de Terceiros (TPRM), o que a Due Diligence visa alcançar primariamente?",
+    "en": "In Third-Party Risk Management (TPRM), what does Due Diligence primarily aim to achieve?"
+  },
+  "options": {
+    "pt": [
+      "Negociar preços de contrato mais baixos.",
+      "Avaliar a estabilidade financeira do fornecedor.",
+      "Avaliar e mitigar riscos potenciais de segurança e conformidade do fornecedor.",
+      "Escrever os termos finais do contrato."
+    ],
+    "en": [
+      "Negotiate lower contract prices.",
+      "Assess the vendor’s financial stability.",
+      "Assess and mitigate potential security and compliance risks from the vendor.",
+      "Draft the final contract terms."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Preços são função de Compras, não Due Diligence.",
+      "Financeiro é um aspecto, mas não o principal foco.",
+      "Due Diligence avalia riscos antes da contratação.",
+      "Termos finais são definidos pelo Jurídico."
+    ],
+    "en": [
+      "Pricing is handled by Procurement, not Due Diligence.",
+      "Financials are part of it, but not the primary focus.",
+      "Due Diligence assesses risks before contracting.",
+      "Final terms are handled by Legal."
+    ]
+  }
+},
+{
+  "id": 36,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 37,
+  "q": {
+    "pt": "Que equipe é responsável por gerenciar todo o processo de planejamento de continuidade de negócios e recuperação de desastres?",
+    "en": "Which team is responsible for managing the entire business continuity and disaster recovery planning process?"
+  },
+  "options": {
+    "pt": [
+      "Equipe de Operações de TI.",
+      "Equipe de Monitoramento de Segurança.",
+      "Equipe de Gestão de Continuidade de Negócios (BCM).",
+      "Departamento de Recursos Humanos."
+    ],
+    "en": [
+      "IT Operations Team.",
+      "Security Monitoring Team.",
+      "Business Continuity Management (BCM) Team.",
+      "Human Resources Department."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "TI executa recuperação técnica, mas não gerencia o processo de negócios.",
+      "Monitoramento detecta incidentes, não planeja recuperação.",
+      "BCM é a função dedicada ao planejamento e gestão da continuidade.",
+      "RH cuida de pessoal, não do processo de continuidade."
+    ],
+    "en": [
+      "IT handles technical recovery but not the business process.",
+      "Monitoring detects incidents, not recovery planning.",
+      "BCM is the dedicated function for continuity planning and management.",
+      "HR handles personnel, not continuity planning."
+    ]
+  }
+},
+{
+  "id": 38,
+  "q": {
+    "pt": "Qual é o foco principal da Política de Uso Aceitável (AUP)?",
+    "en": "What is the primary focus of the Acceptable Use Policy (AUP)?"
+  },
+  "options": {
+    "pt": [
+      "Definir diretrizes de relatórios financeiros.",
+      "Governar o uso de recursos de TI e sistemas de comunicação.",
+      "Descrever o desenvolvimento de software.",
+      "Especificar requisitos de segurança física do datacenter."
+    ],
+    "en": [
+      "Define financial reporting guidelines.",
+      "Govern employee use of IT resources and communication systems.",
+      "Outline software development process.",
+      "Specify physical security requirements for the data center."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "AUP trata de tecnologia, não de finanças.",
+      "AUP estabelece regras de uso seguro e legal da tecnologia.",
+      "SSDLC cobre desenvolvimento de software, não AUP.",
+      "Segurança física é outra política separada."
+    ],
+    "en": [
+      "AUP covers technology, not finance.",
+      "AUP sets rules for safe and legal use of technology.",
+      "SSDLC covers software development, not AUP.",
+      "Physical security is handled by another policy."
+    ]
+  }
+},
+{
+  "id": 39,
+  "q": {
+    "pt": "Por que a Separação de Funções é um controle obrigatório?",
+    "en": "Why is Separation of Duties a mandatory control?"
+  },
+  "options": {
+    "pt": [
+      "Para reduzir custo de mão de obra.",
+      "Para garantir que uma pessoa conclua todo o processo rapidamente.",
+      "Para prevenir fraudes, erros e uso indevido exigindo mais de uma pessoa.",
+      "Para simplificar concessão de privilégios administrativos."
+    ],
+    "en": [
+      "To reduce labor costs.",
+      "To ensure one person completes the process quickly.",
+      "To prevent fraud, errors, and misuse by requiring multiple people.",
+      "To simplify granting administrative privileges."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O objetivo é risco, não custo.",
+      "A separação busca impedir controle total de uma pessoa.",
+      "Divide responsabilidades para prevenir fraudes/erros.",
+      "Na verdade, complica privilégios, mas por segurança."
+    ],
+    "en": [
+      "The goal is risk, not cost.",
+      "Separation prevents one person from controlling a whole process.",
+      "It divides responsibilities to prevent fraud/errors.",
+      "It actually complicates privilege granting for security reasons."
+    ]
+  }
+},
+{
+  "id": 40,
+  "q": {
+    "pt": "Quando um contrato de fornecedor de alto risco precisa ser estendido, qual processo deve ser iniciado?",
+    "en": "When a high-risk vendor contract needs to be extended, what process should be initiated?"
+  },
+  "options": {
+    "pt": [
+      "Apenas revisão legal do contrato.",
+      "Nova avaliação completa de segurança (reavaliação).",
+      "Um simples ticket para Compras.",
+      "Revisão da atividade do fornecedor nas redes sociais."
+    ],
+    "en": [
+      "Only legal review of the contract.",
+      "A new full security assessment (reassessment).",
+      "A simple ticket to Procurement.",
+      "Review of the vendor’s social media activity."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Contrato de alto risco exige verificação de segurança.",
+      "A renovação requer reavaliação da postura atual.",
+      "Um ticket simples é insuficiente para alto risco.",
+      "Redes sociais não são critério formal de risco."
+    ],
+    "en": [
+      "High-risk contracts require security verification.",
+      "Renewal requires reassessment of current posture.",
+      "A simple ticket is insufficient for high-risk vendors.",
+      "Social media is not a formal risk criterion."
+    ]
+  }
+},
+{
+  "id": 41,
+  "q": {
+    "pt": "Qual é o principal risco de conceder privilégios excessivos a uma conta de usuário?",
+    "en": "What is the main risk of granting excessive privileges to a user account?"
+  },
+  "options": {
+    "pt": [
+      "Aumento do uso de hardware.",
+      "Perda da necessidade de saber e maior risco de violação.",
+      "Rede mais lenta.",
+      "Treinamento de usuários mais complexo."
+    ],
+    "en": [
+      "Increased hardware usage.",
+      "Loss of need-to-know and higher risk of breach.",
+      "Slower network.",
+      "More complex user training."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Privilégios não afetam hardware.",
+      "Excesso de privilégios viola o menor privilégio e aumenta risco.",
+      "Rede não está ligada diretamente a privilégios.",
+      "Treinamento é necessário em qualquer cenário."
+    ],
+    "en": [
+      "Privileges do not affect hardware.",
+      "Excessive privileges violate least privilege and increase risk.",
+      "Network speed is not directly tied to privileges.",
+      "Training is required in any case."
+    ]
+  }
 }
 ]
