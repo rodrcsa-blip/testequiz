@@ -683,40 +683,48 @@
       ]
     }
   },
-  {
-    "id": 20,
-    "q": {
-      "pt": "Qual é um exemplo chave de 'Controle' no contexto de segurança da informação?",
-      "en": "What is a key example of a 'Control' in the context of information security?"
-    },
-    "options": {
-      "pt": [
-        "Uma porta física com uma fechadura.",
-        "Câmeras de segurança.",
-        "Senhas, permissões e autenticação multifator em sistemas.",
-        "Um guarda na entrada do prédio."
-      ],
-      "en": [
-        "A physical door with a lock.",
-        "Security cameras.",
-        "Passwords, permissions, and multifactor authentication in systems.",
-        "A guard at the building entrance."
-      ]
-    },
-    "correctIndex": 2,
-    "rationales": {
-      "pt": [
-        "Embora seja um controle, um controle digital mais representativo é preferível em exemplos de GRC.",
-        "Este é um controle físico; GRC frequentemente enfatiza controles digitais.",
-        "Estes são exemplos primários de controles lógicos e de acesso que aplicam políticas e mitigam riscos digitais.",
-        "Este é um controle físico."
-      ],
-      "en": [
-        "While it is a control, a more representative digital control is preferable in GRC examples.",
-        "This is a physical control; GRC often emphasizes digital controls.",
-        "These are primary examples of logical and access controls that enforce policies and mitigate digital risks.",
-        "This is a physical control."
-      ]
-    }
+ {
+  "id": 20,
+  "q": {
+    "pt": "Qual é um exemplo chave de 'Controle' no contexto de segurança da informação?",
+    "en": "What is a key example of a 'Control' in the context of information security?"
+  },
+  "options": {
+    "pt": [
+      "Uma porta física com uma fechadura.",
+      "Câmeras de segurança.",
+      "Senhas, permissões e autenticação multifator em sistemas.",
+      "Um guarda na entrada do prédio."
+    ],
+    "en": [
+      "A physical door with a lock.",
+      "Security cameras.",
+      "Passwords, permissions, and multifactor authentication in systems.",
+      "A guard at the building entrance."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Embora seja um controle, um controle digital mais representativo é preferível em exemplos de GRC.",
+      "Este é um controle físico; GRC frequentemente enfatiza controles digitais.",
+      "Estes são exemplos primários de controles lógicos e de acesso que aplicam políticas e mitigam riscos digitais.",
+      "Este é um controle físico."
+    ],
+    "en": [
+      "While it is a control, a more representative digital control is preferable in GRC examples.",
+      "This is a physical control; GRC often emphasizes digital controls.",
+      "These are primary examples of logical and access controls that enforce policies and mitigate digital risks.",
+      "This is a physical control."
+    ]
   }
-]
+},
+{
+  "id": 21,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+}
