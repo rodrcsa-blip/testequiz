@@ -1,5 +1,5 @@
 // ===============================
-// app.js — Quiz PT/EN com JSON
+// app.js — Quiz PT/EN com JSON + Trap (Phishing) + Imagens
 // ===============================
 
 let rawQuestions = [];
@@ -17,6 +17,7 @@ const els = {
   feedbackContainer: document.getElementById('feedback-container'),
   feedbackTitle: document.getElementById('feedback-title'),
   feedbackRationale: document.getElementById('feedback-rationale'),
+  // Topbar da pergunta (voltar + idioma)
   backBtn: document.getElementById('back-to-menu-button'),
   loginButton: document.getElementById('login-button'),
   loginError: document.getElementById('login-error'),
@@ -25,12 +26,10 @@ const els = {
   menuRange: document.getElementById('menu-range'),
   langLabel: document.getElementById('lang-label'),
   langSelect: document.getElementById('lang-select'),
-  // NOVOS: seletor de idioma dentro da pergunta
   langLabelInQuestion: document.getElementById('lang-label-in-question'),
   langSelectInQuestion: document.getElementById('lang-select-in-question'),
 };
 
-// Textos de interface por idioma
 function t() {
   return currentLang === 'en'
     ? {
@@ -42,6 +41,8 @@ function t() {
         loginError: "Please enter a username.",
         lang: "Language",
         comingSoon: "Coming soon",
+        // Textos específicos da trap (fallback se o JSON não trouxer)
+        trapTitle: "YOU FELL FOR PHISHING! TRY AGAIN LATER!",
       }
     : {
         select: "Selecione a Pergunta",
@@ -52,6 +53,7 @@ function t() {
         loginError: "Por favor, insira um nome de usuário.",
         lang: "Idioma",
         comingSoon: "Em breve",
+        trapTitle: "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
       };
 }
 
@@ -65,7 +67,6 @@ function updateUIStrings() {
   if (els.langLabelInQuestion) els.langLabelInQuestion.textContent = tt.lang;
 }
 
-// Converte questão crua → formato interno
 function qToInternal(q) {
   const opts = (q.options && (q.options[currentLang] || q.options.pt)) || [];
   const rats = (q.rationales && (q.rationales[currentLang] || q.rationales.pt)) || [];
@@ -76,26 +77,23 @@ function qToInternal(q) {
       text,
       isCorrect: i === q.correctIndex,
       rationale: rats[i] || ''
-    }))
+    })),
+    image: q.image || null
   };
 }
 
-// Carrega JSON
 async function loadQuestions() {
-  const res = await fetch('./questions.json?v=1');
+  const res = await fetch('./questions.json?v=2');
   if (!res.ok) throw new Error('Falha ao carregar questions.json');
   rawQuestions = await res.json();
   if (!Array.isArray(rawQuestions)) throw new Error('questions.json inválido: esperado um array');
 }
 
-// Mostra menu 1..450, habilitando só as existentes
 function showStartPage() {
   els.loginPage?.classList.add('hidden');
   els.quizArea.classList.add('hidden');
   els.startPage.classList.remove('hidden');
   els.feedbackContainer.classList.add('hidden');
-  // Importante: botão de voltar não some do DOM na página da pergunta,
-  // mas aqui garantimos que o usuário está no menu.
   currentQuestionIndex = -1;
 
   els.menuOptions.innerHTML = '';
@@ -133,21 +131,40 @@ function showStartPage() {
   updateUIStrings();
 }
 
-// Carrega e exibe a questão
 function loadQuestion(index) {
   currentQuestionIndex = index;
   const currentRaw = rawQuestions[index];
   if (!currentRaw) return showStartPage();
 
+  // Se for uma TRAP (campo minado)
+  if (currentRaw.trap === 'phishing') {
+    renderTrap(currentRaw);
+    return;
+  }
+
+  // Caso contrário: pergunta normal
   const currentQuiz = qToInternal(currentRaw);
 
   els.startPage.classList.add('hidden');
   els.quizArea.classList.remove('hidden');
-
-  // mantém os seletores de idioma sincronizados
   syncLanguageSelectors();
 
-  els.questionText.textContent = currentQuiz.question;
+  // Limpa área e coloca o enunciado
+  els.questionText.innerHTML = '';
+  const title = document.createElement('div');
+  title.textContent = currentQuiz.question;
+  title.className = '';
+  els.questionText.appendChild(title);
+
+  // Imagem (opcional) da pergunta normal
+  if (currentQuiz.image) {
+    const img = document.createElement('img');
+    img.src = currentQuiz.image;
+    img.alt = "Imagem da questão";
+    img.className = "my-4 max-h-64 mx-auto rounded shadow";
+    els.questionText.appendChild(img);
+  }
+
   els.optionsContainer.innerHTML = '';
   els.feedbackContainer.classList.add('hidden');
 
@@ -162,7 +179,36 @@ function loadQuestion(index) {
   });
 }
 
-// Clicar numa alternativa (aqui sim marca como respondida)
+// Render da tela TRAP (phishing)
+function renderTrap(qRaw) {
+  els.startPage.classList.add('hidden');
+  els.quizArea.classList.remove('hidden');
+  syncLanguageSelectors();
+
+  // Mensagem (usa a do JSON se houver; caso contrário, fallback t().trapTitle)
+  const msg = (qRaw.trapMessage && (qRaw.trapMessage[currentLang] || qRaw.trapMessage.pt)) || t().trapTitle;
+
+  // Limpa e mostra mensagem grande + imagem
+  els.questionText.innerHTML = '';
+  const msgEl = document.createElement('div');
+  msgEl.textContent = msg;
+  msgEl.className = 'text-center text-xl font-extrabold text-red-700';
+  els.questionText.appendChild(msgEl);
+
+  if (qRaw.image) {
+    const img = document.createElement('img');
+    img.src = qRaw.image;
+    img.alt = "Phishing";
+    img.className = 'my-6 max-h-72 mx-auto rounded shadow';
+    els.questionText.appendChild(img);
+  }
+
+  // Numa trap, não há opções de resposta
+  els.optionsContainer.innerHTML = '';
+  els.feedbackContainer.classList.add('hidden');
+  // Importante: NÃO marcamos como respondida (somente checkAnswer marca).
+}
+
 function checkAnswer(selectedButton, selectedOption, allOptions) {
   if (currentQuestionIndex !== -1) {
     answeredQuestions.add(currentQuestionIndex);
@@ -203,10 +249,8 @@ function checkAnswer(selectedButton, selectedOption, allOptions) {
   els.feedbackContainer.classList.remove('hidden');
 }
 
-// Botão Voltar ao Menu (não marca como respondida caso não tenha respondido)
 els.backBtn?.addEventListener('click', showStartPage);
 
-// (Opcional) Login
 function handleLogin() {
   const username = document.getElementById('username')?.value || '';
   if (username.trim()) {
@@ -221,21 +265,18 @@ function handleLogin() {
 }
 els.loginButton?.addEventListener('click', handleLogin);
 
-// Sincroniza os dois seletores de idioma e aplica mudança
 function setLanguage(lang) {
   if (lang !== 'pt' && lang !== 'en') return;
   currentLang = lang;
-  // Sincroniza selects
   if (els.langSelect && els.langSelect.value !== lang) els.langSelect.value = lang;
   if (els.langSelectInQuestion && els.langSelectInQuestion.value !== lang) els.langSelectInQuestion.value = lang;
 
-  // Atualiza labels gerais
   updateUIStrings();
 
-  // Se estiver no menu, só atualiza; se estiver numa questão, recarrega a questão atual
   if (!els.startPage.classList.contains('hidden')) {
-    // nada além das labels
+    // nada
   } else if (!els.quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
+    // Recarrega a questão atual para refletir idioma (inclui trap/normal)
     loadQuestion(currentQuestionIndex);
   }
 }
@@ -247,16 +288,14 @@ function syncLanguageSelectors() {
   }
 }
 
-// Eventos dos dois seletores
 els.langSelect?.addEventListener('change', (e) => setLanguage(e.target.value));
 els.langSelectInQuestion?.addEventListener('change', (e) => setLanguage(e.target.value));
 
-// Inicialização
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
     updateUIStrings();
-    showStartPage(); // entra direto no menu 1–450
+    showStartPage();
   } catch (e) {
     if (els.headerSubtitle) {
       els.headerSubtitle.textContent =
