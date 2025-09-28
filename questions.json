@@ -727,5 +727,329 @@
     "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
     "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
   }
+},
+{
+  "id": 22,
+  "q": {
+    "pt": "Qual equipe é responsável por garantir a implementação de um programa de segurança da informação apropriado e baseado em riscos, e por designar um Oficial de Segurança da Informação?",
+    "en": "Which team is responsible for ensuring the implementation of an appropriate, risk-based information security program and for appointing an Information Security Officer?"
+  },
+  "options": {
+    "pt": [
+      "O Conselho de Administração.",
+      "O CISO.",
+      "A Gestão Executiva.",
+      "O Comitê Diretor de Cibersegurança."
+    ],
+    "en": [
+      "The Board of Directors.",
+      "The CISO.",
+      "Executive Management.",
+      "The Cybersecurity Steering Committee."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O Conselho define a tolerância ao risco, mas delega o mandato de implementação do programa.",
+      "O CISO executa o programa, mas o mandato e a designação vêm da gestão superior.",
+      "A Gestão Executiva é responsável por dirigir e garantir a implementação do programa de segurança e designar a função de Oficial de Segurança da Informação.",
+      "O Comitê fornece orientação, não o mandato executivo final."
+    ],
+    "en": [
+      "The Board defines risk tolerance but delegates the implementation mandate.",
+      "The CISO executes the program, but the mandate and designation come from top management.",
+      "Executive Management is responsible for directing and ensuring implementation of the program and appointing the Information Security Officer role.",
+      "The Committee provides guidance, not the final executive mandate."
+    ]
+  }
+},
+{
+  "id": 23,
+  "q": {
+    "pt": "Se você tiver dúvidas sobre qualquer disposição na política de SegInfo, qual é o canal de suporte designado?",
+    "en": "If you have questions about any provision in the InfoSec policy, what is the designated support channel?"
+  },
+  "options": {
+    "pt": [
+      "Enviar e-mail para o Conselho de Administração.",
+      "Abrir um ticket com o help desk de TI.",
+      "Contatar a equipe de infosec-Policy-management no canal interno designado.",
+      "Enviar uma mensagem diretamente para o CISO."
+    ],
+    "en": [
+      "Send an email to the Board of Directors.",
+      "Open a ticket with the IT help desk.",
+      "Contact the infosec-Policy-management team via the designated internal channel.",
+      "Send a direct message to the CISO."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Questões de política devem ser dirigidas à equipe de gestão dedicada, não ao órgão de governança.",
+      "O help desk de TI lida com suporte técnico, não com esclarecimento de políticas.",
+      "Um canal interno dedicado é estabelecido para lidar com interpretações e consultas de políticas.",
+      "O CISO delega consultas diárias sobre políticas para a equipe de gestão relevante."
+    ],
+    "en": [
+      "Policy questions should be directed to the dedicated management team, not the governance body.",
+      "The IT help desk handles technical support, not policy clarification.",
+      "A dedicated internal channel is established to handle policy interpretations and queries.",
+      "The CISO delegates day-to-day policy queries to the relevant management team."
+    ]
+  }
+},
+{
+  "id": 24,
+  "q": {
+    "pt": "Qual é o processo para formalizar uma contratação de fornecedor não padrão que está fora do fluxo regular de compras?",
+    "en": "What is the process to formalize a non-standard vendor engagement outside the regular procurement flow?"
+  },
+  "options": {
+    "pt": [
+      "Renegociar o contrato existente.",
+      "Formalizar um processo de contratação.",
+      "Formalizar um processo de contratação fora do fluxo padrão.",
+      "Este processo não existe formalmente."
+    ],
+    "en": [
+      "Renegotiate the existing contract.",
+      "Formalize a hiring process.",
+      "Formalize a procurement process outside the standard flow.",
+      "This process does not formally exist."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Isso se aplica a fornecedores existentes, não a uma nova contratação não padrão.",
+      "Contratação se refere a pessoal, não a engajamento de fornecedor.",
+      "Deve existir um processo formal para contratações não padrão para garantir requisitos legais e de risco.",
+      "Para governança e auditabilidade, todas as contratações devem ter um processo formal."
+    ],
+    "en": [
+      "This applies to existing vendors, not a new non-standard engagement.",
+      "Hiring refers to personnel, not vendor engagement.",
+      "A formal process must exist for non-standard procurements to ensure legal and risk requirements are met.",
+      "For governance and auditability, all engagements must have a formal process."
+    ]
+  }
+},
+{
+  "id": 25,
+  "q": {
+    "pt": "Que tipo de dados sensíveis pode ser compartilhado com Fornecedores Terceirizados em um contexto de BPO?",
+    "en": "What type of sensitive data can be shared with Third-Party Vendors in a BPO context?"
+  },
+  "options": {
+    "pt": [
+      "Apenas dados internos da empresa.",
+      "Apenas dados internos do fornecedor de BPO.",
+      "Dados de clientes e informações proprietárias da empresa.",
+      "Nenhuma das opções."
+    ],
+    "en": [
+      "Only internal company data.",
+      "Only internal data of the BPO vendor.",
+      "Customer data and company proprietary information.",
+      "None of the options."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "BPO frequentemente envolve o manuseio de dados de clientes.",
+      "Isso limita severamente o escopo do serviço de BPO.",
+      "Se o contrato de BPO exigir, dados de clientes e informações proprietárias podem ser compartilhados sob controles rigorosos.",
+      "Compartilhar dados é a razão fundamental para muitos contratos de BPO."
+    ],
+    "en": [
+      "BPO often involves handling customer data.",
+      "This severely limits the scope of the BPO service.",
+      "If the BPO contract requires, customer and proprietary data can be shared under strict controls.",
+      "Data sharing is the fundamental reason for many BPO contracts."
+    ]
+  }
+},
+{
+  "id": 26,
+  "q": {
+    "pt": "Qual é o principal propósito do anexo unificado de Acordo de Processamento de Dados (DPA) em um contrato de BPO?",
+    "en": "What is the main purpose of the unified Data Processing Agreement (DPA) annex in a BPO contract?"
+  },
+  "options": {
+    "pt": [
+      "Ele substitui apenas o anexo de segurança.",
+      "Ele consolida os requisitos de DPA e cibersegurança em um único anexo.",
+      "Não é usado em contratos de BPO.",
+      "É opcional para BPOs de baixo risco."
+    ],
+    "en": [
+      "It replaces only the security annex.",
+      "It consolidates DPA and cybersecurity requirements into a single annex.",
+      "It is not used in BPO contracts.",
+      "It is optional for low-risk BPOs."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Um DPA unificado geralmente cobre mais do que apenas o anexo de segurança.",
+      "O DPA unificado agiliza a conformidade legal e de segurança, combinando privacidade e segurança em um único documento.",
+      "DPAs são obrigatórios em BPOs que envolvem dados pessoais.",
+      "DPAs são legalmente exigidos sempre que dados pessoais são processados."
+    ],
+    "en": [
+      "A unified DPA generally covers more than just the security annex.",
+      "The unified DPA streamlines compliance by combining data privacy and security into a single binding document.",
+      "DPAs are mandatory in BPOs involving personal data.",
+      "DPAs are legally required whenever personal data is processed."
+    ]
+  }
+},
+{
+  "id": 27,
+  "q": {
+    "pt": "Em qual estágio do ciclo de vida do BPO as equipes de SegInfo e Privacidade de Dados garantem que a proteção de dados seja constantemente aplicada?",
+    "en": "At which stage of the BPO lifecycle do InfoSec and Data Privacy teams ensure data protection is consistently enforced?"
+  },
+  "options": {
+    "pt": [
+      "Apenas na fase de desligamento.",
+      "Em todas as etapas (integração, processamento e desligamento).",
+      "Apenas na fase de integração.",
+      "Apenas durante a fase de reavaliação."
+    ],
+    "en": [
+      "Only at the offboarding stage.",
+      "At all stages (onboarding, processing, and offboarding).",
+      "Only at the onboarding stage.",
+      "Only during the reassessment stage."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "A proteção deve ser contínua, não apenas no final.",
+      "A proteção de dados é uma obrigação contínua durante todo o ciclo de vida do fornecedor.",
+      "A integração prepara o terreno, mas o monitoramento contínuo é essencial.",
+      "A reavaliação é necessária, mas não substitui a aplicação contínua."
+    ],
+    "en": [
+      "Protection must be continuous, not only at the end.",
+      "Data protection is an ongoing obligation throughout the vendor lifecycle.",
+      "Onboarding sets the stage, but continuous monitoring is essential.",
+      "Reassessment is needed but does not replace continuous enforcement."
+    ]
+  }
+},
+{
+  "id": 28,
+  "q": {
+    "pt": "Quais são as três principais categorias de parcerias tipicamente gerenciadas pelas equipes Jurídica e de ESG?",
+    "en": "What are the three main categories of partnerships typically managed by Legal and ESG teams?"
+  },
+  "options": {
+    "pt": [
+      "Contratos, Doações, Patrocínios",
+      "Contratos, Outras Parcerias, Patrocínios",
+      "Doações, Patrocínios, Outras Parcerias",
+      "Contratos, Doações, Outras Parcerias"
+    ],
+    "en": [
+      "Contracts, Donations, Sponsorships",
+      "Contracts, Other Partnerships, Sponsorships",
+      "Donations, Sponsorships, Other Partnerships",
+      "Contracts, Donations, Other Partnerships"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Esta lista omite a categoria necessária de parcerias diversas.",
+      "Outras Parcerias precisam ser incluídas como categoria distinta.",
+      "Estas três cobrem os principais engajamentos não comerciais tratados por ESG e Jurídico.",
+      "Omissão de Patrocínios, categoria crítica de Marketing/RP."
+    ],
+    "en": [
+      "This list omits the needed category of diverse partnerships.",
+      "Other Partnerships must be included as a distinct category.",
+      "These three cover the main non-commercial engagements handled by ESG and Legal.",
+      "Omission of Sponsorships, a critical Marketing/PR category."
+    ]
+  }
+},
+{
+  "id": 29,
+  "q": {
+    "pt": "Quem é o dono do processo de TPRM e responsável por sua adesão por todas as equipes internas?",
+    "en": "Who owns the TPRM process and is responsible for its adherence across all internal teams?"
+  },
+  "options": {
+    "pt": [
+      "O Dono do Contrato.",
+      "A Equipe de Compras.",
+      "O CISO e a Equipe de SegInfo.",
+      "A Equipe Jurídica."
+    ],
+    "en": [
+      "The Contract Owner.",
+      "The Procurement Team.",
+      "The CISO and the InfoSec Team.",
+      "The Legal Team."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O Dono do Contrato gerencia o fornecedor, mas não o processo geral de TPRM.",
+      "Compras lida com o fluxo comercial, mas o TPRM envolve risco e segurança.",
+      "O CISO e sua equipe governam o TPRM, garantindo segurança e análise de riscos.",
+      "O Jurídico fornece informações contratuais, mas não governa todo o ciclo de TPRM."
+    ],
+    "en": [
+      "The Contract Owner manages the vendor but not the overall TPRM process.",
+      "Procurement handles the commercial flow, but TPRM involves risk and security.",
+      "The CISO and their team govern TPRM, ensuring security and risk analysis.",
+      "Legal provides contractual input but does not govern the full TPRM lifecycle."
+    ]
+  }
+},
+{
+  "id": 30,
+  "q": {
+    "pt": "O que o princípio de 'Necessidade de Saber' impõe em um ambiente de negócios?",
+    "en": "What does the 'Need to Know' principle enforce in a business environment?"
+  },
+  "options": {
+    "pt": [
+      "Compartilhamento de todas as informações com todos os funcionários.",
+      "Concessão de privilégios com base na senioridade.",
+      "Limitação do acesso apenas aos dados estritamente necessários para a função.",
+      "Delegação da responsabilidade de segurança igualmente a todos os usuários."
+    ],
+    "en": [
+      "Sharing all information with all employees.",
+      "Granting privileges based on seniority.",
+      "Limiting access strictly to the data necessary for the role.",
+      "Delegating security responsibility equally to all users."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Necessidade de Saber é um princípio restritivo, limitando o acesso.",
+      "O acesso é baseado na função do trabalho, não na senioridade.",
+      "O princípio garante que apenas informações essenciais sejam acessadas.",
+      "As responsabilidades de segurança são segmentadas, não iguais."
+    ],
+    "en": [
+      "Need to Know is a restrictive principle, limiting access.",
+      "Access is based on job role, not seniority.",
+      "The principle ensures only essential information is accessed.",
+      "Security responsibilities are segmented, not equal."
+    ]
+  }
 }
 ]
