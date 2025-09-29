@@ -6081,5 +6081,1010 @@
       "ISO 45001 is occupational health."
     ]
   }
+},
+  {
+  "id": 183,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 184,
+  "q": {
+    "pt": "Qual é o prazo de SLA para que o fornecedor responda ao assessment?",
+    "en": "What is the SLA timeframe for a vendor to respond to the assessment?"
+  },
+  "options": {
+    "pt": ["7 dias", "10 dias", "14 dias", "21 dias"],
+    "en": ["7 days", "10 days", "14 days", "21 days"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Prazo curto demais.",
+      "Ainda abaixo do estipulado.",
+      "Correto: o SLA definido é de 14 dias.",
+      "Prazo maior que o exigido."
+    ],
+    "en": [
+      "Too short.",
+      "Still below the requirement.",
+      "Correct: the SLA is set to 14 days.",
+      "Longer than required."
+    ]
+  }
+},
+{
+  "id": 185,
+  "q": {
+    "pt": "O que acontece se um fornecedor não responde ao assessment dentro do prazo estipulado?",
+    "en": "What happens if a vendor does not respond to the assessment within the deadline?"
+  },
+  "options": {
+    "pt": [
+      "O contrato é aprovado com restrições",
+      "O contrato é aprovado",
+      "O contrato não é aprovado e o risco é registrado",
+      "O fornecedor é reavaliado em 6 meses"
+    ],
+    "en": [
+      "The contract is approved with restrictions",
+      "The contract is approved",
+      "The contract is not approved and the risk is recorded",
+      "The vendor is reassessed in 6 months"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não há aprovação parcial prevista.",
+      "Não pode ser aprovado sem resposta.",
+      "Correto: sem resposta, não há aprovação e o risco é formalizado.",
+      "Não é regra automática reavaliar após 6 meses."
+    ],
+    "en": [
+      "No partial approval is foreseen.",
+      "Cannot be approved without response.",
+      "Correct: without response, approval is denied and risk is logged.",
+      "Not automatically reassessed in 6 months."
+    ]
+  }
+},
+{
+  "id": 186,
+  "q": {
+    "pt": "Quais são os níveis de classificação de risco identificados pelo UpGuard?",
+    "en": "What are the risk classification levels identified by UpGuard?"
+  },
+  "options": {
+    "pt": [
+      "Baixo, Médio, Alto e Crítico",
+      "Apenas Baixo e Alto",
+      "Apenas Alto e Crítico",
+      "Apenas Baixo e Médio"
+    ],
+    "en": [
+      "Low, Medium, High and Critical",
+      "Only Low and High",
+      "Only High and Critical",
+      "Only Low and Medium"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: UpGuard utiliza quatro níveis principais.",
+      "Incompleto.",
+      "Restrito demais.",
+      "Restrito demais."
+    ],
+    "en": [
+      "Correct: UpGuard uses four main levels.",
+      "Incomplete.",
+      "Too restricted.",
+      "Too restricted."
+    ]
+  }
+},
+{
+  "id": 187,
+  "q": {
+    "pt": "O que deve ser feito para um risco classificado como “Muito Alto” no Ongoing Monitoring?",
+    "en": "What should be done for a 'Very High' risk in Ongoing Monitoring?"
+  },
+  "options": {
+    "pt": [
+      "Reavaliação em até 18 meses",
+      "Reavaliação em até 12 meses",
+      "Monitoramento contínuo",
+      "Não é necessário reavaliação"
+    ],
+    "en": [
+      "Reassessment within 18 months",
+      "Reassessment within 12 months",
+      "Continuous monitoring",
+      "No reassessment required"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Prazo longo demais.",
+      "Correto: riscos muito altos devem ser reavaliados em até 12 meses.",
+      "O monitoramento é contínuo, mas não substitui reavaliação formal.",
+      "Reavaliação é obrigatória."
+    ],
+    "en": [
+      "Too long a timeframe.",
+      "Correct: very high risks must be reassessed within 12 months.",
+      "Monitoring is ongoing but doesn’t replace reassessment.",
+      "Reassessment is mandatory."
+    ]
+  }
+},
+{
+  "id": 188,
+  "q": {
+    "pt": "O que acontece quando um fornecedor não responde ao reassessment em um processo de reavaliação de fornecedores ativos?",
+    "en": "What happens when a vendor does not respond to reassessment in an active vendor reevaluation process?"
+  },
+  "options": {
+    "pt": [
+      "O fornecedor é descontinuado",
+      "O fornecedor é categorizado como 'non assessed'",
+      "O risco é registrado, mas o contrato continua",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "The vendor is discontinued",
+      "The vendor is categorized as 'non assessed'",
+      "The risk is recorded but the contract continues",
+      "None of the options"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "A descontinuação não é imediata.",
+      "Correto: a classificação 'non assessed' é aplicada.",
+      "O risco pode ser registrado, mas não substitui categorização oficial.",
+      "Há política definida, não é indefinido."
+    ],
+    "en": [
+      "Discontinuation is not immediate.",
+      "Correct: the vendor is categorized as 'non assessed'.",
+      "Risk can be logged, but categorization is official.",
+      "Policy defines this; it’s not undefined."
+    ]
+  }
+},
+{
+  "id": 189,
+  "q": {
+    "pt": "Qual é o propósito do Anexo para Fornecedores Relevantes Bacen?",
+    "en": "What is the purpose of the Annex for Relevant Bacen Vendors?"
+  },
+  "options": {
+    "pt": [
+      "Apenas para fornecedores de TI",
+      "Apenas para BPOs",
+      "Garantir a conformidade com as normas regulatórias do Bacen",
+      "Fornecer uma visão geral do processo"
+    ],
+    "en": [
+      "Only for IT vendors",
+      "Only for BPOs",
+      "Ensure compliance with Bacen regulatory standards",
+      "Provide an overview of the process"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não se restringe a TI.",
+      "Não se restringe a BPOs.",
+      "Correto: é voltado à conformidade regulatória Bacen.",
+      "É mais do que apenas visão geral."
+    ],
+    "en": [
+      "Not limited to IT.",
+      "Not limited to BPOs.",
+      "Correct: it ensures Bacen regulatory compliance.",
+      "It is more than just an overview."
+    ]
+  }
+},
+{
+  "id": 190,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 191,
+  "q": {
+    "pt": "Em qual etapa do processo de TPRM ocorre a Avaliação de Segurança (Security Assessment)?",
+    "en": "In which stage of the TPRM process does the Security Assessment occur?"
+  },
+  "options": {
+    "pt": [
+      "Onboarding",
+      "Risk Classification",
+      "Infosec Security Assessment",
+      "Ongoing Monitoring"
+    ],
+    "en": [
+      "Onboarding",
+      "Risk Classification",
+      "Infosec Security Assessment",
+      "Ongoing Monitoring"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Onboarding é inicial, mas não a avaliação de segurança.",
+      "Classificação de risco antecede, mas não substitui.",
+      "Correto: a Avaliação de Segurança ocorre nessa etapa.",
+      "Ongoing é após a contratação."
+    ],
+    "en": [
+      "Onboarding is initial but not the security assessment.",
+      "Risk classification precedes but doesn’t replace it.",
+      "Correct: Security Assessment happens in this stage.",
+      "Ongoing is post-contract."
+    ]
+  }
+},
+{
+  "id": 192,
+  "q": {
+    "pt": "Para que serve a Calculadora de Risco Inerente?",
+    "en": "What is the purpose of the Inherent Risk Calculator?"
+  },
+  "options": {
+    "pt": [
+      "Para classificar o risco de fornecedores",
+      "Para calcular o SLA de avaliações",
+      "Para monitorar continuamente os fornecedores",
+      "Para gerenciar planos de ação"
+    ],
+    "en": [
+      "To classify vendor risk",
+      "To calculate SLA timelines",
+      "To continuously monitor vendors",
+      "To manage action plans"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: a calculadora classifica o risco inerente do fornecedor.",
+      "SLA não é calculado com essa ferramenta.",
+      "Monitoramento contínuo é etapa separada.",
+      "Gerenciamento de planos é resultado, não objetivo."
+    ],
+    "en": [
+      "Correct: it classifies the vendor’s inherent risk.",
+      "SLA is not calculated with this tool.",
+      "Continuous monitoring is separate.",
+      "Action plan management is an outcome, not the tool’s goal."
+    ]
+  }
+},
+{
+  "id": 193,
+  "q": {
+    "pt": "O que é exigido para um fornecedor 'Aprovado com restrições'?",
+    "en": "What is required for a vendor 'Approved with restrictions'?"
+  },
+  "options": {
+    "pt": [
+      "A contratação é negada",
+      "A contratação prossegue sem restrições",
+      "Planos de ação são exigidos",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "The contract is denied",
+      "The contract proceeds without restrictions",
+      "Action plans are required",
+      "None of the options"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não é negada, apenas restrita.",
+      "Não segue sem restrições.",
+      "Correto: exige planos de ação mitigatórios.",
+      "Existe exigência definida."
+    ],
+    "en": [
+      "Not denied, just restricted.",
+      "Does not proceed unrestricted.",
+      "Correct: action plans are mandatory.",
+      "There is a defined requirement."
+    ]
+  }
+},
+{
+  "id": 194,
+  "q": {
+    "pt": "Que ação é recomendada para riscos classificados como 'Médios'?",
+    "en": "What action is recommended for risks classified as 'Medium'?"
+  },
+  "options": {
+    "pt": [
+      "Remediação imediata",
+      "Não requer ação imediata",
+      "Criação de um plano de ação com prazo para remediação",
+      "Não seguir com a contratação"
+    ],
+    "en": [
+      "Immediate remediation",
+      "No immediate action required",
+      "Creation of an action plan with a remediation deadline",
+      "Do not proceed with contracting"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não há urgência imediata.",
+      "Pode esperar, mas deve ter plano.",
+      "Correto: riscos médios exigem plano de ação com prazo definido.",
+      "Não implica automaticamente em recusa da contratação."
+    ],
+    "en": [
+      "No immediate urgency.",
+      "It can wait, but a plan is required.",
+      "Correct: medium risks require an action plan with deadline.",
+      "Does not automatically block contracting."
+    ]
+  }
+},
+  {
+  "id": 195,
+  "q": {
+    "pt": "Qual é o principal objetivo da Política de Criptografia do Nubank?",
+    "en": "What is the main objective of Nubank's Encryption Policy?"
+  },
+  "options": {
+    "pt": [
+      "Proteger o Nu Group, seus clientes e funcionários, garantindo que as operações atendam aos mais altos padrões de segurança",
+      "Apenas proteger os dados dos clientes",
+      "Apenas cumprir com as regulamentações do setor",
+      "Fornecer diretrizes para o desenvolvimento de software"
+    ],
+    "en": [
+      "Protect Nu Group, its customers and employees, ensuring operations meet the highest security standards",
+      "Only protect customer data",
+      "Only comply with industry regulations",
+      "Provide software development guidelines"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: é abrangente e cobre pessoas, clientes e operações seguras.",
+      "Muito restrito ao cliente.",
+      "Conformidade é consequência, não o objetivo principal.",
+      "Diretrizes de desenvolvimento não bastam como objetivo central."
+    ],
+    "en": [
+      "Correct: comprehensive protection across people, customers, and secure operations.",
+      "Too narrow—only customers.",
+      "Compliance is an outcome, not the primary goal.",
+      "Dev guidelines alone are not the central objective."
+    ]
+  }
+},
+{
+  "id": 196,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 197,
+  "q": {
+    "pt": "A quem se destinam as diretrizes da Política de Criptografia?",
+    "en": "Who are the guidelines of the Encryption Policy intended for?"
+  },
+  "options": {
+    "pt": [
+      "Apenas à equipe de segurança da informação",
+      "Apenas aos desenvolvedores e engenheiros de software",
+      "A todos os oficiais, diretores, funcionários, estagiários (\"Nubankers\") e prestadores de serviços relevantes",
+      "Apenas aos diretores e gerentes"
+    ],
+    "en": [
+      "Only the information security team",
+      "Only developers and software engineers",
+      "All officers, directors, employees, interns (\"Nubankers\") and relevant service providers",
+      "Only directors and managers"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Muito restrito.",
+      "Restrito a engenharia, política é corporativa.",
+      "Correto: política corporativa aplica-se a todos os públicos elegíveis.",
+      "Restrito demais à liderança."
+    ],
+    "en": [
+      "Too narrow.",
+      "Engineering-only is too narrow for a corporate policy.",
+      "Correct: applies broadly across eligible audiences.",
+      "Too restricted to leadership."
+    ]
+  }
+},
+{
+  "id": 198,
+  "q": {
+    "pt": "Para quais tipos de informação as Unidades de Negócios (UNs) devem utilizar controles criptográficos?",
+    "en": "For which types of information should Business Units use cryptographic controls?"
+  },
+  "options": {
+    "pt": [
+      "Apenas para informações públicas",
+      "Para informações classificadas como confidenciais ou superiores",
+      "Para todos os tipos de informação, sem exceção",
+      "Apenas para informações financeiras"
+    ],
+    "en": [
+      "Only for public information",
+      "For information classified as confidential or higher",
+      "For all types of information, without exception",
+      "Only for financial information"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Informações públicas não requerem criptografia.",
+      "Correto: confidenciais (ou superiores) exigem proteção criptográfica.",
+      "Exagero; nem tudo requer criptografia.",
+      "Muito restrito a um domínio."
+    ],
+    "en": [
+      "Public information generally doesn’t require encryption.",
+      "Correct: confidential (or higher) needs cryptographic protection.",
+      "Overbroad; not everything requires encryption.",
+      "Too restricted to one domain."
+    ]
+  }
+},
+{
+  "id": 199,
+  "q": {
+    "pt": "Qual é a primeira escolha de biblioteca criptográfica a ser utilizada na Nu, quando o caso de uso é suportado?",
+    "en": "What is the first-choice crypto library at Nu when the use case is supported?"
+  },
+  "options": {
+    "pt": ["Tink", "OpenSSL", "Libsodium", "Common-secrets"],
+    "en": ["Tink", "OpenSSL", "Libsodium", "Common-secrets"]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "Tink é forte, mas não é a primeira escolha segundo a política.",
+      "Poderosa, porém de baixo nível e com armadilhas de configuração.",
+      "Excelente, mas não é a primeira segundo a política.",
+      "Correto: usar common-secrets quando suportado."
+    ],
+    "en": [
+      "Tink is strong but not the first according to policy.",
+      "Powerful but low-level and easy to misconfigure.",
+      "Excellent, but not the policy’s first choice.",
+      "Correct: prefer common-secrets when supported."
+    ]
+  }
+},
+{
+  "id": 200,
+  "q": {
+    "pt": "Qual biblioteca criptográfica, desenvolvida pelo Google, é destacada por suas APIs resistentes ao uso indevido?",
+    "en": "Which crypto library, developed by Google, is known for misuse-resistant APIs?"
+  },
+  "options": {
+    "pt": ["OpenSSL", "Bouncy Castle", "Tink", "Libsodium"],
+    "en": ["OpenSSL", "Bouncy Castle", "Tink", "Libsodium"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não foi desenvolvida pelo Google.",
+      "Não foi desenvolvida pelo Google.",
+      "Correto: Tink é do Google e foca em APIs seguras/misuse-resistant.",
+      "Não é do Google."
+    ],
+    "en": [
+      "Not developed by Google.",
+      "Not developed by Google.",
+      "Correct: Tink is by Google and emphasizes misuse-resistant APIs.",
+      "Not by Google."
+    ]
+  }
+},
+{
+  "id": 201,
+  "q": {
+    "pt": "Qual prática é recomendada ao integrar bibliotecas criptográficas em projetos para atenuar vulnerabilidades?",
+    "en": "What practice is recommended when integrating crypto libraries to mitigate vulnerabilities?"
+  },
+  "options": {
+    "pt": [
+      "Usar sempre a mesma versão da biblioteca para manter a consistência",
+      "Atualizar as bibliotecas apenas quando um novo recurso for necessário",
+      "Usar sempre a versão mais recente e atualizá-las regularmente",
+      "Escolher a biblioteca com base na popularidade"
+    ],
+    "en": [
+      "Always use the same version to keep consistency",
+      "Update libraries only when a new feature is needed",
+      "Always use the latest version and update regularly",
+      "Choose libraries based on popularity"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Congelar versão aumenta risco de vulnerabilidades.",
+      "Atualizar só por features ignora patches de segurança.",
+      "Correto: manter atualizado reduz exposição a CVEs.",
+      "Popularidade não garante segurança."
+    ],
+    "en": [
+      "Freezing versions increases vulnerability risk.",
+      "Feature-driven updates ignore security patches.",
+      "Correct: staying current reduces exposure to CVEs.",
+      "Popularity ≠ security."
+    ]
+  }
+},
+{
+  "id": 202,
+  "q": {
+    "pt": "Quais duas bibliotecas mencionadas na política exigem cuidado na escolha de primitivas por conterem algoritmos quebrados como MD5 e SHA-1?",
+    "en": "Which two libraries require care in primitive selection due to broken algorithms like MD5 and SHA-1?"
+  },
+  "options": {
+    "pt": [
+      "Tink e Libsodium",
+      "Common-secrets e JCA",
+      "OpenSSL e Bouncy Castle",
+      "Libsodium e OpenSSL"
+    ],
+    "en": [
+      "Tink and Libsodium",
+      "Common-secrets and JCA",
+      "OpenSSL and Bouncy Castle",
+      "Libsodium and OpenSSL"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Ambas já evitam primitivas inseguras por design.",
+      "Não é o foco deste cuidado.",
+      "Correto: OpenSSL e Bouncy Castle expõem primitivas legadas (ex.: MD5/SHA-1).",
+      "Par incorreto."
+    ],
+    "en": [
+      "Both tend to avoid unsafe primitives by design.",
+      "Not the focus here.",
+      "Correct: OpenSSL and Bouncy Castle expose legacy primitives (e.g., MD5/SHA-1).",
+      "Incorrect pairing."
+    ]
+  }
+},
+{
+  "id": 203,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 204,
+  "q": {
+    "pt": "Para criptografar dados em repouso, qual o tamanho de chave recomendado para AES?",
+    "en": "For encrypting data at rest, what is the recommended AES key size?"
+  },
+  "options": {
+    "pt": ["128 bits", "192 bits", "256 bits", "512 bits"],
+    "en": ["128-bit", "192-bit", "256-bit", "512-bit"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Seguro, mas a recomendação é 256 bits.",
+      "Menos comum em políticas padronizadas.",
+      "Correto: 256 bits é a recomendação típica para repouso.",
+      "Não é um tamanho real de chave AES."
+    ],
+    "en": [
+      "Secure, but 256-bit is the recommendation.",
+      "Less common in standardized policies.",
+      "Correct: 256-bit is the typical at-rest recommendation.",
+      "Not a real AES key size."
+    ]
+  }
+},
+{
+  "id": 205,
+  "q": {
+    "pt": "Qual algoritmo de criptografia é preferível ao AES na maioria das aplicações por ser mais rápido e seguro sem exigir a geração de novas chaves?",
+    "en": "Which cipher is preferable to AES in most applications for speed and security without requiring new key generation?"
+  },
+  "options": {
+    "pt": ["RSA", "XChaCha20-Poly1305", "DES", "EdDSA"],
+    "en": ["RSA", "XChaCha20-Poly1305", "DES", "EdDSA"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "RSA é assimétrica; não substitui AES em dados em repouso.",
+      "Correto segundo a diretriz informada: AEAD moderno e eficiente.",
+      "DES está obsoleto e inseguro.",
+      "EdDSA é assinatura, não cifragem."
+    ],
+    "en": [
+      "RSA is asymmetric; not a drop-in for AES at-rest.",
+      "Correct per your guideline: modern AEAD with efficiency.",
+      "DES is obsolete/insecure.",
+      "EdDSA is for signatures, not encryption."
+    ]
+  }
+},
+{
+  "id": 206,
+  "q": {
+    "pt": "Para criptografia de envelope (criptografia de chaves), qual é o tamanho mínimo de chave recomendado para o RSA?",
+    "en": "For envelope encryption (key encryption), what is the minimum recommended RSA key size?"
+  },
+  "options": {
+    "pt": ["1024 bits", "2048 bits", "3072 bits", "4096 bits"],
+    "en": ["1024-bit", "2048-bit", "3072-bit", "4096-bit"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Considerado fraco atualmente.",
+      "Correto: 2048 bits é o mínimo recomendado atual.",
+      "Mais forte, porém não é o mínimo.",
+      "Muito forte; pode ser excessivo em muitos cenários."
+    ],
+    "en": [
+      "Considered weak today.",
+      "Correct: 2048-bit is the current minimum recommendation.",
+      "Stronger, but not the minimum.",
+      "Very strong; may be excessive for many scenarios."
+    ]
+  }
+},
+{
+  "id": 207,
+  "q": {
+    "pt": "Entre os algoritmos de assinatura digital, qual é geralmente preferível em vez do RSA por oferecer operações mais rápidas e chaves menores para segurança equivalente?",
+    "en": "Among digital signature algorithms, which is generally preferable to RSA for faster operations and smaller keys at equivalent security?"
+  },
+  "options": {
+    "pt": ["HMAC", "ECDSA", "Criptografia de Curva Elíptica (ECC)", "SHA-2"],
+    "en": ["HMAC", "ECDSA", "Elliptic Curve Cryptography (ECC)", "SHA-2"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "HMAC é MAC, não assinatura assimétrica.",
+      "ECDSA é um algoritmo específico dentro de ECC.",
+      "Correto: ECC em geral oferece vantagens vs. RSA.",
+      "SHA-2 é hash, não assinatura."
+    ],
+    "en": [
+      "HMAC is a MAC, not an asymmetric signature.",
+      "ECDSA is a specific algorithm within ECC.",
+      "Correct: ECC generally offers advantages vs. RSA.",
+      "SHA-2 is hashing, not a signature algorithm."
+    ]
+  }
+},
+{
+  "id": 208,
+  "q": {
+    "pt": "Qual curva é recomendada para uso com o algoritmo de assinatura digital EdDSA?",
+    "en": "Which curve is recommended for use with the EdDSA digital signature algorithm?"
+  },
+  "options": {
+    "pt": ["NIST P-256", "NIST P-521", "Ed25519", "Curva Koblitz"],
+    "en": ["NIST P-256", "NIST P-521", "Ed25519", "Koblitz curve"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Curvas NIST são para ECDSA/ECDH, não EdDSA.",
+      "Curva NIST mais alta, ainda não EdDSA.",
+      "Correto: Ed25519 é a curva clássica do EdDSA.",
+      "Não é a recomendada para EdDSA."
+    ],
+    "en": [
+      "NIST curves are for ECDSA/ECDH, not EdDSA.",
+      "Higher NIST curve, still not EdDSA.",
+      "Correct: Ed25519 is the canonical EdDSA curve.",
+      "Not recommended for EdDSA."
+    ]
+  }
+},
+{
+  "id": 209,
+  "q": {
+    "pt": "Qual algoritmo de troca de chaves é geralmente menos preferido para novos sistemas devido à sua ineficiência computacional e tamanhos de chave maiores em comparação com o ECDH?",
+    "en": "Which key exchange algorithm is generally less preferred for new systems due to computational inefficiency and larger key sizes compared to ECDH?"
+  },
+  "options": {
+    "pt": ["Diffie-Hellman clássico", "Troca de chaves RSA", "Kyber", "Falcon"],
+    "en": ["Classic Diffie-Hellman", "RSA key exchange", "Kyber", "Falcon"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Ainda utilizável, mas menos eficiente que ECDH; porém a pergunta destaca RSA.",
+      "Correto: RSA KEX é menos preferido que ECDH em novos sistemas.",
+      "Kyber é pós-quântico e moderno.",
+      "Falcon é esquema de assinatura, não KEX."
+    ],
+    "en": [
+      "Still usable but less efficient than ECDH; question highlights RSA.",
+      "Correct: RSA key exchange is less preferred vs. ECDH.",
+      "Kyber is post-quantum and modern.",
+      "Falcon is a signature scheme, not KEX."
+    ]
+  }
+},
+{
+  "id": 210,
+  "q": {
+    "pt": "Qual família de funções hash é um padrão NIST e inclui algoritmos como SHA-256 e SHA-512?",
+    "en": "Which hash function family is an NIST standard and includes SHA-256 and SHA-512?"
+  },
+  "options": {
+    "pt": ["SHA-1", "SHA-3", "BLAKE2", "SHA-2"],
+    "en": ["SHA-1", "SHA-3", "BLAKE2", "SHA-2"]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "SHA-1 é legado e desaconselhado.",
+      "SHA-3 é outra família (Keccak).",
+      "BLAKE2 não é a família citada.",
+      "Correto: SHA-2 inclui SHA-256/512."
+    ],
+    "en": [
+      "SHA-1 is legacy and discouraged.",
+      "SHA-3 is a different family (Keccak).",
+      "BLAKE2 is not that family.",
+      "Correct: SHA-2 includes SHA-256/512."
+    ]
+  }
+},
+{
+  "id": 211,
+  "q": {
+    "pt": "Por que as funções de hash como SHA-2 não são recomendadas para hash de senhas?",
+    "en": "Why are hash functions like SHA-2 not recommended for password hashing?"
+  },
+  "options": {
+    "pt": [
+      "Porque são muito lentas",
+      "Porque foram projetadas para velocidade, tornando-as vulneráveis a ataques de força bruta",
+      "Porque não são padronizadas pelo NIST",
+      "Porque geram hashes muito longos"
+    ],
+    "en": [
+      "Because they are too slow",
+      "Because they are designed for speed, making them vulnerable to brute force",
+      "Because they are not standardized by NIST",
+      "Because they produce very long hashes"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Na verdade são rápidas, o que é ruim para senhas.",
+      "Correto: rapidez facilita ataques em GPU/ASIC.",
+      "São padronizadas; não é o motivo.",
+      "Tamanho do hash não é o problema central."
+    ],
+    "en": [
+      "They are actually fast, which is bad for passwords.",
+      "Correct: speed enables efficient GPU/ASIC brute force.",
+      "They are standardized; not the reason.",
+      "Hash length is not the core issue."
+    ]
+  }
+},
+{
+  "id": 212,
+  "q": {
+    "pt": "Qual algoritmo de hash de senha, vencedor da Competição de Hash de Senhas em 2015, é recomendado por equilíbrio entre resistência a ataques de canal lateral e GPU?",
+    "en": "Which password hashing algorithm, winner of the 2015 Password Hashing Competition, is recommended for balancing side-channel and GPU resistance?"
+  },
+  "options": {
+    "pt": ["bcrypt", "PBKDF2", "Argon2", "scrypt"],
+    "en": ["bcrypt", "PBKDF2", "Argon2", "scrypt"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Antigo e útil, porém não vencedor do PHC.",
+      "Amplamente usado, mas não o vencedor do PHC.",
+      "Correto: Argon2 venceu o PHC em 2015.",
+      "Bom, mas não o vencedor do PHC."
+    ],
+    "en": [
+      "Older and useful, but not the PHC winner.",
+      "Widely used, but not the PHC winner.",
+      "Correct: Argon2 won the PHC in 2015.",
+      "Good, but not the PHC winner."
+    ]
+  }
+},
+{
+  "id": 213,
+  "q": {
+    "pt": "Qual função de hash de senha é baseada na cifra Blowfish e incorpora um sal para proteger contra ataques de tabela arco-íris?",
+    "en": "Which password hashing function is based on the Blowfish cipher and incorporates a salt to defend against rainbow tables?"
+  },
+  "options": {
+    "pt": ["Argon2", "PBKDF2", "SHA-3", "bcrypt"],
+    "en": ["Argon2", "PBKDF2", "SHA-3", "bcrypt"]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "Argon2 é PHC 2015, não Blowfish-based.",
+      "PBKDF2 é baseado em HMAC.",
+      "SHA-3 é hash geral, não password hasher dedicado.",
+      "Correto: bcrypt deriva de Blowfish e usa sal."
+    ],
+    "en": [
+      "Argon2 is PHC 2015 winner, not Blowfish-based.",
+      "PBKDF2 is HMAC-based.",
+      "SHA-3 is a general hash, not a dedicated password hasher.",
+      "Correct: bcrypt derives from Blowfish and salts passwords."
+    ]
+  }
+},
+{
+  "id": 214,
+  "q": {
+    "pt": "Qual é a maneira recomendada de usar a Criptografia Pós-Quântica (PQC) atualmente?",
+    "en": "What is the recommended way to use Post-Quantum Cryptography (PQC) today?"
+  },
+  "options": {
+    "pt": [
+      "Substituindo completamente os algoritmos atuais como ECC",
+      "Usando apenas algoritmos PQC para todos os casos de uso",
+      "Por meio de algoritmos híbridos que combinam os atuais com os pós-quânticos",
+      "Aguardando a padronização completa antes de qualquer implementação"
+    ],
+    "en": [
+      "Fully replacing current algorithms like ECC",
+      "Using only PQC algorithms for all use cases",
+      "Through hybrid algorithms combining current and post-quantum",
+      "Waiting for full standardization before any implementation"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Troca completa ainda é prematura.",
+      "Abordagem radical e não prática hoje.",
+      "Correto: abordagens híbridas são recomendadas na transição.",
+      "Alguns casos já pedem testes/adoção controlada."
+    ],
+    "en": [
+      "A full replacement is premature.",
+      "Too radical and impractical today.",
+      "Correct: hybrid approaches are recommended for transition.",
+      "Some scenarios warrant controlled trials already."
+    ]
+  }
+},
+{
+  "id": 215,
+  "q": {
+    "pt": "De acordo com a política, a equipe de criptografia já recomenda a migração para a criptografia pós-quântica para casos de uso comercial normais?",
+    "en": "According to policy, does the crypto team already recommend migration to PQC for normal commercial use cases?"
+  },
+  "options": {
+    "pt": [
+      "Sim, para todos os novos sistemas",
+      "Sim, mas apenas para dados extremamente sensíveis",
+      "Não, a equipe ainda não recomenda para casos comerciais normais",
+      "Sim, é obrigatório"
+    ],
+    "en": [
+      "Yes, for all new systems",
+      "Yes, but only for extremely sensitive data",
+      "No, the team does not yet recommend it for normal commercial cases",
+      "Yes, it is mandatory"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não é a diretriz atual.",
+      "A diretriz geral ainda não é recomendar amplamente.",
+      "Correto: não recomendado ainda para casos comerciais normais.",
+      "Não é obrigatório."
+    ],
+    "en": [
+      "Not the current guideline.",
+      "General guidance is not broad recommendation yet.",
+      "Correct: not yet recommended for normal commercial use.",
+      "It is not mandatory."
+    ]
+  }
+},
+{
+  "id": 216,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+  {
+  "id": 217,
+  "q": {
+    "pt": "Onde a geração de chaves criptográficas deve ser evitada?",
+    "en": "Where should cryptographic key generation be avoided?"
+  },
+  "options": {
+    "pt": [
+      "Em servidores seguros e controlados",
+      "Usando ferramentas e serviços internos",
+      "Em dispositivos pessoais, como notebooks ou celulares",
+      "Em ambientes de nuvem certificados"
+    ],
+    "en": [
+      "On secure, controlled servers",
+      "Using internal tools and services",
+      "On personal devices such as laptops or mobile phones",
+      "In certified cloud environments"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Ambiente apropriado e controlado para geração de chaves.",
+      "Ferramentas internas podem ser adequadas quando devidamente gerenciadas.",
+      "Correto: dispositivos pessoais são inseguros e fora do controle corporativo.",
+      "Ambientes certificados podem ser usados com controles apropriados."
+    ],
+    "en": [
+      "Appropriate, controlled environment for key generation.",
+      "Internal tools can be suitable when properly managed.",
+      "Correct: personal devices are insecure and outside corporate control.",
+      "Certified cloud environments can be used with proper controls."
+    ]
+  }
 }
 ]
