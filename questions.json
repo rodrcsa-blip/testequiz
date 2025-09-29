@@ -1711,38 +1711,109 @@
 {
   "id": 51,
   "q": {
-    "pt": "Qual é o papel da equipe de Segurança da Informação na aquisição de novo software (não fornecedor de BPO)?",
-    "en": "What is the role of the InfoSec team in acquiring new software (not a BPO vendor)?"
+    "pt": "Qual é o limite típico de valor para um contrato onde a negociação pode ser conduzida pelo Dono do Contrato sem a liderança direta de Compras?",
+    "en": "What is the typical contract value threshold where negotiation can be conducted by the Contract Owner without direct Procurement leadership?"
   },
   "options": {
     "pt": [
-      "Negociar preço com o fornecedor.",
-      "Realizar revisão e avaliação de segurança e integração.",
-      "Dar aprovação final do orçamento.",
-      "Escrever manual de treinamento."
+      "Acima de USD $50K.",
+      "Até BRL $250K.",
+      "Até USD $50K.",
+      "Acima de BRL $250K."
     ],
     "en": [
-      "Negotiate price with the vendor.",
-      "Perform a security and integration review.",
-      "Provide final budget approval.",
-      "Write the training manual."
+      "Above USD $50K.",
+      "Up to BRL $250K.",
+      "Up to USD $50K.",
+      "Above BRL $250K."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Acima de USD $50K normalmente exige participação direta de Compras.",
+      "Este valor em BRL não é o limite adotado para o processo simplificado.",
+      "Até USD $50K geralmente é o limite aceito para negociação direta pelo Dono do Contrato.",
+      "Acima de BRL $250K ainda demanda o fluxo formal de Compras."
+    ],
+    "en": [
+      "Above USD $50K typically requires direct Procurement involvement.",
+      "This BRL value is not the standard threshold for simplified contracting.",
+      "Up to USD $50K is generally the accepted threshold for direct negotiation by the Contract Owner.",
+      "Above BRL $250K still requires the formal Procurement process."
+    ]
+  }
+},
+  {
+  "id": 52,
+  "q": {
+    "pt": "Qual é a diferença fundamental entre Política e Padrão na documentação de Segurança da Informação?",
+    "en": "What is the fundamental difference between Policy and Standard in Information Security documentation?"
+  },
+  "options": {
+    "pt": [
+      "Políticas são opcionais, Padrões são obrigatórios.",
+      "Uma Política é de alto nível, enquanto um Padrão fornece requisitos específicos e obrigatórios (como fazer).",
+      "Padrões são aprovados pelo Conselho; Políticas são aprovadas pelo CISO.",
+      "Um Padrão é apenas para sistemas de TI; uma Política é para todos os funcionários."
+    ],
+    "en": [
+      "Policies are optional, Standards are mandatory.",
+      "A Policy is high-level, while a Standard provides specific and mandatory requirements (the how-to).",
+      "Standards are approved by the Board; Policies are approved by the CISO.",
+      "A Standard is only for IT systems; a Policy is for all employees."
     ]
   },
   "correctIndex": 1,
   "rationales": {
     "pt": [
-      "Preço é tratado por Compras.",
-      "InfoSec deve revisar segurança e integração.",
-      "Orçamento é tratado pelo Financeiro.",
-      "Treinamento é tratado pela área usuária ou TI."
+      "Políticas são obrigatórias — definem o que deve ser feito.",
+      "Políticas definem o 'o que', enquanto Padrões detalham o 'como'.",
+      "Nem sempre a aprovação segue essa divisão rígida.",
+      "Padrões não se limitam apenas a TI, abrangem outros domínios também."
     ],
     "en": [
-      "Pricing is handled by Procurement.",
-      "InfoSec must review security and integration.",
-      "Budget is handled by Finance.",
-      "Training is handled by the business/IT team."
+      "Policies are mandatory — they define what must be done.",
+      "Policies define the 'what', while Standards detail the 'how'.",
+      "Approval does not always follow that rigid division.",
+      "Standards are not limited to IT, they cover other domains too."
+    ]
+  }
+},
+{
+  "id": 53,
+  "q": {
+    "pt": "Qual é o principal objetivo de uma auditoria de terceiros (ex.: SOC 2) em TPRM?",
+    "en": "What is the main objective of a third-party audit (e.g., SOC 2) in TPRM?"
+  },
+  "options": {
+    "pt": [
+      "Substituir a equipe de segurança interna.",
+      "Fornecer garantia independente sobre os controles do fornecedor.",
+      "Forçar uso de software específico.",
+      "Suspender imediatamente o contrato."
+    ],
+    "en": [
+      "Replace the internal security team.",
+      "Provide independent assurance of the vendor’s controls.",
+      "Force use of a specific software.",
+      "Immediately suspend the contract."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Auditorias dão garantia, não substituem a equipe interna.",
+      "O objetivo é assegurar que os controles do fornecedor são eficazes.",
+      "Auditorias avaliam conformidade, não impõem tecnologias.",
+      "Suspensão é decisão de risco, não objetivo da auditoria."
+    ],
+    "en": [
+      "Audits provide assurance, they don’t replace internal teams.",
+      "The goal is to ensure vendor controls are effective.",
+      "Audits assess compliance, not dictate technology.",
+      "Suspension is a risk decision, not the audit’s purpose."
     ]
   }
 }
 ]
-
