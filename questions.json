@@ -2616,5 +2616,1328 @@
       "Slides without evidence are not sufficient for closure."
     ]
   }
+},
+  {
+  "id": 77,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 78,
+  "q": {
+    "pt": "Qual é o objetivo principal da Política de Segurança da Informação (InfoSec)?",
+    "en": "What is the primary objective of the Information Security (InfoSec) Policy?"
+  },
+  "options": {
+    "pt": [
+      "Definir a estrutura organizacional do Nu Group.",
+      "Definir medidas disciplinares para funcionários não conformes.",
+      "Estabelecer requisitos de proteção de informações alinhados aos padrões legais e regulatórios em todos os locais onde o Nu Group opera.",
+      "Gerenciar exclusivamente os contratos e a segurança de fornecedores terceirizados."
+    ],
+    "en": [
+      "Define Nu Group’s organizational structure.",
+      "Define disciplinary measures for non-compliant employees.",
+      "Establish information protection requirements aligned with legal and regulatory standards across all locations where Nu Group operates.",
+      "Exclusively manage third-party vendor contracts and security."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Estrutura organizacional não é o foco da política de segurança.",
+      "Medidas disciplinares são consequência, não o objetivo principal.",
+      "A política define requisitos para proteger informações em alinhamento com leis e regulamentos aplicáveis.",
+      "Gestão de terceiros é apenas um recorte do programa, não o objetivo central."
+    ],
+    "en": [
+      "Organizational structure is not the policy’s focus.",
+      "Disciplinary measures are consequences, not the core objective.",
+      "The policy sets requirements to protect information aligned with applicable laws and regulations.",
+      "Third-party management is only a subset, not the main objective."
+    ]
+  }
+},
+{
+  "id": 79,
+  "q": {
+    "pt": "A quem se aplica a Política de Segurança da Informação?",
+    "en": "To whom does the Information Security Policy apply?"
+  },
+  "options": {
+    "pt": [
+      "Somente para o Conselho de Administração e a Gerência Executiva.",
+      "Somente para membros da equipe de InfoSec.",
+      "Todos os Nubankers (funcionários, diretores, estagiários, etc.) e terceiros/contratados autorizados.",
+      "Somente para funcionários em tempo integral baseados na sede da empresa."
+    ],
+    "en": [
+      "Only to the Board of Directors and Executive Management.",
+      "Only to InfoSec team members.",
+      "All Nubankers (employees, officers, interns, etc.) and authorized third parties/contractors.",
+      "Only to full-time staff based at company headquarters."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "A política não se restringe a conselheiros e executivos.",
+      "Aplica-se além do time de segurança.",
+      "Abrange todos os colaboradores e terceiros autorizados que tratam informação da organização.",
+      "Não se limita a uma localidade ou vínculo específico."
+    ],
+    "en": [
+      "The policy is not limited to board and executives.",
+      "It applies beyond the security team.",
+      "It covers all personnel and authorized third parties handling organizational information.",
+      "It’s not restricted to one site or employment type."
+    ]
+  }
+},
+{
+  "id": 80,
+  "q": {
+    "pt": "Com que frequência a Política de InfoSec é revisada?",
+    "en": "How often is the InfoSec Policy reviewed?"
+  },
+  "options": {
+    "pt": [
+      "A cada seis meses.",
+      "Pelo menos uma vez a cada 12 meses (anualmente), ou antes, se ocorrer uma mudança comercial ou regulatória significativa.",
+      "Somente em resposta a um grande incidente de segurança.",
+      "Uma vez a cada dois anos."
+    ],
+    "en": [
+      "Every six months.",
+      "At least once every 12 months (annually), or earlier if a significant business or regulatory change occurs.",
+      "Only in response to a major security incident.",
+      "Once every two years."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Pode haver revisões semestrais, mas o requisito mínimo é anual.",
+      "Boa prática e conformidade pedem revisão anual ou adiantada por mudanças relevantes.",
+      "Incidentes não são o único gatilho de revisão.",
+      "Bienal pode ser insuficiente para mudanças regulatórias e de risco."
+    ],
+    "en": [
+      "Semiannual may occur, but the minimum is annual.",
+      "Best practice and compliance call for annual review or sooner upon material changes.",
+      "Incidents are not the only trigger.",
+      "Biennial review may be insufficient for evolving requirements."
+    ]
+  }
+},
+{
+  "id": 81,
+  "q": {
+    "pt": "O que acontece se uma lei local impuser um requisito de segurança maior do que esta política?",
+    "en": "What happens if a local law imposes a stricter security requirement than this policy?"
+  },
+  "options": {
+    "pt": [
+      "A política global sempre tem precedência sobre as leis locais.",
+      "A entidade deve solicitar uma exceção ao CISO para seguir a política global.",
+      "O requisito mais elevado da lei local deve ser observado naquela geografia específica.",
+      "A política deve ser imediatamente reescrita para aplicar o padrão mais elevado globalmente."
+    ],
+    "en": [
+      "The global policy always supersedes local laws.",
+      "The entity must request a CISO exception to follow the global policy.",
+      "The stricter local legal requirement must be observed in that specific geography.",
+      "The policy must be immediately rewritten to apply the stricter standard globally."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Leis locais não são suplantadas por políticas internas.",
+      "Exceção não autoriza descumprir a lei.",
+      "Deve-se cumprir o requisito legal mais rigoroso na jurisdição aplicável.",
+      "A atualização global pode ocorrer depois, mas o cumprimento local é imediato."
+    ],
+    "en": [
+      "Internal policies don’t override local laws.",
+      "An exception cannot authorize violating the law.",
+      "The stricter local legal requirement must be met in that jurisdiction.",
+      "Global update may come later; local compliance is immediate."
+    ]
+  }
+},
+{
+  "id": 82,
+  "q": {
+    "pt": "Qual das seguintes opções é um dos quatro pilares do Gerenciamento de Identidade e Acesso (IAM)?",
+    "en": "Which of the following is one of the four pillars of Identity and Access Management (IAM)?"
+  },
+  "options": {
+    "pt": [
+      "Eficiência.",
+      "Integração.",
+      "Responsabilidade.",
+      "Simplicidade."
+    ],
+    "en": [
+      "Efficiency.",
+      "Integration.",
+      "Accountability.",
+      "Simplicity."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Eficiência é desejável, mas não é um pilar clássico.",
+      "Integração é importante, porém não está entre os pilares canônicos.",
+      "Responsabilidade (accountability) é um pilar fundamental ligado a rastreabilidade e auditoria.",
+      "Simplicidade é princípio de design, não um pilar em si."
+    ],
+    "en": [
+      "Efficiency is desirable but not a canonical pillar.",
+      "Integration is important but not one of the core pillars.",
+      "Accountability is fundamental, tied to traceability and audit.",
+      "Simplicity is a design principle, not a core pillar."
+    ]
+  }
+},
+{
+  "id": 83,
+  "q": {
+    "pt": "O acesso aos sistemas e dados deve ser concedido com base nas necessidades comerciais, na segregação de tarefas e em qual outro princípio?",
+    "en": "Access to systems and data should be granted based on business need, segregation of duties, and which other principle?"
+  },
+  "options": {
+    "pt": [
+      "Princípio da antiguidade.",
+      "Princípio do menor privilégio.",
+      "Princípio do acesso máximo.",
+      "Princípio da conveniência do usuário."
+    ],
+    "en": [
+      "Seniority principle.",
+      "Principle of least privilege.",
+      "Maximum access principle.",
+      "User convenience principle."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Acesso não deve ser concedido por senioridade.",
+      "Concede-se apenas o mínimo necessário para executar a função.",
+      "Acesso máximo eleva o risco desnecessariamente.",
+      "Conveniência do usuário não sobrepõe segurança."
+    ],
+    "en": [
+      "Access is not granted by seniority.",
+      "Only the minimum necessary access should be granted.",
+      "Maximum access unduly increases risk.",
+      "User convenience doesn’t override security."
+    ]
+  }
+},
+{
+  "id": 84,
+  "q": {
+    "pt": "Para que finalidade os recursos de TI e ativos de informação da empresa devem ser usados?",
+    "en": "For what purpose should company IT resources and information assets be used?"
+  },
+  "options": {
+    "pt": [
+      "Principalmente para negócios, com uso pessoal permitido durante os intervalos.",
+      "Para qualquer propósito que não seja ilegal.",
+      "Somente para fins comerciais.",
+      "Para uma mistura de desenvolvimento profissional pessoal e empresarial."
+    ],
+    "en": [
+      "Primarily for business, with limited personal use allowed during breaks.",
+      "For any purpose that is not illegal.",
+      "Only for business purposes.",
+      "For a mix of personal professional development and business."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Algumas organizações permitem uso pessoal limitado, mas a diretriz mais restritiva é apenas fins corporativos.",
+      "“Não ilegal” é amplo demais e não atende à política de uso aceitável.",
+      "A diretriz padrão é uso exclusivamente corporativo (ou conforme AUP aplicável).",
+      "Misturar objetivos pessoais não atende ao foco corporativo de segurança e compliance."
+    ],
+    "en": [
+      "Some organizations allow limited personal use, but the stricter guideline is business-only.",
+      "“Not illegal” is far too broad for an AUP.",
+      "Standard guidance is business-only use (or per applicable AUP).",
+      "Blending personal goals does not align with corporate security/compliance."
+    ]
+  }
+},
+{
+  "id": 85,
+  "q": {
+    "pt": "Quem é responsável por coordenar e gerenciar a resposta a todos os incidentes de segurança relatados?",
+    "en": "Who is responsible for coordinating and managing the response to all reported security incidents?"
+  },
+  "options": {
+    "pt": [
+      "A equipe de conformidade.",
+      "A gerência executiva.",
+      "A equipe jurídica.",
+      "A equipe de segurança da informação."
+    ],
+    "en": [
+      "The compliance team.",
+      "Executive management.",
+      "The legal team.",
+      "The information security team."
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "Conformidade verifica aderência, mas não lidera resposta técnica.",
+      "A liderança apoia, mas a coordenação operacional é da segurança.",
+      "Jurídico assessora aspectos legais, não a resposta técnica.",
+      "InfoSec coordena investigação, contenção, erradicação e lições aprendidas."
+    ],
+    "en": [
+      "Compliance checks adherence, but doesn’t lead technical response.",
+      "Management supports, but security coordinates operations.",
+      "Legal advises on legal exposure, not the technical response.",
+      "InfoSec leads investigation, containment, eradication, and lessons learned."
+    ]
+  }
+},
+{
+  "id": 86,
+  "q": {
+    "pt": "Quem é obrigado a relatar incidentes de segurança da informação?",
+    "en": "Who is required to report information security incidents?"
+  },
+  "options": {
+    "pt": [
+      "Somente gerentes e líderes de equipe.",
+      "Somente membros da equipe de InfoSec.",
+      "Nubankers, contratados e parceiros.",
+      "Somente funcionários que lidam diretamente com dados confidenciais de clientes."
+    ],
+    "en": [
+      "Only managers and team leads.",
+      "Only InfoSec team members.",
+      "Nubankers, contractors, and partners.",
+      "Only employees who directly handle sensitive customer data."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "A obrigação de reporte é ampla, não restrita a gestores.",
+      "Não é apenas do time de segurança.",
+      "Todos que identificarem incidentes devem reportar pelos canais definidos.",
+      "Qualquer pessoa pode observar um incidente, independentemente de lidar com dados sensíveis."
+    ],
+    "en": [
+      "Reporting duty is broad, not limited to managers.",
+      "It’s not only the security team’s role.",
+      "Anyone who detects incidents must report via defined channels.",
+      "Anyone may observe an incident, regardless of data handling role."
+    ]
+  }
+},
+{
+  "id": 87,
+  "q": {
+    "pt": "De acordo com a política, que tipo de informação deve ser protegida por criptografia durante o processamento, armazenamento e transmissão?",
+    "en": "According to the policy, which information must be protected by encryption during processing, storage, and transmission?"
+  },
+  "options": {
+    "pt": [
+      "Somente comunicações internas entre executivos.",
+      "Somente dados armazenados em serviços de nuvem.",
+      "Todos os dados pessoais, informações comerciais críticas e dados classificados como restritos ou confidenciais.",
+      "Somente código-fonte para aplicativos proprietários."
+    ],
+    "en": [
+      "Only internal communications between executives.",
+      "Only data stored in cloud services.",
+      "All personal data, critical business information, and data classified as restricted or confidential.",
+      "Only source code for proprietary applications."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "A criptografia não se restringe a comunicações de executivos.",
+      "Aplica-se tanto on-premises quanto em nuvem.",
+      "Dados pessoais, críticos e classificados exigem proteção robusta, incluindo criptografia.",
+      "Código-fonte pode exigir proteção, mas não é o único foco."
+    ],
+    "en": [
+      "Encryption is not limited to executive communications.",
+      "It applies both on-prem and in the cloud.",
+      "Personal, critical, and classified data require robust protection including encryption.",
+      "Source code may need protection, but it’s not the only focus."
+    ]
+  }
+},
+{
+  "id": 88,
+  "q": {
+    "pt": "O que deve ser incluído em todos os contratos com provedores de serviços de nuvem?",
+    "en": "What must be included in all contracts with cloud service providers?"
+  },
+  "options": {
+    "pt": [
+      "Uma garantia de 100% de disponibilidade.",
+      "Cláusulas de segurança adequadas, como proteção de dados e confidencialidade.",
+      "A localização física de todos os data centers.",
+      "Tarifas com desconto para serviços de longo prazo."
+    ],
+    "en": [
+      "A 100% availability guarantee.",
+      "Appropriate security clauses, such as data protection and confidentiality.",
+      "The physical location of all data centers.",
+      "Discounted rates for long-term services."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Garantia de 100% é irrealista.",
+      "Cláusulas de segurança e privacidade são essenciais para conformidade e proteção.",
+      "Localização pode ser relevante, mas não é obrigatório para todos os contratos.",
+      "Preço não substitui requisitos de segurança contratuais."
+    ],
+    "en": [
+      "A 100% uptime guarantee is unrealistic.",
+      "Security and privacy clauses are essential for compliance and protection.",
+      "Location can matter, but is not universally mandatory.",
+      "Pricing does not replace contractual security requirements."
+    ]
+  }
+},
+{
+  "id": 89,
+  "q": {
+    "pt": "Qual é a diretriz em relação à rede corporativa e à rede de convidados?",
+    "en": "What is the guideline regarding the corporate network and the guest network?"
+  },
+  "options": {
+    "pt": [
+      "Eles podem compartilhar a mesma infraestrutura para reduzir custos.",
+      "A rede de convidados deve ter velocidades mais rápidas que a rede corporativa.",
+      "Eles devem ser segregados física ou logicamente.",
+      "O acesso à rede de convidados deve ser aprovado pelo CISO."
+    ],
+    "en": [
+      "They can share the same infrastructure to reduce costs.",
+      "The guest network should be faster than the corporate network.",
+      "They must be physically or logically segregated.",
+      "Guest network access must be approved by the CISO."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Compartilhar infraestrutura aumenta a superfície de ataque.",
+      "Velocidade não é o critério principal de segurança.",
+      "Segregação reduz o risco de trânsito indevido entre ambientes.",
+      "A aprovação de acesso pode seguir outras políticas; o essencial é a segregação."
+    ],
+    "en": [
+      "Sharing infrastructure increases the attack surface.",
+      "Speed is not the primary security criterion.",
+      "Segregation reduces the risk of improper cross-traffic.",
+      "Access approval may follow other policies; segregation is the key control."
+    ]
+  }
+},
+  {
+  "id": 90,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 91,
+  "q": {
+    "pt": "Qual é a etapa inicial para a contratação de um novo fornecedor?",
+    "en": "What is the initial step for onboarding a new vendor?"
+  },
+  "options": {
+    "pt": [
+      "Fluxo de Procurement",
+      "Risk Classification",
+      "Infosec Security Assessment",
+      "Todas as anteriores"
+    ],
+    "en": [
+      "Procurement flow",
+      "Risk classification",
+      "Infosec security assessment",
+      "All of the above"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: o processo sempre inicia pelo fluxo de Procurement.",
+      "A classificação de risco ocorre após a entrada no fluxo.",
+      "A avaliação de segurança é uma etapa subsequente.",
+      "Nem todas são executadas ao mesmo tempo no início."
+    ],
+    "en": [
+      "Correct: the process always starts with Procurement flow.",
+      "Risk classification happens after onboarding.",
+      "Security assessment comes later in the flow.",
+      "Not all steps occur simultaneously at the start."
+    ]
+  }
+},
+{
+  "id": 92,
+  "q": {
+    "pt": "O que acontece se a contratação for superior a USD 50 mil?",
+    "en": "What happens if the contract value exceeds USD 50,000?"
+  },
+  "options": {
+    "pt": [
+      "A negociação é conduzida pelo Contract Owner",
+      "A negociação é conduzida pela equipe de Procurement",
+      "A negociação é limitada a BRL 250 mil",
+      "O processo é descontinuado"
+    ],
+    "en": [
+      "Negotiation is led by the Contract Owner",
+      "Negotiation is led by the Procurement team",
+      "Negotiation is capped at BRL 250,000",
+      "The process is discontinued"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "O Contract Owner só conduz até USD 50K.",
+      "Correto: acima de USD 50K a negociação deve ser conduzida por Procurement.",
+      "Esse limite não é o aplicável aqui.",
+      "Não há interrupção do processo por esse valor."
+    ],
+    "en": [
+      "The Contract Owner only negotiates up to USD 50K.",
+      "Correct: above USD 50K Procurement must lead.",
+      "The BRL 250k limit does not apply here.",
+      "The process is not discontinued at this threshold."
+    ]
+  }
+},
+{
+  "id": 93,
+  "q": {
+    "pt": "O que o Contract Owner deve fazer quando o vínculo com o fornecedor termina?",
+    "en": "What must the Contract Owner do when the vendor engagement ends?"
+  },
+  "options": {
+    "pt": [
+      "Iniciar uma reavaliação",
+      "Abrir um ticket de rescisão",
+      "Iniciar um novo processo de contratação",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "Start a reassessment",
+      "Open a termination ticket",
+      "Start a new procurement process",
+      "None of the above"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não há necessidade de reavaliação, e sim de encerramento formal.",
+      "Correto: deve abrir um ticket de rescisão.",
+      "Novo processo só se houver nova demanda.",
+      "Há sim uma ação obrigatória: rescisão formal."
+    ],
+    "en": [
+      "No reassessment is needed, but a formal closure is.",
+      "Correct: must open a termination ticket.",
+      "New process only if there’s a new demand.",
+      "There is indeed a required action: formal termination."
+    ]
+  }
+},
+{
+  "id": 94,
+  "q": {
+    "pt": "Qual é o processo para abertura de um POC (Proof of Concept) que tenha um custo?",
+    "en": "What is the process for opening a Proof of Concept (POC) that has a cost?"
+  },
+  "options": {
+    "pt": [
+      "Selecionar a opção de contrato limitado a USD 50K",
+      "O POC não pode ter custo",
+      "Apenas a opção de doação",
+      "Apenas a opção de patrocínio"
+    ],
+    "en": [
+      "Select the limited contract option up to USD 50K",
+      "POCs cannot have costs",
+      "Only donation option",
+      "Only sponsorship option"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: POCs pagos devem usar contrato limitado a USD 50K.",
+      "Não é verdade, POCs podem ter custo com o contrato correto.",
+      "Doação não se aplica a POCs.",
+      "Patrocínio não se aplica a POCs."
+    ],
+    "en": [
+      "Correct: paid POCs must use the limited USD 50K contract.",
+      "Incorrect, POCs may have cost if under the right contract.",
+      "Donation does not apply to POCs.",
+      "Sponsorship does not apply to POCs."
+    ]
+  }
+},
+{
+  "id": 95,
+  "q": {
+    "pt": "Para quais países o processo de contratação é aplicável?",
+    "en": "To which countries does the procurement process apply?"
+  },
+  "options": {
+    "pt": [
+      "Brasil, Argentina e Chile",
+      "Brasil, Colômbia e México",
+      "Brasil, EUA e Alemanha",
+      "Todos os países"
+    ],
+    "en": [
+      "Brazil, Argentina and Chile",
+      "Brazil, Colombia and Mexico",
+      "Brazil, USA and Germany",
+      "All countries"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não cobre Argentina e Chile.",
+      "Correto: Brasil, Colômbia e México.",
+      "Não inclui EUA e Alemanha.",
+      "Não é válido globalmente."
+    ],
+    "en": [
+      "Does not cover Argentina and Chile.",
+      "Correct: Brazil, Colombia and Mexico.",
+      "Does not include USA and Germany.",
+      "Not valid globally."
+    ]
+  }
+},
+{
+  "id": 96,
+  "q": {
+    "pt": "Qual é o limite de valor para que a negociação de um contrato seja conduzida pelo Contract Owner?",
+    "en": "What is the value limit for the Contract Owner to conduct a contract negotiation?"
+  },
+  "options": {
+    "pt": [
+      "Até USD 50K",
+      "Acima de USD 50K",
+      "Até BRL 250K",
+      "Acima de BRL 250K"
+    ],
+    "en": [
+      "Up to USD 50K",
+      "Above USD 50K",
+      "Up to BRL 250K",
+      "Above BRL 250K"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: até USD 50K é permitido ao Contract Owner.",
+      "Acima desse valor passa a Procurement.",
+      "Esse limite não é o usado para esse processo.",
+      "Esse limite não se aplica aqui."
+    ],
+    "en": [
+      "Correct: up to USD 50K is allowed for the Contract Owner.",
+      "Above this, Procurement takes over.",
+      "This limit is not the one used here.",
+      "This threshold does not apply here."
+    ]
+  }
+},
+{
+  "id": 97,
+  "q": {
+    "pt": "Qual equipe é responsável por gerenciar contratos de patrocínio e doação?",
+    "en": "Which team is responsible for managing sponsorship and donation contracts?"
+  },
+  "options": {
+    "pt": [
+      "Procurement",
+      "Infosec",
+      "Legal e ESG",
+      "Contabilidade"
+    ],
+    "en": [
+      "Procurement",
+      "Infosec",
+      "Legal and ESG",
+      "Accounting"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Procurement não gerencia patrocínios e doações.",
+      "Infosec não é responsável por esse tema.",
+      "Correto: Legal e ESG cuidam de patrocínios e doações.",
+      "Contabilidade acompanha, mas não gerencia contratos."
+    ],
+    "en": [
+      "Procurement does not handle sponsorships/donations.",
+      "Infosec is not responsible here.",
+      "Correct: Legal and ESG manage sponsorships and donations.",
+      "Accounting tracks but doesn’t manage contracts."
+    ]
+  }
+},
+{
+  "id": 98,
+  "q": {
+    "pt": "O que deve ser feito se houver a necessidade de alterar o conteúdo de uma solicitação de contrato já criada no portal?",
+    "en": "What should be done if the content of a contract request already created in the portal needs to be changed?"
+  },
+  "options": {
+    "pt": [
+      "É possível editar a solicitação",
+      "É necessário cancelar a solicitação e abrir uma nova",
+      "A alteração é feita pela equipe de Procurement",
+      "Não é possível fazer alterações"
+    ],
+    "en": [
+      "The request can be edited",
+      "It is necessary to cancel the request and open a new one",
+      "The change is made by the Procurement team",
+      "It is not possible to make changes"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não é permitido editar diretamente.",
+      "Correto: deve-se cancelar e abrir nova solicitação.",
+      "Procurement não altera solicitações já criadas.",
+      "Alteração é possível via novo pedido."
+    ],
+    "en": [
+      "Direct editing is not allowed.",
+      "Correct: must cancel and open a new request.",
+      "Procurement does not alter requests already created.",
+      "Change is possible but only via new submission."
+    ]
+  }
+},
+{
+  "id": 99,
+  "q": {
+    "pt": "Como se deve preencher o campo 'available budget' e 'total contract amount'?",
+    "en": "How should the 'available budget' and 'total contract amount' fields be filled?"
+  },
+  "options": {
+    "pt": [
+      "Com o valor sem impostos",
+      "Com o valor em formato de texto",
+      "Com o valor em formato 1000.21, com impostos",
+      "Com o valor arredondado"
+    ],
+    "en": [
+      "With the value excluding taxes",
+      "With the value as text",
+      "With the value in 1000.21 format, including taxes",
+      "With the rounded value"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não deve ser sem impostos.",
+      "Texto não é aceito pelo sistema.",
+      "Correto: deve ser no formato numérico, incluindo impostos.",
+      "Não deve ser arredondado."
+    ],
+    "en": [
+      "Not excluding taxes.",
+      "Text is not accepted by the system.",
+      "Correct: must be numeric format, including taxes.",
+      "Not rounded."
+    ]
+  }
+},
+{
+  "id": 100,
+  "q": {
+    "pt": "Em caso de um novo fornecedor, quais informações são necessárias além do nome da empresa e CNPJ?",
+    "en": "For a new vendor, what information is required besides company name and CNPJ?"
+  },
+  "options": {
+    "pt": [
+      "Apenas informações de contato",
+      "Apenas endereço",
+      "Todas as informações, incluindo endereço e contato",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "Only contact information",
+      "Only address",
+      "All information, including address and contact",
+      "None of the above"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Contato sozinho não basta.",
+      "Endereço sozinho não basta.",
+      "Correto: são necessárias todas as informações adicionais.",
+      "Há sim requisitos adicionais obrigatórios."
+    ],
+    "en": [
+      "Contact alone is insufficient.",
+      "Address alone is insufficient.",
+      "Correct: all additional details are required.",
+      "There are indeed mandatory extra requirements."
+    ]
+  }
+},
+{
+  "id": 101,
+  "q": {
+    "pt": "Quando a equipe de segurança da informação é alertada sobre um novo fornecedor?",
+    "en": "When is the information security team alerted about a new vendor?"
+  },
+  "options": {
+    "pt": [
+      "Quando o risco inerente é classificado como Baixo",
+      "Quando o risco inerente é classificado como Médio",
+      "Quando o risco inerente é classificado como Alto ou Muito Alto",
+      "A equipe não é alertada"
+    ],
+    "en": [
+      "When the inherent risk is classified as Low",
+      "When the inherent risk is classified as Medium",
+      "When the inherent risk is classified as High or Very High",
+      "The team is not alerted"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Risco baixo não aciona alerta.",
+      "Risco médio também não aciona.",
+      "Correto: apenas Alto ou Muito Alto acionam alerta.",
+      "A equipe é alertada sim, dependendo da classificação."
+    ],
+    "en": [
+      "Low risk does not trigger an alert.",
+      "Medium risk also does not trigger.",
+      "Correct: only High or Very High trigger alerts.",
+      "The team is indeed alerted when applicable."
+    ]
+  }
+},
+{
+  "id": 102,
+  "q": {
+    "pt": "O que a ferramenta UpGuard Domain Scan Monitoring faz?",
+    "en": "What does the UpGuard Domain Scan Monitoring tool do?"
+  },
+  "options": {
+    "pt": [
+      "Classifica os fornecedores",
+      "Monitora domínios em busca de vulnerabilidades",
+      "Registra riscos de fornecedores",
+      "Elabora planos de mitigação"
+    ],
+    "en": [
+      "Classifies vendors",
+      "Monitors domains for vulnerabilities",
+      "Logs vendor risks",
+      "Creates mitigation plans"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não classifica fornecedores diretamente.",
+      "Correto: é usada para monitoramento de vulnerabilidades em domínios.",
+      "Registro de riscos é feito em outras ferramentas.",
+      "Planos de mitigação não são o foco da ferramenta."
+    ],
+    "en": [
+      "It does not classify vendors directly.",
+      "Correct: it is used to monitor vulnerabilities in domains.",
+      "Risk logging is handled in other tools.",
+      "Mitigation plans are not its main purpose."
+    ]
+  }
+},
+  {
+  "id": 103,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 104,
+  "q": {
+    "pt": "Para uma auditoria regulatória do BACEN, o que a área de TI deve estar preparada para apresentar?",
+    "en": "For a BACEN regulatory audit, what must the IT area be prepared to present?"
+  },
+  "options": {
+    "pt": [
+      "Fotos da equipe de TI",
+      "Evidências dos controles implementados, como registros de acesso e políticas",
+      "Plano de almoço semanal",
+      "Uma lista de todos os usuários do sistema"
+    ],
+    "en": [
+      "Photos of the IT team",
+      "Evidence of implemented controls, such as access logs and policies",
+      "Weekly lunch plan",
+      "A list of all system users"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Imagens não demonstram conformidade.",
+      "Auditorias regulatórias exigem evidências objetivas de controles.",
+      "Irrelevante para auditoria.",
+      "Listas podem ser parte, mas não substituem evidências de controle."
+    ],
+    "en": [
+      "Pictures do not demonstrate compliance.",
+      "Regulatory audits require objective control evidence.",
+      "Irrelevant to an audit.",
+      "User lists may be part of evidence, but not sufficient alone."
+    ]
+  }
+},
+{
+  "id": 105,
+  "q": {
+    "pt": "Qual das seguintes certificações é focada em auditoria de sistemas de informação?",
+    "en": "Which of the following certifications focuses on information systems auditing?"
+  },
+  "options": {
+    "pt": [
+      "PMP (Profissional de Gerenciamento de Projetos)",
+      "CISA (Auditor Certificado de Sistemas de Informação)",
+      "CCNA (Associado Certificado de Rede Cisco)",
+      "CSM (ScrumMaster Certificado)"
+    ],
+    "en": [
+      "PMP (Project Management Professional)",
+      "CISA (Certified Information Systems Auditor)",
+      "CCNA (Cisco Certified Network Associate)",
+      "CSM (Certified ScrumMaster)"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "PMP é gestão de projetos.",
+      "CISA é especificamente voltada à auditoria de SI.",
+      "CCNA é redes.",
+      "CSM é ágil/Scrum."
+    ],
+    "en": [
+      "PMP is project management.",
+      "CISA is specifically for IS auditing.",
+      "CCNA is networking.",
+      "CSM is agile/Scrum."
+    ]
+  }
+},
+{
+  "id": 106,
+  "q": {
+    "pt": "O que é um \"Controle Compensatório\" no GRC?",
+    "en": "What is a \"Compensating Control\" in GRC?"
+  },
+  "options": {
+    "pt": [
+      "Um controle que substitui um controle que não é viável",
+      "Um controle que não tem utilidade",
+      "Um controle que não precisa ser testado",
+      "Um controle que é apenas um backup"
+    ],
+    "en": [
+      "A control that replaces a control that is not feasible",
+      "A control that has no usefulness",
+      "A control that does not need testing",
+      "A control that is only a backup"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Definição correta de controle compensatório.",
+      "Controles compensatórios são úteis por definição.",
+      "Eles também devem ser testados.",
+      "Não é apenas backup; é uma alternativa equivalente."
+    ],
+    "en": [
+      "Correct definition of a compensating control.",
+      "By definition it provides utility.",
+      "It must also be tested.",
+      "It’s not merely a backup; it’s an equivalent alternative."
+    ]
+  }
+},
+{
+  "id": 107,
+  "q": {
+    "pt": "Qual é o principal objetivo de um programa de conscientização sobre segurança?",
+    "en": "What is the main objective of a security awareness program?"
+  },
+  "options": {
+    "pt": [
+      "Garantir que os funcionários passem no teste de conhecimento",
+      "Garantir que os funcionários entendam seu papel na proteção de ativos",
+      "Punir funcionários que cometem erros",
+      "Apenas cumprir um requisito de auditoria"
+    ],
+    "en": [
+      "Ensure employees pass the knowledge test",
+      "Ensure employees understand their role in protecting assets",
+      "Punish employees who make mistakes",
+      "Only meet an audit requirement"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Passar em teste não garante mudança de comportamento.",
+      "Objetivo é entendimento e comportamento seguro.",
+      "Punição não é objetivo do programa.",
+      "Conformidade é consequência, não o propósito central."
+    ],
+    "en": [
+      "Passing a test doesn’t ensure behavioral change.",
+      "Goal is understanding and secure behavior.",
+      "Punishment is not the program’s goal.",
+      "Compliance is a consequence, not the core purpose."
+    ]
+  }
+},
+{
+  "id": 108,
+  "q": {
+    "pt": "O que significa \"ransomware\" em termos de GRC?",
+    "en": "What does \"ransomware\" mean in GRC terms?"
+  },
+  "options": {
+    "pt": [
+      "Um tipo de vírus que não causa danos",
+      "Um ataque que compromete a disponibilidade dos dados",
+      "Um ataque que afeta apenas a confidencialidade",
+      "Um evento que não precisa ser reportado"
+    ],
+    "en": [
+      "A type of virus that causes no damage",
+      "An attack that compromises data availability",
+      "An attack that only affects confidentiality",
+      "An event that does not need to be reported"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Ransomware causa impacto significativo.",
+      "Criptografa/indisponibiliza dados, afetando disponibilidade.",
+      "Também pode afetar confidencialidade, mas o impacto-chave é disponibilidade.",
+      "Incidentes de ransomware devem ser reportados."
+    ],
+    "en": [
+      "Ransomware causes significant impact.",
+      "It encrypts/makes data unavailable, impacting availability.",
+      "It may affect confidentiality too, but key impact is availability.",
+      "Ransomware incidents must be reported."
+    ]
+  }
+},
+{
+  "id": 109,
+  "q": {
+    "pt": "O que a \"Maturidade GRC\" de uma empresa mede?",
+    "en": "What does a company’s \"GRC Maturity\" measure?"
+  },
+  "options": {
+    "pt": [
+      "O número de funcionários na área de GRC",
+      "A maturidade das políticas e processos de GRC",
+      "A idade dos sistemas de TI",
+      "O nível de experiência do gestor"
+    ],
+    "en": [
+      "The number of employees in the GRC area",
+      "The maturity of GRC policies and processes",
+      "The age of IT systems",
+      "The manager’s level of experience"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Quantidade de pessoas não mede maturidade.",
+      "Mede quão definidos, implementados e melhorados são políticas e processos.",
+      "Idade de sistemas não é proxy direto de maturidade GRC.",
+      "Experiência do gestor não define a maturidade do programa."
+    ],
+    "en": [
+      "Headcount does not measure maturity.",
+      "It measures how defined, implemented, and improved policies/processes are.",
+      "System age is not a direct proxy for GRC maturity.",
+      "Manager experience doesn’t define program maturity."
+    ]
+  }
+},
+{
+  "id": 110,
+  "q": {
+    "pt": "Em termos de GRC, o que é um \"ativo de informação\"?",
+    "en": "In GRC terms, what is an \"information asset\"?"
+  },
+  "options": {
+    "pt": [
+      "Apenas computadores",
+      "Quaisquer dados ou recursos que tenham valor para a organização",
+      "Apenas servidores de e-mail",
+      "Um contrato com um fornecedor"
+    ],
+    "en": [
+      "Only computers",
+      "Any data or resource that has value to the organization",
+      "Only email servers",
+      "A contract with a vendor"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "É mais amplo que hardware.",
+      "Inclui dados, sistemas, pessoas, processos e infraestrutura de valor.",
+      "É mais amplo que um tipo de servidor.",
+      "Contratos são documentos/ativos, mas não o único foco."
+    ],
+    "en": [
+      "It’s broader than hardware.",
+      "Includes data, systems, people, processes, and infrastructure of value.",
+      "It’s broader than one server type.",
+      "Contracts are assets, but not the only focus."
+    ]
+  }
+},
+{
+  "id": 111,
+  "q": {
+    "pt": "Qual é a função de uma auditoria de conformidade?",
+    "en": "What is the function of a compliance audit?"
+  },
+  "options": {
+    "pt": [
+      "Somente punir funcionários",
+      "Verificar se a organização está cumprindo as normas e leis",
+      "Criar novas políticas de segurança",
+      "Fazer um inventário de ativos"
+    ],
+    "en": [
+      "Only punish employees",
+      "Verify whether the organization complies with laws and standards",
+      "Create new security policies",
+      "Perform an asset inventory"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Punição não é objetivo da auditoria.",
+      "Auditorias de conformidade avaliam aderência a requisitos externos/internos.",
+      "Auditoria não cria políticas; apenas avalia.",
+      "Inventário pode ser evidência, mas não é a função principal."
+    ],
+    "en": [
+      "Punishment is not the audit’s goal.",
+      "Compliance audits assess adherence to external/internal requirements.",
+      "Audits don’t create policies; they assess them.",
+      "Inventory may be evidence, but not the main function."
+    ]
+  }
+},
+{
+  "id": 112,
+  "q": {
+    "pt": "Qual dos seguintes é um exemplo de controle de segurança física?",
+    "en": "Which of the following is an example of a physical security control?"
+  },
+  "options": {
+    "pt": [
+      "Antivírus instalado",
+      "Firewall de rede",
+      "Câmeras de segurança e controle de acesso",
+      "Política de senha forte"
+    ],
+    "en": [
+      "Installed antivirus",
+      "Network firewall",
+      "Security cameras and access control",
+      "Strong password policy"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Antivírus é controle lógico.",
+      "Firewall é controle de rede (lógico).",
+      "Câmeras e controle de acesso são controles físicos.",
+      "Política de senha é controle administrativo/lógico."
+    ],
+    "en": [
+      "Antivirus is a logical control.",
+      "Firewall is a logical/network control.",
+      "Cameras and access control are physical controls.",
+      "Password policy is administrative/logical."
+    ]
+  }
+},
+{
+  "id": 113,
+  "q": {
+    "pt": "O que é \"segregação de funções\"?",
+    "en": "What is \"segregation of duties\"?"
+  },
+  "options": {
+    "pt": [
+      "Dividir a equipe em grupos menores",
+      "Separar responsabilidades para evitar conflitos de interesse",
+      "Separar as funções de um software",
+      "Separar as funções de um hardware"
+    ],
+    "en": [
+      "Splitting the team into smaller groups",
+      "Separating responsibilities to avoid conflicts of interest",
+      "Separating a software’s functions",
+      "Separating a hardware’s functions"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não é sobre tamanho da equipe.",
+      "Objetiva reduzir fraude/erros ao dividir responsabilidades críticas.",
+      "Não se refere a arquitetura de software.",
+      "Não se refere a hardware."
+    ],
+    "en": [
+      "It’s not about team size.",
+      "It reduces fraud/errors by splitting critical responsibilities.",
+      "Not about software architecture.",
+      "Not about hardware."
+    ]
+  }
+},
+{
+  "id": 114,
+  "q": {
+    "pt": "Qual é a principal função de um firewall de rede?",
+    "en": "What is the primary function of a network firewall?"
+  },
+  "options": {
+    "pt": [
+      "Acelerar o tráfego da internet",
+      "Monitorar e controlar o tráfego de rede",
+      "Fazer backup de dados",
+      "Proteger contra vírus em arquivos"
+    ],
+    "en": [
+      "Speed up internet traffic",
+      "Monitor and control network traffic",
+      "Back up data",
+      "Protect against file viruses"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Desempenho não é a função principal.",
+      "Firewalls aplicam políticas e filtram tráfego.",
+      "Backup é outra função de segurança.",
+      "Antivírus lida com arquivos; firewall lida com tráfego."
+    ],
+    "en": [
+      "Performance is not the main function.",
+      "Firewalls enforce policy and filter traffic.",
+      "Backup is a different security function.",
+      "Antivirus handles files; firewalls handle traffic."
+    ]
+  }
+},
+{
+  "id": 115,
+  "q": {
+    "pt": "Qual das seguintes opções é um controle de segurança tecnológica?",
+    "en": "Which of the following is a technological security control?"
+  },
+  "options": {
+    "pt": [
+      "Acesso biométrico a edifícios",
+      "Criptografia de dados",
+      "Contrato com um fornecedor",
+      "Treinamento de conscientização"
+    ],
+    "en": [
+      "Biometric access to buildings",
+      "Data encryption",
+      "Vendor contract",
+      "Awareness training"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Biometria física é controle físico.",
+      "Criptografia é controle tecnológico/lógico.",
+      "Contrato é controle administrativo/terceiros.",
+      "Treinamento é controle administrativo."
+    ],
+    "en": [
+      "Physical biometrics are physical controls.",
+      "Encryption is a technological/logical control.",
+      "A contract is an administrative/third-party control.",
+      "Training is an administrative control."
+    ]
+  }
 }
 ]
