@@ -34,7 +34,6 @@ const loadErrorEl = document.getElementById('load-error');
 
 // === Utilidades ===
 function getDisplayText(obj, lang) {
-  // Campos multilíngues no JSON: { pt: "...", en: "..." }
   if (!obj) return '';
   if (typeof obj === 'string') return obj;
   if (typeof obj === 'object') {
@@ -44,7 +43,6 @@ function getDisplayText(obj, lang) {
 }
 
 function getOptionsArray(questionObj, lang) {
-  // questionObj.options pode ser {pt:[...], en:[...]} ou array simples
   if (!questionObj || !questionObj.options) return [];
   const opts = Array.isArray(questionObj.options)
     ? questionObj.options
@@ -81,7 +79,6 @@ function buildMenu() {
     const isAnswered = answeredSet.has(i);
 
     if (!qObj || isDisabled) {
-      // não existe no JSON OU foi desabilitada (trap clicada)
       btn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
       btn.disabled = true;
     } else {
@@ -136,7 +133,6 @@ async function loadQuestions() {
 
     allQuestions = data;
 
-    // Mapear para índices 0..449 conforme id (1..450)
     questionByIndex = new Array(450).fill(null);
     for (const q of allQuestions) {
       if (typeof q.id === 'number' && q.id >= 1 && q.id <= 450) {
@@ -158,7 +154,6 @@ function loadQuestion(index) {
   const qObj = questionByIndex[index];
   if (!qObj) { showStartPage(); return; }
 
-  // Número da pergunta (usa id do JSON se tiver; senão, index+1)
   const displayId = (typeof qObj.id === 'number') ? qObj.id : (index + 1);
   if (questionNumberEl) {
     questionNumberEl.textContent = (currentLang === 'en')
@@ -166,21 +161,18 @@ function loadQuestion(index) {
       : `Pergunta ${displayId}`;
   }
 
-  // Se for TRAP: mostra a tela de trap e remove do menu em seguida
   if (isTrap(qObj)) {
     showQuizArea();
     renderTrap(qObj);
-    // desabilita no menu (some quando voltar)
     disabledIndices.add(index);
     return;
   }
 
-  // Pergunta normal
   showQuizArea();
   renderQuestion(qObj);
 }
 
-// Renderiza TRAP (phishing)
+// === Renderiza TRAP (phishing) ===
 function renderTrap(qObj) {
   questionText.textContent = '';
   optionsContainer.innerHTML = '';
@@ -191,21 +183,25 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
+  // Texto vermelho destacado
   questionText.textContent = msg;
+  questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
+  // Imagem centralizada
   if (qObj.image) {
     const img = document.createElement('img');
     img.src = qObj.image;
     img.alt = 'phishing';
-    img.className = 'mt-2 max-h-72 object-contain rounded-lg border';
+    img.className = 'mt-4 max-h-72 object-contain rounded-lg border mx-auto block';
     optionsContainer.appendChild(img);
   }
 }
 
-// Renderiza pergunta e opções
+// === Renderiza pergunta normal ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
+  questionText.className = 'text-xl font-semibold text-gray-800 bg-blue-50 p-4 rounded-lg border border-blue-200';
 
   optionsContainer.innerHTML = '';
   feedbackContainer.classList.add('hidden');
@@ -216,7 +212,6 @@ function renderQuestion(qObj) {
   const rats = getRationalesArray(qObj, currentLang);
   const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
 
-  // Embaralha opções preservando índice original
   const shuffled = opts.map((t, i) => ({ text: t, idx: i }))
     .sort(() => Math.random() - 0.5);
 
@@ -229,14 +224,12 @@ function renderQuestion(qObj) {
   });
 }
 
-// Verifica resposta
+// === Verifica resposta ===
 function checkAnswer(selectedButton, selectedIdx, ctx) {
-  // Marca como respondida somente ao responder
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
   }
 
-  // Desabilita botões
   document.querySelectorAll('.answer-button').forEach(btn => {
     btn.disabled = true;
     btn.classList.remove('hover:bg-blue-50');
@@ -254,7 +247,6 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
 
-    // Destaca a correta
     const correctText = ctx.opts[ctx.correctIndex];
     document.querySelectorAll('.answer-button').forEach(btn => {
       if (btn.textContent === correctText) {
@@ -269,7 +261,6 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     feedbackTitle.className = 'text-lg font-bold text-red-700';
   }
 
-  // Mostra justificativa (a do índice correto)
   const rationale = ctx.rats[ctx.correctIndex] || '';
   feedbackRationale.textContent = rationale;
   feedbackContainer.classList.remove('hidden');
@@ -282,11 +273,9 @@ function wireEvents() {
   backTopBtn.addEventListener('click', () => showStartPage());
   backBottomBtn.addEventListener('click', () => showStartPage());
 
-  // Idioma global: atualiza a pergunta exibida (se houver) e os rótulos
   globalLangSel.addEventListener('change', (e) => {
     currentLang = e.target.value;
 
-    // Atualiza rótulo/número da pergunta
     if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
       const qObj = questionByIndex[currentQuestionIndex];
       if (qObj) {
@@ -307,14 +296,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
   } finally {
-    // mostra login por padrão
     loginPage.classList.remove('hidden');
     startPage.classList.add('hidden');
     quizArea.classList.add('hidden');
 
-    // seletor global inicia no idioma default
     globalLangSel.value = currentLang;
-
     wireEvents();
   }
 });
