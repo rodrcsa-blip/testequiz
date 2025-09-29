@@ -1,335 +1,362 @@
-// ===============================
-// app.js — Quiz PT/EN com JSON + Trap (Phishing) + Imagens
-//  (modificado para "sumir" trap após clique)
-// ===============================
-
-let rawQuestions = [];
-let currentLang = 'pt';
+// === Estado global ===
+let currentLang = 'pt'; // 'pt' | 'en'
+let allQuestions = [];  // array carregado do questions.json (pode estar fora de ordem)
+let questionByIndex = []; // array de 0..449 com perguntas ou null
+let answeredSet = new Set(); // índices (0-based) das perguntas respondidas
+let disabledIndices = new Set(); // traps clicadas/itens removidos do menu
 let currentQuestionIndex = -1;
-const answeredQuestions = new Set();
 
-const els = {
-  headerSubtitle: document.getElementById('header-subtitle'),
-  loginPage: document.getElementById('login-page'),
-  startPage: document.getElementById('start-page'),
-  quizArea: document.getElementById('quiz-area'),
-  menuOptions: document.getElementById('menu-options'),
-  optionsContainer: document.getElementById('options-container'),
-  feedbackContainer: document.getElementById('feedback-container'),
-  feedbackTitle: document.getElementById('feedback-title'),
-  feedbackRationale: document.getElementById('feedback-rationale'),
-  backBtn: document.getElementById('back-to-menu-button'),
-  loginButton: document.getElementById('login-button'),
-  loginError: document.getElementById('login-error'),
-  questionText: document.getElementById('question-text'),
-  menuTitle: document.getElementById('menu-title'),
-  menuRange: document.getElementById('menu-range'),
-  langLabel: document.getElementById('lang-label'),
-  langSelect: document.getElementById('lang-select'),
-  langLabelInQuestion: document.getElementById('lang-label-in-question'),
-  langSelectInQuestion: document.getElementById('lang-select-in-question'),
-};
+// === Referências de elementos ===
+const loginPage = document.getElementById('login-page');
+const startPage = document.getElementById('start-page');
+const quizArea = document.getElementById('quiz-area');
 
-function t() {
-  return currentLang === 'en'
-    ? {
-        select: "Select a question",
-        subtitle: "Pick a question to test your knowledge.",
-        correct: "Correct!",
-        incorrect: "Incorrect. Review the rationale:",
-        back: "Back to Menu",
-        loginError: "Please enter a username.",
-        lang: "Language",
-        comingSoon: "Coming soon",
-        trapTitle: "YOU FELL FOR PHISHING! TRY AGAIN LATER!",
-      }
-    : {
-        select: "Selecione a Pergunta",
-        subtitle: "Selecione uma pergunta para testar seus conhecimentos.",
-        correct: "Correto!",
-        incorrect: "Incorreto. Revise a justificativa:",
-        back: "Voltar ao Menu",
-        loginError: "Por favor, insira um nome de usuário.",
-        lang: "Idioma",
-        comingSoon: "Em breve",
-        trapTitle: "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
-      };
+const headerSubtitle = document.getElementById('header-subtitle');
+
+const loginButton = document.getElementById('login-button');
+const loginError = document.getElementById('login-error');
+
+const menuOptions = document.getElementById('menu-options');
+const globalLangSel = document.getElementById('global-lang');
+const menuLangSel = document.getElementById('menu-lang');
+
+const backTopBtn = document.getElementById('back-to-menu-top');
+const backBottomBtn = document.getElementById('back-to-menu-bottom');
+
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const feedbackContainer = document.getElementById('feedback-container');
+const feedbackTitle = document.getElementById('feedback-title');
+const feedbackRationale = document.getElementById('feedback-rationale');
+
+const questionNumberEl = document.getElementById('question-number');
+const questionLangSel = document.getElementById('question-lang');
+
+const loadErrorEl = document.getElementById('load-error');
+
+// === Utilidades ===
+function normalizeToIndex(idOrNumber) {
+  // O menu vai de 1..450, índice interno 0..449
+  if (typeof idOrNumber === 'number') return idOrNumber - 1;
+  return NaN;
 }
 
-function updateUIStrings() {
-  const tt = t();
-  if (els.menuTitle) els.menuTitle.textContent = tt.select;
-  if (els.menuRange) els.menuRange.textContent = '(1–450)'; // faixa fixa
-  if (els.headerSubtitle) els.headerSubtitle.textContent = tt.subtitle;
-  if (els.backBtn) els.backBtn.textContent = tt.back;
-  if (els.langLabel) els.langLabel.textContent = tt.lang;
-  if (els.langLabelInQuestion) els.langLabelInQuestion.textContent = tt.lang;
+function getDisplayText(obj, lang) {
+  // Campos multilíngues no JSON são do tipo: { pt: "...", en: "..." }
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  if (typeof obj === 'object') {
+    return obj[lang] ?? obj['pt'] ?? '';
+  }
+  return '';
 }
 
-function qToInternal(q) {
-  const opts = (q.options && (q.options[currentLang] || q.options.pt)) || [];
-  const rats = (q.rationales && (q.rationales[currentLang] || q.rationales.pt)) || [];
-  return {
-    id: q.id,
-    question: (q.q && (q.q[currentLang] || q.q.pt)) || '',
-    options: opts.map((text, i) => ({
-      text,
-      isCorrect: i === q.correctIndex,
-      rationale: rats[i] || ''
-    })),
-    image: q.image || null
-  };
+function getOptionsArray(questionObj, lang) {
+  // questionObj.options pode ser {pt:[...], en:[...]} ou já um array simples (legado)
+  if (!questionObj || !questionObj.options) return [];
+  const opts = Array.isArray(questionObj.options) ? questionObj.options : questionObj.options[lang] || questionObj.options['pt'] || [];
+  return opts;
 }
 
-async function loadQuestions() {
-  const res = await fetch('./questions.json?v=2');
-  if (!res.ok) throw new Error('Falha ao carregar questions.json');
-  rawQuestions = await res.json();
-  if (!Array.isArray(rawQuestions)) throw new Error('questions.json inválido: esperado um array');
+function getRationalesArray(questionObj, lang) {
+  if (!questionObj || !questionObj.rationales) return [];
+  const rats = Array.isArray(questionObj.rationales) ? questionObj.rationales : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
+  return rats;
 }
 
-/* ===== Helpers para marcar e atualizar botão no menu ===== */
+function isTrap(questionObj) {
+  return questionObj && questionObj.trap === 'phishing';
+}
 
-// Marca internamente e atualiza o botão do menu correspondente (se existir no DOM)
-function markQuestionAsAnswered(idx) {
-  if (idx == null || idx < 0) return;
-  answeredQuestions.add(idx);
+// === Construção do menu ===
+function buildMenu() {
+  menuOptions.innerHTML = '';
+  const TOTAL = 450;
 
-  // Atualiza visual do botão (se o menu já estiver renderizado)
-  if (els.menuOptions) {
-    const buttons = els.menuOptions.querySelectorAll('button');
-    const btn = buttons[idx]; // posição corresponde ao índice (1..450)
-    if (btn) {
+  for (let i = 0; i < TOTAL; i++) {
+    const btn = document.createElement('button');
+    const labelNum = i + 1;
+
+    btn.textContent = labelNum.toString();
+    btn.className = 'menu-item-button py-2 text-center text-sm font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-4';
+
+    const qObj = questionByIndex[i];
+
+    const isDisabled = disabledIndices.has(i);
+    const isAnswered = answeredSet.has(i);
+
+    if (!qObj || isDisabled) {
+      // não existe no JSON OU foi desabilitada (trap clicada)
+      btn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
       btn.disabled = true;
-      // remove classes de ativo e aplica classes de respondido/desabilitado
-      btn.classList.remove('bg-blue-500', 'hover:bg-blue-600', 'focus:ring-blue-300');
-      btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
-    }
-  }
-}
-
-/* ===== Render do menu ===== */
-
-function showStartPage() {
-  els.loginPage?.classList.add('hidden');
-  els.quizArea.classList.add('hidden');
-  els.startPage.classList.remove('hidden');
-  els.feedbackContainer.classList.add('hidden');
-  currentQuestionIndex = -1;
-
-  els.menuOptions.innerHTML = '';
-  const totalButtons = 450;
-  const available = rawQuestions.length;
-  const tt = t();
-
-  for (let i = 1; i <= totalButtons; i++) {
-    const button = document.createElement('button');
-    const questionIndex = i - 1;
-    const isAnswered = answeredQuestions.has(questionIndex);
-    const isAvailable = i <= available;
-
-    button.textContent = String(i);
-    button.className =
-      'menu-item-button py-2 text-center text-sm font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-4';
-
-    if (isAvailable) {
-      if (isAnswered) {
-        button.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
-        button.disabled = true;
-      } else {
-        button.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-600', 'focus:ring-blue-300');
-        button.onclick = () => loadQuestion(questionIndex);
-      }
     } else {
-      button.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
-      button.disabled = true;
-      button.title = tt.comingSoon;
+      if (isAnswered) {
+        btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
+        btn.disabled = true;
+      } else {
+        btn.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-600', 'focus:ring-blue-300');
+        btn.disabled = false;
+        btn.onclick = () => loadQuestion(i);
+      }
     }
-
-    els.menuOptions.appendChild(button);
+    menuOptions.appendChild(btn);
   }
-
-  updateUIStrings();
 }
 
-/* ===== Render de pergunta / trap ===== */
+// === Login ===
+function handleLogin() {
+  const username = document.getElementById('username').value;
+  if (username.trim() !== '') {
+    loginPage.classList.add('hidden');
+    headerSubtitle.textContent = "Selecione uma pergunta para testar seus conhecimentos sobre estratégia e responsabilidades de segurança da informação.";
+    showStartPage();
+    loginError.classList.add('hidden');
+  } else {
+    loginError.classList.remove('hidden');
+  }
+}
 
+// === Páginas ===
+function showStartPage() {
+  loginPage.classList.add('hidden');
+  startPage.classList.remove('hidden');
+  quizArea.classList.add('hidden');
+  feedbackContainer.classList.add('hidden');
+  currentQuestionIndex = -1;
+  buildMenu();
+}
+
+function showQuizArea() {
+  startPage.classList.add('hidden');
+  quizArea.classList.remove('hidden');
+}
+
+// === Carregamento de perguntas (questions.json) ===
+async function loadQuestions() {
+  try {
+    const resp = await fetch('questions.json', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    if (!Array.isArray(data)) throw new Error('JSON não é um array');
+
+    allQuestions = data;
+
+    // Mapear para índices 0..449 conforme id (1..450)
+    questionByIndex = new Array(450).fill(null);
+    for (const q of allQuestions) {
+      if (typeof q.id === 'number' && q.id >= 1 && q.id <= 450) {
+        const idx = q.id - 1;
+        questionByIndex[idx] = q;
+      }
+    }
+
+    loadErrorEl.classList.add('hidden');
+  } catch (e) {
+    console.error('Falha ao carregar questions.json', e);
+    loadErrorEl.classList.remove('hidden');
+  }
+}
+
+// === Renderização de pergunta ===
 function loadQuestion(index) {
   currentQuestionIndex = index;
-  const currentRaw = rawQuestions[index];
-  if (!currentRaw) return showStartPage();
+  const qObj = questionByIndex[index];
+  if (!qObj) { showStartPage(); return; }
 
-  // Se for uma TRAP (campo minado)
-  if (currentRaw.trap === 'phishing') {
-    // Marca como respondida para que suma da seleção
-    markQuestionAsAnswered(index);
-    renderTrap(currentRaw);
+  // Número da pergunta (usa id do JSON se tiver; senão, index+1)
+  const displayId = (typeof qObj.id === 'number') ? qObj.id : (index + 1);
+  if (questionNumberEl) {
+    questionNumberEl.textContent = (currentLang === 'en')
+      ? `Question ${displayId}`
+      : `Pergunta ${displayId}`;
+  }
+
+  // Se for TRAP: mostra a tela de trap e remove do menu em seguida
+  if (isTrap(qObj)) {
+    showQuizArea();
+    renderTrap(qObj);
+    // marcar como desabilitada para sumir do menu
+    disabledIndices.add(index);
+    // não marca como respondida (não é uma resposta), só desabilita
     return;
   }
 
-  // Caso contrário: pergunta normal
-  const currentQuiz = qToInternal(currentRaw);
+  // Pergunta normal
+  showQuizArea();
+  renderQuestion(qObj);
+}
 
-  els.startPage.classList.add('hidden');
-  els.quizArea.classList.remove('hidden');
-  syncLanguageSelectors();
+// Renderiza TRAP (phishing)
+function renderTrap(qObj) {
+  // Zera área
+  questionText.textContent = '';
+  optionsContainer.innerHTML = '';
+  feedbackContainer.classList.add('hidden');
 
-  // Limpa área e coloca o enunciado
-  els.questionText.innerHTML = '';
-  const title = document.createElement('div');
-  title.textContent = currentQuiz.question;
-  els.questionText.appendChild(title);
+  const msg = getDisplayText(qObj.trapMessage, currentLang) || (currentLang === 'en'
+    ? 'YOU FELL FOR PHISHING! TRY AGAIN LATER!'
+    : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
+  );
 
-  // Imagem (opcional) da pergunta normal
-  if (currentQuiz.image) {
+  // Título com mensagem
+  questionText.textContent = msg;
+
+  // Mostra imagem se houver
+  if (qObj.image) {
     const img = document.createElement('img');
-    img.src = currentQuiz.image;
-    img.alt = "Imagem da questão";
-    img.className = "my-4 max-h-64 mx-auto rounded shadow";
-    els.questionText.appendChild(img);
+    img.src = qObj.image;
+    img.alt = 'phishing';
+    img.className = 'mt-2 max-h-72 object-contain rounded-lg border';
+    optionsContainer.appendChild(img);
   }
 
-  els.optionsContainer.innerHTML = '';
-  els.feedbackContainer.classList.add('hidden');
+  // Como é trap, não há respostas. Usuário pode voltar ao menu pelos botões
+}
 
-  const shuffled = [...currentQuiz.options].sort(() => Math.random() - 0.5);
-  shuffled.forEach((option) => {
-    const btn = document.createElement('button');
-    btn.textContent = option.text;
-    btn.className =
-      'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
-    btn.onclick = () => checkAnswer(btn, option, currentQuiz.options);
-    els.optionsContainer.appendChild(btn);
+// Renderiza pergunta e opções
+function renderQuestion(qObj) {
+  const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
+  questionText.textContent = qText;
+
+  optionsContainer.innerHTML = '';
+  feedbackContainer.classList.add('hidden');
+  feedbackTitle.textContent = '';
+  feedbackRationale.textContent = '';
+
+  const opts = getOptionsArray(qObj, currentLang);
+  const rats = getRationalesArray(qObj, currentLang);
+  const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
+
+  // Embaralha opções preservando índice original
+  const shuffled = opts.map((t, i) => ({ text: t, idx: i }))
+    .sort(() => Math.random() - 0.5);
+
+  shuffled.forEach(({ text, idx }) => {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
+    button.onclick = () => checkAnswer(button, idx, { correctIndex, rats, opts });
+    optionsContainer.appendChild(button);
   });
 }
 
-function renderTrap(qRaw) {
-  els.startPage.classList.add('hidden');
-  els.quizArea.classList.remove('hidden');
-  syncLanguageSelectors();
-
-  const msg = (qRaw.trapMessage && (qRaw.trapMessage[currentLang] || qRaw.trapMessage.pt)) || t().trapTitle;
-
-  els.questionText.innerHTML = '';
-  const msgEl = document.createElement('div');
-  msgEl.textContent = msg;
-  msgEl.className = 'text-center text-xl font-extrabold text-red-700';
-  els.questionText.appendChild(msgEl);
-
-  if (qRaw.image) {
-    const img = document.createElement('img');
-    img.src = qRaw.image;
-    img.alt = "Phishing";
-    img.className = 'my-6 max-h-72 mx-auto rounded shadow';
-    els.questionText.appendChild(img);
+// Verifica resposta
+function checkAnswer(selectedButton, selectedIdx, ctx) {
+  // Marcar como respondida somente ao responder
+  if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
+    answeredSet.add(currentQuestionIndex);
   }
 
-  // Não há opções; feedback oculto
-  els.optionsContainer.innerHTML = '';
-  els.feedbackContainer.classList.add('hidden');
-}
-
-/* ===== Resposta normal (marca como respondida e atualiza botão) ===== */
-
-function checkAnswer(selectedButton, selectedOption, allOptions) {
-  if (currentQuestionIndex !== -1) {
-    // Ao responder, marca e atualiza visual do menu
-    markQuestionAsAnswered(currentQuestionIndex);
-  }
-
-  document.querySelectorAll('.answer-button').forEach((b) => {
-    b.disabled = true;
-    b.classList.remove('hover:bg-blue-50');
+  // Desabilita botões
+  document.querySelectorAll('.answer-button').forEach(btn => {
+    btn.disabled = true;
+    btn.classList.remove('hover:bg-blue-50');
   });
 
-  const tt = t();
+  const isCorrect = selectedIdx === ctx.correctIndex;
 
-  if (selectedOption.isCorrect) {
+  if (isCorrect) {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
-    els.feedbackContainer.className =
-      'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
-    els.feedbackTitle.textContent = tt.correct;
-    els.feedbackTitle.className = 'text-lg font-bold text-green-700';
+    feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
+    feedbackTitle.textContent = (currentLang === 'en') ? 'Correct!' : 'Correto!';
+    feedbackTitle.className = 'text-lg font-bold text-green-700';
   } else {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
 
-    const correct = allOptions.find((o) => o.isCorrect);
-    document.querySelectorAll('.answer-button').forEach((b) => {
-      if (b.textContent === correct.text) {
-        b.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
+    // Destaca a correta
+    const correctText = ctx.opts[ctx.correctIndex];
+    document.querySelectorAll('.answer-button').forEach(btn => {
+      if (btn.textContent === correctText) {
+        btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
       }
     });
 
-    els.feedbackContainer.className =
-      'mt-6 p-4 rounded-lg border-l-4 bg-red-50 border-red-500';
-    els.feedbackTitle.textContent = tt.incorrect;
-    els.feedbackTitle.className = 'text-lg font-bold text-red-700';
+    feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-red-50 border-red-500';
+    feedbackTitle.textContent = (currentLang === 'en')
+      ? 'Incorrect. Review the rationale:'
+      : 'Incorreto. Revise a justificativa:';
+    feedbackTitle.className = 'text-lg font-bold text-red-700';
   }
 
-  els.feedbackRationale.textContent = selectedOption.rationale || '';
-  els.feedbackContainer.classList.remove('hidden');
+  // Mostra justificativa
+  const rationale = ctx.rats[ctx.correctIndex] || '';
+  feedbackRationale.textContent = rationale;
+  feedbackContainer.classList.remove('hidden');
+
+  // Depois de responder, no retorno ao menu o botão ficará desabilitado
 }
 
-/* ===== Eventos e utilitários ===== */
+// === Navegação ===
+function wireEvents() {
+  loginButton.addEventListener('click', handleLogin);
 
-els.backBtn?.addEventListener('click', showStartPage);
+  backTopBtn.addEventListener('click', () => showStartPage());
+  backBottomBtn.addEventListener('click', () => showStartPage());
 
-function handleLogin() {
-  const username = document.getElementById('username')?.value || '';
-  if (username.trim()) {
-    els.loginError?.classList.add('hidden');
-    showStartPage();
-  } else {
-    if (els.loginError) {
-      els.loginError.textContent = t().loginError;
-      els.loginError.classList.remove('hidden');
+  // Idioma global sincroniza com menu e pergunta
+  globalLangSel.addEventListener('change', (e) => {
+    currentLang = e.target.value;
+    menuLangSel.value = currentLang;
+    questionLangSel.value = currentLang;
+    // re-render se estiver no quiz
+    if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
+      const qObj = questionByIndex[currentQuestionIndex];
+      if (qObj) {
+        // Atualiza o número com label correto (Question/Pergunta)
+        const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
+        if (questionNumberEl) {
+          questionNumberEl.textContent = (currentLang === 'en')
+            ? `Question ${displayId}`
+            : `Pergunta ${displayId}`;
+        }
+        isTrap(qObj) ? renderTrap(qObj) : renderQuestion(qObj);
+      }
     }
-  }
+  });
+
+  // Menu idioma: só muda a linguagem usada ao renderizar pergunta
+  menuLangSel.addEventListener('change', (e) => {
+    currentLang = e.target.value;
+    globalLangSel.value = currentLang;
+    questionLangSel.value = currentLang;
+  });
+
+  // Idioma dentro da pergunta
+  questionLangSel.addEventListener('change', (e) => {
+    currentLang = e.target.value;
+    globalLangSel.value = currentLang;
+    menuLangSel.value = currentLang;
+    // Re-render da pergunta atual
+    if (currentQuestionIndex >= 0) {
+      const qObj = questionByIndex[currentQuestionIndex];
+      if (qObj) {
+        const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
+        if (questionNumberEl) {
+          questionNumberEl.textContent = (currentLang === 'en')
+            ? `Question ${displayId}`
+            : `Pergunta ${displayId}`;
+        }
+        isTrap(qObj) ? renderTrap(qObj) : renderQuestion(qObj);
+      }
+    }
+  });
 }
-els.loginButton?.addEventListener('click', handleLogin);
 
-function setLanguage(lang) {
-  if (lang !== 'pt' && lang !== 'en') return;
-  currentLang = lang;
-  if (els.langSelect && els.langSelect.value !== lang) els.langSelect.value = lang;
-  if (els.langSelectInQuestion && els.langSelectInQuestion.value !== lang) els.langSelectInQuestion.value = lang;
-
-  updateUIStrings();
-
-  if (!els.startPage.classList.contains('hidden')) {
-    // nada além das labels
-  } else if (!els.quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
-    // Recarrega a questão atual para refletir idioma (inclui trap/normal)
-    loadQuestion(currentQuestionIndex);
-  }
-}
-
-function syncLanguageSelectors() {
-  if (els.langSelect && els.langSelectInQuestion) {
-    els.langSelect.value = currentLang;
-    els.langSelectInQuestion.value = currentLang;
-  }
-}
-
-els.langSelect?.addEventListener('change', (e) => setLanguage(e.target.value));
-els.langSelectInQuestion?.addEventListener('change', (e) => setLanguage(e.target.value));
-
-/* ===== Inicialização ===== */
-
+// === Bootstrap ===
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
-    updateUIStrings();
-    showStartPage();
-  } catch (e) {
-    if (els.headerSubtitle) {
-      els.headerSubtitle.textContent =
-        currentLang === 'en'
-          ? 'Failed to load questions. Check questions.json.'
-          : 'Erro ao carregar as perguntas. Verifique o questions.json.';
-    }
-    console.error(e);
+  } finally {
+    // mostra login por padrão
+    loginPage.classList.remove('hidden');
+    startPage.classList.add('hidden');
+    quizArea.classList.add('hidden');
+    // sincronia de seletores
+    menuLangSel.value = currentLang;
+    questionLangSel.value = currentLang;
+    globalLangSel.value = currentLang;
+    wireEvents();
   }
 });
