@@ -1410,5 +1410,339 @@
       "Training is required in any case."
     ]
   }
+},
+  {
+  "id": 42,
+  "q": {
+    "pt": "Que documento fornece a orientação detalhada de 'como fazer' para implementar a Política de Segurança da Informação?",
+    "en": "Which document provides the detailed 'how-to' guidance to implement the Information Security Policy?"
+  },
+  "options": {
+    "pt": [
+      "Relatórios de Conformidade.",
+      "Procedimentos de Segurança.",
+      "Metas de Negócios.",
+      "Contratos de Fornecedores."
+    ],
+    "en": [
+      "Compliance Reports.",
+      "Security Procedures.",
+      "Business Goals.",
+      "Vendor Contracts."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Relatórios resumem status, não instruem implementação.",
+      "Procedimentos são instruções passo a passo para aplicar políticas e padrões.",
+      "Metas de negócios definem o 'porquê', não o 'como'.",
+      "Contratos tratam de acordos externos, não de implementação interna."
+    ],
+    "en": [
+      "Reports summarize status; they don’t instruct implementation.",
+      "Procedures are step-by-step instructions to apply policies and standards.",
+      "Business goals define the 'why', not the 'how'.",
+      "Contracts cover external agreements, not internal implementation."
+    ]
+  }
+},
+{
+  "id": 43,
+  "q": {
+    "pt": "Por que um inventário de todos os ativos da empresa é crucial para a Segurança da Informação?",
+    "en": "Why is an inventory of all company assets crucial for Information Security?"
+  },
+  "options": {
+    "pt": [
+      "Para calcular depreciação contábil.",
+      "Porque você não pode proteger o que não sabe que possui.",
+      "Para reduzir espaço físico.",
+      "Para atribuir um laptop exclusivo a cada funcionário."
+    ],
+    "en": [
+      "To calculate accounting depreciation.",
+      "Because you cannot protect what you don’t know you have.",
+      "To reduce physical space.",
+      "To assign each employee a unique laptop."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Isso é objetivo da contabilidade, não da segurança.",
+      "O inventário define o perímetro de segurança: só é possível proteger o que está mapeado.",
+      "Gerenciamento de inventário não reduz espaço físico.",
+      "Atribuir equipamentos é provisão de TI, não controle de segurança."
+    ],
+    "en": [
+      "That’s accounting, not security.",
+      "Inventory defines the security perimeter: you can only protect what you know exists.",
+      "Inventory management doesn’t reduce physical space.",
+      "Assigning equipment is IT provisioning, not a security control."
+    ]
+  }
+},
+{
+  "id": 44,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 45,
+  "q": {
+    "pt": "Qual é o principal objetivo de uma auditoria de terceiros (ex.: SOC 2) em TPRM?",
+    "en": "What is the main objective of a third-party audit (e.g., SOC 2) in TPRM?"
+  },
+  "options": {
+    "pt": [
+      "Substituir a equipe de segurança interna.",
+      "Fornecer garantia independente sobre os controles do fornecedor.",
+      "Forçar uso de software específico.",
+      "Suspender imediatamente o contrato."
+    ],
+    "en": [
+      "Replace the internal security team.",
+      "Provide independent assurance of the vendor’s controls.",
+      "Force use of a specific software.",
+      "Immediately suspend the contract."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Auditorias dão garantia, não substituem a equipe interna.",
+      "O objetivo é assegurar que os controles do fornecedor são eficazes.",
+      "Auditorias avaliam conformidade, não impõem tecnologias.",
+      "Suspensão é decisão de risco, não objetivo da auditoria."
+    ],
+    "en": [
+      "Audits provide assurance, they don’t replace internal teams.",
+      "The goal is to ensure vendor controls are effective.",
+      "Audits assess compliance, not dictate technology.",
+      "Suspension is a risk decision, not the audit’s purpose."
+    ]
+  }
+},
+{
+  "id": 46,
+  "q": {
+    "pt": "A que se refere o termo 'Linha de Base de Segurança'?",
+    "en": "What does the term 'Security Baseline' refer to?"
+  },
+  "options": {
+    "pt": [
+      "Nível máximo de risco aceitável.",
+      "Um documento de política de alto nível.",
+      "Configuração mínima obrigatória de segurança.",
+      "Custo total do orçamento anual de segurança."
+    ],
+    "en": [
+      "The maximum acceptable risk level.",
+      "A high-level policy document.",
+      "The minimum mandatory security configuration.",
+      "The total annual security budget."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Isso é tolerância ao risco, não baseline técnica.",
+      "Baseline é detalhada e técnica, não apenas política.",
+      "Baseline garante consistência mínima em todos os sistemas.",
+      "Isso é finanças, não configuração técnica."
+    ],
+    "en": [
+      "That’s risk tolerance, not a baseline.",
+      "Baseline is detailed and technical, not just policy.",
+      "Baseline ensures a minimum level of consistency across systems.",
+      "That’s budgeting, not configuration."
+    ]
+  }
+},
+{
+  "id": 47,
+  "q": {
+    "pt": "Que equipe é responsável pelo monitoramento contínuo e detecção de ameaças?",
+    "en": "Which team is responsible for continuous monitoring and threat detection?"
+  },
+  "options": {
+    "pt": [
+      "Equipe de Recuperação de Desastres.",
+      "Centro de Operações de Segurança (SOC).",
+      "Equipe de Auditoria Interna.",
+      "Recursos Humanos."
+    ],
+    "en": [
+      "Disaster Recovery Team.",
+      "Security Operations Center (SOC).",
+      "Internal Audit Team.",
+      "Human Resources."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Recuperação atua após incidentes.",
+      "SOC é responsável por monitorar, detectar e responder a incidentes.",
+      "Auditoria verifica conformidade, não faz monitoramento contínuo.",
+      "RH cuida de pessoal, não monitora ameaças."
+    ],
+    "en": [
+      "Recovery acts after incidents.",
+      "SOC monitors, detects, and responds to incidents.",
+      "Audit verifies compliance, not continuous monitoring.",
+      "HR handles personnel, not threats."
+    ]
+  }
+},
+{
+  "id": 48,
+  "q": {
+    "pt": "Com que frequência o treinamento de conscientização em segurança deve ser fornecido a todos os funcionários?",
+    "en": "How often should security awareness training be provided to all employees?"
+  },
+  "options": {
+    "pt": [
+      "Apenas no onboarding.",
+      "A cada três anos.",
+      "Anualmente e em mudanças significativas.",
+      "Apenas para a equipe de segurança."
+    ],
+    "en": [
+      "Only during onboarding.",
+      "Every three years.",
+      "Annually and upon significant changes.",
+      "Only for the security team."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Onboarding é insuficiente para ameaças em evolução.",
+      "Três anos é muito infrequente.",
+      "Prática recomendada: anual e em mudanças significativas.",
+      "Segurança é responsabilidade de todos, não só do time de segurança."
+    ],
+    "en": [
+      "Onboarding alone is insufficient.",
+      "Three years is too infrequent.",
+      "Best practice: annually and upon significant changes.",
+      "Security is everyone’s responsibility."
+    ]
+  }
+},
+{
+  "id": 49,
+  "q": {
+    "pt": "Qual é a consequência de não abrir um ticket formal de rescisão para um fornecedor desligado?",
+    "en": "What is the consequence of not opening a formal termination ticket for a disengaged vendor?"
+  },
+  "options": {
+    "pt": [
+      "O contrato é renovado automaticamente.",
+      "O fornecedor pode manter acessos desnecessários, gerando risco.",
+      "O Dono do Contrato deve pagar multa.",
+      "O Jurídico é notificado automaticamente."
+    ],
+    "en": [
+      "The contract auto-renews.",
+      "The vendor may retain unnecessary access, creating risk.",
+      "The Contract Owner must pay a fine.",
+      "Legal is automatically notified."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Renovação automática é processo separado.",
+      "O maior risco é o fornecedor manter acessos ativos indevidamente.",
+      "Multa não é a consequência primária.",
+      "Sem ticket, não há notificação automática."
+    ],
+    "en": [
+      "Auto-renewal is a separate process.",
+      "The biggest risk is the vendor retaining active access.",
+      "A fine is not the primary consequence.",
+      "Without a ticket, no automatic notifications occur."
+    ]
+  }
+},
+{
+  "id": 50,
+  "q": {
+    "pt": "Qual é o papel da equipe de Segurança da Informação na aquisição de novo software?",
+    "en": "What is the role of the InfoSec team in the acquisition of new software?"
+  },
+  "options": {
+    "pt": [
+      "Negociar preço com o fornecedor.",
+      "Realizar revisão e avaliação de segurança do software.",
+      "Dar aprovação final do orçamento.",
+      "Escrever manual de treinamento do usuário."
+    ],
+    "en": [
+      "Negotiate price with the vendor.",
+      "Perform a security review and assessment of the software.",
+      "Give final budget approval.",
+      "Write the end-user training manual."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Negociação é responsabilidade de Compras.",
+      "InfoSec revisa segurança e integração do software.",
+      "Orçamento é de responsabilidade do Financeiro.",
+      "Treinamento é feito pela área usuária ou TI."
+    ],
+    "en": [
+      "Negotiation is Procurement’s responsibility.",
+      "InfoSec reviews software security and integration.",
+      "Finance is responsible for budget approval.",
+      "Training is handled by the business/IT team."
+    ]
+  }
+},
+{
+  "id": 51,
+  "q": {
+    "pt": "Qual é o papel da equipe de Segurança da Informação na aquisição de novo software (não fornecedor de BPO)?",
+    "en": "What is the role of the InfoSec team in acquiring new software (not a BPO vendor)?"
+  },
+  "options": {
+    "pt": [
+      "Negociar preço com o fornecedor.",
+      "Realizar revisão e avaliação de segurança e integração.",
+      "Dar aprovação final do orçamento.",
+      "Escrever manual de treinamento."
+    ],
+    "en": [
+      "Negotiate price with the vendor.",
+      "Perform a security and integration review.",
+      "Provide final budget approval.",
+      "Write the training manual."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Preço é tratado por Compras.",
+      "InfoSec deve revisar segurança e integração.",
+      "Orçamento é tratado pelo Financeiro.",
+      "Treinamento é tratado pela área usuária ou TI."
+    ],
+    "en": [
+      "Pricing is handled by Procurement.",
+      "InfoSec must review security and integration.",
+      "Budget is handled by Finance.",
+      "Training is handled by the business/IT team."
+    ]
+  }
 }
 ]
+
