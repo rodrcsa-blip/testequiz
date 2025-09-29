@@ -1815,5 +1815,806 @@
       "Suspension is a risk decision, not the audit’s purpose."
     ]
   }
+},
+  {
+  "id": 54,
+  "q": {
+    "pt": "O que significa GRC?",
+    "en": "What does GRC stand for?"
+  },
+  "options": {
+    "pt": [
+      "Governança, Regulamentação e Conformidade",
+      "Governança, Risco e Conformidade",
+      "Orientar, Resolver e Colaborar",
+      "Girafas, Rinocerontes e Cachorros"
+    ],
+    "en": [
+      "Governance, Regulation and Compliance",
+      "Governance, Risk and Compliance",
+      "Guide, Resolve and Collaborate",
+      "Giraffes, Rhinos and Cats"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Regulamentação não é o termo usado na sigla.",
+      "Governança, Risco e Conformidade é a definição correta de GRC.",
+      "Uma opção inventada para confundir, não corresponde ao termo real.",
+      "Uma opção de brincadeira, sem relação com o tema."
+    ],
+    "en": [
+      "Regulation is not the term used in the acronym.",
+      "Governance, Risk and Compliance is the correct definition of GRC.",
+      "A distractor option, not the real meaning.",
+      "A joke option, unrelated to the subject."
+    ]
+  }
+},
+{
+  "id": 55,
+  "q": {
+    "pt": "Qual das seguintes opções é um objetivo do Sistema de Gestão de Segurança da Informação (SGSI) da ISO 27001?",
+    "en": "Which of the following is an objective of the Information Security Management System (ISMS) under ISO 27001?"
+  },
+  "options": {
+    "pt": [
+      "Aumentar a receita da empresa",
+      "Melhorar a comunicação interna",
+      "Proteger e gerenciar continuamente os ativos de informação",
+      "Reduzir os custos de licenciamento de software"
+    ],
+    "en": [
+      "Increase company revenue",
+      "Improve internal communication",
+      "Continuously protect and manage information assets",
+      "Reduce software licensing costs"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Receita não é foco do SGSI.",
+      "Comunicação interna pode melhorar, mas não é o objetivo central.",
+      "O SGSI tem como objetivo principal proteger e gerenciar continuamente os ativos de informação.",
+      "Redução de custos não é objetivo primário da norma."
+    ],
+    "en": [
+      "Revenue is not the ISMS focus.",
+      "Internal communication may improve, but it's not the main goal.",
+      "The ISMS’s primary goal is to continuously protect and manage information assets.",
+      "Cost reduction is not the primary purpose of ISO 27001."
+    ]
+  }
+},
+{
+  "id": 56,
+  "q": {
+    "pt": "O que contém o Anexo A da ISO 27001:2022?",
+    "en": "What does Annex A of ISO 27001:2022 contain?"
+  },
+  "options": {
+    "pt": [
+      "Um guia de auditoria financeira",
+      "Uma lista de 93 controles de segurança da informação",
+      "Um plano completo de recuperação de desastres",
+      "Apenas a política de uso de e-mail"
+    ],
+    "en": [
+      "A financial audit guide",
+      "A list of 93 information security controls",
+      "A full disaster recovery plan",
+      "Only the email usage policy"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Auditoria financeira não faz parte da ISO 27001.",
+      "O Anexo A lista os 93 controles de segurança da informação.",
+      "Planos de recuperação fazem parte de continuidade de negócios, não do Anexo A.",
+      "Políticas específicas não são o foco do Anexo A."
+    ],
+    "en": [
+      "Financial auditing is not part of ISO 27001.",
+      "Annex A lists 93 information security controls.",
+      "Disaster recovery is part of business continuity, not Annex A.",
+      "Specific policies are not the focus of Annex A."
+    ]
+  }
+},
+{
+  "id": 57,
+  "q": {
+    "pt": "No contexto da ISO 27001, o que é uma 'declaração de aplicabilidade'?",
+    "en": "In the context of ISO 27001, what is a 'statement of applicability'?"
+  },
+  "options": {
+    "pt": [
+      "Um documento para contratação de novos funcionários",
+      "Um relatório que liste os controles implementados e justifique sua aplicação",
+      "Um guia de boas-vindas para novos funcionários",
+      "Um contrato com um fornecedor de software"
+    ],
+    "en": [
+      "A document for hiring new employees",
+      "A report listing implemented controls and justifying their applicability",
+      "A welcome guide for new employees",
+      "A contract with a software vendor"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Contratação de funcionários não é o foco da ISO 27001.",
+      "A declaração de aplicabilidade documenta quais controles do Anexo A foram implementados e por quê.",
+      "Guias de boas-vindas não fazem parte da norma.",
+      "Contratos com fornecedores não são a finalidade deste documento."
+    ],
+    "en": [
+      "Hiring documents are not part of ISO 27001.",
+      "The SoA documents which Annex A controls are implemented and why.",
+      "Welcome guides are not part of the standard.",
+      "Vendor contracts are not the purpose of this document."
+    ]
+  }
+},
+{
+  "id": 58,
+  "q": {
+    "pt": "O que é um 'controle de acesso lógico'?",
+    "en": "What is a 'logical access control'?"
+  },
+  "options": {
+    "pt": [
+      "Uma porta com fechadura",
+      "Senhas, permissões e autenticação multifator nos sistemas",
+      "Câmeras de segurança",
+      "Um guarda na entrada do prédio"
+    ],
+    "en": [
+      "A door with a lock",
+      "Passwords, permissions, and multifactor authentication in systems",
+      "Security cameras",
+      "A guard at the building entrance"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Isto é um controle físico.",
+      "Senhas, permissões e MFA são exemplos de controles lógicos de acesso.",
+      "Câmeras são controles físicos.",
+      "Um guarda é um controle físico."
+    ],
+    "en": [
+      "That’s a physical control.",
+      "Passwords, permissions, and MFA are examples of logical access controls.",
+      "Cameras are physical controls.",
+      "A guard is a physical control."
+    ]
+  }
+},
+{
+  "id": 59,
+  "q": {
+    "pt": "O que significa o 'princípio do menor privilégio' em segurança da informação?",
+    "en": "What does the 'principle of least privilege' mean in information security?"
+  },
+  "options": {
+    "pt": [
+      "Dar a todos o mesmo nível de acesso",
+      "Limitar o acesso aos sistemas ao estritamente necessário para o trabalho",
+      "Conceder privilégios apenas aos gerentes",
+      "Apenas um conceito teórico sem aplicação prática"
+    ],
+    "en": [
+      "Grant everyone the same level of access",
+      "Restrict access to systems strictly to what is needed for the job",
+      "Grant privileges only to managers",
+      "Only a theoretical concept with no practical use"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não significa acesso igual para todos.",
+      "Menor privilégio garante acesso apenas ao necessário.",
+      "Não é baseado em cargo, mas em função.",
+      "É um conceito prático e essencial."
+    ],
+    "en": [
+      "It does not mean equal access for all.",
+      "Least privilege ensures access only to what is needed.",
+      "It is not based on hierarchy but on function.",
+      "It is a practical and essential concept."
+    ]
+  }
+},
+{
+  "id": 60,
+  "q": {
+    "pt": "O que é a estrutura COSO?",
+    "en": "What is the COSO framework?"
+  },
+  "options": {
+    "pt": [
+      "Uma estrutura de gestão de segurança",
+      "Uma estrutura para gestão de riscos corporativos e controles internos",
+      "Uma estrutura de desenvolvimento de software",
+      "Uma estrutura de auditoria de rede"
+    ],
+    "en": [
+      "A security management framework",
+      "A framework for enterprise risk management and internal controls",
+      "A software development framework",
+      "A network auditing framework"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não é focada apenas em segurança.",
+      "COSO é uma estrutura para gestão de riscos e controles internos.",
+      "Não tem relação com desenvolvimento de software.",
+      "Não é um modelo de auditoria de rede."
+    ],
+    "en": [
+      "Not limited to security.",
+      "COSO is a framework for risk management and internal control.",
+      "Not related to software development.",
+      "Not a network auditing model."
+    ]
+  }
+},
+{
+  "id": 61,
+  "q": {
+    "pt": "Qual das seguintes opções é um componente da estrutura de controle interno do COSO?",
+    "en": "Which of the following is a component of COSO’s internal control framework?"
+  },
+  "options": {
+    "pt": [
+      "Gestão de Projetos",
+      "Avaliação de Riscos",
+      "Desenvolvimento de Produtos",
+      "Estratégia de Marketing"
+    ],
+    "en": [
+      "Project Management",
+      "Risk Assessment",
+      "Product Development",
+      "Marketing Strategy"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Gestão de projetos não é um componente COSO.",
+      "Avaliação de Riscos é um dos cinco componentes principais.",
+      "Desenvolvimento de produtos não é foco do COSO.",
+      "Marketing não faz parte do modelo."
+    ],
+    "en": [
+      "Project management is not a COSO component.",
+      "Risk Assessment is one of the five key components.",
+      "Product development is not a COSO focus.",
+      "Marketing is not part of the model."
+    ]
+  }
+},
+{
+  "id": 62,
+  "q": {
+    "pt": "No COSO, o que significa 'Ambiente de Controle'?",
+    "en": "In COSO, what does 'Control Environment' mean?"
+  },
+  "options": {
+    "pt": [
+      "A localização física do escritório",
+      "O conjunto de regras, valores e ética da organização",
+      "A infraestrutura de rede",
+      "O conjunto de ferramentas de segurança"
+    ],
+    "en": [
+      "The physical office location",
+      "The set of organizational rules, values, and ethics",
+      "The network infrastructure",
+      "The set of security tools"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Ambiente de Controle não é físico.",
+      "É a base cultural e ética que sustenta os controles internos.",
+      "Infraestrutura de rede é TI, não COSO.",
+      "Ferramentas são recursos, não princípios de controle."
+    ],
+    "en": [
+      "Control Environment is not physical.",
+      "It is the cultural and ethical foundation of internal control.",
+      "Network infrastructure is IT, not COSO.",
+      "Tools are resources, not control principles."
+    ]
+  }
+},
+{
+  "id": 63,
+  "q": {
+    "pt": "O que é o componente 'Atividades de Controle' no COSO?",
+    "en": "What is the 'Control Activities' component in COSO?"
+  },
+  "options": {
+    "pt": [
+      "Somente auditoria interna",
+      "Políticas e procedimentos que garantam o cumprimento das diretrizes",
+      "O planejamento financeiro anual",
+      "O plano de carreira dos funcionários"
+    ],
+    "en": [
+      "Only internal audit",
+      "Policies and procedures ensuring directives are carried out",
+      "Annual financial planning",
+      "Employee career plan"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Auditoria é uma forma de monitoramento, não todo o componente.",
+      "Atividades de Controle são políticas e procedimentos que dão execução às diretrizes.",
+      "Planejamento financeiro é gestão, não COSO.",
+      "Plano de carreira não faz parte da estrutura COSO."
+    ],
+    "en": [
+      "Audit is a form of monitoring, not the whole component.",
+      "Control Activities are policies and procedures to enforce directives.",
+      "Financial planning is management, not COSO.",
+      "Career plans are not part of COSO."
+    ]
+  }
+},
+{
+  "id": 64,
+  "q": {
+    "pt": "Qual das seguintes opções é um dos cinco componentes principais do COSO?",
+    "en": "Which of the following is one of the five main components of COSO?"
+  },
+  "options": {
+    "pt": [
+      "Gestão de Contratos",
+      "Ambiente de Controle",
+      "Auditoria Externa",
+      "Planejamento Estratégico"
+    ],
+    "en": [
+      "Contract Management",
+      "Control Environment",
+      "External Audit",
+      "Strategic Planning"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Gestão de contratos não é um dos cinco componentes.",
+      "Ambiente de Controle é um dos pilares do COSO.",
+      "Auditoria Externa não faz parte da estrutura interna.",
+      "Planejamento estratégico é importante, mas não é um dos cinco componentes do COSO."
+    ],
+    "en": [
+      "Contract management is not one of the five components.",
+      "Control Environment is one of COSO’s five pillars.",
+      "External Audit is not part of the internal framework.",
+      "Strategic planning is important, but not one of the five COSO components."
+    ]
+  }
+},
+  {
+  "id": 65,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 66,
+  "q": {
+    "pt": "Qual é o foco principal da Lei SOX (Sarbanes-Oxley)?",
+    "en": "What is the primary focus of the SOX (Sarbanes–Oxley) Act?"
+  },
+  "options": {
+    "pt": [
+      "Privacidade de dados pessoais",
+      "Segurança de rede e firewalls",
+      "Governança corporativa e confiabilidade dos relatórios financeiros",
+      "Gestão de projetos de TI"
+    ],
+    "en": [
+      "Personal data privacy",
+      "Network security and firewalls",
+      "Corporate governance and reliability of financial reporting",
+      "IT project management"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "SOX não é uma lei de privacidade de dados pessoais.",
+      "Controles de rede podem apoiar conformidade, mas não são o foco central.",
+      "SOX foca em governança corporativa e confiabilidade/integraidade dos relatórios financeiros.",
+      "Gestão de projetos de TI não é o objetivo primário da SOX."
+    ],
+    "en": [
+      "SOX is not a personal data privacy law.",
+      "Network controls may support compliance but are not the main focus.",
+      "SOX focuses on corporate governance and the reliability/integrity of financial reporting.",
+      "IT project management is not SOX’s primary objective."
+    ]
+  }
+},
+{
+  "id": 67,
+  "q": {
+    "pt": "O que são 'Controles Gerais de TI' (ITGCs) da perspectiva da SOX?",
+    "en": "From a SOX perspective, what are IT General Controls (ITGCs)?"
+  },
+  "options": {
+    "pt": [
+      "Controles de hardware em data centers",
+      "Controles gerais de TI que garantem a integridade dos dados financeiros",
+      "Controles de acesso físico aos escritórios",
+      "Controles de inventário de ativos"
+    ],
+    "en": [
+      "Hardware controls in data centers",
+      "General IT controls that ensure the integrity of financial data",
+      "Physical access controls to offices",
+      "Asset inventory controls"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Apenas hardware é escopo limitado; ITGCs são mais amplos.",
+      "ITGCs suportam a confiabilidade dos relatórios financeiros garantindo integridade dos dados.",
+      "Acesso físico é apenas um subconjunto de controles.",
+      "Inventário de ativos é um controle específico, não define ITGCs por completo."
+    ],
+    "en": [
+      "Focusing only on hardware is too narrow; ITGCs are broader.",
+      "ITGCs support reliable financial reporting by ensuring data integrity.",
+      "Physical access is just a subset of controls.",
+      "Asset inventory is a specific control, not the full ITGC concept."
+    ]
+  }
+},
+{
+  "id": 68,
+  "q": {
+    "pt": "No contexto da SOX, qual das seguintes opções é uma ITGC comum?",
+    "en": "In the SOX context, which of the following is a common ITGC?"
+  },
+  "options": {
+    "pt": [
+      "Política de uso de mídias sociais",
+      "Processo de gestão de mudanças",
+      "Plano de marketing",
+      "Análise de dados de vendas"
+    ],
+    "en": [
+      "Social media usage policy",
+      "Change management process",
+      "Marketing plan",
+      "Sales data analysis"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Mídias sociais não é um ITGC típico.",
+      "Gestão de mudanças é um ITGC clássico que protege a integridade do ambiente.",
+      "Plano de marketing não é controle de TI para SOX.",
+      "Análise de vendas é atividade de negócio, não um ITGC."
+    ],
+    "en": [
+      "Social media policy is not a typical ITGC.",
+      "Change management is a classic ITGC protecting environment integrity.",
+      "A marketing plan is not an IT control for SOX.",
+      "Sales analysis is a business activity, not an ITGC."
+    ]
+  }
+},
+{
+  "id": 69,
+  "q": {
+    "pt": "O que é um 'plano de ação' no contexto de uma auditoria?",
+    "en": "What is an 'action plan' in the context of an audit?"
+  },
+  "options": {
+    "pt": [
+      "Um documento para contratação de novos funcionários",
+      "Um plano para remediar deficiências ou não conformidades",
+      "Um plano de vendas para o próximo trimestre",
+      "Um plano para realização de testes de penetração"
+    ],
+    "en": [
+      "A document for hiring new employees",
+      "A plan to remediate deficiencies or nonconformities",
+      "A sales plan for the next quarter",
+      "A plan to perform penetration tests"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Contratação não é objetivo de auditoria.",
+      "Planos de ação definem medidas, prazos e responsáveis para corrigir achados.",
+      "Vendas não se relaciona com remediação de achados de auditoria.",
+      "Testes de penetração podem ser uma ação, mas não definem o conceito."
+    ],
+    "en": [
+      "Hiring is not an audit objective.",
+      "Action plans define measures, timelines, and owners to fix findings.",
+      "Sales planning is unrelated to audit remediation.",
+      "Pen tests may be a task within a plan, but not the definition itself."
+    ]
+  }
+},
+{
+  "id": 70,
+  "q": {
+    "pt": "O que significa 'propriedade' em um plano de ação?",
+    "en": "What does 'ownership' mean in an action plan?"
+  },
+  "options": {
+    "pt": [
+      "Apenas um título simbólico",
+      "O profissional ou equipe responsável pela execução do plano e garantia da remediação",
+      "A propriedade de um ativo de TI",
+      "A responsabilidade pela criação da pergunta"
+    ],
+    "en": [
+      "Just a symbolic title",
+      "The individual or team responsible for executing the plan and ensuring remediation",
+      "Ownership of an IT asset",
+      "Responsibility for creating the question"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Propriedade não é simbólica; implica responsabilidade ativa.",
+      "É quem executa e garante a correção dentro do prazo e escopo.",
+      "Propriedade de ativo não define ownership do plano.",
+      "Não tem relação com autoria da pergunta."
+    ],
+    "en": [
+      "Ownership is not symbolic; it implies active responsibility.",
+      "It is the party that executes and ensures timely, in-scope remediation.",
+      "Asset ownership is different from plan ownership.",
+      "Unrelated to question authorship."
+    ]
+  }
+},
+{
+  "id": 71,
+  "q": {
+    "pt": "Qual é a última etapa do ciclo de gerenciamento de um plano de ação?",
+    "en": "What is the final step in the management cycle of an action plan?"
+  },
+  "options": {
+    "pt": [
+      "Identificar o problema",
+      "Criar o plano",
+      "Encerrar a não conformidade após verificação das evidências",
+      "Atribuir o responsável"
+    ],
+    "en": [
+      "Identify the problem",
+      "Create the plan",
+      "Close the nonconformity after verifying evidence",
+      "Assign the owner"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Identificação é o começo, não o fim.",
+      "Criar o plano vem antes da execução e validação.",
+      "A etapa final é o encerramento após evidências comprovarem a remediação.",
+      "Atribuir responsável ocorre no planejamento inicial."
+    ],
+    "en": [
+      "Identification is the start, not the end.",
+      "Plan creation precedes execution and validation.",
+      "The final step is closure after evidence confirms remediation.",
+      "Assigning ownership happens during initial planning."
+    ]
+  }
+},
+{
+  "id": 72,
+  "q": {
+    "pt": "Qual é o foco principal do padrão PCI DSS?",
+    "en": "What is the primary focus of the PCI DSS standard?"
+  },
+  "options": {
+    "pt": [
+      "Proteção de dados pessoais em sistemas de RH",
+      "Proteção de dados de cartões de pagamento",
+      "Regulamentação de transações financeiras via PIX",
+      "Gerenciamento da segurança nas redes sociais"
+    ],
+    "en": [
+      "Protection of personal data in HR systems",
+      "Protection of payment card data",
+      "Regulation of financial transactions via PIX",
+      "Security management on social networks"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "PCI DSS não é específico de RH.",
+      "PCI DSS visa proteger dados de cartões (PAN, CVV, etc.).",
+      "PIX não é escopo do PCI DSS.",
+      "Redes sociais não são foco do PCI DSS."
+    ],
+    "en": [
+      "PCI DSS is not HR-specific.",
+      "PCI DSS aims to protect cardholder data (PAN, CVV, etc.).",
+      "PIX is not within PCI DSS scope.",
+      "Social networks are not PCI DSS focus."
+    ]
+  }
+},
+{
+  "id": 73,
+  "q": {
+    "pt": "O que é o 'Ambiente de Dados do Titular do Cartão' (CDE) no PCI DSS?",
+    "en": "What is the 'Cardholder Data Environment' (CDE) in PCI DSS?"
+  },
+  "options": {
+    "pt": [
+      "O local onde o cartão é fabricado",
+      "O ambiente de rede que processa, armazena ou transmite dados do cartão",
+      "O escritório da equipe de vendas",
+      "O celular do cliente"
+    ],
+    "en": [
+      "The place where the card is manufactured",
+      "The network environment that processes, stores, or transmits card data",
+      "The sales team office",
+      "The customer’s mobile phone"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Fabricação do cartão não define o CDE.",
+      "CDE é o escopo de sistemas/redes que lidam com dados de cartão.",
+      "Escritório de vendas não define o CDE.",
+      "Dispositivo do cliente pode interagir, mas CDE é o ambiente sob controle da organização."
+    ],
+    "en": [
+      "Card manufacturing does not define CDE.",
+      "CDE is the scope of systems/networks that handle card data.",
+      "A sales office does not define CDE.",
+      "A customer device may interact, but CDE is the organization-controlled environment."
+    ]
+  }
+},
+{
+  "id": 74,
+  "q": {
+    "pt": "Para PCI DSS, quais dados do cartão são proibidos de serem armazenados após a autorização?",
+    "en": "Under PCI DSS, which card data is prohibited from being stored after authorization?"
+  },
+  "options": {
+    "pt": [
+      "Nome do titular do cartão",
+      "Data de validade",
+      "Código de verificação (CVV)",
+      "Número do cartão (PAN)"
+    ],
+    "en": [
+      "Cardholder name",
+      "Expiration date",
+      "Card verification code (CVV)",
+      "Primary Account Number (PAN)"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Nome pode ser armazenado com controles.",
+      "Data de validade pode ser armazenada com controles.",
+      "CVV não pode ser armazenado após autorização, por exigência explícita do PCI DSS.",
+      "PAN pode ser armazenado sob proteção (ex.: truncado, tokenizado, cifrado)."
+    ],
+    "en": [
+      "Name may be stored under controls.",
+      "Expiration date may be stored under controls.",
+      "CVV must not be stored after authorization per PCI DSS.",
+      "PAN may be stored with protections (e.g., truncation, tokenization, encryption)."
+    ]
+  }
+},
+{
+  "id": 75,
+  "q": {
+    "pt": "O que o Banco Central do Brasil (BACEN) exige para garantir a segurança dos dados nos bancos digitais?",
+    "en": "What does the Central Bank of Brazil (BACEN) require to ensure data security in digital banks?"
+  },
+  "options": {
+    "pt": [
+      "Que todos os dados sejam criptografados",
+      "Que a empresa siga as normas e diretrizes do BACEN para segurança e resiliência",
+      "Que a empresa tenha escritório no exterior",
+      "Que a empresa não tenha clientes fora do Brasil"
+    ],
+    "en": [
+      "That all data must be encrypted",
+      "That the company follows BACEN’s security and resilience rules and guidelines",
+      "That the company has an overseas office",
+      "That the company has no customers outside Brazil"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Criptografia é importante, mas a exigência é mais ampla (normas e diretrizes).",
+      "O BACEN estabelece normas de segurança e resiliência a serem seguidas.",
+      "Não há exigência de escritório no exterior.",
+      "Não há proibição de ter clientes fora do Brasil."
+    ],
+    "en": [
+      "Encryption is important, but the requirement is broader (rules and guidelines).",
+      "BACEN sets security and resilience rules/guidelines that must be followed.",
+      "There is no requirement for an overseas office.",
+      "There is no prohibition on having customers outside Brazil."
+    ]
+  }
+},
+{
+  "id": 76,
+  "q": {
+    "pt": "Qual destes é um exemplo de evidência aceitável para encerrar um plano de ação de auditoria?",
+    "en": "Which of the following is an acceptable evidence example to close an audit action plan?"
+  },
+  "options": {
+    "pt": [
+      "Uma declaração verbal de que o problema foi resolvido",
+      "Capturas de tela, registros de mudança e aprovação demonstrando a correção",
+      "Uma promessa de resolver no próximo trimestre",
+      "Uma apresentação de slides sem dados comprobatórios"
+    ],
+    "en": [
+      "A verbal statement that the issue is resolved",
+      "Screenshots, change logs, and approvals demonstrating the fix",
+      "A promise to solve it next quarter",
+      "A slide deck without supporting data"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Declarações verbais não bastam para auditoria.",
+      "Evidências objetivas (prints, logs, aprovações) comprovam a remediação.",
+      "Promessas futuras não encerram achados.",
+      "Slides sem evidências não são suficientes para fechamento."
+    ],
+    "en": [
+      "Verbal statements are insufficient for audit purposes.",
+      "Objective evidence (screens, logs, approvals) demonstrates remediation.",
+      "Future promises do not close findings.",
+      "Slides without evidence are not sufficient for closure."
+    ]
+  }
 }
 ]
