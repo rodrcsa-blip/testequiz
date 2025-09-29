@@ -5550,5 +5550,536 @@
       "Encryption is a different control."
     ]
   }
+},
+  {
+  "id": 166,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 167,
+  "q": {
+    "pt": "Quem detém a responsabilidade principal por estabelecer e executar a estratégia de segurança da informação da empresa?",
+    "en": "Who holds primary responsibility for establishing and executing the company's information security strategy?"
+  },
+  "options": {
+    "pt": [
+      "O Conselho de Administração",
+      "A Gerência Executiva",
+      "O Comitê Diretor de Segurança Cibernética",
+      "O Diretor de Segurança da Informação (CISO)"
+    ],
+    "en": [
+      "The Board of Directors",
+      "Executive Management",
+      "The Cybersecurity Steering Committee",
+      "The Chief Information Security Officer (CISO)"
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "O Conselho supervisiona, mas não executa a estratégia no dia a dia.",
+      "A gerência executiva dá suporte e recursos, mas não lidera tecnicamente a execução.",
+      "O comitê orienta e alinha, mas não é executor operacional.",
+      "Correto: o CISO é o executivo responsável por desenvolver e executar a estratégia de segurança."
+    ],
+    "en": [
+      "The Board provides oversight, not day-to-day execution.",
+      "Executive management supports and funds, but doesn't lead technical execution.",
+      "The committee provides guidance and alignment, not operational execution.",
+      "Correct: the CISO is the executive accountable for developing and executing the security strategy."
+    ]
+  }
+},
+{
+  "id": 168,
+  "q": {
+    "pt": "Antes de implementar novas tecnologias ou aplicações que possam impactar as operações da empresa, o que deve ser feito?",
+    "en": "Before implementing new technologies or applications that may impact company operations, what must be done?"
+  },
+  "options": {
+    "pt": [
+      "Uma pesquisa com funcionários em toda a empresa",
+      "Uma análise de custo-benefício apresentada ao conselho",
+      "Uma avaliação de segurança",
+      "Uma revisão de alternativas de código aberto"
+    ],
+    "en": [
+      "A company-wide employee survey",
+      "A cost-benefit analysis presented to the board",
+      "A security assessment",
+      "A review of open-source alternatives"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Útil para feedback, mas não substitui controle de risco.",
+      "Pode ser necessária, porém o foco aqui é risco de segurança.",
+      "Correto: a avaliação de segurança identifica e trata riscos antes da adoção.",
+      "Avaliar alternativas é válido, mas a prioridade é mitigar riscos."
+    ],
+    "en": [
+      "Useful for feedback, but not a risk control.",
+      "May be required, but the focus here is security risk.",
+      "Correct: a security assessment identifies and addresses risks prior to adoption.",
+      "Reviewing alternatives is fine; risk mitigation is the priority."
+    ]
+  }
+},
+{
+  "id": 169,
+  "q": {
+    "pt": "O que os termos e condições de emprego devem estipular em relação às informações tratadas nos sistemas da Empresa?",
+    "en": "What should employment terms and conditions stipulate regarding information handled on Company systems?"
+  },
+  "options": {
+    "pt": [
+      "Que todas as comunicações sejam privadas e confidenciais",
+      "Que sejam proprietárias e possam ser gravadas, revisadas ou monitoradas pela Empresa",
+      "Que comunicações pessoais sejam incentivadas para melhorar o moral",
+      "Que todas as informações sejam excluídas automaticamente após 90 dias"
+    ],
+    "en": [
+      "That all communications are private and confidential",
+      "That they are company-owned and may be recorded, reviewed, or monitored by the Company",
+      "That personal communications are encouraged to boost morale",
+      "That all information is automatically deleted after 90 days"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Privacidade absoluta não é realista em sistemas corporativos.",
+      "Correto: dados nos sistemas da empresa são propriedade da empresa e podem ser monitorados.",
+      "Não é uma diretriz típica de segurança.",
+      "Retenção é definida por políticas/leis, não por um prazo fixo universal."
+    ],
+    "en": [
+      "Absolute privacy is unrealistic on corporate systems.",
+      "Correct: data on company systems is company property and may be monitored.",
+      "Not a typical security directive.",
+      "Retention follows policies/laws, not a universal fixed period."
+    ]
+  }
+},
+{
+  "id": 170,
+  "q": {
+    "pt": "Para controlar o acesso físico, o que a política exige que cada edifício tenha?",
+    "en": "To control physical access, what does policy require each building to have?"
+  },
+  "options": {
+    "pt": [
+      "Uma política de portas abertas durante o horário comercial",
+      "Um sistema simples de fechadura com chave",
+      "Uma área de segurança/recepção",
+      "Um guarda na entrada principal apenas"
+    ],
+    "en": [
+      "An open-door policy during business hours",
+      "A simple keyed lock system",
+      "A security/reception area",
+      "A guard posted only at the main entrance"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Isso aumenta o risco de acesso não autorizado.",
+      "Insuficiente como controle principal.",
+      "Correto: recepção/segurança controla e registra acessos.",
+      "Cobertura limitada não é suficiente para controle efetivo."
+    ],
+    "en": [
+      "Increases risk of unauthorized access.",
+      "Insufficient as a primary control.",
+      "Correct: reception/security controls and logs access.",
+      "Limited coverage is not sufficient for effective control."
+    ]
+  }
+},
+{
+  "id": 171,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 172,
+  "q": {
+    "pt": "Qual é o propósito de conduzir campanhas de Análise de Impacto nos Negócios (BIA)?",
+    "en": "What is the purpose of conducting Business Impact Analysis (BIA) campaigns?"
+  },
+  "options": {
+    "pt": [
+      "Analisar o impacto financeiro das campanhas de marketing",
+      "Identificar e monitorar processos críticos e suas dependências, incluindo terceiros",
+      "Avaliar o impacto de novas regulamentações nos negócios",
+      "Medir o impacto cultural de novas iniciativas"
+    ],
+    "en": [
+      "Analyze the financial impact of marketing campaigns",
+      "Identify and monitor critical processes and their dependencies, including third parties",
+      "Assess the impact of new regulations on the business",
+      "Measure the cultural impact of new initiatives"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "É um tema de marketing, não BIA.",
+      "Correto: BIA foca processos críticos, RTO/RPO e dependências.",
+      "Regulatório é relevante, mas não o foco da BIA.",
+      "Não é objetivo de BIA."
+    ],
+    "en": [
+      "This is marketing, not BIA.",
+      "Correct: BIA focuses on critical processes, RTO/RPO, and dependencies.",
+      "Regulatory impact is relevant but not BIA’s focus.",
+      "Not a BIA objective."
+    ]
+  }
+},
+{
+  "id": 173,
+  "q": {
+    "pt": "Qual órgão é responsável pela aprovação final e adoção da Política de Segurança da Informação?",
+    "en": "Which body is responsible for final approval and adoption of the Information Security Policy?"
+  },
+  "options": {
+    "pt": [
+      "O CISO",
+      "A equipe InfoSec - GRC",
+      "O Comitê Diretor de Segurança Cibernética",
+      "O Conselho de Administração"
+    ],
+    "en": [
+      "The CISO",
+      "The InfoSec GRC team",
+      "The Cybersecurity Steering Committee",
+      "The Board of Directors"
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "O CISO propõe e executa, mas não aprova formalmente.",
+      "Equipe de apoio; não tem autoridade final.",
+      "Órgão consultivo/estratégico.",
+      "Correto: o Conselho tem autoridade final de aprovação."
+    ],
+    "en": [
+      "The CISO proposes and executes, not final approval.",
+      "Support team; not the final authority.",
+      "Advisory/strategic body.",
+      "Correct: the Board holds final approval authority."
+    ]
+  }
+},
+{
+  "id": 174,
+  "q": {
+    "pt": "Qual a frequência mínima que o Head de Segurança Cibernética deve apresentar ao Conselho de Administração?",
+    "en": "What is the minimum frequency the Head of Cybersecurity must present to the Board of Directors?"
+  },
+  "options": {
+    "pt": [
+      "Mensalmente",
+      "Pelo menos uma vez por trimestre",
+      "Pelo menos uma vez por ano",
+      "Somente quando ocorrer um incidente significativo"
+    ],
+    "en": [
+      "Monthly",
+      "At least once per quarter",
+      "At least once per year",
+      "Only upon a major incident"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Mais frequente que o mínimo exigido.",
+      "Maior frequência que o mínimo.",
+      "Correto: ao menos anual é o requisito mínimo típico.",
+      "A governança não deve ser somente reativa a incidentes."
+    ],
+    "en": [
+      "More frequent than the minimum.",
+      "More frequent than the minimum.",
+      "Correct: at least annually is the typical minimum requirement.",
+      "Governance should not be only incident-driven."
+    ]
+  }
+},
+{
+  "id": 175,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 176,
+  "q": {
+    "pt": "Se um incidente de segurança afetar dados pessoais, ele deve ser tratado de acordo com qual procedimento específico?",
+    "en": "If a security incident affects personal data, it must be handled according to which specific procedure?"
+  },
+  "options": {
+    "pt": [
+      "A política de gerenciamento de riscos de TI de terceiros",
+      "A política de retenção de dados",
+      "O Procedimento Global de Resposta a Incidentes de Privacidade",
+      "O Código de Conduta"
+    ],
+    "en": [
+      "The third-party IT risk management policy",
+      "The data retention policy",
+      "The Global Privacy Incident Response Procedure",
+      "The Code of Conduct"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Abrange riscos de terceiros, não resposta a privacidade.",
+      "Retenção é outro tema.",
+      "Correto: incidentes com dados pessoais seguem o procedimento de privacidade.",
+      "Documento de ética, não procedimento técnico/jurídico de incidentes."
+    ],
+    "en": [
+      "Covers third-party risk, not privacy incident handling.",
+      "Retention is a different topic.",
+      "Correct: incidents involving personal data follow privacy IR procedures.",
+      "Ethics document, not the technical/legal incident procedure."
+    ]
+  }
+},
+  {
+  "id": 177,
+  "q": {
+    "pt": "A Política de Segurança da Informação é baseada em qual código internacional de práticas?",
+    "en": "The Information Security Policy is based on which international code of practice?"
+  },
+  "options": {
+    "pt": [
+      "ISO 9001 (Gestão da Qualidade)",
+      "ISO 27002 (Gestão da Segurança da Informação)",
+      "ISO 14001 (Gestão Ambiental)",
+      "ISO 45001 (Saúde e Segurança Ocupacional)"
+    ],
+    "en": [
+      "ISO 9001 (Quality Management)",
+      "ISO 27002 (Information Security Management)",
+      "ISO 14001 (Environmental Management)",
+      "ISO 45001 (Occupational Health & Safety)"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Esta norma cobre qualidade, não segurança da informação.",
+      "Correto: a ISO 27002 é a base de boas práticas em controles de segurança.",
+      "Abrange gestão ambiental, não segurança da informação.",
+      "Focada em saúde ocupacional, não segurança da informação."
+    ],
+    "en": [
+      "This standard covers quality, not information security.",
+      "Correct: ISO 27002 is the basis of best practices for security controls.",
+      "Covers environmental management, not information security.",
+      "Focused on occupational health, not information security."
+    ]
+  }
+},
+{
+  "id": 178,
+  "q": {
+    "pt": "Quem é responsável por realizar verificações de antecedentes adequadas de todos os funcionários da empresa?",
+    "en": "Who is responsible for conducting proper background checks for all company employees?"
+  },
+  "options": {
+    "pt": [
+      "A equipe de InfoSec",
+      "O departamento de conformidade",
+      "O gerente direto do novo contratado",
+      "A equipe de Pessoas e Cultura"
+    ],
+    "en": [
+      "The InfoSec team",
+      "The Compliance department",
+      "The direct manager of the new hire",
+      "The People & Culture team"
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "InfoSec foca em controles técnicos, não em RH.",
+      "Compliance monitora normas, mas não executa background check.",
+      "O gerente avalia competências, mas não conduz verificações formais.",
+      "Correto: Pessoas & Cultura (RH) é responsável pelos processos de checagem."
+    ],
+    "en": [
+      "InfoSec focuses on technical controls, not HR checks.",
+      "Compliance monitors adherence to regulations but doesn’t run checks.",
+      "The manager reviews skills, not formal background checks.",
+      "Correct: People & Culture (HR) conducts the background verification process."
+    ]
+  }
+},
+{
+  "id": 179,
+  "q": {
+    "pt": "Qual função é responsável por garantir que um programa de segurança da informação baseado em risco seja implementado e por designar um Diretor de Segurança da Informação?",
+    "en": "Which function is responsible for ensuring a risk-based information security program is implemented and for appointing a Chief Information Security Officer (CISO)?"
+  },
+  "options": {
+    "pt": [
+      "O Conselho de Administração",
+      "O CISO",
+      "A Gerência Executiva",
+      "O Comitê Diretor de Segurança Cibernética"
+    ],
+    "en": [
+      "The Board of Directors",
+      "The CISO",
+      "Executive Management",
+      "The Cybersecurity Steering Committee"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O Conselho aprova, mas não executa diretamente.",
+      "O CISO é designado, não quem nomeia a si mesmo.",
+      "Correto: a Gerência Executiva garante a implementação e designa o CISO.",
+      "O Comitê é consultivo, não responsável final."
+    ],
+    "en": [
+      "The Board approves but does not execute directly.",
+      "The CISO is appointed, not self-appointed.",
+      "Correct: Executive Management ensures implementation and appoints the CISO.",
+      "The Committee is advisory, not the final authority."
+    ]
+  }
+},
+{
+  "id": 180,
+  "q": {
+    "pt": "O que deve ser executado periodicamente para sistemas regulamentados de acordo com a política de IAM?",
+    "en": "What must be performed periodically for regulated systems according to the IAM policy?"
+  },
+  "options": {
+    "pt": [
+      "Redefinições de senhas em todo o sistema",
+      "O processo de revisão de acesso do usuário",
+      "Um backup completo dos dados",
+      "Um teste de penetração"
+    ],
+    "en": [
+      "System-wide password resets",
+      "The user access review process",
+      "A full data backup",
+      "A penetration test"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Resetar todas as senhas não é exigência periódica.",
+      "Correto: revisões periódicas de acesso são parte central de IAM.",
+      "Backups são importantes, mas não substituem a revisão de acesso.",
+      "Testes de penetração são úteis, mas não são o foco da exigência IAM."
+    ],
+    "en": [
+      "Resetting all passwords is not a periodic requirement.",
+      "Correct: periodic access reviews are a core IAM requirement.",
+      "Backups are critical but not IAM-specific.",
+      "Pen tests are useful but not the IAM periodic requirement."
+    ]
+  }
+},
+{
+  "id": 181,
+  "q": {
+    "pt": "Caso você tenha dúvidas sobre alguma disposição da política de infosec, qual é o canal de suporte designado?",
+    "en": "If you have questions about any provision of the infosec policy, what is the designated support channel?"
+  },
+  "options": {
+    "pt": [
+      "Enviar um e-mail para o Conselho de Administração",
+      "Abrir um tíquete com o suporte técnico de TI",
+      "Entrar em contato com a equipe de gerenciamento de políticas de segurança da informação no canal do Slack",
+      "Enviar uma mensagem diretamente ao CISO"
+    ],
+    "en": [
+      "Send an email to the Board of Directors",
+      "Open a ticket with IT technical support",
+      "Contact the information security policy management team via Slack channel",
+      "Send a message directly to the CISO"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O Conselho não é o canal de suporte operacional.",
+      "O suporte de TI trata de incidentes técnicos, não de políticas.",
+      "Correto: a equipe de gerenciamento de políticas responde dúvidas via Slack.",
+      "O CISO não é o canal designado para dúvidas gerais."
+    ],
+    "en": [
+      "The Board is not an operational support channel.",
+      "IT support handles technical issues, not policy clarifications.",
+      "Correct: the policy management team answers via Slack channel.",
+      "The CISO is not the designated general Q&A channel."
+    ]
+  }
+},
+{
+  "id": 182,
+  "q": {
+    "pt": "A Política de Segurança da Informação é baseada em qual código internacional de práticas?",
+    "en": "The Information Security Policy is based on which international code of practice?"
+  },
+  "options": {
+    "pt": [
+      "ISO 9001 (Gestão da Qualidade)",
+      "ISO 27002 (Gestão da Segurança da Informação)",
+      "ISO 14001 (Gestão Ambiental)",
+      "ISO 45001 (Saúde e Segurança Ocupacional)"
+    ],
+    "en": [
+      "ISO 9001 (Quality Management)",
+      "ISO 27002 (Information Security Management)",
+      "ISO 14001 (Environmental Management)",
+      "ISO 45001 (Occupational Health & Safety)"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "ISO 9001 trata de qualidade.",
+      "Correto: ISO 27002 orienta políticas e controles de segurança.",
+      "ISO 14001 é ambiental.",
+      "ISO 45001 é saúde ocupacional."
+    ],
+    "en": [
+      "ISO 9001 is about quality.",
+      "Correct: ISO 27002 guides policies and security controls.",
+      "ISO 14001 is environmental.",
+      "ISO 45001 is occupational health."
+    ]
+  }
 }
 ]
