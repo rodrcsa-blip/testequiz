@@ -1,8 +1,8 @@
 // === Estado global ===
 let currentLang = 'pt'; // 'pt' | 'en'
-let allQuestions = [];  // array carregado do questions.json (pode estar fora de ordem)
-let questionByIndex = []; // array de 0..449 com perguntas ou null
-let answeredSet = new Set(); // índices (0-based) das perguntas respondidas
+let allQuestions = [];        // array carregado do questions.json
+let questionByIndex = [];     // array 0..449 com perguntas ou null
+let answeredSet = new Set();  // índices 0-based respondidos
 let disabledIndices = new Set(); // traps clicadas/itens removidos do menu
 let currentQuestionIndex = -1;
 
@@ -18,7 +18,6 @@ const loginError = document.getElementById('login-error');
 
 const menuOptions = document.getElementById('menu-options');
 const globalLangSel = document.getElementById('global-lang');
-const menuLangSel = document.getElementById('menu-lang');
 
 const backTopBtn = document.getElementById('back-to-menu-top');
 const backBottomBtn = document.getElementById('back-to-menu-bottom');
@@ -30,19 +29,12 @@ const feedbackTitle = document.getElementById('feedback-title');
 const feedbackRationale = document.getElementById('feedback-rationale');
 
 const questionNumberEl = document.getElementById('question-number');
-const questionLangSel = document.getElementById('question-lang');
 
 const loadErrorEl = document.getElementById('load-error');
 
 // === Utilidades ===
-function normalizeToIndex(idOrNumber) {
-  // O menu vai de 1..450, índice interno 0..449
-  if (typeof idOrNumber === 'number') return idOrNumber - 1;
-  return NaN;
-}
-
 function getDisplayText(obj, lang) {
-  // Campos multilíngues no JSON são do tipo: { pt: "...", en: "..." }
+  // Campos multilíngues no JSON: { pt: "...", en: "..." }
   if (!obj) return '';
   if (typeof obj === 'string') return obj;
   if (typeof obj === 'object') {
@@ -52,15 +44,19 @@ function getDisplayText(obj, lang) {
 }
 
 function getOptionsArray(questionObj, lang) {
-  // questionObj.options pode ser {pt:[...], en:[...]} ou já um array simples (legado)
+  // questionObj.options pode ser {pt:[...], en:[...]} ou array simples
   if (!questionObj || !questionObj.options) return [];
-  const opts = Array.isArray(questionObj.options) ? questionObj.options : questionObj.options[lang] || questionObj.options['pt'] || [];
+  const opts = Array.isArray(questionObj.options)
+    ? questionObj.options
+    : questionObj.options[lang] || questionObj.options['pt'] || [];
   return opts;
 }
 
 function getRationalesArray(questionObj, lang) {
   if (!questionObj || !questionObj.rationales) return [];
-  const rats = Array.isArray(questionObj.rationales) ? questionObj.rationales : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
+  const rats = Array.isArray(questionObj.rationales)
+    ? questionObj.rationales
+    : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
   return rats;
 }
 
@@ -81,7 +77,6 @@ function buildMenu() {
     btn.className = 'menu-item-button py-2 text-center text-sm font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-4';
 
     const qObj = questionByIndex[i];
-
     const isDisabled = disabledIndices.has(i);
     const isAnswered = answeredSet.has(i);
 
@@ -175,9 +170,8 @@ function loadQuestion(index) {
   if (isTrap(qObj)) {
     showQuizArea();
     renderTrap(qObj);
-    // marcar como desabilitada para sumir do menu
+    // desabilita no menu (some quando voltar)
     disabledIndices.add(index);
-    // não marca como respondida (não é uma resposta), só desabilita
     return;
   }
 
@@ -188,7 +182,6 @@ function loadQuestion(index) {
 
 // Renderiza TRAP (phishing)
 function renderTrap(qObj) {
-  // Zera área
   questionText.textContent = '';
   optionsContainer.innerHTML = '';
   feedbackContainer.classList.add('hidden');
@@ -198,10 +191,8 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
-  // Título com mensagem
   questionText.textContent = msg;
 
-  // Mostra imagem se houver
   if (qObj.image) {
     const img = document.createElement('img');
     img.src = qObj.image;
@@ -209,8 +200,6 @@ function renderTrap(qObj) {
     img.className = 'mt-2 max-h-72 object-contain rounded-lg border';
     optionsContainer.appendChild(img);
   }
-
-  // Como é trap, não há respostas. Usuário pode voltar ao menu pelos botões
 }
 
 // Renderiza pergunta e opções
@@ -242,7 +231,7 @@ function renderQuestion(qObj) {
 
 // Verifica resposta
 function checkAnswer(selectedButton, selectedIdx, ctx) {
-  // Marcar como respondida somente ao responder
+  // Marca como respondida somente ao responder
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
   }
@@ -280,56 +269,25 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     feedbackTitle.className = 'text-lg font-bold text-red-700';
   }
 
-  // Mostra justificativa
+  // Mostra justificativa (a do índice correto)
   const rationale = ctx.rats[ctx.correctIndex] || '';
   feedbackRationale.textContent = rationale;
   feedbackContainer.classList.remove('hidden');
-
-  // Depois de responder, no retorno ao menu o botão ficará desabilitado
 }
 
-// === Navegação ===
+// === Navegação e idioma ===
 function wireEvents() {
   loginButton.addEventListener('click', handleLogin);
 
   backTopBtn.addEventListener('click', () => showStartPage());
   backBottomBtn.addEventListener('click', () => showStartPage());
 
-  // Idioma global sincroniza com menu e pergunta
+  // Idioma global: atualiza a pergunta exibida (se houver) e os rótulos
   globalLangSel.addEventListener('change', (e) => {
     currentLang = e.target.value;
-    menuLangSel.value = currentLang;
-    questionLangSel.value = currentLang;
-    // re-render se estiver no quiz
+
+    // Atualiza rótulo/número da pergunta
     if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
-      const qObj = questionByIndex[currentQuestionIndex];
-      if (qObj) {
-        // Atualiza o número com label correto (Question/Pergunta)
-        const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
-        if (questionNumberEl) {
-          questionNumberEl.textContent = (currentLang === 'en')
-            ? `Question ${displayId}`
-            : `Pergunta ${displayId}`;
-        }
-        isTrap(qObj) ? renderTrap(qObj) : renderQuestion(qObj);
-      }
-    }
-  });
-
-  // Menu idioma: só muda a linguagem usada ao renderizar pergunta
-  menuLangSel.addEventListener('change', (e) => {
-    currentLang = e.target.value;
-    globalLangSel.value = currentLang;
-    questionLangSel.value = currentLang;
-  });
-
-  // Idioma dentro da pergunta
-  questionLangSel.addEventListener('change', (e) => {
-    currentLang = e.target.value;
-    globalLangSel.value = currentLang;
-    menuLangSel.value = currentLang;
-    // Re-render da pergunta atual
-    if (currentQuestionIndex >= 0) {
       const qObj = questionByIndex[currentQuestionIndex];
       if (qObj) {
         const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
@@ -353,10 +311,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     loginPage.classList.remove('hidden');
     startPage.classList.add('hidden');
     quizArea.classList.add('hidden');
-    // sincronia de seletores
-    menuLangSel.value = currentLang;
-    questionLangSel.value = currentLang;
+
+    // seletor global inicia no idioma default
     globalLangSel.value = currentLang;
+
     wireEvents();
   }
 });
