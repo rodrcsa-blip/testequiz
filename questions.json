@@ -4875,5 +4875,679 @@
       "It is directly related to security."
     ]
   }
-}
-]
+},
+  {
+  "id": 145,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 146,
+  "q": {
+    "pt": "O que é \"classificação de dados\"?",
+    "en": "What is \"data classification\"?"
+  },
+  "options": {
+    "pt": [
+      "Organizar arquivos em ordem alfabética",
+      "Categorizar dados com base em seu nível de sensibilidade",
+      "Excluir dados não utilizados",
+      "Fazer backup de dados importantes"
+    ],
+    "en": [
+      "Organizing files alphabetically",
+      "Categorizing data based on its sensitivity level",
+      "Deleting unused data",
+      "Backing up important data"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Alfabetizar não trata de segurança.",
+      "Correto: classificar por sensibilidade orienta proteção.",
+      "Exclusão é retenção/descartes, não classificação.",
+      "Backup é continuidade, não classificação."
+    ],
+    "en": [
+      "Alphabetizing is not security-focused.",
+      "Correct: sensitivity-based categorization guides protection.",
+      "Deletion relates to retention/disposal, not classification.",
+      "Backup is continuity, not classification."
+    ]
+  }
+},
+{
+  "id": 147,
+  "q": {
+    "pt": "O que é um \"plano de continuidade de negócios\" (BCP)?",
+    "en": "What is a Business Continuity Plan (BCP)?"
+  },
+  "options": {
+    "pt": [
+      "Um plano para manter a empresa aberta durante os feriados",
+      "Um plano para garantir as operações em caso de desastre",
+      "Um plano de marketing para o próximo ano",
+      "Um plano para contratar novos funcionários"
+    ],
+    "en": [
+      "A plan to keep the company open during holidays",
+      "A plan to ensure operations in case of disaster",
+      "A marketing plan for next year",
+      "A plan to hire new employees"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Feriados não são foco de continuidade.",
+      "Correto: garantir operações diante de interrupções.",
+      "Marketing é outro domínio.",
+      "Recrutamento não é continuidade."
+    ],
+    "en": [
+      "Holidays aren’t the continuity focus.",
+      "Correct: ensure operations during disruptions.",
+      "Marketing is separate.",
+      "Hiring is not continuity."
+    ]
+  }
+},
+{
+  "id": 148,
+  "q": {
+    "pt": "O que é um \"risco residual\"?",
+    "en": "What is \"residual risk\"?"
+  },
+  "options": {
+    "pt": [
+      "O risco que é completamente eliminado",
+      "O risco que permanece após a implementação dos controles",
+      "O risco que não pode ser mensurado",
+      "O risco causado por quedas de energia"
+    ],
+    "en": [
+      "Risk that is completely eliminated",
+      "Risk that remains after implementing controls",
+      "Risk that cannot be measured",
+      "Risk caused by power outages"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Risco raramente é zerado.",
+      "Correto: é o risco remanescente após controles.",
+      "Pode ser mensurado/estimado.",
+      "É apenas um exemplo de causa, não definição."
+    ],
+    "en": [
+      "Risk is rarely zeroed out.",
+      "Correct: the remaining risk after controls.",
+      "It can be measured/estimated.",
+      "Only an example cause, not the definition."
+    ]
+  }
+},
+{
+  "id": 149,
+  "q": {
+    "pt": "Qual é a função de um \"plano de ação\" no GRC?",
+    "en": "What is the role of an \"action plan\" in GRC?"
+  },
+  "options": {
+    "pt": [
+      "Apenas um documento para ser lido",
+      "Um documento que detalha as etapas para corrigir uma não conformidade",
+      "Um relatório de auditoria",
+      "Um plano para gerenciar a equipe de TI"
+    ],
+    "en": [
+      "Just a document to be read",
+      "A document detailing steps to remediate a nonconformity",
+      "An audit report",
+      "A plan to manage the IT team"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não é passivo; é executável.",
+      "Correto: define ações, prazos e responsáveis.",
+      "Relatório é insumo, não o plano em si.",
+      "Gestão de equipe não é o foco."
+    ],
+    "en": [
+      "It’s not passive; it’s actionable.",
+      "Correct: defines actions, timelines, owners.",
+      "Reports are inputs, not the plan itself.",
+      "Team management is not the focus."
+    ]
+  }
+},
+{
+  "id": 150,
+  "q": {
+    "pt": "O que é a fase de \"Monitoramento\" no ciclo de vida do GRC?",
+    "en": "What is the \"Monitoring\" phase in the GRC lifecycle?"
+  },
+  "options": {
+    "pt": [
+      "Apenas a fase de planejamento inicial",
+      "O monitoramento contínuo da eficácia dos controles e da conformidade",
+      "A fase de implementação de novas tecnologias",
+      "A fase de contratação de novos funcionários"
+    ],
+    "en": [
+      "Only the initial planning phase",
+      "Ongoing monitoring of control effectiveness and compliance",
+      "The phase of implementing new technologies",
+      "The phase of hiring new employees"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não é só planejamento.",
+      "Correto: observar desempenho e aderência continuamente.",
+      "Tecnologia pode ajudar, mas não define a fase.",
+      "Contratação não é foco de GRC aqui."
+    ],
+    "en": [
+      "It’s not just planning.",
+      "Correct: continuously observe control performance and compliance.",
+      "Tech may help, but that’s not the definition.",
+      "Hiring isn’t the GRC focus here."
+    ]
+  }
+},
+{
+  "id": 151,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 152,
+  "q": {
+    "pt": "No contexto de uma auditoria bancária, o que significa \"evidência\"?",
+    "en": "In a banking audit context, what does \"evidence\" mean?"
+  },
+  "options": {
+    "pt": [
+      "Um documento que comprove o cumprimento de um controle",
+      "Apenas a palavra do gerente",
+      "Apenas uma captura de tela",
+      "Um e-mail informal"
+    ],
+    "en": [
+      "A document proving a control’s fulfillment",
+      "Only the manager’s word",
+      "Only a screenshot",
+      "An informal email"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: evidência objetiva de execução/aderência.",
+      "Depoimentos isolados não bastam.",
+      "Print pode complementar, não ser único.",
+      "Informalidade não garante auditabilidade."
+    ],
+    "en": [
+      "Correct: objective proof of execution/adherence.",
+      "Statements alone are insufficient.",
+      "Screenshots may complement, not suffice alone.",
+      "Informal emails lack auditability."
+    ]
+  }
+},
+{
+  "id": 153,
+  "q": {
+    "pt": "O que é o \"princípio da necessidade de saber\" em segurança?",
+    "en": "What is the \"need-to-know\" principle in security?"
+  },
+  "options": {
+    "pt": [
+      "Conceder o mesmo acesso a todos",
+      "Conceder acesso apenas ao que for essencial para o trabalho",
+      "Ter acesso a todos os sistemas",
+      "Não conceder acesso a ninguém"
+    ],
+    "en": [
+      "Grant the same access to everyone",
+      "Grant access only to what is essential for the job",
+      "Have access to all systems",
+      "Grant no access to anyone"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Acesso uniforme ignora risco.",
+      "Correto: acesso mínimo necessário.",
+      "Acesso amplo aumenta a superfície de risco.",
+      "Negar tudo inviabiliza o trabalho."
+    ],
+    "en": [
+      "Uniform access ignores risk.",
+      "Correct: minimum necessary access.",
+      "Broad access raises risk exposure.",
+      "Denying all access blocks work."
+    ]
+  }
+},
+{
+  "id": 154,
+  "q": {
+    "pt": "O que é um \"inventário de ativos de TI\"?",
+    "en": "What is an \"IT asset inventory\"?"
+  },
+  "options": {
+    "pt": [
+      "Uma lista de todos os usuários da rede",
+      "Um catálogo de hardware e software que precisam ser protegidos",
+      "Um relatório financeiro",
+      "Uma lista de fornecedores"
+    ],
+    "en": [
+      "A list of all network users",
+      "A catalog of hardware and software that need protection",
+      "A financial report",
+      "A vendor list"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Usuários não são o foco do inventário de TI.",
+      "Correto: base para gestão de risco e controles.",
+      "Finanças não define ativos de TI.",
+      "Fornecedores são outra dimensão."
+    ],
+    "en": [
+      "Users are not the asset inventory focus.",
+      "Correct: foundation for risk and control management.",
+      "Finance does not define IT assets.",
+      "Vendors are a separate dimension."
+    ]
+  }
+},
+{
+  "id": 155,
+  "q": {
+    "pt": "Qual das seguintes opções é um requisito do PCI DSS?",
+    "en": "Which of the following is a PCI DSS requirement?"
+  },
+  "options": {
+    "pt": [
+      "Usar senhas fracas",
+      "Proteger os dados do cartão de forma criptografada",
+      "Armazenar o CVV do cartão",
+      "Não usar antivírus"
+    ],
+    "en": [
+      "Use weak passwords",
+      "Protect cardholder data with encryption",
+      "Store the card CVV",
+      "Do not use antivirus"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Contraria a norma.",
+      "Correto: criptografia é requisito central.",
+      "Armazenar CVV é proibido pós-autorização.",
+      "Antivírus é requerido quando aplicável."
+    ],
+    "en": [
+      "Violates the standard.",
+      "Correct: encryption is a core requirement.",
+      "Storing CVV after authorization is prohibited.",
+      "Antivirus is required where applicable."
+    ]
+  }
+},
+{
+  "id": 156,
+  "q": {
+    "pt": "O que é um \"plano de continuidade de negócios\" em uma instituição financeira?",
+    "en": "What is a Business Continuity Plan in a financial institution?"
+  },
+  "options": {
+    "pt": [
+      "Um plano para expandir a filial",
+      "Um plano para garantir a continuidade dos serviços em caso de interrupção",
+      "Um plano de marketing",
+      "Um plano de recrutamento"
+    ],
+    "en": [
+      "A plan to expand a branch",
+      "A plan to ensure continuity of services in case of disruption",
+      "A marketing plan",
+      "A recruitment plan"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Expansão não é continuidade.",
+      "Correto: foco é manter serviços críticos.",
+      "Marketing é outro tema.",
+      "Recrutamento não é BCP."
+    ],
+    "en": [
+      "Expansion is not continuity.",
+      "Correct: keep critical services running.",
+      "Marketing is unrelated.",
+      "Recruitment is not BCP."
+    ]
+  }
+},
+{
+  "id": 157,
+  "q": {
+    "pt": "Qual é o principal papel do GRC em relação a um plano de ação de auditoria?",
+    "en": "What is GRC’s main role regarding an audit action plan?"
+  },
+  "options": {
+    "pt": [
+      "Punir apenas aqueles que não cumpriram",
+      "Coordenar a execução do plano e verificar as evidências de sua conclusão",
+      "Realizar o trabalho de correção técnica",
+      "Ignorar os planos de ação"
+    ],
+    "en": [
+      "Punish only those who failed to comply",
+      "Coordinate execution of the plan and verify completion evidence",
+      "Perform the technical remediation work",
+      "Ignore action plans"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "GRC não é órgão punitivo.",
+      "Correto: coordenação, governança e validação de evidências.",
+      "A correção técnica cabe às áreas donas.",
+      "Ignorar contraria governança."
+    ],
+    "en": [
+      "GRC is not punitive by design.",
+      "Correct: coordinate, govern, and validate evidence.",
+      "Technical fixes are owned by the respective teams.",
+      "Ignoring contradicts governance."
+    ]
+  }
+},
+{
+  "id": 158,
+  "q": {
+    "pt": "O que significa o princípio de \"integridade\" na segurança da informação?",
+    "en": "What does the principle of \"integrity\" mean in information security?"
+  },
+  "options": {
+    "pt": [
+      "Manter as informações disponíveis",
+      "Garantir que as informações não sejam alteradas ou corrompidas",
+      "Proteger as informações contra acesso não autorizado",
+      "Proteger as informações contra perdas"
+    ],
+    "en": [
+      "Keeping information available",
+      "Ensuring information is not altered or corrupted",
+      "Protecting information from unauthorized access",
+      "Protecting information from loss"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Isso é disponibilidade.",
+      "Correto: prevenir alteração não autorizada.",
+      "Isso é confidencialidade.",
+      "Perda relaciona-se a disponibilidade/backup."
+    ],
+    "en": [
+      "That’s availability.",
+      "Correct: prevent unauthorized alteration.",
+      "That’s confidentiality.",
+      "Loss relates to availability/backup."
+    ]
+  }
+},
+{
+  "id": 159,
+  "q": {
+    "pt": "Qual é a função de uma auditoria regulatória de uma organização como o BACEN?",
+    "en": "What is the role of a regulatory audit by an organization like the Central Bank (BACEN)?"
+  },
+  "options": {
+    "pt": [
+      "Apenas multar a empresa",
+      "Garantir que a instituição cumpra os padrões de segurança e resiliência",
+      "Apenas auditar as finanças",
+      "Apenas auditar os funcionários"
+    ],
+    "en": [
+      "Only to fine the company",
+      "Ensure the institution meets security and resilience standards",
+      "Only audit finances",
+      "Only audit employees"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Multas são consequência, não o objetivo principal.",
+      "Correto: avaliar conformidade com normas e resiliência.",
+      "Abrange muito além de finanças.",
+      "Não foca apenas em pessoas."
+    ],
+    "en": [
+      "Fines are consequences, not the core goal.",
+      "Correct: assess compliance with standards and resilience.",
+      "Scope goes beyond finance.",
+      "Not focused solely on personnel."
+    ]
+  }
+},
+{
+  "id": 160,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 161,
+  "q": {
+    "pt": "Qual é a diferença entre risco inerente e risco residual?",
+    "en": "What is the difference between inherent risk and residual risk?"
+  },
+  "options": {
+    "pt": [
+      "Inerente é após os controles; residual é antes dos controles",
+      "Inerente é sempre maior porque não considera os controles; residual é o risco que permanece após os controles",
+      "Não há diferença; são sinônimos",
+      "Residual é o risco de falha dos controles; inerente é o risco de ameaças internas"
+    ],
+    "en": [
+      "Inherent is after controls; residual is before controls",
+      "Inherent is typically higher as it ignores controls; residual is what remains after controls",
+      "There is no difference; they are synonyms",
+      "Residual is control failure risk; inherent is insider threat risk"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Está invertido.",
+      "Correto: inerente sem controles; residual após controles.",
+      "Não são sinônimos.",
+      "Definições incorretas."
+    ],
+    "en": [
+      "Reversed.",
+      "Correct: inherent without controls; residual after controls.",
+      "They’re not synonyms.",
+      "Incorrect definitions."
+    ]
+  }
+},
+{
+  "id": 162,
+  "q": {
+    "pt": "Em um processo de risco, qual etapa vem antes da seleção dos controles?",
+    "en": "In a risk process, which step comes before selecting controls?"
+  },
+  "options": {
+    "pt": [
+      "Monitoramento",
+      "Treinamento de usuários",
+      "Avaliação de riscos (análise e avaliação)",
+      "Implementação de políticas"
+    ],
+    "en": [
+      "Monitoring",
+      "User training",
+      "Risk assessment (analysis and evaluation)",
+      "Policy implementation"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Monitorar vem depois da implementação.",
+      "Treinamento não precede a escolha de controles.",
+      "Correto: primeiro analisa/prioriza, depois seleciona controles.",
+      "Políticas derivam das decisões de risco/controles."
+    ],
+    "en": [
+      "Monitoring comes after implementation.",
+      "Training does not precede control selection.",
+      "Correct: analyze/prioritize first, then select controls.",
+      "Policies derive from risk/control decisions."
+    ]
+  }
+},
+{
+  "id": 163,
+  "q": {
+    "pt": "O que é apetite ao risco?",
+    "en": "What is risk appetite?"
+  },
+  "options": {
+    "pt": [
+      "A quantidade de risco que a organização está disposta a aceitar para atingir seus objetivos",
+      "Tolerância zero para qualquer risco",
+      "Uma medida de risco residual",
+      "Um plano de mitigação"
+    ],
+    "en": [
+      "The amount of risk an organization is willing to accept to achieve its objectives",
+      "Zero tolerance for any risk",
+      "A measure of residual risk",
+      "A mitigation plan"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: nível de risco aceitável alinhado à estratégia.",
+      "Zero risco é irrealista na prática.",
+      "É conceito de apetite, não a medição residual.",
+      "Plano é resposta, não apetite."
+    ],
+    "en": [
+      "Correct: acceptable risk level aligned to strategy.",
+      "Zero risk is unrealistic in practice.",
+      "Appetite is not residual measurement.",
+      "A plan is a response, not appetite."
+    ]
+  }
+},
+{
+  "id": 164,
+  "q": {
+    "pt": "Qual é o principal objetivo de uma auditoria de conformidade em segurança da informação?",
+    "en": "What is the primary objective of a compliance audit in information security?"
+  },
+  "options": {
+    "pt": [
+      "Implementar novas tecnologias",
+      "Treinar a equipe de TI",
+      "Verificar a adesão às leis, normas e políticas internas",
+      "Substituir a avaliação de riscos"
+    ],
+    "en": [
+      "Implement new technologies",
+      "Train the IT team",
+      "Verify adherence to laws, standards, and internal policies",
+      "Replace risk assessment"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Implementação não é objetivo da auditoria.",
+      "Treinamento não é o foco da auditoria.",
+      "Correto: avaliar conformidade com requisitos aplicáveis.",
+      "Não substitui a avaliação de riscos."
+    ],
+    "en": [
+      "Implementation is not the audit’s goal.",
+      "Training is not the audit’s focus.",
+      "Correct: assess compliance with applicable requirements.",
+      "It doesn’t replace risk assessment."
+    ]
+  }
+},
+{
+  "id": 165,
+  "q": {
+    "pt": "O que significa Segregação de Funções (SoD) em controles internos?",
+    "en": "What does Segregation of Duties (SoD) mean in internal controls?"
+  },
+  "options": {
+    "pt": [
+      "Separação física entre servidores",
+      "Combinação de funções para reduzir custos",
+      "Divisão de responsabilidades para prevenir fraudes e erros (por exemplo, o aprovador não deve executar)",
+      "Criptografia de dados sensíveis"
+    ],
+    "en": [
+      "Physical separation between servers",
+      "Combining functions to reduce costs",
+      "Splitting responsibilities to prevent fraud and errors (e.g., approver must not execute)",
+      "Encrypting sensitive data"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Infraestrutura física não define SoD.",
+      "Combinar funções eleva o risco.",
+      "Correto: separar funções críticas previne fraude/erro.",
+      "Criptografia é outro controle."
+    ],
+    "en": [
+      "Physical infrastructure isn’t SoD.",
+      "Combining functions increases risk.",
+      "Correct: separate critical duties to prevent fraud/error.",
+      "Encryption is a different control."
+    ]
+  }
+  ]
