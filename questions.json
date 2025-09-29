@@ -3939,5 +3939,941 @@
       "Training is an administrative control."
     ]
   }
+},
+  {
+  "id": 116,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 117,
+  "q": {
+    "pt": "Quem deve observar as diretrizes da Política de Uso Aceitável?",
+    "en": "Who must follow the Acceptable Use Policy (AUP) guidelines?"
+  },
+  "options": {
+    "pt": [
+      "Apenas funcionários em tempo integral (\"Nubankers\") da Nu Holdings.",
+      "Apenas a equipe de Segurança da Informação e o departamento de Engenharia de TI.",
+      "Todos os executivos, diretores, funcionários, estagiários (\"Nubankers\") e prestadores de serviços relevantes autorizados a utilizar os recursos de informação da empresa.",
+      "Apenas contratados externos e fornecedores terceirizados."
+    ],
+    "en": [
+      "Only full-time employees (\"Nubankers\") of Nu Holdings.",
+      "Only the Information Security team and the IT Engineering department.",
+      "All executives, officers, employees, interns (\"Nubankers\"), and relevant service providers authorized to use the company’s information resources.",
+      "Only external contractors and third-party vendors."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "A política não se limita a funcionários em tempo integral.",
+      "A AUP não é exclusiva da área técnica.",
+      "Correto: todos os usuários autorizados dos recursos de informação devem seguir a política.",
+      "Restringir apenas a terceiros ignora o público interno obrigatório."
+    ],
+    "en": [
+      "The policy is not limited to full-time employees.",
+      "The AUP is not exclusive to technical teams.",
+      "Correct: all authorized users of information resources must follow the policy.",
+      "Limiting it to third parties ignores the required internal audience."
+    ]
+  }
+},
+{
+  "id": 118,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 119,
+  "q": {
+    "pt": "Qual é o objetivo principal da política de uso aceitável?",
+    "en": "What is the primary objective of the Acceptable Use Policy?"
+  },
+  "options": {
+    "pt": [
+      "Monitorar a produtividade dos funcionários e o uso da internet.",
+      "Definir o processo para solicitar novos softwares e hardwares.",
+      "Proteger a confidencialidade, integridade e disponibilidade das informações.",
+      "Descrever as ações disciplinares para qualquer má conduta."
+    ],
+    "en": [
+      "Monitor employee productivity and internet usage.",
+      "Define the process to request new software and hardware.",
+      "Protect the confidentiality, integrity, and availability of information.",
+      "Describe disciplinary actions for any misconduct."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Monitoramento pode ocorrer, mas não é o objetivo central.",
+      "Solicitação de TI não é o foco da AUP.",
+      "Correto: a AUP visa proteger C, I e D das informações.",
+      "Medidas disciplinares são consequência, não objetivo."
+    ],
+    "en": [
+      "Monitoring may occur but is not the core objective.",
+      "IT request processes are not the AUP’s focus.",
+      "Correct: the AUP aims to protect confidentiality, integrity and availability.",
+      "Disciplinary actions are consequences, not the goal."
+    ]
+  }
+},
+{
+  "id": 120,
+  "q": {
+    "pt": "O que um usuário deve fazer ao término de seu emprego ou contrato?",
+    "en": "What must a user do upon termination of employment or contract?"
+  },
+  "options": {
+    "pt": [
+      "Ficar com o laptop da empresa se pagar por ele.",
+      "Devolver todos os ativos fornecidos pela empresa e os dados associados.",
+      "Apagar todos os dados da empresa dos ativos antes de devolver.",
+      "Tem 30 dias para devolver todos os ativos da empresa."
+    ],
+    "en": [
+      "Keep the company laptop if they pay for it.",
+      "Return all company-provided assets along with associated data.",
+      "Erase all company data from assets before returning.",
+      "Has 30 days to return all company assets."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "A retenção de ativos não é permitida dessa forma.",
+      "Correto: todos os ativos e dados associados devem ser devolvidos.",
+      "A limpeza é feita por TI; o dever principal é devolver.",
+      "Prazos podem variar; a obrigação é a devolução imediata."
+    ],
+    "en": [
+      "Asset retention is not permitted this way.",
+      "Correct: all assets and associated data must be returned.",
+      "Sanitization is handled by IT; the main duty is to return assets.",
+      "Deadlines may vary; the obligation is immediate return."
+    ]
+  }
+},
+{
+  "id": 121,
+  "q": {
+    "pt": "Qual é o procedimento correto para relatar equipamentos perdidos ou danificados?",
+    "en": "What is the correct procedure to report lost or damaged equipment?"
+  },
+  "options": {
+    "pt": [
+      "Informar o gestor e aguardar instruções.",
+      "Abrir um ticket de TI dentro de uma semana.",
+      "Enviar e-mail para panic@nubank.com.br em até 24h com nome, e-mail corporativo, tipo de dispositivo e se é pessoal ou da empresa.",
+      "Contactar Pessoas & Cultura para registrar um boletim."
+    ],
+    "en": [
+      "Inform your manager and wait for instructions.",
+      "Open an IT ticket within a week.",
+      "Email panic@nubank.com.br within 24h with name, corporate email, device type, and whether personal or company-owned.",
+      "Contact People & Culture to file a report."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Aguardar pode atrasar a contenção de risco.",
+      "Uma semana é tardio para incidentes de segurança.",
+      "Correto: reporte em até 24h com os dados solicitados.",
+      "P&C não é o canal designado para esse reporte."
+    ],
+    "en": [
+      "Waiting may delay risk containment.",
+      "One week is too late for security incidents.",
+      "Correct: report within 24h with the requested details.",
+      "People & Culture is not the designated channel."
+    ]
+  }
+},
+{
+  "id": 122,
+  "q": {
+    "pt": "De acordo com a política, qual é um 'Uso Inaceitável' de credenciais de conta?",
+    "en": "According to the policy, which is an 'Unacceptable Use' of account credentials?"
+  },
+  "options": {
+    "pt": [
+      "Usar um gerenciador de senhas aprovado.",
+      "Habilitar autenticação de dois fatores.",
+      "Alterar a senha imediatamente ao suspeitar de comprometimento.",
+      "Permitir que um familiar use sua conta ao trabalhar de casa."
+    ],
+    "en": [
+      "Using an approved password manager.",
+      "Enabling two-factor authentication.",
+      "Changing your password immediately if compromise is suspected.",
+      "Allowing a family member to use your account while working from home."
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "Gerenciadores aprovados são aceitáveis.",
+      "2FA é recomendado.",
+      "Mudança imediata é boa prática.",
+      "Correto: compartilhar credenciais ou acesso é proibido."
+    ],
+    "en": [
+      "Approved managers are acceptable.",
+      "2FA is recommended.",
+      "Immediate change is best practice.",
+      "Correct: sharing credentials or access is prohibited."
+    ]
+  }
+},
+{
+  "id": 123,
+  "q": {
+    "pt": "Onde é estritamente proibido armazenar dados da empresa?",
+    "en": "Where is it strictly prohibited to store company data?"
+  },
+  "options": {
+    "pt": [
+      "Em um laptop criptografado fornecido pela empresa.",
+      "Em solução de nuvem gerenciada pela empresa.",
+      "Em nuvens pessoais não corporativas (ex.: Dropbox/OneDrive).",
+      "Em unidade de rede interna e segura."
+    ],
+    "en": [
+      "On a company-provided encrypted laptop.",
+      "In a company-managed cloud solution.",
+      "In personal, non-corporate clouds (e.g., Dropbox/OneDrive).",
+      "On a secure internal network share."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Dispositivos corporativos são controlados.",
+      "Ambientes gerenciados são permitidos.",
+      "Correto: nuvens pessoais não são autorizadas.",
+      "Unidades internas seguras são adequadas."
+    ],
+    "en": [
+      "Corporate devices are controlled.",
+      "Managed environments are allowed.",
+      "Correct: personal clouds are not authorized.",
+      "Secure internal shares are appropriate."
+    ]
+  }
+},
+{
+  "id": 124,
+  "q": {
+    "pt": "O que um usuário deve fazer se suspeitar que sua senha foi comprometida?",
+    "en": "What should a user do if they suspect their password has been compromised?"
+  },
+  "options": {
+    "pt": [
+      "Reportar ao suporte e aguardar reset forçado.",
+      "Alterar a senha imediatamente.",
+      "Revelar a senha ao gestor para investigação.",
+      "Continuar usando e monitorar atividade suspeita."
+    ],
+    "en": [
+      "Report to support and wait for a forced reset.",
+      "Change the password immediately.",
+      "Reveal the password to the manager for investigation.",
+      "Keep using it and monitor for suspicious activity."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Aguardar aumenta o risco.",
+      "Correto: troque a senha imediatamente.",
+      "Jamais compartilhe a senha.",
+      "Continuar usando mantém a exposição."
+    ],
+    "en": [
+      "Waiting increases risk.",
+      "Correct: change it immediately.",
+      "Never share your password.",
+      "Continuing to use it keeps exposure."
+    ]
+  }
+},
+{
+  "id": 125,
+  "q": {
+    "pt": "Quando o uso de contas de e-mail pessoais é permitido para negócios da empresa?",
+    "en": "When is the use of personal email accounts allowed for company business?"
+  },
+  "options": {
+    "pt": [
+      "Para enviar informações não confidenciais.",
+      "Quando o e-mail corporativo está fora do ar.",
+      "Usuários não devem usar e-mails pessoais para informações proprietárias.",
+      "Com aprovação prévia de um gestor."
+    ],
+    "en": [
+      "To send non-confidential information.",
+      "When the corporate email system is down.",
+      "Users must not use personal email for proprietary information.",
+      "With prior manager approval."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Ainda assim cria risco e rastreabilidade limitada.",
+      "Falhas não autorizam uso de e-mail pessoal para dados da empresa.",
+      "Correto: informações proprietárias não devem ir por e-mail pessoal.",
+      "Aprovação não elimina o risco de canal não gerenciado."
+    ],
+    "en": [
+      "It still creates risk and limited traceability.",
+      "Outages don’t authorize personal email for company data.",
+      "Correct: proprietary info must not be sent via personal email.",
+      "Approval doesn’t remove unmanaged-channel risk."
+    ]
+  }
+},
+{
+  "id": 126,
+  "q": {
+    "pt": "As comunicações ou conteúdos publicados em mídias sociais devem estar em conformidade com qual documento?",
+    "en": "Social media communications/content must comply with which company document?"
+  },
+  "options": {
+    "pt": [
+      "Política de IAM da InfoSec.",
+      "Código de Conduta do Nubank.",
+      "Política de Incidentes da InfoSec.",
+      "Política de Terceiros da InfoSec."
+    ],
+    "en": [
+      "InfoSec IAM Policy.",
+      "Nubank’s Code of Conduct.",
+      "InfoSec Incident Management Policy.",
+      "InfoSec Third-Party Policy."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "IAM trata de identidades e acesso, não comunicação externa.",
+      "Correto: comunicações devem seguir o Código de Conduta.",
+      "Incidentes tratam resposta, não diretriz pública.",
+      "Política de terceiros não rege conduta pública."
+    ],
+    "en": [
+      "IAM covers identities/access, not external comms.",
+      "Correct: communications must follow the Code of Conduct.",
+      "Incident policy is about response, not public guidance.",
+      "Third-party policy doesn’t govern public conduct."
+    ]
+  }
+},
+{
+  "id": 127,
+  "q": {
+    "pt": "O que é estritamente proibido em relação a mídias removíveis?",
+    "en": "What is strictly prohibited regarding removable media?"
+  },
+  "options": {
+    "pt": [
+      "Armazenar dados da empresa em mídias removíveis pessoais.",
+      "Usar mídias removíveis aprovadas e criptografadas.",
+      "Solicitar desbloqueio de USB para dispositivo conhecido.",
+      "Guardar mídias aprovadas em ambiente seguro."
+    ],
+    "en": [
+      "Storing company data on personally owned removable media.",
+      "Using approved, encrypted removable media.",
+      "Requesting USB unlock for a known device.",
+      "Keeping approved media in a secure environment."
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: mídias pessoais não podem armazenar dados da empresa.",
+      "Permitido quando aprovado e criptografado.",
+      "Pode ser permitido sob controle.",
+      "Boa prática de custódia, não proibida."
+    ],
+    "en": [
+      "Correct: personal media must not store company data.",
+      "Allowed when approved and encrypted.",
+      "May be allowed under controls.",
+      "Good custody practice, not prohibited."
+    ]
+  }
+},
+{
+  "id": 128,
+  "q": {
+    "pt": "Se um usuário compra um dispositivo e é reembolsado pela empresa, quem é o proprietário do dispositivo?",
+    "en": "If a user purchases a device and is reimbursed by the company, who owns the device?"
+  },
+  "options": {
+    "pt": [
+      "O usuário mantém a propriedade total.",
+      "Co-propriedade do usuário e da empresa.",
+      "Torna-se propriedade exclusiva da empresa.",
+      "A propriedade transfere só na saída do usuário."
+    ],
+    "en": [
+      "The user keeps full ownership.",
+      "Co-ownership by the user and the company.",
+      "It becomes the exclusive property of the company.",
+      "Ownership transfers only upon the user’s departure."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Após reembolso, o bem é corporativo.",
+      "Não há co-propriedade nesse caso.",
+      "Correto: a empresa é a proprietária.",
+      "A transferência ocorre no reembolso, não na saída."
+    ],
+    "en": [
+      "After reimbursement, the asset is corporate.",
+      "There is no co-ownership in this case.",
+      "Correct: the company owns it.",
+      "Transfer occurs upon reimbursement, not at exit."
+    ]
+  }
+},
+{
+  "id": 129,
+  "q": {
+    "pt": "Quais serviços corporativos os usuários podem acessar de um dispositivo móvel pessoal (BYOD)?",
+    "en": "Which corporate services can users access from a personal mobile device (BYOD)?"
+  },
+  "options": {
+    "pt": [
+      "Todos os serviços e redes internas sem restrição.",
+      "Apenas ferramentas de comunicação não confidenciais.",
+      "Serviços limitados como Google Workspace, Slack e Zoom.",
+      "Apenas a VPN corporativa e compartilhamentos internos."
+    ],
+    "en": [
+      "All services and internal networks without restriction.",
+      "Only non-confidential communication tools.",
+      "Limited services such as Google Workspace, Slack, and Zoom.",
+      "Only corporate VPN and internal shares."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "BYOD não dá acesso irrestrito.",
+      "Pode incluir dados sensíveis; regra é mais específica.",
+      "Correto: acesso é limitado a serviços autorizados.",
+      "Nem sempre a VPN é permitida em BYOD."
+    ],
+    "en": [
+      "BYOD does not grant unrestricted access.",
+      "May involve sensitive data; rule is more specific.",
+      "Correct: access is limited to authorized services.",
+      "VPN is not always permitted for BYOD."
+    ]
+  }
+},
+{
+  "id": 130,
+  "q": {
+    "pt": "Qual é a política sobre o uso de dispositivos móveis com jailbreak ou root?",
+    "en": "What is the policy on using mobile devices with jailbreak or root?"
+  },
+  "options": {
+    "pt": [
+      "Permitidos se um MDM estiver instalado.",
+      "Permitidos pela equipe técnica para testes.",
+      "Não são permitidos para se conectar aos recursos de informação da empresa.",
+      "Exigem aprovação especial do CISO."
+    ],
+    "en": [
+      "Allowed if an MDM is installed.",
+      "Allowed for the technical team for testing.",
+      "Not allowed to connect to company information resources.",
+      "Require special CISO approval."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "MDM não anula o risco de root/jailbreak.",
+      "Ambientes de teste devem usar dispositivos conformes.",
+      "Correto: dispositivos com root/jailbreak não podem se conectar.",
+      "Aprovação não mitiga vulnerabilidades estruturais."
+    ],
+    "en": [
+      "MDM does not remove root/jailbreak risk.",
+      "Testing should use compliant devices.",
+      "Correct: rooted/jailbroken devices cannot connect.",
+      "Approval does not mitigate inherent vulnerabilities."
+    ]
+  }
+},
+  {
+  "id": 131,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 132,
+  "q": {
+    "pt": "O que a segregação de funções (SoD - Segregation of Duties) significa na prática em um ambiente de TI?",
+    "en": "In practice, what does Segregation of Duties (SoD) mean in an IT environment?"
+  },
+  "options": {
+    "pt": [
+      "Que cada funcionário deve ter uma função diferente.",
+      "A divisão de uma tarefa crítica entre várias pessoas para evitar fraudes ou erros.",
+      "A separação entre o ambiente de desenvolvimento e o de produção.",
+      "A alocação de recursos de TI para diferentes departamentos."
+    ],
+    "en": [
+      "That each employee must have a different role.",
+      "Splitting a critical task among multiple people to prevent fraud or errors.",
+      "Separating development and production environments.",
+      "Allocating IT resources to different departments."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Funções distintas ajudam, mas não definem SoD por si só.",
+      "Correto: SoD distribui etapas críticas para reduzir fraude/erro.",
+      "Separar ambientes é boa prática, mas não é a definição de SoD.",
+      "Alocação de recursos não é SoD."
+    ],
+    "en": [
+      "Different roles help, but that alone is not SoD.",
+      "Correct: SoD splits critical steps to reduce fraud/error.",
+      "Env separation is good practice, not SoD’s definition.",
+      "Resource allocation is not SoD."
+    ]
+  }
+},
+{
+  "id": 133,
+  "q": {
+    "pt": "Qual a importância de um Plano de Continuidade de Negócios (PCN) e de um Plano de Recuperação de Desastres (PRD)?",
+    "en": "What is the importance of a Business Continuity Plan (BCP) and a Disaster Recovery Plan (DRP)?"
+  },
+  "options": {
+    "pt": [
+      "São documentos opcionais para grandes empresas.",
+      "São essenciais para garantir que a empresa possa voltar a operar rapidamente após um incidente grave.",
+      "São exigidos apenas para bancos que lidam com criptomoedas.",
+      "Servem apenas para cumprir requisitos de certificação ISO."
+    ],
+    "en": [
+      "They are optional documents for large companies.",
+      "They are essential to ensure the company can resume operations quickly after a major incident.",
+      "They are required only for banks dealing with cryptocurrencies.",
+      "They exist only to satisfy ISO certification requirements."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Não são opcionais em um programa maduro.",
+      "Correto: visam resiliência e retomada rápida.",
+      "Aplicam-se a diversos setores, não só a bancos/cripto.",
+      "Vão além de certificações: focam continuidade real."
+    ],
+    "en": [
+      "Not optional in a mature program.",
+      "Correct: they enable resilience and quick recovery.",
+      "They apply across industries, not only crypto banks.",
+      "Beyond certifications; they ensure real continuity."
+    ]
+  }
+},
+{
+  "id": 134,
+  "q": {
+    "pt": "Em um programa de conscientização de segurança, qual é o principal objetivo de um simulado de phishing?",
+    "en": "In a security awareness program, what is the main objective of a phishing simulation?"
+  },
+  "options": {
+    "pt": [
+      "Identificar e punir os funcionários que clicam em links maliciosos.",
+      "Coletar dados sobre o comportamento dos funcionários na internet.",
+      "Educar os colaboradores sobre como identificar e evitar ataques de engenharia social.",
+      "Testar a velocidade do sistema de detecção de vírus."
+    ],
+    "en": [
+      "Identify and punish employees who click malicious links.",
+      "Collect data on employees’ internet behavior.",
+      "Educate employees to identify and avoid social engineering attacks.",
+      "Test the speed of the antivirus detection system."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Punição não é o objetivo pedagógico.",
+      "Coleta de dados não é a finalidade central.",
+      "Correto: foco é educação e mudança de comportamento.",
+      "Simulados não medem antivírus."
+    ],
+    "en": [
+      "Punishment is not the pedagogical goal.",
+      "Data collection is not the core purpose.",
+      "Correct: focus is education and behavior change.",
+      "Simulations don’t test antivirus speed."
+    ]
+  }
+},
+{
+  "id": 135,
+  "q": {
+    "pt": "Qual é a diferença entre risco inerente e risco residual?",
+    "en": "What is the difference between inherent risk and residual risk?"
+  },
+  "options": {
+    "pt": [
+      "O risco inerente é o que sobra após controles; o residual é o inicial.",
+      "O risco inerente é o risco inicial antes de controles; o residual é o que permanece após os controles.",
+      "O risco inerente é um risco de TI; o residual é um risco de negócio.",
+      "São sinônimos e podem ser usados de forma intercambiável."
+    ],
+    "en": [
+      "Inherent risk is what remains after controls; residual is the initial risk.",
+      "Inherent risk is the initial risk before controls; residual is what remains after controls.",
+      "Inherent risk is an IT risk; residual is a business risk.",
+      "They are synonyms and interchangeable."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Inverte os conceitos.",
+      "Correto: inerente = antes; residual = depois dos controles.",
+      "Ambos podem existir em TI e negócio.",
+      "Não são sinônimos."
+    ],
+    "en": [
+      "Reversed definitions.",
+      "Correct: inherent = before; residual = after controls.",
+      "Both can exist in IT and business contexts.",
+      "They are not synonyms."
+    ]
+  }
+},
+{
+  "id": 136,
+  "q": {
+    "pt": "Qual é a prática mais segura para desativar o acesso de um funcionário que se desligou da empresa?",
+    "en": "What is the safest practice to disable access for an employee who has left the company?"
+  },
+  "options": {
+    "pt": [
+      "Desativar sua conta de usuário após o término do último dia de trabalho.",
+      "Excluir sua conta de usuário imediatamente após o desligamento.",
+      "Trocar a senha do usuário e mantê-la ativa para futuras auditorias.",
+      "Permitir que o gerente utilize a conta do ex-funcionário."
+    ],
+    "en": [
+      "Disable their user account at the end of the last working day.",
+      "Delete the user account immediately upon termination.",
+      "Change the user’s password and keep the account active for audits.",
+      "Allow the manager to use the former employee’s account."
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: desativar pontualmente evita uso indevido.",
+      "Excluir pode prejudicar trilhas/auditoria e ownership.",
+      "Manter ativa aumenta risco e confunde auditoria.",
+      "Compartilhar contas viola responsabilização."
+    ],
+    "en": [
+      "Correct: timely disablement prevents misuse.",
+      "Deletion can harm audit trails/ownership.",
+      "Keeping it active increases risk and muddles audits.",
+      "Shared accounts break accountability."
+    ]
+  }
+},
+{
+  "id": 137,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 138,
+  "q": {
+    "pt": "Qual é a principal função de um firewall em uma rede de computadores?",
+    "en": "What is the primary function of a firewall in a computer network?"
+  },
+  "options": {
+    "pt": [
+      "Impedir que funcionários acessem sites não autorizados.",
+      "Proteger a rede contra o acesso de dispositivos não autorizados.",
+      "Atuar como uma barreira que monitora e controla o tráfego de rede com base em regras de segurança.",
+      "Criptografar todo o tráfego de dados."
+    ],
+    "en": [
+      "Prevent employees from accessing unauthorized websites.",
+      "Protect the network from unauthorized devices.",
+      "Act as a barrier that monitors and controls network traffic based on security rules.",
+      "Encrypt all data traffic."
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Pode ser um efeito, mas não a função principal.",
+      "Parcial e não abrangente.",
+      "Correto: inspeção e filtragem conforme políticas.",
+      "Criptografia não é função do firewall por si só."
+    ],
+    "en": [
+      "May be a side effect, not the core function.",
+      "Partially true but not comprehensive.",
+      "Correct: policy-based inspection and filtering.",
+      "Encryption is not the firewall’s inherent function."
+    ]
+  }
+},
+{
+  "id": 139,
+  "q": {
+    "pt": "Como as empresas lidam com uma exigência regulatória que não pode ser atendida por motivos técnicos?",
+    "en": "How do companies handle a regulatory requirement that cannot be met for technical reasons?"
+  },
+  "options": {
+    "pt": [
+      "Ignoram a exigência por inviabilidade técnica.",
+      "Implementam um controle compensatório com proteção equivalente ao controle principal.",
+      "Buscam uma nova tecnologia independentemente do custo.",
+      "Solicitam uma exceção formal sem solução alternativa."
+    ],
+    "en": [
+      "Ignore the requirement due to technical infeasibility.",
+      "Implement a compensating control providing equivalent protection.",
+      "Adopt new technology regardless of cost.",
+      "Request a formal exception without an alternative."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Ignorar requisito não é aceitável.",
+      "Correto: controles compensatórios mitigam o risco.",
+      "Custo/benefício e viabilidade precisam ser avaliados.",
+      "Exceção sem mitigação não resolve o risco."
+    ],
+    "en": [
+      "Ignoring is not acceptable.",
+      "Correct: compensating controls mitigate risk.",
+      "Cost/benefit and feasibility must be evaluated.",
+      "Exception without mitigation doesn’t address risk."
+    ]
+  }
+},
+{
+  "id": 140,
+  "q": {
+    "pt": "Para proteger dados de um cliente de banco, a informação é misturada e transformada em um código secreto. Como chamamos esse processo?",
+    "en": "To protect a bank customer’s data, the information is scrambled into a secret code. What is this process called?"
+  },
+  "options": {
+    "pt": [
+      "Backup",
+      "Criptografia",
+      "Relatório de auditoria",
+      "Crash"
+    ],
+    "en": [
+      "Backup",
+      "Encryption",
+      "Audit report",
+      "Crash"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Backup não transforma dados.",
+      "Correto: criptografia codifica os dados.",
+      "Relatórios não protegem dados dessa forma.",
+      "Crash é falha, não proteção."
+    ],
+    "en": [
+      "Backup doesn’t transform data.",
+      "Correct: encryption encodes data.",
+      "Reports don’t protect data this way.",
+      "Crash is a failure, not protection."
+    ]
+  }
+},
+{
+  "id": 141,
+  "q": {
+    "pt": "Se um funcionário novo precisa de acesso a um sistema, qual regra diz que ele deve ter o mínimo de permissões possível?",
+    "en": "If a new employee needs system access, which rule says they should have the minimum permissions possible?"
+  },
+  "options": {
+    "pt": [
+      "Política de senha forte.",
+      "Princípio do menor privilégio.",
+      "Regra de privacidade.",
+      "Contrato de trabalho."
+    ],
+    "en": [
+      "Strong password policy.",
+      "Principle of least privilege.",
+      "Privacy rule.",
+      "Employment contract."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Senhas não definem escopo de acesso.",
+      "Correto: conceder somente o necessário.",
+      "Privacidade não define permissão mínima.",
+      "Contrato não dita nível técnico de acesso."
+    ],
+    "en": [
+      "Passwords don’t define access scope.",
+      "Correct: grant only what’s necessary.",
+      "Privacy doesn’t set minimal permissions.",
+      "Contract doesn’t dictate technical access level."
+    ]
+  }
+},
+{
+  "id": 142,
+  "q": {
+    "pt": "Para garantir que um sistema não seja alterado de forma errada, qual controle monitora quem fez qual mudança e quando?",
+    "en": "To ensure a system isn’t changed improperly, which control monitors who made what change and when?"
+  },
+  "options": {
+    "pt": [
+      "Controle de acesso físico.",
+      "Controle de mudanças.",
+      "Controle de férias.",
+      "Controle de ponto."
+    ],
+    "en": [
+      "Physical access control.",
+      "Change control.",
+      "Vacation control.",
+      "Timekeeping control."
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Acesso físico não registra alterações de sistema.",
+      "Correto: change control/management registra autoria e tempo.",
+      "Férias não se aplica.",
+      "Ponto não se aplica."
+    ],
+    "en": [
+      "Physical access doesn’t log system changes.",
+      "Correct: change control/management logs who/what/when.",
+      "Vacations don’t apply.",
+      "Timekeeping doesn’t apply."
+    ]
+  }
+},
+{
+  "id": 143,
+  "q": {
+    "pt": "A empresa precisa manter registros de tudo que acontece nos sistemas para investigar depois. Como chamamos esses registros?",
+    "en": "The company must keep records of everything happening in systems to investigate later. What are these records called?"
+  },
+  "options": {
+    "pt": [
+      "Logs de auditoria.",
+      "Notas de reunião.",
+      "Planos de férias.",
+      "Canal no Slack."
+    ],
+    "en": [
+      "Audit logs.",
+      "Meeting notes.",
+      "Vacation plans.",
+      "Slack channel."
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: logs registram eventos para análise e auditoria.",
+      "Notas não substituem trilhas técnicas.",
+      "Irrelevante para eventos técnicos.",
+      "Canal de chat não é trilha de auditoria."
+    ],
+    "en": [
+      "Correct: logs record events for analysis/audit.",
+      "Notes don’t replace technical trails.",
+      "Not relevant for technical events.",
+      "Chat channels aren’t audit trails."
+    ]
+  }
+},
+{
+  "id": 144,
+  "q": {
+    "pt": "O que significa 'vulnerabilidade' em segurança da informação?",
+    "en": "What does a 'vulnerability' mean in information security?"
+  },
+  "options": {
+    "pt": [
+      "A fraqueza de um sistema que pode ser explorada por um invasor.",
+      "Um problema com o computador que o faz travar.",
+      "Um tipo de programa de computador.",
+      "Não tem relação com segurança."
+    ],
+    "en": [
+      "A weakness in a system that can be exploited by an attacker.",
+      "A computer problem that causes it to freeze.",
+      "A type of computer program.",
+      "It has nothing to do with security."
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: vulnerabilidade é uma fraqueza explorável.",
+      "Travamentos podem ocorrer sem relação com segurança.",
+      "Programa não define vulnerabilidade.",
+      "Está diretamente ligada à segurança."
+    ],
+    "en": [
+      "Correct: a vulnerability is an exploitable weakness.",
+      "Crashes may occur without being security-related.",
+      "A program is not a vulnerability by itself.",
+      "It is directly related to security."
+    ]
+  }
 }
 ]
