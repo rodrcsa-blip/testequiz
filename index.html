@@ -25,7 +25,7 @@
         <h1 class="text-3xl font-extrabold text-gray-900">Pescaria de GRC</h1>
         <p id="header-subtitle" class="mt-2 text-md text-gray-500">Por favor, faça o login para começar.</p>
       </div>
-      <!-- Seleção global de idioma (também há seleção dentro da pergunta) -->
+      <!-- ÚNICO seletor de idioma (global) -->
       <div class="flex items-center justify-center md:justify-end gap-2">
         <label for="global-lang" class="text-sm text-gray-600">Idioma:</label>
         <select id="global-lang" class="border rounded-md px-3 py-2 text-sm">
@@ -59,41 +59,25 @@
 
       <!-- Página Inicial / Menu -->
       <div id="start-page" class="hidden">
-        <div class="flex items-center justify-between mb-4">
+        <div class="mb-4">
           <h2 class="text-xl font-bold text-gray-700">
             Selecione a Pergunta (1-450 disponíveis):
           </h2>
-          <div class="flex items-center gap-2">
-            <label for="menu-lang" class="text-sm text-gray-600">Idioma das perguntas:</label>
-            <select id="menu-lang" class="border rounded-md px-3 py-2 text-sm">
-              <option value="pt">Português</option>
-              <option value="en">English</option>
-            </select>
-          </div>
         </div>
         <div id="menu-options" class="menu-button-grid"></div>
       </div>
 
       <!-- Área do Quiz -->
       <div id="quiz-area" class="space-y-6 hidden">
-        <!-- Barra superior: voltar + idioma + número da pergunta -->
+        <!-- Barra superior: voltar + número da pergunta -->
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
           <button id="back-to-menu-top" class="px-4 py-2 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
             Voltar ao Menu
           </button>
-          <div class="flex items-center gap-3">
-            <div class="mb-0">
-              <span id="question-number" class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 border border-gray-200">
-                Pergunta —
-              </span>
-            </div>
-            <div class="flex items-center gap-2">
-              <label for="question-lang" class="text-sm text-gray-600">Idioma:</label>
-              <select id="question-lang" class="border rounded-md px-3 py-2 text-sm">
-                <option value="pt">Português</option>
-                <option value="en">English</option>
-              </select>
-            </div>
+          <div class="mb-0">
+            <span id="question-number" class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 border border-gray-200">
+              Pergunta —
+            </span>
           </div>
         </div>
 
