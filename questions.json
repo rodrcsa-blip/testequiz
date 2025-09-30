@@ -7600,15 +7600,6 @@
     "en": ["Correct.", "Generic and false claim.", "They differ functionally.", "Not synonyms."]
   }
 },
-  {
-  "id": 250,
-  "trap": "phishing",
-  "image": "./images/phishing.jpg",
-  "trapMessage": {
-    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
-  }
-},
 {
   "id": 251,
   "q": {
