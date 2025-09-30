@@ -7599,5 +7599,1625 @@
     "pt": ["Correto.", "Afirmação genérica e falsa.", "Há diferença funcional clara.", "Não são sinônimos."],
     "en": ["Correct.", "Generic and false claim.", "They differ functionally.", "Not synonyms."]
   }
-}
+},
+  {
+  "id": 250,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+  "id": 251,
+  "q": {
+    "pt": "Em quais casos a contratação pode ser “Não Recomendada”?",
+    "en": "In which cases can hiring be 'Not Recommended'?"
+  },
+  "options": {
+    "pt": [
+      "Apenas em caso de riscos baixos",
+      "Quando o fornecedor apresenta riscos altos ou críticos não remediados",
+      "Quando o fornecedor não responde ao assessment",
+      "Quando o fornecedor é aprovado com restrições"
+    ],
+    "en": [
+      "Only in case of low risks",
+      "When the supplier presents high or critical risks that are not remediated",
+      "When the supplier does not respond to the assessment",
+      "When the supplier is approved with restrictions"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Riscos baixos não justificam bloqueio de contratação.",
+      "Correto: riscos altos/críticos sem remediação tornam a contratação inviável.",
+      "A falta de resposta leva a 'non assessed', não necessariamente a 'não recomendada'.",
+      "Restrições permitem seguir com mitigação, não rejeição total."
+    ],
+    "en": [
+      "Low risks do not justify blocking a contract.",
+      "Correct: high/critical risks without remediation make hiring unfeasible.",
+      "Lack of response leads to 'non assessed', not necessarily 'not recommended'.",
+      "Restrictions allow hiring with mitigation, not full rejection."
+    ]
+  }
+},
+{
+  "id": 252,
+  "q": {
+    "pt": "Qual equipe auxilia na monitorização de fornecedores classificados como High ou Very High que não responderam ao assessment?",
+    "en": "Which team assists in monitoring suppliers classified as High or Very High that did not respond to the assessment?"
+  },
+  "options": {
+    "pt": [
+      "Apenas a equipe de Procurement",
+      "Equipe de Cyber Intelligence",
+      "Apenas o Contract Owner",
+      "Equipe Jurídica"
+    ],
+    "en": [
+      "Only the Procurement team",
+      "Cyber Intelligence team",
+      "Only the Contract Owner",
+      "Legal team"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Procurement conduz o processo, mas não monitora tecnicamente.",
+      "Correto: a equipe de Cyber Intelligence apoia o monitoramento avançado de risco.",
+      "O Contract Owner acompanha o contrato, mas não realiza monitoramento de risco.",
+      "O Jurídico atua em conformidade, não em monitoramento contínuo."
+    ],
+    "en": [
+      "Procurement leads the process but does not handle technical monitoring.",
+      "Correct: Cyber Intelligence team supports advanced risk monitoring.",
+      "The Contract Owner oversees the contract, not continuous monitoring.",
+      "Legal ensures compliance, not risk monitoring."
+    ]
+  }
+},
+{
+  "id": 253,
+  "q": {
+    "pt": "O que deve ser incluído em um plano de mitigação para fornecedores que não respondem ao assessment?",
+    "en": "What should be included in a mitigation plan for suppliers who do not respond to the assessment?"
+  },
+  "options": {
+    "pt": [
+      "Somente o nome da empresa",
+      "Nome, CNPJ e mapeamento de domínios",
+      "Nome e CNPJ",
+      "Apenas o CNPJ"
+    ],
+    "en": [
+      "Only the company name",
+      "Name, CNPJ and domain mapping",
+      "Name and CNPJ",
+      "Only the CNPJ"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Nome sozinho não é suficiente para análise.",
+      "Correto: informações completas permitem rastreabilidade e mitigação adequada.",
+      "Falta o mapeamento de domínios, necessário para análise técnica.",
+      "CNPJ sozinho é insuficiente para avaliação de risco."
+    ],
+    "en": [
+      "Company name alone is insufficient for analysis.",
+      "Correct: complete data allows traceability and adequate mitigation.",
+      "Missing domain mapping, which is critical for technical assessment.",
+      "CNPJ alone is not enough for risk assessment."
+    ]
+  }
+},
+{
+  "id": 254,
+  "q": {
+    "pt": "Onde os alertas de monitoramento são recebidos?",
+    "en": "Where are monitoring alerts received?"
+  },
+  "options": {
+    "pt": [
+      "Por e-mail",
+      "No canal #infosec_tprm_monitoring no Slack",
+      "No sistema de Procurement",
+      "No Risk Register"
+    ],
+    "en": [
+      "By email",
+      "In the #infosec_tprm_monitoring channel on Slack",
+      "In the Procurement system",
+      "In the Risk Register"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "E-mails podem complementar, mas não são o canal oficial.",
+      "Correto: o Slack #infosec_tprm_monitoring centraliza os alertas.",
+      "O Procurement registra contratos, não alertas técnicos.",
+      "O Risk Register documenta riscos, mas não emite alertas."
+    ],
+    "en": [
+      "Emails may complement but are not the official channel.",
+      "Correct: the Slack #infosec_tprm_monitoring channel centralizes alerts.",
+      "Procurement system registers contracts, not alerts.",
+      "Risk Register documents risks but does not generate alerts."
+    ]
+  }
+},
+{
+  "id": 255,
+  "q": {
+    "pt": "Qual é o primeiro passo para a elaboração de um plano de mitigação?",
+    "en": "What is the first step in developing a mitigation plan?"
+  },
+  "options": {
+    "pt": [
+      "Abrir um ticket com o time de Cyber Intelligence",
+      "Coletar informações do fornecedor",
+      "Incluir o ticket no Risk Register",
+      "Mapear domínios"
+    ],
+    "en": [
+      "Open a ticket with the Cyber Intelligence team",
+      "Collect supplier information",
+      "Include the ticket in the Risk Register",
+      "Map domains"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Abrir ticket pode ser necessário, mas não é o passo inicial.",
+      "Correto: sem informações do fornecedor, não há base para o plano.",
+      "O Risk Register é etapa posterior de documentação.",
+      "Mapear domínios é parte da coleta, não o primeiro passo isolado."
+    ],
+    "en": [
+      "Opening a ticket may be needed but is not the first step.",
+      "Correct: without supplier info, the plan cannot be developed.",
+      "Risk Register is a later documentation step.",
+      "Domain mapping is part of data collection, not the initial step alone."
+    ]
+  }
+},
+{
+  "id": 256,
+  "q": {
+    "pt": "Qual é a ação recomendada para riscos classificados como “Altos” ou “Críticos”?",
+    "en": "What is the recommended action for risks classified as 'High' or 'Critical'?"
+  },
+  "options": {
+    "pt": [
+      "Remediação imediata antes da continuidade da contratação",
+      "Criação de um plano de ação",
+      "Apenas monitoramento",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "Immediate remediation before continuing the hiring",
+      "Creation of an action plan",
+      "Monitoring only",
+      "None of the options"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: riscos críticos precisam ser tratados antes da continuidade.",
+      "Plano de ação pode complementar, mas só após remediação imediata.",
+      "Monitorar não reduz o risco no curto prazo.",
+      "Sempre há medidas cabíveis."
+    ],
+    "en": [
+      "Correct: critical risks must be remediated before proceeding.",
+      "Action plans may complement but only after immediate remediation.",
+      "Monitoring alone does not mitigate short-term risk.",
+      "There are always mitigation measures to take."
+    ]
+  }
+},
+{
+  "id": 257,
+  "q": {
+    "pt": "O que é uma boa prática para a formalização do resultado da avaliação de um fornecedor?",
+    "en": "What is a good practice for formalizing the result of a supplier evaluation?"
+  },
+  "options": {
+    "pt": [
+      "Apenas comunicação verbal",
+      "Não é necessário documentar",
+      "Exigir evidências formais de que os controles foram implementados",
+      "Nenhuma das opções"
+    ],
+    "en": [
+      "Verbal communication only",
+      "Documentation is not required",
+      "Require formal evidence that controls were implemented",
+      "None of the options"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Verbal não garante rastreabilidade.",
+      "Sempre é necessário documentar para auditoria.",
+      "Correto: evidências formais comprovam efetividade.",
+      "Existe sim prática recomendada."
+    ],
+    "en": [
+      "Verbal does not guarantee traceability.",
+      "Documentation is always required for audits.",
+      "Correct: formal evidence proves effectiveness.",
+      "There is indeed a recommended practice."
+    ]
+  }
+},
+{
+  "id": 258,
+  "q": {
+    "pt": "Qual o tipo de contrato que se aplica a um fornecedor que precisa de um plano de ação?",
+    "en": "What type of contract applies to a supplier that needs an action plan?"
+  },
+  "options": {
+    "pt": [
+      "Recomendado",
+      "Recomendado com Restrições",
+      "Não Recomendado",
+      "Sem restrições"
+    ],
+    "en": [
+      "Recommended",
+      "Recommended with Restrictions",
+      "Not Recommended",
+      "No restrictions"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Recomendado simples não exige plano de ação.",
+      "Correto: restrições obrigam plano de ação vinculado.",
+      "Não recomendado implica rejeição total, não mitigação.",
+      "Sem restrição não exige plano de ação."
+    ],
+    "en": [
+      "Plain 'Recommended' does not require an action plan.",
+      "Correct: restrictions enforce a linked action plan.",
+      "'Not Recommended' implies rejection, not mitigation.",
+      "'No restrictions' means no action plan required."
+    ]
+  }
+},
+{
+  "id": 259,
+  "q": {
+    "pt": "Qual é a frequência de reavaliação de um fornecedor com risco “Alto”?",
+    "en": "What is the frequency of reassessment for a supplier with 'High' risk?"
+  },
+  "options": {
+    "pt": [
+      "Em até 12 meses",
+      "Em até 18 meses",
+      "Anualmente",
+      "Semestralmente"
+    ],
+    "en": [
+      "Within 12 months",
+      "Within 18 months",
+      "Annually",
+      "Semi-annually"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "12 meses é prazo de risco muito alto, não apenas alto.",
+      "Correto: risco alto requer reavaliação em até 18 meses.",
+      "Anual pode ser insuficiente se o risco for alto.",
+      "Semestral é mais curto do que o exigido."
+    ],
+    "en": [
+      "12 months applies to very high risk, not just high.",
+      "Correct: high risk requires reassessment within 18 months.",
+      "Annual may be insufficient for high risk.",
+      "Semi-annual is shorter than required."
+    ]
+  }
+},
+{
+  "id": 260,
+  "q": {
+    "pt": "Qual é a frequência de reavaliação de um fornecedor com risco “Muito Alto”?",
+    "en": "What is the frequency of reassessment for a supplier with 'Very High' risk?"
+  },
+  "options": {
+    "pt": [
+      "Em até 12 meses",
+      "Em até 18 meses",
+      "Semestralmente",
+      "Anualmente"
+    ],
+    "en": [
+      "Within 12 months",
+      "Within 18 months",
+      "Semi-annually",
+      "Annually"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: risco muito alto requer reavaliação anual no máximo em 12 meses.",
+      "18 meses é permitido para risco alto, não muito alto.",
+      "Semestral pode ser adotado, mas não é exigido pela política.",
+      "Anual isolado pode ser insuficiente."
+    ],
+    "en": [
+      "Correct: very high risk requires reassessment within 12 months.",
+      "18 months is for high risk, not very high.",
+      "Semi-annual may be adopted but is not the default requirement.",
+      "Annual alone may be insufficient."
+    ]
+  }
+},
+  {
+  "id": 261,
+  "q": {
+    "pt": "Qual o principal objetivo da Política de Gestão de Identidades e Acessos do Nubank?",
+    "en": "What is the main objective of Nubank's Identity and Access Management Policy?"
+  },
+  "options": {
+    "pt": [
+      "Estabelecer diretrizes para marketing digital",
+      "Estabelecer regras para garantir a conformidade regulatória e a governança sobre o ciclo de vida de identidades e acessos",
+      "Definir o código de vestimenta da empresa",
+      "Regular o uso de redes sociais pelos funcionários"
+    ],
+    "en": [
+      "Establish guidelines for digital marketing",
+      "Establish rules to ensure regulatory compliance and governance over the identity and access lifecycle",
+      "Define the company dress code",
+      "Regulate employees' use of social media"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Marketing digital não é o objetivo da política de IAM.",
+      "Correto: a política visa governança e conformidade regulatória sobre identidades e acessos.",
+      "Código de vestimenta não é tratado pela política de IAM.",
+      "Redes sociais não são foco da política de IAM."
+    ],
+    "en": [
+      "Digital marketing is not the goal of IAM policy.",
+      "Correct: the policy aims at governance and regulatory compliance over identities and access.",
+      "Dress code is not covered by IAM policy.",
+      "Social media is not the focus of IAM policy."
+    ]
+  }
+},
+{
+  "id": 262,
+  "q": {
+    "pt": "A quem se aplicam as diretrizes da Política de Gestão de Identidades e Acessos?",
+    "en": "To whom do the guidelines of the Identity and Access Management Policy apply?"
+  },
+  "options": {
+    "pt": [
+      "Apenas aos executivos C-level",
+      "Apenas aos funcionários em tempo integral",
+      "A todos os funcionários, estagiários e terceiros que necessitam de acesso lógico ao ambiente tecnológico",
+      "Apenas à equipe de segurança da informação"
+    ],
+    "en": [
+      "Only C-level executives",
+      "Only full-time employees",
+      "All employees, interns and third parties requiring logical access to the technological environment",
+      "Only the information security team"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Restrito a executivos não reflete a realidade da política.",
+      "Não se limita apenas a funcionários em tempo integral.",
+      "Correto: abrange todos que precisam de acesso lógico, incluindo terceiros.",
+      "A política não é exclusiva da equipe de segurança."
+    ],
+    "en": [
+      "Restricted to executives does not reflect the policy scope.",
+      "It is not limited to full-time employees only.",
+      "Correct: it covers all who need logical access, including third parties.",
+      "The policy is not exclusive to the security team."
+    ]
+  }
+},
+{
+  "id": 263,
+  "q": {
+    "pt": "O que o princípio do \"menor privilégio\" estipula?",
+    "en": "What does the 'least privilege' principle stipulate?"
+  },
+  "options": {
+    "pt": [
+      "Que todos os usuários devem ter acesso de administrador",
+      "Que o usuário deve receber apenas os privilégios necessários para completar sua tarefa",
+      "Que os privilégios de acesso são concedidos com base na antiguidade do funcionário",
+      "Que o acesso deve ser o mais amplo possível para facilitar o trabalho"
+    ],
+    "en": [
+      "That all users must have administrator access",
+      "That the user should be granted only the privileges necessary to complete their task",
+      "That access privileges are granted based on employee seniority",
+      "That access should be as broad as possible to facilitate work"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Acesso administrativo para todos aumenta riscos.",
+      "Correto: menor privilégio concede apenas o necessário para a função.",
+      "Antiguidade não é critério de privilégio de acesso.",
+      "Acesso amplo contraria boas práticas de segurança."
+    ],
+    "en": [
+      "Admin access for all increases risks.",
+      "Correct: least privilege grants only what is necessary for the role.",
+      "Seniority is not a criterion for access privilege.",
+      "Broad access goes against security best practices."
+    ]
+  }
+},
+{
+  "id": 264,
+  "q": {
+    "pt": "Qual é o objetivo do princípio da \"Segregação de Funções\"?",
+    "en": "What is the purpose of the 'Segregation of Duties' principle?"
+  },
+  "options": {
+    "pt": [
+      "Garantir que todos os funcionários possam realizar todas as tarefas",
+      "Reduzir o número de funcionários necessários",
+      "Evitar riscos, determinando que funções conflitantes sejam realizadas por pessoas diferentes",
+      "Promover a colaboração em tarefas de alto risco"
+    ],
+    "en": [
+      "Ensure that all employees can perform all tasks",
+      "Reduce the number of employees required",
+      "Prevent risks by ensuring conflicting roles are carried out by different people",
+      "Promote collaboration in high-risk tasks"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Não é para dar múltiplas funções a todos.",
+      "Não visa redução de pessoal.",
+      "Correto: SoD previne riscos distribuindo funções críticas.",
+      "Colaboração não é o foco da SoD."
+    ],
+    "en": [
+      "It is not to give multiple roles to everyone.",
+      "It does not aim at reducing staff.",
+      "Correct: SoD prevents risks by splitting critical roles.",
+      "Collaboration is not the focus of SoD."
+    ]
+  }
+},
+{
+  "id": 265,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+  "id": 266,
+  "q": {
+    "pt": "De acordo com a política de IAM, o compartilhamento de credenciais vinculadas a um indivíduo específico é:",
+    "en": "According to the IAM policy, sharing credentials linked to a specific individual is:"
+  },
+  "options": {
+    "pt": [
+      "Permitido, se for para fins de trabalho",
+      "Permitido com a aprovação de um gerente",
+      "Estritamente proibido",
+      "Encorajado para facilitar a colaboração"
+    ],
+    "en": [
+      "Allowed if for work purposes",
+      "Allowed with manager approval",
+      "Strictly prohibited",
+      "Encouraged to facilitate collaboration"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Mesmo para fins de trabalho não é permitido.",
+      "Gerente não pode autorizar compartilhamento de credenciais pessoais.",
+      "Correto: credenciais são intransferíveis.",
+      "Encorajar esse comportamento fere a segurança."
+    ],
+    "en": [
+      "Even for work purposes, it is not allowed.",
+      "Manager cannot authorize sharing personal credentials.",
+      "Correct: credentials are non-transferable.",
+      "Encouraging this behavior violates security."
+    ]
+  }
+},
+{
+  "id": 267,
+  "q": {
+    "pt": "O que um usuário deve fazer ao identificar uma anomalia durante o uso de um sistema, serviço ou perfil?",
+    "en": "What should a user do upon identifying an anomaly while using a system, service or profile?"
+  },
+  "options": {
+    "pt": [
+      "Ignorar, pois provavelmente é um problema temporário",
+      "Tentar corrigir o problema sozinho",
+      "Comunicar imediatamente à equipe de IAM BA e ao proprietário da aplicação/perfil através do canal de Slack #itsec-iam-identity-access-management",
+      "Enviar um e-mail para o CEO"
+    ],
+    "en": [
+      "Ignore it, as it is probably a temporary issue",
+      "Try to fix the problem by themselves",
+      "Immediately notify the IAM BA team and the application/profile owner via Slack channel #itsec-iam-identity-access-management",
+      "Send an email to the CEO"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Ignorar pode aumentar o risco.",
+      "Usuário não deve corrigir sozinho.",
+      "Correto: deve reportar imediatamente no canal indicado.",
+      "Não é responsabilidade do CEO tratar anomalias técnicas."
+    ],
+    "en": [
+      "Ignoring it may increase risk.",
+      "User should not attempt to fix it alone.",
+      "Correct: must report immediately in the indicated channel.",
+      "It is not the CEO’s responsibility to handle technical anomalies."
+    ]
+  }
+},
+{
+  "id": 268,
+  "q": {
+    "pt": "Qual é a definição de um risco de acesso classificado como \"Muito Alto\"?",
+    "en": "What is the definition of an access risk classified as 'Very High'?"
+  },
+  "options": {
+    "pt": [
+      "Perdas de produtividade que afetam uma única unidade por um curto período",
+      "Impacto na integridade dos dados devido à manipulação indevida",
+      "Possibilidade de comprometimento material da integridade dos relatórios financeiros ou alto impacto operacional com longo tempo de recuperação",
+      "Possibilidade de fraude sem impacto nos relatórios financeiros"
+    ],
+    "en": [
+      "Productivity losses affecting a single unit for a short period",
+      "Impact on data integrity due to mishandling",
+      "Possibility of material compromise of financial reporting integrity or high operational impact with long recovery time",
+      "Possibility of fraud without impact on financial reporting"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Impacto limitado não caracteriza 'muito alto'.",
+      "Impacto em integridade de dados é grave, mas não necessariamente muito alto.",
+      "Correto: risco muito alto compromete relatórios financeiros ou operações críticas.",
+      "Fraude sem impacto financeiro é menor."
+    ],
+    "en": [
+      "Limited impact does not qualify as 'very high'.",
+      "Impact on data integrity is serious but not always 'very high'.",
+      "Correct: very high risk compromises financial reports or critical operations.",
+      "Fraud without financial impact is lesser risk."
+    ]
+  }
+},
+{
+  "id": 269,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+  "id": 270,
+  "q": {
+    "pt": "Quem é o responsável por garantir a implementação e eficácia adequadas dos controles de acesso em uma aplicação?",
+    "en": "Who is responsible for ensuring proper implementation and effectiveness of access controls in an application?"
+  },
+  "options": {
+    "pt": [
+      "O usuário final",
+      "A equipe de Segurança da Informação",
+      "O proprietário da aplicação (application owner)",
+      "O CISO Global"
+    ],
+    "en": [
+      "The end user",
+      "The Information Security team",
+      "The application owner",
+      "The Global CISO"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "O usuário final não é responsável por controles de aplicação.",
+      "Segurança apoia, mas não é responsável exclusivo.",
+      "Correto: o application owner garante implementação e eficácia.",
+      "O CISO atua estrategicamente, não no nível de cada aplicação."
+    ],
+    "en": [
+      "The end user is not responsible for application controls.",
+      "Security supports but is not solely responsible.",
+      "Correct: the application owner ensures implementation and effectiveness.",
+      "The CISO acts strategically, not at each application level."
+    ]
+  }
+},
+{
+  "id": 271,
+  "q": {
+    "pt": "A criação de contas não nominais ou usuários locais para transações de risco Muito Alto e Alto requer qual procedimento?",
+    "en": "What procedure is required to create non-nominal accounts or local users for Very High and High risk transactions?"
+  },
+  "options": {
+    "pt": [
+      "Apenas uma solicitação verbal ao gerente",
+      "Nenhuma aprovação é necessária",
+      "Aprovação no sistema corporativo de solicitação de acesso",
+      "Aprovação direta do CISO"
+    ],
+    "en": [
+      "Only a verbal request to the manager",
+      "No approval is needed",
+      "Approval in the corporate access request system",
+      "Direct approval from the CISO"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Solicitação verbal não é suficiente.",
+      "Aprovação é obrigatória.",
+      "Correto: deve haver aprovação formal no sistema corporativo.",
+      "Não exige aprovação direta do CISO."
+    ],
+    "en": [
+      "Verbal request is not enough.",
+      "Approval is mandatory.",
+      "Correct: must be approved formally in the corporate system.",
+      "Direct CISO approval is not required."
+    ]
+  }
+},
+{
+  "id": 272,
+  "q": {
+    "pt": "O que deve ser avaliado antes de conceder novos acessos para transações de risco Muito Alto e Alto?",
+    "en": "What should be evaluated before granting new access for Very High and High risk transactions?"
+  },
+  "options": {
+    "pt": [
+      "A popularidade do sistema solicitado",
+      "A existência de combinações tóxicas de acesso",
+      "O tempo de serviço do solicitante na empresa",
+      "A opinião dos colegas de equipe"
+    ],
+    "en": [
+      "The popularity of the requested system",
+      "The existence of toxic access combinations",
+      "The employee's tenure at the company",
+      "The colleagues' opinion"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Popularidade não é critério.",
+      "Correto: combinações tóxicas devem ser avaliadas para evitar riscos.",
+      "Tempo de serviço não garante segurança.",
+      "Opinião de colegas não substitui análise técnica."
+    ],
+    "en": [
+      "Popularity is not a criterion.",
+      "Correct: toxic combinations must be evaluated to avoid risks.",
+      "Tenure does not guarantee security.",
+      "Colleagues’ opinion does not replace technical analysis."
+    ]
+  }
+},
+{
+  "id": 273,
+  "q": {
+    "pt": "O que deve ser feito com a senha padrão configurada para contas privilegiadas?",
+    "en": "What should be done with the default password set for privileged accounts?"
+  },
+  "options": {
+    "pt": [
+      "Mantê-la, pois é fácil de lembrar",
+      "Anotá-la e guardar em um local público",
+      "Alterá-la",
+      "Compartilhá-la com toda a equipe de TI"
+    ],
+    "en": [
+      "Keep it, as it is easy to remember",
+      "Write it down and store it in a public place",
+      "Change it",
+      "Share it with the entire IT team"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Manter senha padrão expõe riscos.",
+      "Guardar em local público é inseguro.",
+      "Correto: senha padrão deve sempre ser alterada.",
+      "Compartilhar expõe credenciais críticas."
+    ],
+    "en": [
+      "Keeping default password exposes risks.",
+      "Storing in a public place is insecure.",
+      "Correct: default password must always be changed.",
+      "Sharing exposes critical credentials."
+    ]
+  }
+},
+{
+  "id": 274,
+  "q": {
+    "pt": "Como o acesso classificado como privilegiado deve ser concedido?",
+    "en": "How should privileged access be granted?"
+  },
+  "options": {
+    "pt": [
+      "De forma permanente para todos os administradores de sistema",
+      "Pontualmente para a execução de uma atividade específica, com registro e aprovação",
+      "Automaticamente para qualquer funcionário que solicite",
+      "Apenas durante os fins de semana"
+    ],
+    "en": [
+      "Permanently for all system administrators",
+      "Temporarily for a specific activity, with logging and approval",
+      "Automatically for any employee who requests",
+      "Only during weekends"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Acesso permanente expõe riscos contínuos.",
+      "Correto: acesso privilegiado deve ser temporário e aprovado.",
+      "Acesso automático não é seguro.",
+      "Fim de semana não é critério válido."
+    ],
+    "en": [
+      "Permanent access exposes continuous risks.",
+      "Correct: privileged access must be temporary and approved.",
+      "Automatic access is not secure.",
+      "Weekend is not a valid criterion."
+    ]
+  }
+},
+{
+  "id": 275,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+  "id": 276,
+  "q": {
+    "pt": "O que o proprietário de uma aplicação deve garantir em relação à rastreabilidade (logs) para transações de alto risco?",
+    "en": "What should the owner of an application ensure regarding traceability (logs) for high-risk transactions?"
+  },
+  "options": {
+    "pt": [
+      "Que os logs sejam deletados diariamente para economizar espaço",
+      "Que qualquer pessoa na empresa possa acessar e modificar os logs",
+      "Que a aplicação permita rastrear atividades, proteger os logs contra acesso não autorizado e garantir a confidencialidade",
+      "Que a rastreabilidade seja desativada para melhorar o desempenho"
+    ],
+    "en": [
+      "That logs are deleted daily to save space",
+      "That anyone in the company can access and modify logs",
+      "That the application allows tracking activities, protecting logs from unauthorized access and ensuring confidentiality",
+      "That traceability is disabled to improve performance"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Logs não devem ser deletados diariamente.",
+      "Logs não podem ser acessados por qualquer pessoa.",
+      "Correto: logs devem ser protegidos e confidenciais.",
+      "Desativar rastreabilidade compromete a segurança."
+    ],
+    "en": [
+      "Logs should not be deleted daily.",
+      "Logs cannot be accessible by anyone.",
+      "Correct: logs must be protected and confidential.",
+      "Disabling traceability compromises security."
+    ]
+  }
+},
+{
+  "id": 277,
+  "q": {
+    "pt": "Para sistemas que não podem ser integrados com SSO, qual é o comprimento mínimo de senha exigido pela política de IAM?",
+    "en": "For systems that cannot be integrated with SSO, what is the minimum password length required by the IAM policy?"
+  },
+  "options": {
+    "pt": [
+      "6 caracteres",
+      "8 caracteres",
+      "10 caracteres",
+      "12 caracteres"
+    ],
+    "en": [
+      "6 characters",
+      "8 characters",
+      "10 characters",
+      "12 characters"
+    ]
+  },
+  "correctIndex": 3,
+  "rationales": {
+    "pt": [
+      "6 é muito fraco.",
+      "8 já não é suficiente segundo boas práticas.",
+      "10 é melhor, mas ainda não o exigido pela política.",
+      "Correto: a política exige 12 caracteres."
+    ],
+    "en": [
+      "6 is too weak.",
+      "8 is no longer sufficient according to best practices.",
+      "10 is better but still not the policy requirement.",
+      "Correct: the policy requires 12 characters."
+    ]
+  }
+},
+{
+  "id": 278,
+  "q": {
+    "pt": "Para sistemas com um único fator de autenticação, qual é o prazo máximo para a expiração da senha?",
+    "en": "For systems with a single authentication factor, what is the maximum password expiration period?"
+  },
+  "options": {
+    "pt": [
+      "30 dias corridos",
+      "60 dias corridos",
+      "90 dias corridos",
+      "A senha nunca expira"
+    ],
+    "en": [
+      "30 calendar days",
+      "60 calendar days",
+      "90 calendar days",
+      "Password never expires"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "30 dias é muito restritivo.",
+      "60 é mais comum, mas não o exigido pela política.",
+      "Correto: expiração máxima é de 90 dias.",
+      "Senha não pode ser permanente."
+    ],
+    "en": [
+      "30 days is too restrictive.",
+      "60 is common but not the policy requirement.",
+      "Correct: maximum expiration is 90 days.",
+      "Password cannot be permanent."
+    ]
+  }
+},
+{
+    "id": 279,
+    "q": {
+      "pt": "O que é o UpGuard Domain Scan Monitoring?",
+      "en": "What is the UpGuard Domain Scan Monitoring?"
+    },
+    "options": {
+      "pt": [
+        "Um anexo de segurança",
+        "Uma solução de monitoramento contínuo para domínios",
+        "Um plano de mitigação",
+        "Um formulário de contratação"
+      ],
+      "en": [
+        "A security annex",
+        "A continuous monitoring solution for domains",
+        "A mitigation plan",
+        "A procurement form"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Não é um anexo documental.",
+        "Correto: monitora continuamente configurações/exposição de domínios.",
+        "Plano de mitigação é resposta a risco, não o objetivo do UpGuard.",
+        "Não é um formulário do processo."
+      ],
+      "en": [
+        "It’s not a document annex.",
+        "Correct: it continuously monitors domain configuration/exposures.",
+        "Mitigation plans respond to risks; that’s not UpGuard’s purpose.",
+        "It’s not a process form."
+      ]
+    }
+  },
+  {
+    "id": 280,
+    "q": {
+      "pt": "Qual é o objetivo principal do Ongoing Monitoring?",
+      "en": "What is the main goal of Ongoing Monitoring?"
+    },
+    "options": {
+      "pt": [
+        "Terminar o contrato com o fornecedor",
+        "Reavaliar o fornecedor anualmente",
+        "Acompanhar e reavaliar o fornecedor continuamente",
+        "Apenas monitorar o Apura"
+      ],
+      "en": [
+        "Terminate the vendor contract",
+        "Reassess the vendor annually",
+        "Continuously monitor and reassess the vendor",
+        "Only monitor Apura"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Encerrar contrato pode ser consequência, não o objetivo.",
+        "Apenas anual é insuficiente.",
+        "Correto: acompanhamento e reavaliação contínuos.",
+        "Apura é apenas uma ferramenta, não o escopo."
+      ],
+      "en": [
+        "Termination may be a consequence, not the goal.",
+        "Annual-only is insufficient.",
+        "Correct: continuous follow-up and reassessment.",
+        "Apura is just a tool, not the scope."
+      ]
+    }
+  },
+  {
+    "id": 281,
+    "q": {
+      "pt": "Qual equipe é responsável por rever anualmente a documentação de segurança de BPOs?",
+      "en": "Which team is responsible for annually reviewing BPOs’ security documentation?"
+    },
+    "options": {
+      "pt": [
+        "Apenas o Contract Owner",
+        "Apenas a equipe de Cyber Intelligence",
+        "A equipe de Infosec TPRM",
+        "Todas as equipes"
+      ],
+      "en": [
+        "Only the Contract Owner",
+        "Only the Cyber Intelligence team",
+        "The Infosec TPRM team",
+        "All teams"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "O Contract Owner não cobre o escopo técnico completo.",
+        "Cyber Intelligence apoia, mas não lidera a revisão anual.",
+        "Correto: TPRM é dono do ciclo de avaliação.",
+        "Responsabilidade não é difusa."
+      ],
+      "en": [
+        "The Contract Owner lacks full technical scope.",
+        "Cyber Intelligence supports but doesn’t lead the annual review.",
+        "Correct: Infosec TPRM owns the assessment cycle.",
+        "It’s not a diffuse responsibility."
+      ]
+    }
+  },
+  {
+    "id": 282,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 283,
+    "q": {
+      "pt": "O que o Nubank faz após a operação de um BPO começar a funcionar?",
+      "en": "What does Nubank do after a BPO operation starts running?"
+    },
+    "options": {
+      "pt": [
+        "Não há monitoramento",
+        "O BPO é incluído nas soluções de monitoramento e cerimônias de segurança",
+        "O BPO é reavaliado somente após 1 ano",
+        "O BPO é descontinuado"
+      ],
+      "en": [
+        "There is no monitoring",
+        "The BPO is included in monitoring solutions and security ceremonies",
+        "The BPO is reassessed only after 1 year",
+        "The BPO is discontinued"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Há monitoramento ativo.",
+        "Correto: inclusão em rotinas e cerimônias de segurança.",
+        "Apenas anual é insuficiente.",
+        "Não se descontinua automaticamente."
+      ],
+      "en": [
+        "There is active monitoring.",
+        "Correct: included in routines and security ceremonies.",
+        "Annual-only is insufficient.",
+        "It’s not discontinued by default."
+      ]
+    }
+  },
+  {
+    "id": 284,
+    "q": {
+      "pt": "O que as equipes de SOC e de BPO fazem anualmente?",
+      "en": "What do the SOC and BPO teams do annually?"
+    },
+    "options": {
+      "pt": [
+        "Assinam novos contratos",
+        "Confirmam listas de contatos e árvores de chamadas",
+        "Realizam um novo onboarding",
+        "Nenhuma das opções"
+      ],
+      "en": [
+        "Sign new contracts",
+        "Confirm contact lists and call trees",
+        "Perform a new onboarding",
+        "None of the options"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Contratos não necessariamente são anuais.",
+        "Correto: verificação anual de contatos/árvores de chamadas.",
+        "Novo onboarding não é rotina anual.",
+        "Há opção correta."
+      ],
+      "en": [
+        "Contracts are not necessarily annual.",
+        "Correct: annual verification of contacts/call trees.",
+        "New onboarding isn’t the annual routine.",
+        "There is a correct option."
+      ]
+    }
+  },
+  {
+    "id": 285,
+    "q": {
+      "pt": "O que é avaliado no UpGuard Domain Scan Monitoring?",
+      "en": "What is evaluated in UpGuard Domain Scan Monitoring?"
+    },
+    "options": {
+      "pt": [
+        "Preços e orçamento",
+        "Configurações de DNS, certificados SSL, e outros",
+        "Somente vulnerabilidades",
+        "Somente exposição de dados"
+      ],
+      "en": [
+        "Pricing and budget",
+        "DNS configurations, SSL certificates, and others",
+        "Only vulnerabilities",
+        "Only data exposure"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Não é avaliação financeira.",
+        "Correto: conf. DNS, SSL/TLS, exp. serviços etc.",
+        "Não se limita a vulnerabilidades.",
+        "Não se limita a exposição de dados."
+      ],
+      "en": [
+        "It’s not financial assessment.",
+        "Correct: DNS, SSL/TLS, service exposure, etc.",
+        "Not limited to vulnerabilities.",
+        "Not limited to data exposure."
+      ]
+    }
+  },
+  {
+    "id": 286,
+    "q": {
+      "pt": "Como o Nubank gerencia o risco de “Vendor não avaliado por falta de informações”?",
+      "en": "How does Nubank manage the risk of ‘Vendor not assessed due to lack of information’?"
+    },
+    "options": {
+      "pt": [
+        "Descontinuando o fornecedor imediatamente",
+        "Registrando o risco no “Infosec Risk Register”",
+        "Apenas comunicando a falta de resposta",
+        "Não há gestão para esse risco"
+      ],
+      "en": [
+        "Immediately discontinuing the vendor",
+        "Recording the risk in the Infosec Risk Register",
+        "Only communicating the lack of response",
+        "There is no management for this risk"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Descontinuidade imediata nem sempre é viável.",
+        "Correto: o risco é formalmente registrado e tratado.",
+        "Comunicar é insuficiente sem registro/gestão.",
+        "Há gestão definida para o caso."
+      ],
+      "en": [
+        "Immediate discontinuation isn’t always feasible.",
+        "Correct: risk is formally recorded and managed.",
+        "Communication alone is insufficient.",
+        "There is defined management for this case."
+      ]
+    }
+  },
+  {
+    "id": 287,
+    "q": {
+      "pt": "O que as equipes de Infosec fazem no monitoramento de BPOs?",
+      "en": "What do Infosec teams do when monitoring BPOs?"
+    },
+    "options": {
+      "pt": [
+        "Apenas verificam os contratos",
+        "Realizam avaliações de segurança, incluindo visitas no local",
+        "Nenhuma das opções",
+        "Apenas esperam o fornecedor enviar relatórios"
+      ],
+      "en": [
+        "Only verify contracts",
+        "Perform security assessments, including on-site visits",
+        "None of the options",
+        "Only wait for vendor reports"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Contratos são parte, mas não o todo.",
+        "Correto: avaliações ativas e, quando aplicável, on-site.",
+        "Há opção correta.",
+        "Postura passiva não é suficiente."
+      ],
+      "en": [
+        "Contracts are part, not the whole.",
+        "Correct: active assessments and, when applicable, on-site.",
+        "There is a correct option.",
+        "Passive posture is insufficient."
+      ]
+    }
+  },
+  {
+    "id": 288,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 289,
+    "q": {
+      "pt": "Qual é o objetivo do Anexo de CyberSecurity para BPOs?",
+      "en": "What is the objective of the CyberSecurity Annex for BPOs?"
+    },
+    "options": {
+      "pt": [
+        "Apenas para fins de contrato",
+        "Abordar políticas e requisitos de segurança da informação específicos para BPOs",
+        "Substituir o DPA",
+        "Não é utilizado em BPOs"
+      ],
+      "en": [
+        "Only for contractual purposes",
+        "Address information security policies and requirements specific to BPOs",
+        "Replace the DPA",
+        "It is not used in BPOs"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Vai além de formalidade contratual.",
+        "Correto: detalha requisitos de SI para BPO.",
+        "Não substitui o DPA, complementa.",
+        "É utilizado, sim."
+      ],
+      "en": [
+        "It goes beyond contractual formality.",
+        "Correct: it details IS requirements for BPOs.",
+        "It does not replace the DPA; it complements it.",
+        "It is indeed used."
+      ]
+    }
+  },
+  {
+    "id": 290,
+    "q": {
+      "pt": "Em qual etapa da contratação de BPOs a equipe de Infosec é consultada sobre infraestrutura de software e hardware?",
+      "en": "At which stage of BPO procurement is Infosec consulted about software and hardware infrastructure?"
+    },
+    "options": {
+      "pt": [
+        "Durante a fase de offboarding",
+        "Durante a fase de RFP",
+        "Durante o monitoramento contínuo",
+        "Não é consultada"
+      ],
+      "en": [
+        "During the offboarding stage",
+        "During the RFP stage",
+        "During ongoing monitoring",
+        "It is not consulted"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Offboarding ocorre no fim do ciclo.",
+        "Correto: requisitos técnicos avaliados na RFP.",
+        "Ongoing é após contratação.",
+        "Infosec é consultada, sim."
+      ],
+      "en": [
+        "Offboarding is at the end of the cycle.",
+        "Correct: technical requirements at the RFP stage.",
+        "Ongoing comes after contracting.",
+        "Infosec is consulted."
+      ]
+    }
+  },
+  {
+    "id": 291,
+    "q": {
+      "pt": "Qual deve ser a principal ferramenta para armazenar chaves criptográficas?",
+      "en": "What should be the primary tool to store cryptographic keys?"
+    },
+    "options": {
+      "pt": [
+        "Armazenamento em nuvem como AWS S3 em texto simples",
+        "No código-fonte da aplicação",
+        "Um Sistema de Gerenciamento de Chaves (KMS)",
+        "Em arquivos de configuração locais"
+      ],
+      "en": [
+        "Cloud storage like AWS S3 in plain text",
+        "In the application's source code",
+        "A Key Management System (KMS)",
+        "In local configuration files"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Texto simples é inseguro.",
+        "Código-fonte não é local seguro.",
+        "Correto: KMS provê proteção e rotação.",
+        "Arquivos locais aumentam risco."
+      ],
+      "en": [
+        "Plain text is insecure.",
+        "Source code is not a secure location.",
+        "Correct: KMS provides protection and rotation.",
+        "Local files increase risk."
+      ]
+    }
+  },
+  {
+    "id": 292,
+    "q": {
+      "pt": "Qual princípio de segurança deve ser utilizado ao conceder acesso a chaves criptográficas?",
+      "en": "Which security principle should be used when granting access to cryptographic keys?"
+    },
+    "options": {
+      "pt": [
+        "Acesso total para todas as equipes de desenvolvimento",
+        "Acesso baseado em antiguidade na empresa",
+        "O princípio do menor privilégio",
+        "Acesso irrestrito para administradores de sistema"
+      ],
+      "en": [
+        "Full access for all development teams",
+        "Access based on company tenure",
+        "The least privilege principle",
+        "Unrestricted access for system administrators"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Acesso amplo aumenta a superfície de risco.",
+        "Antiguidade não é critério de segurança.",
+        "Correto: conceder apenas o necessário.",
+        "Acesso irrestrito é inseguro."
+      ],
+      "en": [
+        "Broad access enlarges risk surface.",
+        "Seniority isn’t a security criterion.",
+        "Correct: grant only what’s necessary.",
+        "Unrestricted access is unsafe."
+      ]
+    }
+  },
+  {
+    "id": 293,
+    "q": {
+      "pt": "A rotação regular de chaves é essencial para quê?",
+      "en": "Regular key rotation is essential for what?"
+    },
+    "options": {
+      "pt": [
+        "Aumentar o desempenho do sistema",
+        "Limitar a quantidade de dados criptografados com uma única chave e reduzir o impacto de um comprometimento",
+        "Simplificar o gerenciamento de chaves",
+        "Cumprir com regulamentações de armazenamento de dados"
+      ],
+      "en": [
+        "Increasing system performance",
+        "Limiting the amount of data encrypted with a single key and reducing compromise impact",
+        "Simplifying key management",
+        "Complying with data storage regulations"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Desempenho não é o foco da rotação.",
+        "Correto: limita escopo e impacto de vazamentos.",
+        "Pode até complicar, mas aumenta segurança.",
+        "Conformidade é efeito secundário, não o objetivo."
+      ],
+      "en": [
+        "Performance is not the focus.",
+        "Correct: limits scope and breach impact.",
+        "It may complicate management yet improves security.",
+        "Compliance can be a side-effect, not the main goal."
+      ]
+    }
+  },
+  {
+    "id": 294,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 295,
+    "q": {
+      "pt": "As mensagens que fluem pelo Kafka são criptografadas pelo próprio Kafka?",
+      "en": "Are messages flowing through Kafka encrypted by Kafka itself?"
+    },
+    "options": {
+      "pt": [
+        "Sim, o Kafka criptografa todas as mensagens por padrão",
+        "Sim, mas apenas em tópicos específicos",
+        "Não, as mensagens são armazenadas em disco sem criptografia pelo Kafka",
+        "Apenas as mensagens com PII são criptografadas"
+      ],
+      "en": [
+        "Yes, Kafka encrypts all messages by default",
+        "Yes, but only on specific topics",
+        "No, messages are stored on disk unencrypted by Kafka",
+        "Only messages with PII are encrypted"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Não há criptografia em repouso por padrão.",
+        "Não há configuração de tópico que ative criptografia em repouso nativa.",
+        "Correto: por padrão, não criptografa em disco; use TLS/at-rest externo.",
+        "PII não aciona criptografia automática."
+      ],
+      "en": [
+        "No default at-rest encryption.",
+        "No native per-topic at-rest encryption setting.",
+        "Correct: by default Kafka doesn’t encrypt at rest; use TLS/at-rest solutions.",
+        "PII doesn’t trigger automatic encryption."
+      ]
+    }
+  },
+  {
+    "id": 296,
+    "q": {
+      "pt": "Na hierarquia de PKI da Nu, qual é a principal função da CA Raiz?",
+      "en": "In Nu’s PKI hierarchy, what is the main function of the Root CA?"
+    },
+    "options": {
+      "pt": [
+        "Emitir certificados diretamente para usuários finais",
+        "Estabelecer confiança na rede e emitir certificados para CAs Intermediárias",
+        "Gerenciar a revogação de todos os certificados",
+        "Assinar digitalmente as mensagens dos clientes"
+      ],
+      "en": [
+        "Issue certificates directly to end users",
+        "Establish network trust and issue certificates to Intermediate CAs",
+        "Manage the revocation of all certificates",
+        "Digitally sign clients’ messages"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Emissão direta a usuários finais é papel da CA intermediária.",
+        "Correto: a raiz ancora a confiança e emite para intermediárias.",
+        "Revogação é distribuída e publicada pelas CAs.",
+        "Mensagens de clientes não são assinadas pela CA raiz."
+      ],
+      "en": [
+        "End-entity issuance is typically by intermediates.",
+        "Correct: root anchors trust and signs intermediate CAs.",
+        "Revocation is distributed/published by CAs.",
+        "Root CA doesn’t sign clients’ messages."
+      ]
+    }
+  },
+  {
+    "id": 297,
+    "q": {
+      "pt": "Quem tem permissão exclusiva para realizar tarefas de gestão e operação envolvendo as chaves privadas da AC?",
+      "en": "Who has exclusive permission to perform management/operational tasks involving the CA’s private keys?"
+    },
+    "options": {
+      "pt": [
+        "Qualquer desenvolvedor sênior",
+        "A equipe de Segurança de Infraestrutura Corporativa",
+        "Apenas a equipe de criptografia",
+        "O Diretor de Segurança da Informação (CISO)"
+      ],
+      "en": [
+        "Any senior developer",
+        "The Corporate Infrastructure Security team",
+        "Only the cryptography team",
+        "The Chief Information Security Officer (CISO)"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Desenvolvedores não devem manejar chaves de CA.",
+        "Infraestruturas dão suporte, mas não são donas das chaves da CA.",
+        "Correto: acesso exclusivo do time de cripto.",
+        "CISO define diretrizes, não opera chaves."
+      ],
+      "en": [
+        "Developers must not handle CA keys.",
+        "Infra teams support but don’t own CA private keys.",
+        "Correct: exclusive access by the crypto team.",
+        "CISO sets policy, doesn’t operate keys."
+      ]
+    }
+  },
+  {
+    "id": 298,
+    "q": {
+      "pt": "Qual é o mecanismo principal utilizado na PKI da Nu para revogar certificados?",
+      "en": "What is the primary mechanism used in Nu’s PKI to revoke certificates?"
+    },
+    "options": {
+      "pt": [
+        "Protocolo de Status de Certificado Online (OCSP)",
+        "Listas de Revogação de Certificados (CRLs)",
+        "Contato direto com o suporte",
+        "Exclusão manual dos certificados"
+      ],
+      "en": [
+        "Online Certificate Status Protocol (OCSP)",
+        "Certificate Revocation Lists (CRLs)",
+        "Direct support contact",
+        "Manual deletion of certificates"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "OCSP pode ser usado, mas o principal definido é CRL.",
+        "Correto: CRLs são o mecanismo principal definido.",
+        "Contato com suporte não revoga tecnicamente certificados.",
+        "Exclusão manual não é mecanismo PKI."
+      ],
+      "en": [
+        "OCSP can be used, but CRLs are defined as primary.",
+        "Correct: CRLs are the primary mechanism.",
+        "Support contact doesn’t technically revoke certs.",
+        "Manual deletion isn’t a PKI mechanism."
+      ]
+    }
+  },
+  {
+    "id": 299,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 300,
+    "q": {
+      "pt": "Qual equipe é responsável por fornecer ferramentas e plataformas que facilitem a adesão à Política de Criptografia?",
+      "en": "Which team is responsible for providing tools and platforms that facilitate adherence to the Cryptography Policy?"
+    },
+    "options": {
+      "pt": [
+        "Equipe GRC",
+        "Auditoria Interna",
+        "Equipe de criptografia",
+        "Diretor de Segurança da Informação (CISO)"
+      ],
+      "en": [
+        "GRC team",
+        "Internal Audit",
+        "Cryptography team",
+        "Chief Information Security Officer (CISO)"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "GRC coordena governança, não provê plataformas cripto.",
+        "Auditoria verifica, não provê ferramentas.",
+        "Correto: a equipe de cripto disponibiliza as plataformas.",
+        "CISO define diretrizes, não provê ferramentas diretamente."
+      ],
+      "en": [
+        "GRC coordinates governance, not crypto platforms.",
+        "Audit verifies, it doesn’t provide tools.",
+        "Correct: the crypto team provides the platforms.",
+        "CISO sets policy, not tools directly."
+      ]
+    }
+  }
 ]
