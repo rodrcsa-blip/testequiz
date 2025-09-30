@@ -11058,5 +11058,768 @@
       "Incorrect: SP 800-61 covers incident response."
     ]
   }
-}
+},
+{
+    "id": 362,
+    "q": {
+      "pt": "Qual o nome dado a um ataque em que o invasor engana a vítima para que ela revele informações confidenciais?",
+      "en": "What is the name of an attack where the attacker tricks the victim into revealing confidential information?"
+    },
+    "options": {
+      "pt": ["Ataque de vírus", "Engenharia social", "Ataque de negação de serviço"],
+      "en": ["Virus attack", "Social engineering", "Denial of service attack"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Vírus infecta sistemas, mas não é o caso descrito.",
+        "Correto: engenharia social manipula a vítima para obter informações.",
+        "DoS visa indisponibilidade, não roubo de dados."
+      ],
+      "en": [
+        "A virus infects systems, not the scenario here.",
+        "Correct: social engineering manipulates the victim to gain information.",
+        "DoS causes unavailability, not data theft."
+      ]
+    }
+  },
+  {
+    "id": 363,
+    "q": {
+      "pt": "A LGPD e o BACEN exigem a proteção de dados pessoais. O que o termo 'dado pessoal' inclui?",
+      "en": "LGPD and BACEN require the protection of personal data. What does 'personal data' include?"
+    },
+    "options": {
+      "pt": ["Somente o nome e o CPF", "Qualquer informação que possa identificar uma pessoa (nome, endereço, telefone, e-mail)", "Apenas dados financeiros", "Salários de funcionários"],
+      "en": ["Only name and CPF", "Any information that can identify a person (name, address, phone, email)", "Only financial data", "Employee salaries"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Restrito demais: dado pessoal vai além de nome e CPF.",
+        "Correto: inclui qualquer informação que identifique alguém.",
+        "Dados financeiros são apenas uma parte.",
+        "Salários são apenas um tipo de dado pessoal."
+      ],
+      "en": [
+        "Too narrow: personal data goes beyond name and CPF.",
+        "Correct: includes any information that identifies someone.",
+        "Financial data is only one subset.",
+        "Salaries are just one kind of personal data."
+      ]
+    }
+  },
+  {
+    "id": 364,
+    "q": {
+      "pt": "Para que a gestão de identidade e acesso (IAM) serve em uma empresa?",
+      "en": "What is the purpose of Identity and Access Management (IAM) in a company?"
+    },
+    "options": {
+      "pt": ["Para controlar quem tem acesso a quê e por quanto tempo", "Para comprar novos computadores", "Para gerenciar o estoque", "Para criar mais controles"],
+      "en": ["To control who has access to what and for how long", "To buy new computers", "To manage inventory", "To create more controls"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: IAM regula acessos de forma controlada.",
+        "Incorreto: não é função de compras.",
+        "Incorreto: não gerencia estoque.",
+        "Controles são parte, mas não objetivo principal."
+      ],
+      "en": [
+        "Correct: IAM controls access in a structured way.",
+        "Incorrect: not about procurement.",
+        "Incorrect: not about inventory.",
+        "Controls are part of it, not the main purpose."
+      ]
+    }
+  },
+  {
+    "id": 365,
+    "q": {
+      "pt": "O que a 'governança' em GRC (Governança, Risco e Conformidade) significa?",
+      "en": "What does 'governance' in GRC (Governance, Risk, and Compliance) mean?"
+    },
+    "options": {
+      "pt": ["A estrutura de regras, responsabilidades e processos para guiar a empresa", "A contratação de mais funcionários", "O aumento dos salários", "Nenhuma das anteriores"],
+      "en": ["The structure of rules, responsibilities, and processes to guide the company", "Hiring more employees", "Increasing salaries", "None of the above"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: governança define regras e processos de direção.",
+        "Incorreto: não é foco em contratação.",
+        "Incorreto: salários não fazem parte da definição.",
+        "Há sim definição correta disponível."
+      ],
+      "en": [
+        "Correct: governance defines direction, rules and processes.",
+        "Incorrect: not about hiring.",
+        "Incorrect: salaries are unrelated.",
+        "There is a correct definition available."
+      ]
+    }
+  },
+  {
+    "id": 366,
+    "q": {
+      "pt": "Qual a principal função do 'R' (Risco) em GRC?",
+      "en": "What is the main function of the 'R' (Risk) in GRC?"
+    },
+    "options": {
+      "pt": ["Contratar novos gerentes", "Medir e gerenciar riscos que podem impedir a empresa de atingir seus objetivos", "Garantir uso seguro da internet por todos", "Garantir que o Slack continue funcionando"],
+      "en": ["Hire new managers", "Measure and manage risks that could prevent the company from reaching objectives", "Ensure all employees use the internet safely", "Ensure Slack always works"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Gerentes não são foco de risco.",
+        "Correto: risco busca identificar e mitigar ameaças aos objetivos.",
+        "Segurança online é apenas parte.",
+        "Slack não é exemplo de risco corporativo."
+      ],
+      "en": [
+        "Managers are not the focus of risk.",
+        "Correct: risk is about identifying and mitigating threats to objectives.",
+        "Internet use is only one small aspect.",
+        "Slack uptime is not the definition of risk management."
+      ]
+    }
+  },
+  {
+    "id": 367,
+    "q": {
+      "pt": "Qual é a principal função do 'C' (Conformidade) em GRC?",
+      "en": "What is the main function of the 'C' (Compliance) in GRC?"
+    },
+    "options": {
+      "pt": ["Seguir regras e leis aplicáveis à empresa (ex.: BACEN, PCI DSS)", "Aumentar as vendas do TI", "Organizar festas de fim de ano", "Aumentar clientes"],
+      "en": ["Follow rules and laws applicable to the company (e.g., BACEN, PCI DSS)", "Increase IT sales", "Organize year-end parties", "Increase clients"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: conformidade garante aderência às normas.",
+        "Incorreto: não trata de vendas.",
+        "Incorreto: festas não fazem parte.",
+        "Incorreto: clientes não são foco de compliance."
+      ],
+      "en": [
+        "Correct: compliance ensures adherence to regulations.",
+        "Incorrect: not about sales.",
+        "Incorrect: parties are irrelevant.",
+        "Incorrect: customers are not the compliance focus."
+      ]
+    }
+  },
+  {
+    "id": 368,
+    "q": {
+      "pt": "Qual a diferença entre um controle preventivo e um controle detectivo?",
+      "en": "What is the difference between a preventive control and a detective control?"
+    },
+    "options": {
+      "pt": [
+        "Preventivo evita incidentes, detectivo identifica após ocorrência",
+        "Preventivo é sistema, detectivo é pessoa",
+        "Preventivo é interno, detectivo é externo",
+        "São sinônimos"
+      ],
+      "en": [
+        "Preventive avoids incidents, detective identifies after occurrence",
+        "Preventive is a system, detective is a person",
+        "Preventive is internal, detective is external",
+        "They are synonyms"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: preventivo atua antes, detectivo após o evento.",
+        "Incorreto: não é distinção de papéis humanos.",
+        "Incorreto: não é sobre local de uso.",
+        "São diferentes, não sinônimos."
+      ],
+      "en": [
+        "Correct: preventive acts before, detective after the event.",
+        "Incorrect: not about humans vs systems.",
+        "Incorrect: not about internal vs external.",
+        "They are distinct, not synonyms."
+      ]
+    }
+  },
+  {
+    "id": 369,
+    "q": {
+      "pt": "O que a segmentação de rede no Requisito 1.2 busca alcançar?",
+      "en": "What is the main goal of network segmentation under Requirement 1.2?"
+    },
+    "options": {
+      "pt": [
+        "Garantir criptografia de todo o tráfego",
+        "Diminuir velocidade de comunicação",
+        "Reduzir escopo do PCI DSS e limitar impacto isolando o CDE",
+        "Permitir apenas acesso de TI"
+      ],
+      "en": [
+        "Ensure all network traffic is encrypted",
+        "Slow down communications",
+        "Reduce PCI DSS scope and limit impact by isolating CDE",
+        "Allow only IT staff to access network"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: criptografia não é o foco da segmentação.",
+        "Incorreto: não visa lentidão.",
+        "Correto: segmentação isola o ambiente CDE e reduz impacto/auditoria.",
+        "Restritivo demais, não é objetivo do requisito."
+      ],
+      "en": [
+        "Incorrect: encryption is not segmentation’s focus.",
+        "Incorrect: not about slowing traffic.",
+        "Correct: segmentation isolates CDE and reduces impact/audit scope.",
+        "Too restrictive, not the purpose here."
+      ]
+    }
+  },
+  {
+    "id": 370,
+    "q": {
+      "pt": "Você recebe um e-mail suspeito de RH pedindo clique em link estranho. O que deve fazer?",
+      "en": "You receive a suspicious HR email with a strange link. What should you do?"
+    },
+    "options": {
+      "pt": [
+        "Clicar para ver a pesquisa",
+        "Responder pedindo mais informações",
+        "Não clicar e reportar ao time de segurança"
+      ],
+      "en": [
+        "Click to see the survey",
+        "Reply asking for more information",
+        "Do not click and report to security team"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Clicar expõe a riscos.",
+        "Responder não resolve e ainda confirma validade.",
+        "Correto: não clicar e reportar é a ação segura."
+      ],
+      "en": [
+        "Clicking exposes you to risks.",
+        "Replying confirms address and doesn’t fix risk.",
+        "Correct: safest action is not clicking and reporting."
+      ]
+    }
+  },
+  {
+    "id": 371,
+    "q": {
+      "pt": "Se um auditor externo pede evidências de auditoria, o que fazer?",
+      "en": "If an external auditor asks for audit evidence, what should you do?"
+    },
+    "options": {
+      "pt": [
+        "Enviar tudo imediatamente",
+        "Dizer que não tem tempo",
+        "Notificar a área de GRC para validar e apoiar"
+      ],
+      "en": [
+        "Send everything immediately",
+        "Say you don’t have time",
+        "Notify GRC team to validate and support"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Enviar sem validação é arriscado.",
+        "Recusar não é aceitável.",
+        "Correto: GRC valida e auxilia na entrega adequada."
+      ],
+      "en": [
+        "Sending without validation is risky.",
+        "Refusal is not acceptable.",
+        "Correct: GRC team validates and supports secure delivery."
+      ]
+    }
+  },
+  {
+    "id": 372,
+    "q": {
+      "pt": "ISO 27001, PCI DSS e BACEN compartilham um objetivo central. Qual é?",
+      "en": "ISO 27001, PCI DSS and BACEN share a core objective. What is it?"
+    },
+    "options": {
+      "pt": [
+        "Proteger apenas dados financeiros",
+        "Criar políticas de internet",
+        "Gerenciar riscos de segurança da informação de forma contínua",
+        "Reduzir custos de TI"
+      ],
+      "en": [
+        "Protect only financial data",
+        "Create internet policies",
+        "Continuously manage information security risks",
+        "Reduce IT costs"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Restritivo demais, não só dados financeiros.",
+        "Políticas são meios, não objetivo central.",
+        "Correto: todos visam gestão contínua de riscos de segurança.",
+        "Redução de custos não é prioridade dos frameworks."
+      ],
+      "en": [
+        "Too narrow, not only financial data.",
+        "Policies are means, not the goal.",
+        "Correct: all aim at continuous risk management.",
+        "Cost reduction is not the main focus."
+      ]
+    }
+  },
+  {
+    "id": 373,
+    "q": {
+      "pt": "No contexto do Nubank, o que é o PROJAC?",
+      "en": "In Nubank’s context, what is PROJAC?"
+    },
+    "options": {
+      "pt": [
+        "Estúdios de novela",
+        "Plataforma que integra processos e dados de riscos usando GRC",
+        "Time de engenheiros mais experiente"
+      ],
+      "en": [
+        "Soap opera studios",
+        "Platform integrating risk processes and data using GRC",
+        "Most senior engineering team"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: não se refere a novelas.",
+        "Correto: é plataforma de GRC no Nubank.",
+        "Incorreto: não é nome de equipe."
+      ],
+      "en": [
+        "Incorrect: not TV studios.",
+        "Correct: it’s Nubank’s GRC platform.",
+        "Incorrect: not a team name."
+      ]
+    }
+  },
+  {
+    "id": 374,
+    "q": {
+      "pt": "No modelo das três linhas de defesa, qual a responsabilidade da Primeira Linha?",
+      "en": "In the three lines of defense model, what is the responsibility of the First Line?"
+    },
+    "options": {
+      "pt": [
+        "Auditar internamente",
+        "Ser contato para reguladores",
+        "Gerenciar e possuir riscos operacionais no dia a dia",
+        "Criar políticas corporativas"
+      ],
+      "en": [
+        "Conduct internal audits",
+        "Be contact point for regulators",
+        "Manage and own operational risks daily",
+        "Create corporate policies"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Auditoria é da terceira linha.",
+        "Contato com reguladores é segunda linha.",
+        "Correto: a primeira linha gerencia riscos no dia a dia.",
+        "Políticas são criadas por áreas de governança."
+      ],
+      "en": [
+        "Audits are the third line’s job.",
+        "Regulatory contact is second line.",
+        "Correct: first line manages risks in daily operations.",
+        "Policies are created by governance areas."
+      ]
+    }
+  },
+  {
+  "id": 375,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+    "id": 376,
+    "q": {
+      "pt": "O que a Seção 906 da SOX exige?",
+      "en": "What does SOX Section 906 require?"
+    },
+    "options": {
+      "pt": [
+        "Certificação do CEO e CFO sobre os relatórios financeiros",
+        "Certificação de todos os funcionários de TI",
+        "Avaliação de riscos de segurança",
+        "Relatórios anuais sobre a estratégia de TI"
+      ],
+      "en": [
+        "CEO and CFO certification of financial reports",
+        "Certification by all IT employees",
+        "Security risk assessment",
+        "Annual reports about the IT strategy"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a Seção 906 trata da certificação executiva e penalidades criminais por certificações falsas.",
+        "Incorreto: não há exigência de certificação por toda a TI.",
+        "Incorreto: avaliações de risco não são o foco da Seção 906.",
+        "Incorreto: estratégia de TI não é tema da Seção 906."
+      ],
+      "en": [
+        "Correct: Section 906 covers executive certification and criminal penalties for false certifications.",
+        "Incorrect: it does not require certification by all of IT.",
+        "Incorrect: risk assessments are not the focus of Section 906.",
+        "Incorrect: IT strategy reporting is not addressed by Section 906."
+      ]
+    }
+  },
+  {
+    "id": 377,
+    "q": {
+      "pt": "Qual dos seguintes é um exemplo de controle de operações de TI para a SOX?",
+      "en": "Which of the following is an example of an IT operations control for SOX?"
+    },
+    "options": {
+      "pt": [
+        "Atualização de software",
+        "Backup e recuperação de dados",
+        "Criação de planilhas financeiras",
+        "Contratação de novos funcionários"
+      ],
+      "en": [
+        "Software updates",
+        "Data backup and recovery",
+        "Creating financial spreadsheets",
+        "Hiring new employees"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Atualizações podem existir, mas 'operações' enfatiza continuidade/recuperação.",
+        "Correto: backup/restore é controle clássico de operações de TI sob SOX.",
+        "Incorreto: é atividade de negócio, não controle de TI.",
+        "Incorreto: RH, não controle de operações de TI."
+      ],
+      "en": [
+        "Updates may occur, but operations emphasizes continuity/recovery.",
+        "Correct: backup/restore is a classic IT operations control under SOX.",
+        "Incorrect: business activity, not an IT control.",
+        "Incorrect: HR activity, not an IT operations control."
+      ]
+    }
+  },
+  {
+    "id": 378,
+    "q": {
+      "pt": "O que significa 'Material Weakness' (Fraqueza Material) no contexto da SOX?",
+      "en": "What does a 'Material Weakness' mean in the context of SOX?"
+    },
+    "options": {
+      "pt": [
+        "Um pequeno erro de software",
+        "Uma deficiência de controle que poderia resultar em uma distorção material nos relatórios financeiros",
+        "Um problema de desempenho do sistema",
+        "Uma falha de hardware"
+      ],
+      "en": [
+        "A minor software bug",
+        "A control deficiency that could result in a material misstatement of financial reports",
+        "A system performance issue",
+        "A hardware failure"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: pequeno erro não caracteriza fraqueza material.",
+        "Correto: definição de fraqueza material em ICFR (controles internos sobre relatórios financeiros).",
+        "Incorreto: desempenho não implica distorção material.",
+        "Incorreto: falha de hardware por si só não configura fraqueza material."
+      ],
+      "en": [
+        "Incorrect: a minor bug is not a material weakness.",
+        "Correct: that is the definition in ICFR context.",
+        "Incorrect: performance issues do not imply material misstatement.",
+        "Incorrect: hardware failure alone is not a material weakness."
+      ]
+    }
+  },
+  {
+    "id": 379,
+    "q": {
+      "pt": "Qual é a função de um 'Application Control' (Controle de Aplicação) em relação à SOX?",
+      "en": "What is the role of an 'Application Control' regarding SOX?"
+    },
+    "options": {
+      "pt": [
+        "Controlar o acesso aos sistemas",
+        "Controlar o fluxo de dados em um processo de negócio específico dentro de um sistema de software",
+        "Garantir que o software seja atualizado",
+        "Controlar a instalação de novos aplicativos"
+      ],
+      "en": [
+        "Control system access",
+        "Control data flow in a specific business process within a software system",
+        "Ensure software is updated",
+        "Control installation of new apps"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Controle de acesso é ITGC; controle de aplicação é mais específico ao processo.",
+        "Correto: controles de aplicação asseguram integridade/validade no nível do processo.",
+        "Incorreto: atualização é tema de operações/gestão de mudanças.",
+        "Incorreto: instalação é tópico de operações/ativos, não de aplicação."
+      ],
+      "en": [
+        "Access control is typically an ITGC; application controls are process-specific.",
+        "Correct: application controls ensure integrity/validity at the process level.",
+        "Incorrect: updates relate to operations/change management.",
+        "Incorrect: app installation is an ops/asset topic, not application control."
+      ]
+    }
+  },
+  {
+    "id": 380,
+    "q": {
+      "pt": "A documentação de quais controles de TI é mais crítica para a SOX?",
+      "en": "Documentation of which IT controls is most critical for SOX?"
+    },
+    "options": {
+      "pt": [
+        "Controles de rede e segurança",
+        "Controles de acesso, gerenciamento de mudanças e operações",
+        "Controles de hardware e software",
+        "Controles de e-mail e mensageria"
+      ],
+      "en": [
+        "Network and security controls",
+        "Access controls, change management, and operations",
+        "Hardware and software controls",
+        "Email and messaging controls"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Importantes, mas não o núcleo de SOX-ITGC.",
+        "Correto: estes são os pilares de ITGC para SOX.",
+        "Muito amplo e genérico.",
+        "Não são o foco central de SOX-ITGC."
+      ],
+      "en": [
+        "Important, but not the core SOX ITGC set.",
+        "Correct: these are the SOX ITGC pillars.",
+        "Too broad/generic.",
+        "Not the central SOX ITGC focus."
+      ]
+    }
+  },
+  {
+    "id": 381,
+    "q": {
+      "pt": "Por que a gestão de identidade e acesso (IAM) é fundamental para a conformidade SOX?",
+      "en": "Why is Identity and Access Management (IAM) critical for SOX compliance?"
+    },
+    "options": {
+      "pt": [
+        "Para garantir que todos os funcionários tenham acesso a todos os sistemas",
+        "Para controlar quem pode acessar, alterar ou apagar dados financeiros",
+        "Para evitar que os funcionários usem senhas fracas",
+        "Para reduzir o número de logins"
+      ],
+      "en": [
+        "To ensure all employees can access all systems",
+        "To control who can access, change, or delete financial data",
+        "To prevent employees from using weak passwords",
+        "To reduce the number of logins"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: acesso amplo viola princípios de controle.",
+        "Correto: controle de acesso sobre dados financeiros é central em SOX.",
+        "Parcial: política de senhas é apenas um aspecto.",
+        "Irrelevante para conformidade de controles financeiros."
+      ],
+      "en": [
+        "Incorrect: broad access violates control principles.",
+        "Correct: controlling access to financial data is central to SOX.",
+        "Partial: password policy is only one aspect.",
+        "Irrelevant to financial controls compliance."
+      ]
+    }
+  },
+  {
+    "id": 382,
+    "q": {
+      "pt": "Qual dos seguintes é um exemplo de 'IT General Control' (ITGC)?",
+      "en": "Which of the following is an example of an IT General Control (ITGC)?"
+    },
+    "options": {
+      "pt": [
+        "Um controle para validar o cálculo de impostos",
+        "Um controle que impede a entrada de caracteres em um campo numérico",
+        "Um controle de backup de dados",
+        "Um controle de aprovação de despesas"
+      ],
+      "en": [
+        "A control that validates tax calculations",
+        "A control preventing letters in a numeric field",
+        "A data backup control",
+        "An expense approval control"
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Isto é controle de aplicação (processo de negócio).",
+        "Isto é controle de aplicação (validação de entrada).",
+        "Correto: backup é ITGC (operações).",
+        "Controle de negócio/financeiro, não ITGC."
+      ],
+      "en": [
+        "This is an application control (business process).",
+        "This is an application control (input validation).",
+        "Correct: backup is an ITGC (operations).",
+        "Business/financial control, not an ITGC."
+      ]
+    }
+  },
+  {
+    "id": 383,
+    "q": {
+      "pt": "A falta de documentação de um controle de TI pode ser considerada...",
+      "en": "The lack of documentation for an IT control can be considered..."
+    },
+    "options": {
+      "pt": [
+        "Um problema menor",
+        "Uma deficiência de controle",
+        "Um erro aceitável",
+        "Uma falha de segurança"
+      ],
+      "en": [
+        "A minor issue",
+        "A control deficiency",
+        "An acceptable error",
+        "A security breach"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Minimiza o risco indevidamente.",
+        "Correto: sem documentação não há evidência de desenho/execução.",
+        "Incorreto: não é aceitável sob SOX.",
+        "Pode levar a riscos, mas a classificação é deficiência de controle."
+      ],
+      "en": [
+        "Unduly minimizes the risk.",
+        "Correct: without documentation, design/operation isn’t evidenced.",
+        "Incorrect: not acceptable under SOX.",
+        "It may cause risks, but classification is control deficiency."
+      ]
+    }
+  },
+  {
+    "id": 384,
+    "q": {
+      "pt": "Qual a relação entre a SOX e a COBIT (Control Objectives for Information and Related Technology)?",
+      "en": "What is the relationship between SOX and COBIT?"
+    },
+    "options": {
+      "pt": [
+        "A SOX exige a implementação da COBIT",
+        "A COBIT é um framework que pode ajudar a alcançar a conformidade SOX",
+        "Eles não têm relação",
+        "A COBIT substituiu a SOX"
+      ],
+      "en": [
+        "SOX mandates COBIT implementation",
+        "COBIT is a framework that can help achieve SOX compliance",
+        "They are unrelated",
+        "COBIT replaced SOX"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: SOX não exige COBIT especificamente.",
+        "Correto: COBIT pode ser usado como referência para controles.",
+        "Incorreto: há relação prática via controles/processos.",
+        "Incorreto: SOX é lei; COBIT é framework."
+      ],
+      "en": [
+        "Incorrect: SOX does not mandate COBIT specifically.",
+        "Correct: COBIT can serve as a control/process framework.",
+        "Incorrect: there is a practical relationship via controls.",
+        "Incorrect: SOX is law; COBIT is a framework."
+      ]
+    }
+  },
+  {
+    "id": 385,
+    "q": {
+      "pt": "O que um 'control owner' (dono do controle) faz em relação à SOX?",
+      "en": "What does a 'control owner' do regarding SOX?"
+    },
+    "options": {
+      "pt": [
+        "Apenas documenta o controle",
+        "Garante que o controle seja implementado, mantido e testado quanto à eficácia",
+        "Escreve o código para o controle",
+        "Apenas aprova as mudanças"
+      ],
+      "en": [
+        "Only documents the control",
+        "Ensures the control is implemented, maintained, and tested for effectiveness",
+        "Writes the code for the control",
+        "Only approves changes"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Insuficiente: responsabilidade vai além de documentar.",
+        "Correto: papel inclui execução, manutenção e testes de eficácia.",
+        "Nem sempre há código; foco é no controle em si.",
+        "Aprovar mudanças é parte possível, mas não o todo."
+      ],
+      "en": [
+        "Insufficient: responsibility goes beyond documentation.",
+        "Correct: includes operation, maintenance, and effectiveness testing.",
+        "There may be no code; the focus is the control itself.",
+        "Approving changes can be part of it, but not the whole role."
+      ]
+    }
+  }
 ]
