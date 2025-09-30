@@ -10081,5 +10081,437 @@
         "Incorrect: loyalty points are not a typical impact."
       ]
     }
+  },
+  {
+    "id": 329,
+    "q": {
+      "pt": "Que direito a empresa se reserva em relação à atividade do usuário nos recursos corporativos?",
+      "en": "What right does the company reserve regarding user activity on corporate resources?"
+    },
+    "options": {
+      "pt": [
+        "O direito de monitorar a atividade apenas com notificação prévia ao usuário.",
+        "O direito de monitorar, revisar e registrar o uso de todas as informações nos recursos e endpoints corporativos.",
+        "O direito de monitorar apenas o histórico de navegação na internet e os assuntos dos e-mails.",
+        "O direito de monitorar a atividade apenas em casos de uma investigação formal de segurança."
+      ],
+      "en": [
+        "The right to monitor activity only with prior notice to the user.",
+        "The right to monitor, review, and log the use of all information on corporate resources and endpoints.",
+        "The right to monitor only web browsing history and email subjects.",
+        "The right to monitor activity only during a formal security investigation."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: a empresa pode monitorar sem notificação prévia individual.",
+        "Correto: a empresa pode monitorar, revisar e registrar o uso em recursos/endpoints corporativos.",
+        "Incorreto: o escopo não se limita a navegação e e-mails.",
+        "Incorreto: o monitoramento não se restringe a investigações formais."
+      ],
+      "en": [
+        "Incorrect: prior individual notice is not always required.",
+        "Correct: the company may monitor, review, and log use on corporate resources/endpoints.",
+        "Incorrect: scope is broader than browsing and email subjects.",
+        "Incorrect: monitoring is not limited to formal investigations."
+      ]
+    }
+  },
+  {
+    "id": 330,
+    "q": {
+      "pt": "Qual departamento é responsável por determinar e aplicar ações disciplinares por violações da política?",
+      "en": "Which department is responsible for determining and applying disciplinary actions for policy violations?"
+    },
+    "options": {
+      "pt": [
+        "Segurança da Informação (\"InfoSec\").",
+        "O gestor direto do funcionário.",
+        "Pessoas & Cultura.",
+        "Auditoria Interna."
+      ],
+      "en": [
+        "Information Security (InfoSec).",
+        "The employee’s direct manager.",
+        "People & Culture (HR).",
+        "Internal Audit."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: InfoSec assessora, mas não aplica medidas disciplinares.",
+        "Incorreto: gestores podem reportar, mas não são o órgão disciplinar.",
+        "Correto: Pessoas & Cultura define e aplica as ações disciplinares.",
+        "Incorreto: Auditoria verifica conformidade; não aplica disciplina."
+      ],
+      "en": [
+        "Incorrect: InfoSec advises but doesn’t apply discipline.",
+        "Incorrect: managers escalate but aren’t the disciplinary body.",
+        "Correct: People & Culture (HR) sets and applies disciplinary actions.",
+        "Incorrect: Internal Audit assesses compliance, not discipline."
+      ]
+    }
+  },
+  {
+    "id": 331,
+    "q": {
+      "pt": "Quem é responsável por formalizar, comunicar e atualizar a Política de Uso Aceitável?",
+      "en": "Who is responsible for formalizing, communicating, and updating the Acceptable Use Policy?"
+    },
+    "options": {
+      "pt": [
+        "Engenharia de TI.",
+        "O Chief Information Security Officer (CISO).",
+        "A equipe de Auditoria Interna.",
+        "A equipe de Segurança da Informação (\"InfoSec\")."
+      ],
+      "en": [
+        "IT Engineering.",
+        "The Chief Information Security Officer (CISO).",
+        "Internal Audit.",
+        "The Information Security (InfoSec) team."
+      ]
+    },
+    "correctIndex": 3,
+    "rationales": {
+      "pt": [
+        "Incorreto: Engenharia de TI não é dona da política.",
+        "Incorreto: o CISO patrocina, mas a gestão operacional é do time.",
+        "Incorreto: Auditoria não cria políticas; avalia conformidade.",
+        "Correto: InfoSec formaliza, comunica e mantém a política atualizada."
+      ],
+      "en": [
+        "Incorrect: IT Engineering isn’t the policy owner.",
+        "Incorrect: the CISO sponsors but the team manages updates.",
+        "Incorrect: Internal Audit evaluates compliance, not authorship.",
+        "Correct: InfoSec formalizes, communicates, and updates the policy."
+      ]
+    }
+  },
+  {
+    "id": 332,
+    "q": {
+      "pt": "Com que frequência esta política está sujeita a revisão?",
+      "en": "How often is this policy subject to review?"
+    },
+    "options": {
+      "pt": [
+        "A cada cinco anos.",
+        "Anualmente, ou com mais frequência se necessário.",
+        "Apenas quando ocorre um incidente de segurança grave.",
+        "A cada dois anos."
+      ],
+      "en": [
+        "Every five years.",
+        "Annually, or more frequently if needed.",
+        "Only when a major security incident occurs.",
+        "Every two years."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: intervalo longo demais.",
+        "Correto: revisão anual e com maior frequência se necessário.",
+        "Incorreto: revisões não dependem apenas de incidentes.",
+        "Incorreto: pode ser insuficiente."
+      ],
+      "en": [
+        "Incorrect: too infrequent.",
+        "Correct: annual review, and more often if needed.",
+        "Incorrect: reviews aren’t only incident-driven.",
+        "Incorrect: may be insufficient."
+      ]
+    }
+  },
+  {
+    "id": 333,
+    "q": {
+      "pt": "Quem você deve contatar se tiver dúvidas sobre uma disposição desta política?",
+      "en": "Who should you contact if you have questions about any provision of this policy?"
+    },
+    "options": {
+      "pt": [
+        "O CISO Global.",
+        "O departamento de Pessoas & Cultura.",
+        "O suporte de Engenharia de TI.",
+        "A equipe de InfoSec-policy-management em seu canal no Slack."
+      ],
+      "en": [
+        "The Global CISO.",
+        "People & Culture.",
+        "IT Engineering support.",
+        "The InfoSec-policy-management team via its Slack channel."
+      ]
+    },
+    "correctIndex": 3,
+    "rationales": {
+      "pt": [
+        "Incorreto: o canal operacional dedicado deve ser usado.",
+        "Incorreto: P&C trata disciplina, não dúvidas de política técnica.",
+        "Incorreto: suporte de TI não interpreta política.",
+        "Correto: dúvidas devem ir para o canal de policy-management."
+      ],
+      "en": [
+        "Incorrect: there is a dedicated operational channel.",
+        "Incorrect: HR handles discipline, not policy interpretation.",
+        "Incorrect: IT support doesn’t interpret policy.",
+        "Correct: use the InfoSec policy-management Slack channel."
+      ]
+    }
+  },
+  {
+    "id": 334,
+    "q": {
+      "pt": "O que é necessário para que os usuários acessem os recursos da empresa a partir de seus dispositivos pessoais?",
+      "en": "What is required for users to access company resources from their personal devices?"
+    },
+    "options": {
+      "pt": [
+        "Instalação de antivírus aprovado pela empresa.",
+        "Manter o sistema operacional atualizado.",
+        "Instalação de uma solução de Gerenciamento de Dispositivos Móveis (MDM).",
+        "Usar um PIN ou outro mecanismo de autenticação no dispositivo."
+      ],
+      "en": [
+        "Installing a company-approved antivirus.",
+        "Keeping the device OS up to date.",
+        "Installing a Mobile Device Management (MDM) solution.",
+        "Using a PIN or other device authentication."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: pode ser necessário, mas não é o requisito central.",
+        "Incorreto: boa prática, porém não suficiente.",
+        "Correto: MDM é exigido para acesso corporativo via BYOD.",
+        "Incorreto: autenticação local não basta para compliance."
+      ],
+      "en": [
+        "Incorrect: may be required, but not the core requirement.",
+        "Incorrect: good practice but insufficient.",
+        "Correct: MDM is required for BYOD corporate access.",
+        "Incorrect: device auth alone isn’t sufficient for compliance."
+      ]
+    }
+  },
+  {
+    "id": 335,
+    "q": {
+      "pt": "Qual é a responsabilidade de um usuário ao deixar seu computador desacompanhado?",
+      "en": "What is a user’s responsibility when leaving their computer unattended?"
+    },
+    "options": {
+      "pt": [
+        "Desligar o computador completamente.",
+        "Bloquear o computador.",
+        "Desconectar da rede Wi-Fi.",
+        "Fechar todos os aplicativos com dados sensíveis."
+      ],
+      "en": [
+        "Shut down the computer completely.",
+        "Lock the computer.",
+        "Disconnect from Wi-Fi.",
+        "Close all applications containing sensitive data."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: desligar nem sempre é prático ou necessário.",
+        "Correto: bloquear evita uso não autorizado.",
+        "Incorreto: desconectar não impede acesso físico local.",
+        "Incorreto: fechar apps não garante proteção imediata."
+      ],
+      "en": [
+        "Incorrect: shutdown isn’t always required.",
+        "Correct: locking prevents unauthorized use.",
+        "Incorrect: disconnecting Wi-Fi doesn’t stop local access.",
+        "Incorrect: closing apps doesn’t ensure protection."
+      ]
+    }
+  },
+  {
+    "id": 336,
+    "q": {
+      "pt": "Ter a capacidade técnica de acessar certas informações implica que você está autorizado a fazê-lo?",
+      "en": "Does having the technical ability to access certain information imply you are authorized to do so?"
+    },
+    "options": {
+      "pt": [
+        "Sim, se for para um propósito de negócio válido.",
+        "Não, possuir a capacidade técnica de acessar informações não implica autorização.",
+        "Sim, mas apenas para membros de TI ou InfoSec.",
+        "Não, mas você pode solicitar acesso ao seu gestor posteriormente."
+      ],
+      "en": [
+        "Yes, if it is for a valid business purpose.",
+        "No, having the technical ability does not imply authorization.",
+        "Yes, but only for IT or InfoSec members.",
+        "No, but you can request access from your manager later."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: propósito válido não substitui autorização formal.",
+        "Correto: autorização formal é obrigatória, além da capacidade técnica.",
+        "Incorreto: times técnicos também precisam de autorização.",
+        "Incorreto: pedir depois não legitima o acesso agora."
+      ],
+      "en": [
+        "Incorrect: valid purpose doesn’t replace formal authorization.",
+        "Correct: formal authorization is required beyond capability.",
+        "Incorrect: IT/InfoSec also require authorization.",
+        "Incorrect: requesting later doesn’t justify access now."
+      ]
+    }
+  },
+  {
+    "id": 337,
+    "q": {
+      "pt": "Que tipo de informação deve ser excluída das respostas de e-mail de ausência temporária?",
+      "en": "What type of information should be excluded from out-of-office email replies?"
+    },
+    "options": {
+      "pt": [
+        "A data prevista do seu retorno.",
+        "O nome de um colega para contato em assuntos urgentes.",
+        "Informações confidenciais ou internas, como números de telefone ou locais internos.",
+        "Uma declaração indicando acesso limitado ao e-mail."
+      ],
+      "en": [
+        "Your expected return date.",
+        "A colleague’s name for urgent matters.",
+        "Confidential or internal information, such as internal phone numbers or locations.",
+        "A statement indicating limited email access."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: a data pode constar.",
+        "Incorreto: contato alternativo é adequado.",
+        "Correto: informações internas/confidenciais não devem ser divulgadas.",
+        "Incorreto: declaração de acesso limitado é aceitável."
+      ],
+      "en": [
+        "Incorrect: return dates may be included.",
+        "Incorrect: alternate contact is appropriate.",
+        "Correct: internal/confidential info must not be disclosed.",
+        "Incorrect: stating limited access is fine."
+      ]
+    }
+  },
+  {
+    "id": 338,
+    "q": {
+      "pt": "Qual é a regra para o uso da internet na rede corporativa ou em um dispositivo da empresa?",
+      "en": "What is the rule for internet use on the corporate network or a company device?"
+    },
+    "options": {
+      "pt": [
+        "É irrestrito, desde que não viole a lei.",
+        "Deve ser limitado a atividades relacionadas ao negócio.",
+        "Uso pessoal limitado é permitido durante o almoço.",
+        "É monitorado, mas não restrito."
+      ],
+      "en": [
+        "It is unrestricted as long as it does not violate the law.",
+        "It must be limited to business-related activities.",
+        "Limited personal use is allowed during lunch.",
+        "It is monitored but not restricted."
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: há restrição de uso a fins de negócio.",
+        "Correto: o uso deve ser estritamente para atividades de trabalho.",
+        "Incorreto: exceções pessoais não são a regra.",
+        "Incorreto: pode ser monitorado e também restrito."
+      ],
+      "en": [
+        "Incorrect: use is restricted to business purposes.",
+        "Correct: usage must be business-related.",
+        "Incorrect: personal exceptions are not the rule.",
+        "Incorrect: it can be both monitored and restricted."
+      ]
+    }
+  },
+  {
+    "id": 339,
+    "q": {
+      "pt": "Qual dos seguintes é um exemplo de uso indevido intencional inaceitável de um dispositivo de computação da empresa?",
+      "en": "Which of the following is an example of unacceptable intentional misuse of a company computing device?"
+    },
+    "options": {
+      "pt": [
+        "Instalar software pré-aprovado.",
+        "Executar uma análise de dados para um projeto de negócio.",
+        "Usar o dispositivo para mineração de criptomoedas.",
+        "Acessar a internet fora da rede da empresa."
+      ],
+      "en": [
+        "Installing pre-approved software.",
+        "Running data analysis for a business project.",
+        "Using the device for cryptocurrency mining.",
+        "Accessing the internet outside the corporate network."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: está em conformidade se pré-aprovado.",
+        "Incorreto: atividade de negócio legítima.",
+        "Correto: mineração de criptomoedas é uso indevido intencional.",
+        "Incorreto: acesso externo não é, por si só, indevido."
+      ],
+      "en": [
+        "Incorrect: compliant if pre-approved.",
+        "Incorrect: legitimate business activity.",
+        "Correct: crypto mining is unacceptable intentional misuse.",
+        "Incorrect: off-corp internet isn’t inherently misuse."
+      ]
+    }
+  },
+  {
+    "id": 340,
+    "q": {
+      "pt": "Quem aprova esta política e quaisquer pedidos de exceção a ela?",
+      "en": "Who approves this policy and any exception requests to it?"
+    },
+    "options": {
+      "pt": [
+        "A equipe de Engenharia de TI aprova a política e Pessoas & Cultura aprova as exceções.",
+        "A equipe de InfoSec aprova a política e o gestor do usuário aprova as exceções.",
+        "Os CISOs Global e Locais aprovam a política, e o CISO avalia e aprova ou nega as exceções.",
+        "A equipe de Auditoria Interna aprova tanto a política quanto todas as exceções."
+      ],
+      "en": [
+        "IT Engineering approves the policy and People & Culture approves exceptions.",
+        "InfoSec approves the policy and the user’s manager approves exceptions.",
+        "Global and Local CISOs approve the policy, and the CISO evaluates and approves or denies exceptions.",
+        "Internal Audit approves both the policy and all exceptions."
+      ]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: esses times não detêm a aprovação formal da política.",
+        "Incorreto: o gestor não aprova exceções de política corporativa.",
+        "Correto: CISOs aprovam a política; o CISO decide sobre exceções.",
+        "Incorreto: Auditoria não aprova políticas/exceções."
+      ],
+      "en": [
+        "Incorrect: these teams don’t hold formal policy approval.",
+        "Incorrect: managers don’t approve corporate policy exceptions.",
+        "Correct: CISOs approve the policy; the CISO rules on exceptions.",
+        "Incorrect: Internal Audit doesn’t approve policies/exceptions."
+      ]
+    }
   }
 ]
