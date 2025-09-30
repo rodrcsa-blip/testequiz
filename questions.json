@@ -9374,8 +9374,8 @@
     "trap": "phishing",
     "image": "./images/phishing.jpg",
     "trapMessage": {
-      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+      "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+      "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
     }
   },
   {
@@ -9713,8 +9713,8 @@
     "trap": "phishing",
     "image": "./images/phishing.jpg",
     "trapMessage": {
-      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+      "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+      "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
     }
   },
   {
@@ -9918,8 +9918,8 @@
     "trap": "phishing",
     "image": "./images/phishing.jpg",
     "trapMessage": {
-      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+      "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+      "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
     }
   },
   {
@@ -10643,8 +10643,8 @@
     "trap": "phishing",
     "image": "./images/phishing.jpg",
     "trapMessage": {
-      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+      "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+      "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
     }
   },
   {
@@ -10766,8 +10766,8 @@
     "trap": "phishing",
     "image": "./images/phishing.jpg",
     "trapMessage": {
-      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+      "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+      "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
     }
   },
   {
@@ -11003,8 +11003,8 @@
   "trap": "phishing",
   "image": "./images/phishing.jpg",
   "trapMessage": {
-    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
   }
 },
 {
@@ -11458,8 +11458,8 @@
   "trap": "phishing",
   "image": "./images/phishing.jpg",
   "trapMessage": {
-    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
-    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
   }
 },
 {
@@ -11819,6 +11819,717 @@
         "Correct: includes operation, maintenance, and effectiveness testing.",
         "There may be no code; the focus is the control itself.",
         "Approving changes can be part of it, but not the whole role."
+      ]
+    }
+  },
+  {
+    "id": 386,
+    "q": {
+      "pt": "O que significa PCAOB?",
+      "en": "What does PCAOB stand for?"
+    },
+    "options": {
+      "pt": [
+        "Public Company Accounting Oversight Board",
+        "Professional Corporate Audit Oversight Bureau",
+        "Public Corporate Accounting Office Board",
+        "Professional Compliance and Audit Oversight Body"
+      ],
+      "en": [
+        "Public Company Accounting Oversight Board",
+        "Professional Corporate Audit Oversight Bureau",
+        "Public Corporate Accounting Office Board",
+        "Professional Compliance and Audit Oversight Body"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: este é o significado oficial de PCAOB.",
+        "Incorreto: nome inexistente.",
+        "Incorreto: nome inexistente.",
+        "Incorreto: nome inexistente."
+      ],
+      "en": [
+        "Correct: this is the official expansion of PCAOB.",
+        "Incorrect: not the official name.",
+        "Incorrect: not the official name.",
+        "Incorrect: not the official name."
+      ]
+    }
+  },
+  {
+    "id": 387,
+    "q": {
+      "pt": "Em que ano o PCAOB foi criado?",
+      "en": "In which year was the PCAOB created?"
+    },
+    "options": {
+      "pt": ["2002", "1995", "2010", "1987"],
+      "en": ["2002", "1995", "2010", "1987"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o PCAOB foi criado em 2002.",
+        "Incorreto: 1995 é anterior à SOX.",
+        "Incorreto: posterior à criação do PCAOB.",
+        "Incorreto: muito antes da SOX."
+      ],
+      "en": [
+        "Correct: PCAOB was created in 2002.",
+        "Incorrect: 1995 predates SOX.",
+        "Incorrect: later than creation.",
+        "Incorrect: long before SOX."
+      ]
+    }
+  },
+  {
+    "id": 388,
+    "q": {
+      "pt": "Qual lei dos EUA estabeleceu o PCAOB?",
+      "en": "Which U.S. law established the PCAOB?"
+    },
+    "options": {
+      "pt": [
+        "Sarbanes-Oxley Act (SOX)",
+        "Dodd-Frank Act",
+        "Securities Exchange Act",
+        "Glass-Steagall Act"
+      ],
+      "en": [
+        "Sarbanes-Oxley Act (SOX)",
+        "Dodd-Frank Act",
+        "Securities Exchange Act",
+        "Glass-Steagall Act"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a SOX de 2002 criou o PCAOB.",
+        "Incorreto: Dodd-Frank é de 2010.",
+        "Incorreto: de 1934, não cria o PCAOB.",
+        "Incorreto: trata de bancos, não do PCAOB."
+      ],
+      "en": [
+        "Correct: SOX (2002) created the PCAOB.",
+        "Incorrect: Dodd-Frank is from 2010.",
+        "Incorrect: 1934 act didn’t create PCAOB.",
+        "Incorrect: banking-focused, not PCAOB."
+      ]
+    }
+  },
+  {
+    "id": 389,
+    "q": {
+      "pt": "Qual é a missão principal do PCAOB?",
+      "en": "What is the main mission of the PCAOB?"
+    },
+    "options": {
+      "pt": [
+        "Supervisionar auditorias de companhias abertas",
+        "Aprovar fusões corporativas",
+        "Regular consultores financeiros",
+        "Gerir impostos corporativos"
+      ],
+      "en": [
+        "Oversee audits of public companies",
+        "Approve corporate mergers",
+        "Regulate financial advisors",
+        "Manage corporate taxes"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a missão é supervisionar auditorias de emissores.",
+        "Incorreto: fusões são tema de outras autoridades.",
+        "Incorreto: consultores financeiros não são foco do PCAOB.",
+        "Incorreto: impostos não são escopo do PCAOB."
+      ],
+      "en": [
+        "Correct: it oversees audits of issuers.",
+        "Incorrect: mergers are other authorities’ scope.",
+        "Incorrect: financial advisors aren’t PCAOB’s focus.",
+        "Incorrect: taxes are outside PCAOB’s scope."
+      ]
+    }
+  },
+  {
+    "id": 390,
+    "q": {
+      "pt": "Além de companhias abertas, o PCAOB também supervisiona auditorias de quais entidades?",
+      "en": "The PCAOB also oversees audits of which entities besides public companies?"
+    },
+    "options": {
+      "pt": ["Corretoras-dealers (broker-dealers)", "Empresas privadas", "Agências governamentais", "ONGs"],
+      "en": ["Broker-dealers", "Private companies", "Government agencies", "Nonprofits"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o PCAOB também supervisiona auditorias de broker-dealers.",
+        "Incorreto: privadas não são escopo direto.",
+        "Incorreto: auditorias governamentais não são foco do PCAOB.",
+        "Incorreto: ONGs não são foco do PCAOB."
+      ],
+      "en": [
+        "Correct: PCAOB oversees broker-dealer audits too.",
+        "Incorrect: private companies aren’t PCAOB’s direct scope.",
+        "Incorrect: not focused on government audits.",
+        "Incorrect: nonprofits aren’t PCAOB’s focus."
+      ]
+    }
+  },
+  {
+    "id": 391,
+    "q": {
+      "pt": "Como os membros do Board do PCAOB são nomeados?",
+      "en": "How are PCAOB Board members appointed?"
+    },
+    "options": {
+      "pt": [
+        "Pela SEC",
+        "Pelo Presidente dos EUA",
+        "Pelo Congresso",
+        "Por eleição pública"
+      ],
+      "en": ["By the SEC", "By the U.S. President", "By Congress", "By public election"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a SEC nomeia os membros do Board.",
+        "Incorreto: o Presidente não nomeia diretamente.",
+        "Incorreto: o Congresso não nomeia.",
+        "Incorreto: não há eleição pública."
+      ],
+      "en": [
+        "Correct: the SEC appoints the Board members.",
+        "Incorrect: not directly by the President.",
+        "Incorrect: not appointed by Congress.",
+        "Incorrect: no public election."
+      ]
+    }
+  },
+  {
+    "id": 392,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 393,
+    "q": {
+      "pt": "Quantos membros compõem o Board do PCAOB?",
+      "en": "How many members are on the PCAOB Board?"
+    },
+    "options": {
+      "pt": ["Cinco", "Três", "Sete", "Nove"],
+      "en": ["Five", "Three", "Seven", "Nine"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o Board do PCAOB tem cinco membros.",
+        "Incorreto.",
+        "Incorreto.",
+        "Incorreto."
+      ],
+      "en": [
+        "Correct: the PCAOB Board has five members.",
+        "Incorrect.",
+        "Incorrect.",
+        "Incorrect."
+      ]
+    }
+  },
+  {
+    "id": 394,
+    "q": {
+      "pt": "Qual regulador tem autoridade final sobre o PCAOB?",
+      "en": "Which regulator has ultimate authority over the PCAOB?"
+    },
+    "options": {
+      "pt": ["SEC", "IRS", "GAO", "Departamento do Tesouro"],
+      "en": ["SEC", "IRS", "GAO", "Treasury Department"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a SEC tem autoridade supervisora final.",
+        "Incorreto: IRS lida com impostos.",
+        "Incorreto: GAO audita governo.",
+        "Incorreto: Tesouro não supervisiona o PCAOB."
+      ],
+      "en": [
+        "Correct: the SEC has ultimate oversight authority.",
+        "Incorrect: IRS handles taxes.",
+        "Incorrect: GAO audits government.",
+        "Incorrect: Treasury doesn’t supervise PCAOB."
+      ]
+    }
+  },
+  {
+    "id": 395,
+    "q": {
+      "pt": "Qual das opções a seguir NÃO é uma categoria de padrões do PCAOB?",
+      "en": "Which of the following is NOT a PCAOB standard category?"
+    },
+    "options": {
+      "pt": ["Auditoria", "Asseguração (Attestation)", "Controle de Qualidade", "Marketing"],
+      "en": ["Auditing", "Attestation", "Quality Control", "Marketing"]
+    },
+    "correctIndex": 3,
+    "rationales": {
+      "pt": [
+        "Auditoria é categoria válida.",
+        "Attestation é categoria válida.",
+        "Quality Control é categoria válida.",
+        "Correto: Marketing não é categoria de padrão do PCAOB."
+      ],
+      "en": [
+        "Auditing is a valid category.",
+        "Attestation is a valid category.",
+        "Quality Control is a valid category.",
+        "Correct: Marketing is not a PCAOB standard category."
+      ]
+    }
+  },
+  {
+    "id": 396,
+    "q": {
+      "pt": "Qual padrão do PCAOB se relaciona ao relatório do auditor?",
+      "en": "Which PCAOB standard relates to the auditor’s report?"
+    },
+    "options": {
+      "pt": ["AS 3101", "AS 2201", "AS 2401", "AS 1301"],
+      "en": ["AS 3101", "AS 2201", "AS 2401", "AS 1301"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: AS 3101 trata do relatório do auditor.",
+        "Incorreto: AS 2201 é ICFR.",
+        "Incorreto: AS 2401 é fraude.",
+        "Incorreto: AS 1301 é comunicação com Comitê de Auditoria."
+      ],
+      "en": [
+        "Correct: AS 3101 covers the auditor’s report.",
+        "Incorrect: AS 2201 is ICFR.",
+        "Incorrect: AS 2401 is fraud.",
+        "Incorrect: AS 1301 is audit committee communications."
+      ]
+    }
+  },
+  {
+    "id": 397,
+    "q": {
+      "pt": "Qual padrão do PCAOB aborda controle interno sobre relatórios financeiros (ICFR)?",
+      "en": "Which PCAOB standard addresses internal control over financial reporting (ICFR)?"
+    },
+    "options": {
+      "pt": ["AS 2201", "AS 2401", "AS 1305", "AS 1101"],
+      "en": ["AS 2201", "AS 2401", "AS 1305", "AS 1101"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: AS 2201 cobre ICFR.",
+        "Incorreto: AS 2401 é fraude.",
+        "Incorreto.",
+        "Incorreto."
+      ],
+      "en": [
+        "Correct: AS 2201 covers ICFR.",
+        "Incorrect: AS 2401 is fraud.",
+        "Incorrect.",
+        "Incorrect."
+      ]
+    }
+  },
+  {
+    "id": 398,
+    "q": {
+      "pt": "Qual padrão do PCAOB foca na avaliação de risco de fraude?",
+      "en": "Which PCAOB standard focuses on fraud risk assessment?"
+    },
+    "options": {
+      "pt": ["AS 2401", "AS 3101", "AS 2201", "AS 1301"],
+      "en": ["AS 2401", "AS 3101", "AS 2201", "AS 1301"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: AS 2401 trata de riscos de fraude.",
+        "Incorreto: relatório do auditor.",
+        "Incorreto: ICFR.",
+        "Incorreto: comunicação com Comitê de Auditoria."
+      ],
+      "en": [
+        "Correct: AS 2401 addresses fraud risks.",
+        "Incorrect: auditor’s report.",
+        "Incorrect: ICFR.",
+        "Incorrect: audit committee communications."
+      ]
+    }
+  },
+  {
+    "id": 399,
+    "q": {
+      "pt": "Qual é o propósito das inspeções do PCAOB?",
+      "en": "What is the purpose of PCAOB inspections?"
+    },
+    "options": {
+      "pt": [
+        "Avaliar a conformidade das firmas de auditoria com os padrões",
+        "Aprovar fusões",
+        "Treinar CFOs",
+        "Regular bolsas de valores"
+      ],
+      "en": [
+        "Evaluate audit firms’ compliance with standards",
+        "Approve mergers",
+        "Train CFOs",
+        "Regulate stock exchanges"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: as inspeções verificam conformidade com padrões.",
+        "Incorreto: não é função do PCAOB.",
+        "Incorreto: não é função do PCAOB.",
+        "Incorreto: não é função do PCAOB."
+      ],
+      "en": [
+        "Correct: inspections check compliance with standards.",
+        "Incorrect: not PCAOB’s role.",
+        "Incorrect: not PCAOB’s role.",
+        "Incorrect: not PCAOB’s role."
+      ]
+    }
+  },
+  {
+    "id": 400,
+    "q": {
+      "pt": "Com que frequência são exigidas inspeções do PCAOB para firmas que auditam mais de 100 emissores anualmente?",
+      "en": "How often are PCAOB inspections required for firms auditing more than 100 issuers annually?"
+    },
+    "options": {
+      "pt": ["Anualmente", "A cada 3 anos", "A cada 5 anos", "Somente sob solicitação"],
+      "en": ["Annually", "Every 3 years", "Every 5 years", "Only upon request"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: >100 emissores requer inspeções anuais.",
+        "Incorreto.",
+        "Incorreto.",
+        "Incorreto."
+      ],
+      "en": [
+        "Correct: >100 issuers require annual inspections.",
+        "Incorrect.",
+        "Incorrect.",
+        "Incorrect."
+      ]
+    }
+  },
+  {
+    "id": 401,
+    "q": {
+      "pt": "Com que frequência são exigidas inspeções do PCAOB para firmas que auditam menos de 100 emissores?",
+      "en": "How often are PCAOB inspections required for firms auditing fewer than 100 issuers?"
+    },
+    "options": {
+      "pt": ["A cada 3 anos", "Anualmente", "A cada 5 anos", "Nunca"],
+      "en": ["Every 3 years", "Annually", "Every 5 years", "Never"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: para <100 emissores, é a cada 3 anos.",
+        "Incorreto.",
+        "Incorreto.",
+        "Incorreto."
+      ],
+      "en": [
+        "Correct: for <100 issuers it’s every three years.",
+        "Incorrect.",
+        "Incorrect.",
+        "Incorrect."
+      ]
+    }
+  },
+  {
+    "id": 402,
+    "q": {
+      "pt": "Qual poder de enforcement o PCAOB possui?",
+      "en": "What enforcement power does the PCAOB hold?"
+    },
+    "options": {
+      "pt": [
+        "Aplicar sanções, multas e revogar registros",
+        "Aprovar IPOs",
+        "Definir política tributária",
+        "Regular operações bancárias"
+      ],
+      "en": [
+        "Impose sanctions, fines, and revoke registrations",
+        "Approve IPOs",
+        "Set tax policy",
+        "Regulate banking operations"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o PCAOB pode sancionar, multar e revogar registro de firmas.",
+        "Incorreto.",
+        "Incorreto.",
+        "Incorreto."
+      ],
+      "en": [
+        "Correct: PCAOB may sanction, fine, and revoke firm registrations.",
+        "Incorrect.",
+        "Incorrect.",
+        "Incorrect."
+      ]
+    }
+  },
+  {
+    "id": 403,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 404,
+    "q": {
+      "pt": "O que as firmas devem fazer para auditar legalmente companhias abertas nos EUA?",
+      "en": "What must firms do to legally audit public companies in the U.S.?"
+    },
+    "options": {
+      "pt": [
+        "Registrar-se no PCAOB",
+        "Registrar-se no IRS",
+        "Ser aprovadas pelo FASB",
+        "Receber financiamento da SEC"
+      ],
+      "en": [
+        "Register with the PCAOB",
+        "Register with the IRS",
+        "Be approved by FASB",
+        "Receive SEC funding"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o registro no PCAOB é obrigatório.",
+        "Incorreto: IRS é de impostos.",
+        "Incorreto: FASB define padrões contábeis.",
+        "Incorreto: financiamento não é requisito."
+      ],
+      "en": [
+        "Correct: PCAOB registration is required.",
+        "Incorrect: IRS is tax-related.",
+        "Incorrect: FASB sets accounting standards.",
+        "Incorrect: funding is not a requirement."
+      ]
+    }
+  },
+  {
+    "id": 405,
+    "q": {
+      "pt": "Qual padrão do PCAOB rege a comunicação com comitês de auditoria?",
+      "en": "Which PCAOB standard governs communication with audit committees?"
+    },
+    "options": {
+      "pt": ["AS 1301", "AS 3101", "AS 2201", "AS 2501"],
+      "en": ["AS 1301", "AS 3101", "AS 2201", "AS 2501"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: AS 1301 trata da comunicação com o Comitê de Auditoria.",
+        "Incorreto: relatório do auditor.",
+        "Incorreto: ICFR.",
+        "Incorreto: outro assunto técnico."
+      ],
+      "en": [
+        "Correct: AS 1301 governs audit committee communications.",
+        "Incorrect: auditor’s report.",
+        "Incorrect: ICFR.",
+        "Incorrect: different technical topic."
+      ]
+    }
+  },
+  {
+    "id": 406,
+    "q": {
+      "pt": "Qual formulário do PCAOB é usado para divulgar ações disciplinares?",
+      "en": "Which PCAOB form is used to disclose disciplinary actions?"
+    },
+    "options": {
+      "pt": ["Form 3", "Form 1", "Form 4", "Form 10-K"],
+      "en": ["Form 3", "Form 1", "Form 4", "Form 10-K"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o Form 3 trata de divulgações como ações disciplinares.",
+        "Incorreto.",
+        "Incorreto.",
+        "Incorreto: 10-K é relatório da SEC, não do PCAOB."
+      ],
+      "en": [
+        "Correct: Form 3 covers disclosures such as disciplinary actions.",
+        "Incorrect.",
+        "Incorrect.",
+        "Incorrect: 10-K is an SEC filing, not PCAOB."
+      ]
+    }
+  },
+  {
+    "id": 407,
+    "q": {
+      "pt": "Qual publicação do PCAOB fornece transparência sobre resultados de inspeção?",
+      "en": "Which PCAOB publication provides transparency on inspection results?"
+    },
+    "options": {
+      "pt": [
+        "Relatórios de Inspeção do PCAOB",
+        "Arquivos da SEC",
+        "Atualizações GAAP",
+        "Relatórios COSO"
+      ],
+      "en": [
+        "PCAOB Inspection Reports",
+        "SEC Filings",
+        "GAAP Updates",
+        "COSO Reports"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: são os relatórios de inspeção do PCAOB.",
+        "Incorreto: são exigências da SEC, não publicações do PCAOB.",
+        "Incorreto: GAAP é FASB.",
+        "Incorreto: COSO é framework, não relatório de inspeção do PCAOB."
+      ],
+      "en": [
+        "Correct: PCAOB Inspection Reports provide transparency.",
+        "Incorrect: SEC filings are not PCAOB publications.",
+        "Incorrect: GAAP updates are FASB-related.",
+        "Incorrect: COSO reports are not PCAOB inspection reports."
+      ]
+    }
+  },
+  {
+    "id": 408,
+    "q": {
+      "pt": "Qual equipe é responsável por remover IPs de BPO do AWS Security Group durante o offboarding?",
+      "en": "Which team is responsible for removing BPO IPs from the AWS Security Group during offboarding?"
+    },
+    "options": {
+      "pt": ["Equipe SOC", "Equipe Infosec BPO", "IT-Engineering", "Privacidade de Dados"],
+      "en": ["SOC Team", "Infosec BPO Team", "IT-Engineering", "Data Privacy"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: SOC foca em monitoramento de segurança.",
+        "Correto: a equipe Infosec BPO remove os IPs no offboarding.",
+        "Incorreto: IT-Engineering pode apoiar, mas não é o dono aqui.",
+        "Incorreto: área de privacidade não executa esta ação técnica."
+      ],
+      "en": [
+        "Incorrect: SOC focuses on security monitoring.",
+        "Correct: Infosec BPO Team handles IP removal on offboarding.",
+        "Incorrect: IT-Engineering may support but isn’t the owner here.",
+        "Incorrect: Data Privacy does not perform this technical action."
+      ]
+    }
+  },
+  {
+    "id": 409,
+    "q": {
+      "pt": "Qual é o documento que orienta o processo de offboarding de BPO que o Infosec segue?",
+      "en": "What is the document that guides the BPO offboarding process that Infosec follows?"
+    },
+    "options": {
+      "pt": [
+        "Requisitos de Offboarding da Infosec",
+        "Diretrizes de IT-Engineering para offboarding de um novo BPO",
+        "Checklist da Equipe SOC",
+        "O ticket de rescisão"
+      ],
+      "en": [
+        "Infosec Offboarding Requirements",
+        "IT-Engineering's guidelines for offboarding a new BPO",
+        "SOC Team's checklist",
+        "The termination ticket"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: não é o documento de referência principal.",
+        "Correto: as diretrizes de IT-Engineering guiam o processo.",
+        "Incorreto: checklist do SOC não é o guia principal.",
+        "Incorreto: o ticket não substitui o documento de diretriz."
+      ],
+      "en": [
+        "Incorrect: not the primary reference document.",
+        "Correct: IT-Engineering’s guidelines guide the process.",
+        "Incorrect: SOC checklist isn’t the main guide.",
+        "Incorrect: the ticket doesn’t replace the guideline document."
+      ]
+    }
+  },
+  {
+    "id": 410,
+    "q": {
+      "pt": "Qual é o principal método de identificação do risco \"Fornecedor não avaliado\" durante uma nova contratação?",
+      "en": "What is the primary method of identification for the \"Vendor not assessed\" risk during a new vendor hiring?"
+    },
+    "options": {
+      "pt": [
+        "Ligações do fornecedor",
+        "Ausência de retorno da avaliação via UpGuard após SLA de 14 dias",
+        "Auditoria interna de segurança",
+        "Relato do Contract Owner"
+      ],
+      "en": [
+        "Vendor calls",
+        "Lack of assessment return via UpGuard after 14-day SLA",
+        "Internal security audit",
+        "Contract Owner report"
+      ]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: ligações não qualificam o risco de forma padronizada.",
+        "Correto: a ausência de retorno no prazo do UpGuard indica o risco.",
+        "Incorreto: auditoria interna pode detectar, mas não é o método primário definido.",
+        "Incorreto: relato pode existir, mas não é o método primário."
+      ],
+      "en": [
+        "Incorrect: calls don’t standardize risk identification.",
+        "Correct: lack of UpGuard response by 14-day SLA indicates the risk.",
+        "Incorrect: internal audit might detect but isn’t the primary defined method.",
+        "Incorrect: a report may exist but isn’t the primary method."
       ]
     }
   }
