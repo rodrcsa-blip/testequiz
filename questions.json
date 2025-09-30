@@ -7093,7 +7093,7 @@
     "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
     "en": "After how many incorrect attempts will the password be locked?"
   },
-    {
+  {
   "id": 218,
   "q": {
     "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
@@ -7960,7 +7960,7 @@
     ]
   }
 },
-  {
+{
   "id": 261,
   "q": {
     "pt": "Qual o principal objetivo da Política de Gestão de Identidades e Acessos do Nubank?",
