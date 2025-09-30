@@ -9224,5 +9224,862 @@
         "CISO sets policy, not tools directly."
       ]
     }
+  },
+  {
+    "id": 301,
+    "q": {
+      "pt": "O que significa PCI-DSS?",
+      "en": "What does PCI-DSS stand for?"
+    },
+    "options": {
+      "pt": [
+        "Padrão de Segurança de Dados da Indústria de Cartões de Pagamento",
+        "Padrão Internacional de Segurança de Dados de Conformidade de Pagamentos",
+        "Padrão de Segurança de Dados de Informações Pessoais de Cartão",
+        "Padrão de Infraestrutura de Pagamentos"
+      ],
+      "en": [
+        "Payment Card Industry Data Security Standard",
+        "Payment Compliance International Data Secure Standard",
+        "Personal Card Information Data Security Standard",
+        "Payment Card Infrastructure Default Standard"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: esse é o significado oficial de PCI-DSS.",
+        "Incorreto: não corresponde ao termo oficial.",
+        "Incorreto: não é a definição de PCI-DSS.",
+        "Incorreto: termo inexistente."
+      ],
+      "en": [
+        "Correct: this is the official meaning of PCI-DSS.",
+        "Incorrect: not the official term.",
+        "Incorrect: not the PCI-DSS definition.",
+        "Incorrect: no such term exists."
+      ]
+    }
+  },
+  {
+    "id": 302,
+    "q": {
+      "pt": "Quais organizações devem estar em conformidade com PCI-DSS?",
+      "en": "Which organizations must comply with PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Qualquer entidade que armazene, processe ou transmita dados de titulares de cartão",
+        "Apenas bancos",
+        "Apenas e-commerces",
+        "Apenas comerciantes com receita acima de US$ 1 milhão"
+      ],
+      "en": [
+        "Any entity that stores, processes, or transmits cardholder data",
+        "Only banks",
+        "Only e-commerce",
+        "Only merchants above $1M revenue"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: qualquer entidade que lide com dados de cartão deve seguir PCI-DSS.",
+        "Incorreto: não se limita a bancos.",
+        "Incorreto: não é exclusivo para e-commerces.",
+        "Incorreto: não depende apenas de receita."
+      ],
+      "en": [
+        "Correct: any entity handling cardholder data must comply.",
+        "Incorrect: not limited to banks.",
+        "Incorrect: not only e-commerce.",
+        "Incorrect: revenue is not the only criterion."
+      ]
+    }
+  },
+  {
+    "id": 303,
+    "q": {
+      "pt": "Que tipo de dados é protegido pelo PCI-DSS?",
+      "en": "Which type of data is protected under PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Dados do titular do cartão e dados de autenticação sensíveis",
+        "Apenas dados de RH",
+        "Dados de marketing",
+        "Informações públicas"
+      ],
+      "en": [
+        "Cardholder data and sensitive authentication data",
+        "HR data only",
+        "Marketing data",
+        "Public information"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: PCI-DSS cobre dados do titular e de autenticação.",
+        "Incorreto: não cobre dados de RH.",
+        "Incorreto: dados de marketing não são foco.",
+        "Incorreto: dados públicos não se aplicam."
+      ],
+      "en": [
+        "Correct: PCI-DSS covers cardholder and authentication data.",
+        "Incorrect: HR data is not in scope.",
+        "Incorrect: marketing data not covered.",
+        "Incorrect: public info is not in scope."
+      ]
+    }
+  },
+  {
+    "id": 304,
+    "q": {
+      "pt": "Qual das seguintes opções é considerada dado do titular do cartão?",
+      "en": "Which of the following is considered cardholder data?"
+    },
+    "options": {
+      "pt": [
+        "Número da Conta Primária (PAN)",
+        "Endereço de e-mail",
+        "Número de fidelidade do cliente",
+        "Endereço IP"
+      ],
+      "en": [
+        "Primary Account Number (PAN)",
+        "Email address",
+        "Customer loyalty number",
+        "IP address"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o PAN é o principal dado do titular do cartão.",
+        "Incorreto: e-mail não é cardholder data.",
+        "Incorreto: número de fidelidade não se aplica.",
+        "Incorreto: endereço IP não é cardholder data."
+      ],
+      "en": [
+        "Correct: PAN is the main cardholder data element.",
+        "Incorrect: email is not cardholder data.",
+        "Incorrect: loyalty numbers are not covered.",
+        "Incorrect: IP address is not cardholder data."
+      ]
+    }
+  },
+  {
+    "id": 305,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 306,
+    "q": {
+      "pt": "Qual é o comprimento máximo de um PAN sob PCI-DSS?",
+      "en": "What is the maximum length of a PAN under PCI-DSS?"
+    },
+    "options": {
+      "pt": ["8 dígitos", "12 dígitos", "16-19 dígitos", "Ilimitado"],
+      "en": ["8 digits", "12 digits", "16-19 digits", "Unlimited"]
+    },
+    "correctIndex": 2,
+    "rationales": {
+      "pt": [
+        "Incorreto: muito curto.",
+        "Incorreto: não atende.",
+        "Correto: 16 a 19 dígitos é o padrão aceito.",
+        "Incorreto: há limites definidos."
+      ],
+      "en": [
+        "Incorrect: too short.",
+        "Incorrect: not valid.",
+        "Correct: 16–19 digits is valid for PAN.",
+        "Incorrect: PAN length is limited."
+      ]
+    }
+  },
+  {
+    "id": 307,
+    "q": {
+      "pt": "Qual das seguintes opções é um requisito do PCI-DSS?",
+      "en": "Which of the following is a PCI-DSS requirement?"
+    },
+    "options": {
+      "pt": [
+        "Instalar e manter um firewall",
+        "Desenvolver planos de marketing",
+        "Aumentar volume de vendas",
+        "Reduzir rotatividade de clientes"
+      ],
+      "en": [
+        "Install and maintain a firewall",
+        "Develop marketing plans",
+        "Increase sales volume",
+        "Reduce customer churn"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: firewall é requisito básico do PCI-DSS.",
+        "Incorreto: marketing não é escopo.",
+        "Incorreto: PCI não trata de vendas.",
+        "Incorreto: retenção de clientes não é requisito PCI."
+      ],
+      "en": [
+        "Correct: firewall is a core PCI-DSS requirement.",
+        "Incorrect: marketing is out of scope.",
+        "Incorrect: sales volume is irrelevant.",
+        "Incorrect: churn reduction is not a PCI control."
+      ]
+    }
+  },
+  {
+    "id": 308,
+    "q": {
+      "pt": "Com que frequência os scans de vulnerabilidade devem ser realizados por um ASV?",
+      "en": "How often must vulnerability scans be performed by an Approved Scanning Vendor (ASV)?"
+    },
+    "options": {
+      "pt": ["Mensalmente", "Trimestralmente", "Semestralmente", "Anualmente"],
+      "en": ["Monthly", "Quarterly", "Semi-annually", "Annually"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: mensal não é a exigência.",
+        "Correto: a frequência exigida é trimestral.",
+        "Incorreto: semestral não atende.",
+        "Incorreto: anual é insuficiente."
+      ],
+      "en": [
+        "Incorrect: not monthly.",
+        "Correct: quarterly scans are required.",
+        "Incorrect: semi-annual is not enough.",
+        "Incorrect: annual is too infrequent."
+      ]
+    }
+  },
+  {
+    "id": 309,
+    "q": {
+      "pt": "Qual das seguintes opções NÃO é permitida pelo PCI-DSS?",
+      "en": "Which of the following is NOT allowed under PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Armazenar trilha completa após autorização",
+        "Criptografar PAN",
+        "Tokenização",
+        "Truncar números de cartão"
+      ],
+      "en": [
+        "Storing full track data after authorization",
+        "Encrypting PAN",
+        "Tokenization",
+        "Truncating card numbers"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: armazenamento de track data após autorização é proibido.",
+        "Incorreto: criptografar PAN é permitido.",
+        "Incorreto: tokenização é aceita.",
+        "Incorreto: truncamento é permitido."
+      ],
+      "en": [
+        "Correct: storing full track data post-authorization is forbidden.",
+        "Incorrect: PAN encryption is allowed.",
+        "Incorrect: tokenization is permitted.",
+        "Incorrect: truncation is accepted."
+      ]
+    }
+  },
+  {
+    "id": 310,
+    "q": {
+      "pt": "Qual é o foco principal do requisito 3 do PCI-DSS?",
+      "en": "What is requirement 3 of PCI-DSS mainly about?"
+    },
+    "options": {
+      "pt": [
+        "Proteger dados do titular armazenados",
+        "Monitorar acessos aos sistemas",
+        "Restringir acesso físico",
+        "Manter política de segurança"
+      ],
+      "en": [
+        "Protect stored cardholder data",
+        "Monitor access to systems",
+        "Restrict physical access",
+        "Maintain information security policy"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o requisito 3 trata de proteção de dados armazenados.",
+        "Incorreto: monitoramento é requisito 10.",
+        "Incorreto: acesso físico é requisito 9.",
+        "Incorreto: política é requisito 12."
+      ],
+      "en": [
+        "Correct: requirement 3 focuses on stored data protection.",
+        "Incorrect: monitoring is requirement 10.",
+        "Incorrect: physical access is requirement 9.",
+        "Incorrect: policy is requirement 12."
+      ]
+    }
+  },
+  {
+    "id": 311,
+    "q": {
+      "pt": "O que o requisito 4 do PCI-DSS aborda?",
+      "en": "What does requirement 4 of PCI-DSS address?"
+    },
+    "options": {
+      "pt": [
+        "Criptografar a transmissão de dados do titular em redes abertas",
+        "Monitorar o acesso ao sistema",
+        "Conduzir testes regulares",
+        "Desenvolver software seguro"
+      ],
+      "en": [
+        "Encrypt transmission of cardholder data across open networks",
+        "Monitor system access",
+        "Conduct regular testing",
+        "Develop secure software"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: requisito 4 trata da proteção em trânsito.",
+        "Incorreto: monitoramento é outro requisito.",
+        "Incorreto: testes regulares são do requisito 11.",
+        "Incorreto: desenvolvimento seguro é abordado no req. 6."
+      ],
+      "en": [
+        "Correct: requirement 4 is about encryption in transit.",
+        "Incorrect: monitoring is not req. 4.",
+        "Incorrect: regular testing is requirement 11.",
+        "Incorrect: secure dev is requirement 6."
+      ]
+    }
+  },
+  {
+    "id": 312,
+    "q": {
+      "pt": "O que o CVV representa em um cartão de pagamento?",
+      "en": "What does the CVV represent on a payment card?"
+    },
+    "options": {
+      "pt": [
+        "Valor de Verificação do Cartão",
+        "Validação do Fornecedor do Cartão",
+        "Visa Verificada pelo Cliente",
+        "Versão Virtual do Cartão"
+      ],
+      "en": [
+        "Card Verification Value",
+        "Card Vendor Validation",
+        "Customer Verified Visa",
+        "Card Virtual Version"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: CVV significa Valor de Verificação do Cartão.",
+        "Incorreto: não é a definição do CVV.",
+        "Incorreto: frase incorreta.",
+        "Incorreto: termo sem relação."
+      ],
+      "en": [
+        "Correct: CVV stands for Card Verification Value.",
+        "Incorrect: not the meaning.",
+        "Incorrect: wrong phrase.",
+        "Incorrect: unrelated term."
+      ]
+    }
+  },
+  {
+    "id": 313,
+    "q": {
+      "pt": "Sobre o que trata o requisito 7 do PCI-DSS?",
+      "en": "What is requirement 7 of PCI-DSS about?"
+    },
+    "options": {
+      "pt": [
+        "Restringir acesso aos dados do titular por necessidade de negócio",
+        "Criptografar dados armazenados",
+        "Testar sistemas de segurança",
+        "Implementar antivírus"
+      ],
+      "en": [
+        "Restrict access to cardholder data by business need to know",
+        "Encrypt stored data",
+        "Test security systems",
+        "Implement anti-virus"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o requisito 7 foca em acesso por necessidade de saber.",
+        "Incorreto: criptografia de dados armazenados é outro requisito.",
+        "Incorreto: testes estão no requisito 11.",
+        "Incorreto: antivírus é requisito 5."
+      ],
+      "en": [
+        "Correct: req. 7 is about business need to know.",
+        "Incorrect: encryption of stored data is separate.",
+        "Incorrect: testing is requirement 11.",
+        "Incorrect: anti-virus is requirement 5."
+      ]
+    }
+  },
+  {
+    "id": 314,
+    "q": {
+      "pt": "Qual requisito cobre logging e monitoramento?",
+      "en": "Which requirement covers logging and monitoring?"
+    },
+    "options": {
+      "pt": ["Requisito 10", "Requisito 3", "Requisito 5", "Requisito 12"],
+      "en": ["Requirement 10", "Requirement 3", "Requirement 5", "Requirement 12"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o requisito 10 trata de logs e monitoramento.",
+        "Incorreto: requisito 3 é sobre dados armazenados.",
+        "Incorreto: requisito 5 é sobre antivírus.",
+        "Incorreto: requisito 12 trata da política."
+      ],
+      "en": [
+        "Correct: requirement 10 focuses on logging/monitoring.",
+        "Incorrect: req. 3 is stored data.",
+        "Incorrect: req. 5 is anti-virus.",
+        "Incorrect: req. 12 is policy."
+      ]
+    }
+  },
+  {
+    "id": 315,
+    "q": {
+      "pt": "O que o requisito 11 do PCI-DSS exige?",
+      "en": "What does requirement 11 of PCI-DSS require?"
+    },
+    "options": {
+      "pt": [
+        "Testar regularmente sistemas e processos de segurança",
+        "Instalar firewalls",
+        "Manter antivírus",
+        "Treinar colaboradores"
+      ],
+      "en": [
+        "Regularly test security systems and processes",
+        "Install firewalls",
+        "Maintain anti-virus",
+        "Train employees"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o requisito 11 foca em testes regulares.",
+        "Incorreto: firewalls são do requisito 1.",
+        "Incorreto: antivírus é do requisito 5.",
+        "Incorreto: treinamento não é o foco do req. 11."
+      ],
+      "en": [
+        "Correct: requirement 11 is about regular testing.",
+        "Incorrect: firewalls are req. 1.",
+        "Incorrect: anti-virus is req. 5.",
+        "Incorrect: training is not req. 11's focus."
+      ]
+    }
+  },
+  {
+    "id": 316,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 317,
+    "q": {
+      "pt": "Qual entidade valida a conformidade PCI-DSS para grandes comerciantes?",
+      "en": "Which entity validates PCI-DSS compliance for larger merchants?"
+    },
+    "options": {
+      "pt": [
+        "Qualified Security Assessor (QSA)",
+        "RH interno",
+        "Agência de marketing",
+        "Atendimento ao cliente"
+      ],
+      "en": [
+        "Qualified Security Assessor (QSA)",
+        "Internal HR",
+        "Marketing agency",
+        "Customer support"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: QSAs são autorizados a validar conformidade.",
+        "Incorreto: RH não executa essa validação.",
+        "Incorreto: marketing não participa dessa atividade.",
+        "Incorreto: suporte ao cliente não valida PCI."
+      ],
+      "en": [
+        "Correct: QSAs are authorized to validate compliance.",
+        "Incorrect: HR does not do this.",
+        "Incorrect: marketing has no role here.",
+        "Incorrect: support teams don't validate PCI."
+      ]
+    }
+  },
+  {
+    "id": 318,
+    "q": {
+      "pt": "O que é um SAQ no PCI-DSS?",
+      "en": "What is an SAQ in PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Questionário de Autoavaliação",
+        "Qualidade de Auditoria de Segurança",
+        "Consulta de Aplicação de Sistema",
+        "Questionário de Autorização de Segurança"
+      ],
+      "en": [
+        "Self-Assessment Questionnaire",
+        "Security Audit Quality",
+        "System Application Query",
+        "Security Authorization Quiz"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: SAQ é o Questionário de Autoavaliação.",
+        "Incorreto: não é um índice de qualidade.",
+        "Incorreto: não é uma consulta de sistema.",
+        "Incorreto: não é um quiz de autorização."
+      ],
+      "en": [
+        "Correct: SAQ stands for Self-Assessment Questionnaire.",
+        "Incorrect: not a quality index.",
+        "Incorrect: not a system query.",
+        "Incorrect: not an authorization quiz."
+      ]
+    }
+  },
+  {
+    "id": 319,
+    "q": {
+      "pt": "Qual é o principal propósito da tokenização?",
+      "en": "What is the main purpose of tokenization?"
+    },
+    "options": {
+      "pt": [
+        "Substituir dados de cartão por equivalentes não sensíveis",
+        "Criptografar senhas",
+        "Bloquear malware",
+        "Verificar a identidade do cliente"
+      ],
+      "en": [
+        "Replace card data with non-sensitive equivalents",
+        "Encrypt passwords",
+        "Block malware",
+        "Verify customer identity"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: tokenização reduz exposição substituindo PAN por tokens.",
+        "Incorreto: não é para senhas.",
+        "Incorreto: não é controle anti-malware.",
+        "Incorreto: não é para verificação de identidade."
+      ],
+      "en": [
+        "Correct: tokenization reduces exposure by replacing PAN with tokens.",
+        "Incorrect: not for passwords.",
+        "Incorrect: not a malware control.",
+        "Incorrect: not for identity verification."
+      ]
+    }
+  },
+  {
+    "id": 320,
+    "q": {
+      "pt": "Qual requisito do PCI-DSS aborda manter uma política de segurança da informação?",
+      "en": "Which PCI-DSS requirement addresses maintaining an information security policy?"
+    },
+    "options": {
+      "pt": ["Requisito 12", "Requisito 1", "Requisito 6", "Requisito 9"],
+      "en": ["Requirement 12", "Requirement 1", "Requirement 6", "Requirement 9"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a política é o foco do requisito 12.",
+        "Incorreto: requisito 1 é firewall/rede.",
+        "Incorreto: requisito 6 é desenvolvimento seguro.",
+        "Incorreto: requisito 9 é acesso físico."
+      ],
+      "en": [
+        "Correct: policy is requirement 12.",
+        "Incorrect: requirement 1 is network/firewall.",
+        "Incorrect: requirement 6 is secure development.",
+        "Incorrect: requirement 9 is physical access."
+      ]
+    }
+  },
+  {
+    "id": 321,
+    "q": {
+      "pt": "Qual é o comprimento mínimo de senha exigido pelo PCI-DSS?",
+      "en": "What is the minimum password length required by PCI-DSS?"
+    },
+    "options": {
+      "pt": ["6 caracteres", "7 caracteres", "8 caracteres", "10 caracteres"],
+      "en": ["6 characters", "7 characters", "8 characters", "10 characters"]
+    },
+    "correctIndex": 1,
+    "rationales": {
+      "pt": [
+        "Incorreto: 6 é insuficiente.",
+        "Correto: 7 é o mínimo exigido.",
+        "Incorreto: 8 é aceitável, mas não é o mínimo.",
+        "Incorreto: 10 excede o mínimo."
+      ],
+      "en": [
+        "Incorrect: 6 is insufficient.",
+        "Correct: 7 is the minimum required.",
+        "Incorrect: 8 is acceptable but not the minimum.",
+        "Incorrect: 10 exceeds the minimum."
+      ]
+    }
+  },
+  {
+    "id": 322,
+    "q": {
+      "pt": "O que é um controle compensatório no PCI-DSS?",
+      "en": "What is a compensating control under PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Medida alternativa quando um requisito não pode ser cumprido",
+        "Um controle mais fraco",
+        "Uma exceção de negócios",
+        "Uma pausa temporária de auditoria"
+      ],
+      "en": [
+        "Alternative security measure when a requirement cannot be met",
+        "A weaker control",
+        "A business exception",
+        "A temporary audit pause"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: controles compensatórios substituem com proteção equivalente.",
+        "Incorreto: não devem ser mais fracos.",
+        "Incorreto: não é mero aceite de risco.",
+        "Incorreto: não suspende auditoria."
+      ],
+      "en": [
+        "Correct: provides equivalent protection when primary control can't be met.",
+        "Incorrect: not intended to be weaker.",
+        "Incorrect: not just a business exception.",
+        "Incorrect: not an audit pause."
+      ]
+    }
+  },
+  {
+    "id": 323,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 324,
+    "q": {
+      "pt": "Qual dos seguintes é um dado de autenticação sensível?",
+      "en": "Which of the following is a sensitive authentication data element?"
+    },
+    "options": {
+      "pt": ["CVV", "Data de validade", "Nome do titular", "Endereço de cobrança"],
+      "en": ["CVV", "Expiration date", "Cardholder name", "Billing address"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: CVV é dado de autenticação sensível.",
+        "Incorreto: expiração não é sensível nesse contexto.",
+        "Incorreto: nome do titular não é sensível.",
+        "Incorreto: endereço de cobrança não é sensível."
+      ],
+      "en": [
+        "Correct: CVV is sensitive authentication data.",
+        "Incorrect: expiration date is not sensitive here.",
+        "Incorrect: cardholder name is not sensitive.",
+        "Incorrect: billing address is not sensitive."
+      ]
+    }
+  },
+  {
+    "id": 325,
+    "q": {
+      "pt": "Qual requisito do PCI-DSS cobre software antivírus?",
+      "en": "Which requirement of PCI-DSS covers anti-virus software?"
+    },
+    "options": {
+      "pt": ["Requisito 5", "Requisito 8", "Requisito 11", "Requisito 2"],
+      "en": ["Requirement 5", "Requirement 8", "Requirement 11", "Requirement 2"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: antivírus é tratado no requisito 5.",
+        "Incorreto: req. 8 é autenticação/acesso.",
+        "Incorreto: req. 11 é testes regulares.",
+        "Incorreto: req. 2 é configuração segura."
+      ],
+      "en": [
+        "Correct: anti-virus is addressed in requirement 5.",
+        "Incorrect: req. 8 is authentication/access.",
+        "Incorrect: req. 11 is testing.",
+        "Incorrect: req. 2 is secure configuration."
+      ]
+    }
+  },
+  {
+    "id": 326,
+    "q": {
+      "pt": "Qual é o propósito do requisito 9 do PCI-DSS?",
+      "en": "What is the purpose of requirement 9 of PCI-DSS?"
+    },
+    "options": {
+      "pt": [
+        "Restringir acesso físico aos dados do titular do cartão",
+        "Criptografar dados armazenados",
+        "Monitorar logs",
+        "Implementar firewalls"
+      ],
+      "en": [
+        "Restrict physical access to cardholder data",
+        "Encrypt stored data",
+        "Monitor logs",
+        "Implement firewalls"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: req. 9 trata de controles físicos.",
+        "Incorreto: criptografia de dados armazenados é req. 3.",
+        "Incorreto: logs são req. 10.",
+        "Incorreto: firewalls são req. 1."
+      ],
+      "en": [
+        "Correct: req. 9 focuses on physical access controls.",
+        "Incorrect: encryption of stored data is req. 3.",
+        "Incorrect: logging is req. 10.",
+        "Incorrect: firewalls are req. 1."
+      ]
+    }
+  },
+  {
+    "id": 327,
+    "q": {
+      "pt": "Qual das seguintes é um nível de conformidade PCI-DSS para comerciantes?",
+      "en": "Which of the following is considered a PCI-DSS compliance level for merchants?"
+    },
+    "options": {
+      "pt": [
+        "Nível 1, 2, 3, 4",
+        "Bronze, Prata, Ouro, Platina",
+        "A, B, C, D",
+        "Baixo, Médio, Alto"
+      ],
+      "en": [
+        "Level 1, 2, 3, 4",
+        "Bronze, Silver, Gold, Platinum",
+        "A, B, C, D",
+        "Low, Medium, High"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: esses são os níveis de conformidade PCI para comerciantes.",
+        "Incorreto: nomenclatura não usada.",
+        "Incorreto: não é classificação de nível.",
+        "Incorreto: não é a taxonomia do PCI."
+      ],
+      "en": [
+        "Correct: these are PCI levels for merchants.",
+        "Incorrect: not a PCI naming.",
+        "Incorrect: not a level classification.",
+        "Incorrect: not the PCI taxonomy."
+      ]
+    }
+  },
+  {
+    "id": 328,
+    "q": {
+      "pt": "O que pode acontecer se uma organização falhar na conformidade PCI-DSS?",
+      "en": "What happens if an organization fails PCI-DSS compliance?"
+    },
+    "options": {
+      "pt": [
+        "Multas e possível perda da capacidade de processar cartões",
+        "Nada acontece",
+        "Orçamento extra de marketing",
+        "Perda de pontos de fidelidade do cliente"
+      ],
+      "en": [
+        "Fines and possible loss of ability to process cards",
+        "Nothing",
+        "Extra marketing budget",
+        "Customer loyalty points are lost"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: sanções podem incluir multas e perda de credenciamento.",
+        "Incorreto: há consequências significativas.",
+        "Incorreto: não há relação com marketing.",
+        "Incorreto: pontos de fidelidade não são impacto típico."
+      ],
+      "en": [
+        "Correct: penalties can include fines and loss of processing ability.",
+        "Incorrect: there are serious consequences.",
+        "Incorrect: unrelated to marketing budgets.",
+        "Incorrect: loyalty points are not a typical impact."
+      ]
+    }
   }
-  ]
+]
