@@ -7087,26 +7087,40 @@
     ]
   }
 },
-  {
-  "id": 218,
-  "q": {
-    "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
-    "en": "After how many incorrect attempts will the password be locked?"
-  },
-  {
+{
   "id": 218,
   "q": {
     "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
     "en": "After how many incorrect attempts will the password be locked?"
   },
   "options": {
-    "pt": ["3 tentativas", "5 tentativas", "Um máximo de 10 tentativas", "A senha nunca é bloqueada"],
-    "en": ["3 attempts", "5 attempts", "A maximum of 10 attempts", "The password is never locked"]
+    "pt": [
+      "3 tentativas",
+      "5 tentativas",
+      "Um máximo de 10 tentativas",
+      "A senha nunca é bloqueada"
+    ],
+    "en": [
+      "3 attempts",
+      "5 attempts",
+      "A maximum of 10 attempts",
+      "The password is never locked"
+    ]
   },
   "correctIndex": 2,
   "rationales": {
-    "pt": ["Menos que o limite previsto.", "Abaixo do limite previsto.", "Correto: bloqueio em até 10 tentativas.", "Incorreto: há política de bloqueio."],
-    "en": ["Less than the policy limit.", "Below the policy limit.", "Correct: lock after up to 10 attempts.", "Incorrect: a lockout policy exists."]
+    "pt": [
+      "Alguns sistemas usam 3, mas não é a regra definida aqui.",
+      "5 é comum, porém não é o definido.",
+      "Correto: a política definida é bloquear após 10 tentativas.",
+      "A senha é bloqueada; não permanece ilimitada."
+    ],
+    "en": [
+      "Some systems use 3, but not the rule here.",
+      "5 is common, but not the one defined.",
+      "Correct: policy is to lock after 10 attempts.",
+      "Passwords do get locked; not unlimited."
+    ]
   }
 },
 {
@@ -9211,4 +9225,4 @@
       ]
     }
   }
-]
+  ]
