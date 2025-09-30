@@ -10513,5 +10513,550 @@
         "Incorrect: Internal Audit doesn’t approve policies/exceptions."
       ]
     }
+  },
+  {
+    "id": 341,
+    "q": {
+      "pt": "O que significa NIST?",
+      "en": "What does NIST stand for?"
+    },
+    "options": {
+      "pt": [
+        "Instituto Nacional de Padrões e Tecnologia",
+        "Treinamento Nacional de Segurança da Informação",
+        "Teste de Padrões Internacionais de Rede",
+        "Equipe Nacional de Segurança de Inteligência"
+      ],
+      "en": [
+        "National Institute of Standards and Technology",
+        "National Information Security Training",
+        "Network International Standards Test",
+        "National Intelligence Security Team"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: NIST significa Instituto Nacional de Padrões e Tecnologia.",
+        "Incorreto: não é um instituto de treinamento.",
+        "Incorreto: não se refere a testes de padrões de rede.",
+        "Incorreto: não é uma equipe de segurança de inteligência."
+      ],
+      "en": [
+        "Correct: NIST stands for National Institute of Standards and Technology.",
+        "Incorrect: it is not a training institute.",
+        "Incorrect: it does not refer to network standards testing.",
+        "Incorrect: it is not an intelligence security team."
+      ]
+    }
+  },
+  {
+    "id": 342,
+    "q": {
+      "pt": "Qual publicação do NIST está mais associada ao framework de cibersegurança?",
+      "en": "Which NIST publication is most associated with the cybersecurity framework?"
+    },
+    "options": {
+      "pt": ["NIST CSF", "NIST 800-34", "NIST 800-53", "NIST 9000"],
+      "en": ["NIST CSF", "NIST 800-34", "NIST 800-53", "NIST 9000"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o Cybersecurity Framework do NIST é conhecido como NIST CSF.",
+        "Incorreto: 800-34 trata de planejamento de contingência.",
+        "Incorreto: 800-53 aborda controles de segurança e privacidade.",
+        "Incorreto: NIST 9000 não existe."
+      ],
+      "en": [
+        "Correct: the NIST Cybersecurity Framework is known as NIST CSF.",
+        "Incorrect: 800-34 addresses contingency planning.",
+        "Incorrect: 800-53 addresses security and privacy controls.",
+        "Incorrect: NIST 9000 does not exist."
+      ]
+    }
+  },
+  {
+    "id": 343,
+    "q": {
+      "pt": "Quais são as funções principais do NIST CSF?",
+      "en": "Which are the core functions of the NIST Cybersecurity Framework (CSF)?"
+    },
+    "options": {
+      "pt": [
+        "Identificar, Proteger, Detectar, Responder, Recuperar",
+        "Planejar, Fazer, Verificar, Agir",
+        "Prevenir, Monitorar, Corrigir",
+        "Classificar, Controlar, Reportar, Revisar"
+      ],
+      "en": [
+        "Identify, Protect, Detect, Respond, Recover",
+        "Plan, Do, Check, Act",
+        "Prevent, Monitor, Correct",
+        "Classify, Control, Report, Review"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: essas são as 5 funções centrais do NIST CSF.",
+        "Incorreto: PDCA é outro ciclo de gestão.",
+        "Incorreto: essa não é a estrutura usada pelo NIST CSF.",
+        "Incorreto: não corresponde às funções oficiais."
+      ],
+      "en": [
+        "Correct: these are the 5 core functions of the NIST CSF.",
+        "Incorrect: PDCA is a different management cycle.",
+        "Incorrect: this is not the structure used by NIST CSF.",
+        "Incorrect: does not match the official functions."
+      ]
+    }
+  },
+  {
+    "id": 344,
+    "q": {
+      "pt": "Qual documento do NIST cobre controles de segurança e privacidade para sistemas federais?",
+      "en": "Which NIST document covers security and privacy controls for federal systems?"
+    },
+    "options": {
+      "pt": ["NIST SP 800-53", "NIST SP 800-30", "NIST SP 800-171", "NIST SP 800-34"],
+      "en": ["NIST SP 800-53", "NIST SP 800-30", "NIST SP 800-171", "NIST SP 800-34"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o SP 800-53 é a referência principal de controles de segurança e privacidade.",
+        "Incorreto: o SP 800-30 cobre gestão de riscos.",
+        "Incorreto: o SP 800-171 foca em CUI.",
+        "Incorreto: o SP 800-34 cobre planejamento de contingência."
+      ],
+      "en": [
+        "Correct: SP 800-53 is the main reference for security and privacy controls.",
+        "Incorrect: SP 800-30 covers risk management.",
+        "Incorrect: SP 800-171 focuses on CUI.",
+        "Incorrect: SP 800-34 covers contingency planning."
+      ]
+    }
+  },
+  {
+    "id": 345,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 346,
+    "q": {
+      "pt": "Qual publicação do NIST aborda a gestão de riscos?",
+      "en": "Which NIST publication addresses risk management?"
+    },
+    "options": {
+      "pt": ["NIST SP 800-30", "NIST SP 800-53", "NIST SP 800-171", "NIST SP 800-115"],
+      "en": ["NIST SP 800-30", "NIST SP 800-53", "NIST SP 800-171", "NIST SP 800-115"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: SP 800-30 trata especificamente da gestão de riscos.",
+        "Incorreto: SP 800-53 cobre controles de segurança.",
+        "Incorreto: SP 800-171 aborda CUI.",
+        "Incorreto: SP 800-115 trata de testes de segurança."
+      ],
+      "en": [
+        "Correct: SP 800-30 specifically addresses risk management.",
+        "Incorrect: SP 800-53 covers security controls.",
+        "Incorrect: SP 800-171 addresses CUI.",
+        "Incorrect: SP 800-115 is about security testing."
+      ]
+    }
+  },
+  {
+    "id": 347,
+    "q": {
+      "pt": "Qual é o foco do NIST SP 800-171?",
+      "en": "What is the focus of NIST SP 800-171?"
+    },
+    "options": {
+      "pt": [
+        "Proteger informações não classificadas controladas (CUI)",
+        "Relatórios financeiros",
+        "Conformidade de RH",
+        "Segurança física"
+      ],
+      "en": [
+        "Protecting controlled unclassified information (CUI)",
+        "Financial reporting",
+        "HR compliance",
+        "Physical safety"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o SP 800-171 é focado em proteger CUI.",
+        "Incorreto: não se refere a relatórios financeiros.",
+        "Incorreto: não é sobre conformidade de RH.",
+        "Incorreto: não aborda segurança física."
+      ],
+      "en": [
+        "Correct: SP 800-171 focuses on protecting CUI.",
+        "Incorrect: does not refer to financial reporting.",
+        "Incorrect: not about HR compliance.",
+        "Incorrect: does not cover physical safety."
+      ]
+    }
+  },
+  {
+    "id": 348,
+    "q": {
+      "pt": "Qual função do NIST CSF envolve gestão de ativos?",
+      "en": "Which function of the NIST CSF involves asset management?"
+    },
+    "options": {
+      "pt": ["Identificar", "Proteger", "Detectar", "Recuperar"],
+      "en": ["Identify", "Protect", "Detect", "Recover"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: 'Identificar' inclui gestão de ativos.",
+        "Incorreto: 'Proteger' cobre salvaguardas.",
+        "Incorreto: 'Detectar' trata de detecção de incidentes.",
+        "Incorreto: 'Recuperar' foca em restaurar capacidades."
+      ],
+      "en": [
+        "Correct: 'Identify' includes asset management.",
+        "Incorrect: 'Protect' covers safeguards.",
+        "Incorrect: 'Detect' is about incident detection.",
+        "Incorrect: 'Recover' focuses on restoring capabilities."
+      ]
+    }
+  },
+  {
+    "id": 349,
+    "q": {
+      "pt": "Qual função do NIST CSF inclui resposta a incidentes?",
+      "en": "Which function of the NIST CSF includes incident response?"
+    },
+    "options": {
+      "pt": ["Responder", "Identificar", "Proteger", "Detectar"],
+      "en": ["Respond", "Identify", "Protect", "Detect"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: 'Responder' cobre resposta a incidentes.",
+        "Incorreto: 'Identificar' não trata de resposta.",
+        "Incorreto: 'Proteger' refere-se a salvaguardas.",
+        "Incorreto: 'Detectar' envolve apenas identificação de incidentes."
+      ],
+      "en": [
+        "Correct: 'Respond' covers incident response.",
+        "Incorrect: 'Identify' does not cover response.",
+        "Incorrect: 'Protect' refers to safeguards.",
+        "Incorrect: 'Detect' involves incident identification only."
+      ]
+    }
+  },
+  {
+    "id": 350,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 351,
+    "q": {
+      "pt": "Qual nível do NIST CSF representa uma abordagem informada por riscos?",
+      "en": "Which tier of the NIST CSF represents a risk-informed approach?"
+    },
+    "options": {
+      "pt": ["Nível 2", "Nível 1", "Nível 3", "Nível 4"],
+      "en": ["Tier 2", "Tier 1", "Tier 3", "Tier 4"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o Nível 2 é considerado abordagem informada por riscos.",
+        "Incorreto: o Nível 1 é apenas parcial.",
+        "Incorreto: o Nível 3 é repetível.",
+        "Incorreto: o Nível 4 é adaptativo."
+      ],
+      "en": [
+        "Correct: Tier 2 is considered risk-informed.",
+        "Incorrect: Tier 1 is only partial.",
+        "Incorrect: Tier 3 is repeatable.",
+        "Incorrect: Tier 4 is adaptive."
+      ]
+    }
+  },
+  {
+    "id": 352,
+    "q": {
+      "pt": "O que representa o Nível 4 no modelo de maturidade do NIST CSF?",
+      "en": "What is Tier 4 in the NIST CSF maturity model?"
+    },
+    "options": {
+      "pt": ["Adaptativo", "Parcial", "Repetível", "Informado por riscos"],
+      "en": ["Adaptive", "Partial", "Repeatable", "Risk-Informed"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o Nível 4 é adaptativo.",
+        "Incorreto: 'Parcial' é o Nível 1.",
+        "Incorreto: 'Repetível' é o Nível 3.",
+        "Incorreto: 'Informado por riscos' é o Nível 2."
+      ],
+      "en": [
+        "Correct: Tier 4 is adaptive.",
+        "Incorrect: 'Partial' is Tier 1.",
+        "Incorrect: 'Repeatable' is Tier 3.",
+        "Incorrect: 'Risk-Informed' is Tier 2."
+      ]
+    }
+  },
+  {
+    "id": 353,
+    "q": {
+      "pt": "Qual publicação do NIST foca em planejamento de contingência?",
+      "en": "Which NIST publication focuses on contingency planning?"
+    },
+    "options": {
+      "pt": ["NIST SP 800-34", "NIST SP 800-53", "NIST SP 800-61", "NIST SP 800-171"],
+      "en": ["NIST SP 800-34", "NIST SP 800-53", "NIST SP 800-61", "NIST SP 800-171"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: SP 800-34 trata de planejamento de contingência.",
+        "Incorreto: SP 800-53 cobre controles de segurança.",
+        "Incorreto: SP 800-61 trata de resposta a incidentes.",
+        "Incorreto: SP 800-171 aborda CUI."
+      ],
+      "en": [
+        "Correct: SP 800-34 focuses on contingency planning.",
+        "Incorrect: SP 800-53 covers security controls.",
+        "Incorrect: SP 800-61 is about incident response.",
+        "Incorrect: SP 800-171 covers CUI."
+      ]
+    }
+  },
+  {
+    "id": 354,
+    "q": {
+      "pt": "Qual publicação do NIST fornece diretrizes para tratamento de incidentes?",
+      "en": "Which NIST publication provides guidelines for incident handling?"
+    },
+    "options": {
+      "pt": ["NIST SP 800-61", "NIST SP 800-30", "NIST SP 800-171", "NIST SP 800-37"],
+      "en": ["NIST SP 800-61", "NIST SP 800-30", "NIST SP 800-171", "NIST SP 800-37"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: SP 800-61 é sobre resposta e tratamento de incidentes.",
+        "Incorreto: SP 800-30 cobre riscos.",
+        "Incorreto: SP 800-171 aborda CUI.",
+        "Incorreto: SP 800-37 cobre RMF."
+      ],
+      "en": [
+        "Correct: SP 800-61 is about incident handling.",
+        "Incorrect: SP 800-30 covers risk.",
+        "Incorrect: SP 800-171 addresses CUI.",
+        "Incorrect: SP 800-37 covers RMF."
+      ]
+    }
+  },
+  {
+    "id": 355,
+    "q": {
+      "pt": "Qual é o objetivo principal do NIST SP 800-115?",
+      "en": "What is the main purpose of NIST SP 800-115?"
+    },
+    "options": {
+      "pt": [
+        "Guia técnico para testes de segurança da informação",
+        "Regulamentações de privacidade de dados",
+        "Planejamento de continuidade de negócios",
+        "Gestão de recursos humanos"
+      ],
+      "en": [
+        "Technical guide to information security testing",
+        "Data privacy regulations",
+        "Business continuity planning",
+        "Human resources management"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: SP 800-115 é um guia técnico de testes de segurança.",
+        "Incorreto: não cobre privacidade de dados.",
+        "Incorreto: não aborda continuidade de negócios.",
+        "Incorreto: não trata de gestão de RH."
+      ],
+      "en": [
+        "Correct: SP 800-115 is a technical guide to security testing.",
+        "Incorrect: not about data privacy.",
+        "Incorrect: not about business continuity.",
+        "Incorrect: not about HR management."
+      ]
+    }
+  },
+  {
+    "id": 356,
+    "q": {
+      "pt": "Qual função do NIST CSF cobre a recuperação de dados após incidentes?",
+      "en": "Which NIST CSF function covers data recovery after incidents?"
+    },
+    "options": {
+      "pt": ["Recuperar", "Detectar", "Identificar", "Proteger"],
+      "en": ["Recover", "Detect", "Identify", "Protect"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: 'Recuperar' foca em restaurar dados e capacidades.",
+        "Incorreto: 'Detectar' trata de identificar incidentes.",
+        "Incorreto: 'Identificar' refere-se a ativos e riscos.",
+        "Incorreto: 'Proteger' cobre salvaguardas."
+      ],
+      "en": [
+        "Correct: 'Recover' focuses on restoring data and capabilities.",
+        "Incorrect: 'Detect' is about identifying incidents.",
+        "Incorrect: 'Identify' refers to assets and risks.",
+        "Incorrect: 'Protect' covers safeguards."
+      ]
+    }
+  },
+  {
+  "id": 357,
+  "q": {
+    "pt": "Qual indústria originalmente impulsionou a adoção do NIST CSF?",
+    "en": "Which industry originally drove adoption of the NIST CSF?"
+  },
+  "options": {
+    "pt": [
+      "Infraestrutura crítica (energia, finanças, saúde)",
+      "Varejo",
+      "Academia",
+      "Manufatura"
+    ],
+    "en": [
+      "Critical infrastructure (energy, finance, healthcare)",
+      "Retail",
+      "Academia",
+      "Manufacturing"
+    ]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: o NIST CSF foi criado inicialmente para infraestrutura crítica.",
+      "Incorreto: o varejo não foi o setor inicial.",
+      "Incorreto: academia não direcionou a criação.",
+      "Incorreto: manufatura não foi o setor principal."
+    ],
+    "en": [
+      "Correct: the NIST CSF was originally created for critical infrastructure.",
+      "Incorrect: retail was not the initial sector.",
+      "Incorrect: academia did not drive its creation.",
+      "Incorrect: manufacturing was not the primary sector."
+    ]
   }
+},
+{
+  "id": 358,
+  "q": {
+    "pt": "Qual publicação do NIST fornece orientação para monitoramento contínuo?",
+    "en": "Which NIST publication provides guidance for continuous monitoring?"
+  },
+  "options": {
+    "pt": ["NIST SP 800-137", "NIST SP 800-53", "NIST SP 800-171", "NIST SP 800-34"],
+    "en": ["NIST SP 800-137", "NIST SP 800-53", "NIST SP 800-171", "NIST SP 800-34"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: SP 800-137 trata especificamente de monitoramento contínuo.",
+      "Incorreto: SP 800-53 cobre controles de segurança e privacidade.",
+      "Incorreto: SP 800-171 foca em CUI.",
+      "Incorreto: SP 800-34 aborda contingência."
+    ],
+    "en": [
+      "Correct: SP 800-137 specifically covers continuous monitoring.",
+      "Incorrect: SP 800-53 covers security and privacy controls.",
+      "Incorrect: SP 800-171 focuses on CUI.",
+      "Incorrect: SP 800-34 covers contingency."
+    ]
+  }
+},
+{
+  "id": 359,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+    "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+  }
+},
+{
+  "id": 360,
+  "q": {
+    "pt": "Qual framework do NIST foca em melhorar a cibersegurança da infraestrutura crítica?",
+    "en": "Which NIST framework focuses on improving critical infrastructure cybersecurity?"
+  },
+  "options": {
+    "pt": ["NIST CSF", "NIST RMF", "ISO 27001", "COBIT"],
+    "en": ["NIST CSF", "NIST RMF", "ISO 27001", "COBIT"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: o NIST CSF é voltado para infraestrutura crítica.",
+      "Incorreto: o RMF é um processo de gestão de riscos.",
+      "Incorreto: ISO 27001 é internacional, não do NIST.",
+      "Incorreto: COBIT é da ISACA, não do NIST."
+    ],
+    "en": [
+      "Correct: the NIST CSF is aimed at critical infrastructure.",
+      "Incorrect: RMF is a risk management process.",
+      "Incorrect: ISO 27001 is international, not NIST.",
+      "Incorrect: COBIT is from ISACA, not NIST."
+    ]
+  }
+},
+{
+  "id": 361,
+  "q": {
+    "pt": "Qual publicação fornece um guia para aplicar o Risk Management Framework (RMF)?",
+    "en": "Which publication provides a guide to applying the Risk Management Framework (RMF)?"
+  },
+  "options": {
+    "pt": ["NIST SP 800-37", "NIST SP 800-53", "NIST SP 800-115", "NIST SP 800-61"],
+    "en": ["NIST SP 800-37", "NIST SP 800-53", "NIST SP 800-115", "NIST SP 800-61"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": [
+      "Correto: SP 800-37 fornece o guia para aplicação do RMF.",
+      "Incorreto: SP 800-53 aborda controles de segurança.",
+      "Incorreto: SP 800-115 trata de testes de segurança.",
+      "Incorreto: SP 800-61 cobre resposta a incidentes."
+    ],
+    "en": [
+      "Correct: SP 800-37 provides the guide for applying RMF.",
+      "Incorrect: SP 800-53 addresses security controls.",
+      "Incorrect: SP 800-115 is about security testing.",
+      "Incorrect: SP 800-61 covers incident response."
+    ]
+  }
+}
 ]
