@@ -7093,6 +7093,12 @@
     "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
     "en": "After how many incorrect attempts will the password be locked?"
   },
+    {
+  "id": 218,
+  "q": {
+    "pt": "Após quantas tentativas de uso incorreto a senha será bloqueada?",
+    "en": "After how many incorrect attempts will the password be locked?"
+  },
   "options": {
     "pt": ["3 tentativas", "5 tentativas", "Um máximo de 10 tentativas", "A senha nunca é bloqueada"],
     "en": ["3 attempts", "5 attempts", "A maximum of 10 attempts", "The password is never locked"]
@@ -7101,6 +7107,497 @@
   "rationales": {
     "pt": ["Menos que o limite previsto.", "Abaixo do limite previsto.", "Correto: bloqueio em até 10 tentativas.", "Incorreto: há política de bloqueio."],
     "en": ["Less than the policy limit.", "Below the policy limit.", "Correct: lock after up to 10 attempts.", "Incorrect: a lockout policy exists."]
+  }
+},
+{
+  "id": 219,
+  "q": {
+    "pt": "O que deve ser feito em caso de senhas comprometidas?",
+    "en": "What should be done if passwords are compromised?"
+  },
+  "options": {
+    "pt": ["Nada, o sistema irá bloquear a conta eventualmente", "Tentar adivinhar a nova senha do invasor", "Comunicar à área de Infosec", "Mudar a senha após 24 horas"],
+    "en": ["Nothing, the system will eventually lock the account", "Try to guess the attacker's new password", "Report to Infosec", "Change the password after 24 hours"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Inadequado e arriscado.", "Inapropriado e inseguro.", "Correto: notificar Infosec imediatamente.", "Ação tardia; deve ser imediato."],
+    "en": ["Inadequate and risky.", "Inappropriate and unsafe.", "Correct: notify Infosec immediately.", "Too late; must be immediate."]
+  }
+},
+{
+  "id": 220,
+  "q": {
+    "pt": "Qual é o critério de nomenclatura para a identidade de um funcionário?",
+    "en": "What is the naming convention for an employee identity?"
+  },
+  "options": {
+    "pt": ["\"sobrenome.nome\"", "\"primeiro nome\" e \"segundo nome\" ou \"sobrenome\" para casos homônimos", "Um número de identificação aleatório", "O apelido do funcionário"],
+    "en": ["\"lastname.firstname\"", "\"first name\" and \"second name\" or \"surname\" for homonyms", "A random identification number", "The employee's nickname"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Pode conflitar com homônimos.", "Correto: padrão com tratamento de homônimos.", "Não é legível/convencional.", "Apelidos não são padronizados."],
+    "en": ["Can collide with homonyms.", "Correct: convention handling homonyms.", "Not readable/conventional.", "Nicknames are not standardized."]
+  }
+},
+{
+  "id": 221,
+  "q": {
+    "pt": "Qual é o critério de nomenclatura para o acesso de terceiros (consultores, fornecedores, parceiros)?",
+    "en": "What is the naming convention for third-party access (consultants, vendors, partners)?"
+  },
+  "options": {
+    "pt": ["\"nome da empresa\".\"nome\"", "\"nome\".\"sobrenome\".\"nome da empresa\"", "\"terceiro\".\"id\"", "O mesmo critério dos funcionários"],
+    "en": ["\"company\".\"name\"", "\"first\".\"last\".\"company\"", "\"thirdparty\".\"id\"", "Same as employees"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Incompleto para identificar pessoa e empresa.", "Correto: identifica usuário e empresa.", "Pouco informativo.", "Critério distinto é necessário para terceiros."],
+    "en": ["Incomplete for person+company identity.", "Correct: identifies user and company.", "Not informative enough.", "Third parties need a distinct convention."]
+  }
+},
+{
+  "id": 222,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 223,
+  "q": {
+    "pt": "Qual é a validade máxima inicial para o acesso de um terceiro?",
+    "en": "What is the maximum initial validity for a third-party access?"
+  },
+  "options": {
+    "pt": ["30 dias", "90 dias", "180 dias", "Indeterminado, até o fim do contrato"],
+    "en": ["30 days", "90 days", "180 days", "Indefinite, until the end of the contract"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Curto demais.", "Abaixo do máximo previsto.", "Correto: até 180 dias.", "Não permitido para controle de risco."],
+    "en": ["Too short.", "Below the allowed maximum.", "Correct: up to 180 days.", "Not allowed for risk control."]
+  }
+},
+{
+  "id": 224,
+  "q": {
+    "pt": "Com que frequência o acesso dos usuários aos ativos deve ser revisado?",
+    "en": "How often must users’ access to assets be reviewed?"
+  },
+  "options": {
+    "pt": ["Mensalmente", "Trimestralmente", "Pelo menos anualmente", "A cada dois anos"],
+    "en": ["Monthly", "Quarterly", "At least annually", "Every two years"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Excesso para todos os casos.", "Pode ser mais frequente, mas não obrigatório.", "Correto: revisão pelo menos anual.", "Longo demais entre revisões."],
+    "en": ["Overkill for all cases.", "May be more frequent, but not mandatory.", "Correct: at least annually.", "Too long between reviews."]
+  }
+},
+{
+  "id": 225,
+  "q": {
+    "pt": "Qual o prazo para a revogação do acesso de um funcionário após seu desligamento?",
+    "en": "What is the deadline to revoke an employee’s access after termination?"
+  },
+  "options": {
+    "pt": ["Imediatamente", "Dentro de 24 horas", "Dentro de 5 dias úteis, a menos que haja um requisito legal com prazo menor", "Dentro de 30 dias"],
+    "en": ["Immediately", "Within 24 hours", "Within 5 business days unless a shorter legal requirement applies", "Within 30 days"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Pode ser impraticável em todos os cenários.", "Nem sempre é o prazo padrão.", "Correto: prazo máximo corporativo com exceções legais.", "Longo demais."],
+    "en": ["May be impractical in all cases.", "Not always the standard window.", "Correct: corporate max with legal exceptions.", "Too long."]
+  }
+},
+{
+  "id": 226,
+  "q": {
+    "pt": "Quando o acesso de um funcionário com autenticação integrada deve ser desativado por inatividade?",
+    "en": "When should access for an employee with integrated authentication be disabled due to inactivity?"
+  },
+  "options": {
+    "pt": ["Após 15 dias sem uso", "Após 30 dias sem uso", "Após mais de 45 dias sem uso", "Apenas em caso de desligamento"],
+    "en": ["After 15 days of no use", "After 30 days of no use", "After more than 45 days of no use", "Only in case of termination"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Curto demais.", "Ainda curto para a política indicada.", "Correto: mais de 45 dias.", "Incompleto: há inativação por inatividade."],
+    "en": ["Too short.", "Still short for the stated policy.", "Correct: more than 45 days.", "Incomplete: inactivity deactivation also applies."]
+  }
+},
+{
+  "id": 227,
+  "q": {
+    "pt": "Qual é o prazo para desativar e inativar o acesso de usuários terceiros de BPO por inatividade?",
+    "en": "What is the timeframe to disable and inactivate BPO third-party users due to inactivity?"
+  },
+  "options": {
+    "pt": ["Desativar após 30 dias e inativar após 60 dias", "Desativar após 15 dias e inativar após 30 dias", "Desativar após 7 dias de não uso e inativar após 10 dias", "O acesso nunca é desativado por inatividade para BPO"],
+    "en": ["Disable after 30 days and inactivate after 60 days", "Disable after 15 days and inactivate after 30 days", "Disable after 7 days of no use and inactivate after 10 days", "Access is never disabled for BPO inactivity"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Prazo muito longo.", "Ainda longo.", "Correto: janelas curtas para BPO.", "Falso: há desativação por inatividade."],
+    "en": ["Too long.", "Still long.", "Correct: short windows for BPO.", "False: inactivity disable exists."]
+  }
+},
+{
+  "id": 228,
+  "q": {
+    "pt": "Qual é a responsabilidade da equipe de Segurança da Informação em relação à Política de IAM?",
+    "en": "What is the responsibility of the InfoSec team regarding the IAM Policy?"
+  },
+  "options": {
+    "pt": ["Apenas aprovar a política anualmente", "Coordenar o plano de implementação, atualizar periodicamente e supervisionar a execução", "Executar todas as concessões e revogações de acesso manualmente", "Definir as senhas de todos os usuários"],
+    "en": ["Only approve the policy annually", "Coordinate the implementation plan, update periodically, and oversee the execution", "Manually grant and revoke all access", "Set all users’ passwords"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Insuficiente.", "Correto: governança e coordenação do programa IAM.", "Não é função exclusiva de Infosec.", "Impraticável e inseguro."],
+    "en": ["Insufficient.", "Correct: IAM governance and coordination.", "Not solely an Infosec duty.", "Impractical and insecure."]
+  }
+},
+{
+  "id": 229,
+  "q": {
+    "pt": "Quem é responsável por aprovar a Política de Gestão de Identidades e Acessos?",
+    "en": "Who is responsible for approving the Identity and Access Management Policy?"
+  },
+  "options": {
+    "pt": ["O CEO", "O departamento de Recursos Humanos", "Os CISOs Global e Locais", "O Comitê de Ética"],
+    "en": ["The CEO", "The HR department", "Global and Local CISOs", "The Ethics Committee"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Normalmente não aprova políticas técnicas específicas.", "RH não aprova políticas técnicas.", "Correto: CISOs aprovam a política de IAM.", "Fora do escopo de IAM."],
+    "en": ["Typically does not approve specific technical policies.", "HR does not approve technical policies.", "Correct: CISOs approve the IAM policy.", "Outside the scope of IAM."]
+  }
+},
+{
+  "id": 230,
+  "q": {
+    "pt": "Qual canal deve ser usado para tirar dúvidas sobre as disposições da política de IAM?",
+    "en": "Which channel should be used to ask questions about IAM policy provisions?"
+  },
+  "options": {
+    "pt": ["Canal de Slack #itsec-iam-identity-access-management", "Canal de Slack #iam-feedbacks", "E-mail para o suporte de TI", "Chamado no Service Desk Portal"],
+    "en": ["Slack channel #itsec-iam-identity-access-management", "Slack channel #iam-feedbacks", "Email to IT support", "Service Desk ticket"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Canal técnico, não de dúvidas gerais.", "Correto: canal oficial de feedback/dúvidas.", "Suporte de TI é para incidentes, não política.", "Portal é para solicitações, não Q&A."],
+    "en": ["Technical channel, not general Q&A.", "Correct: official feedback/questions channel.", "IT support is for incidents, not policy Q&A.", "Portal is for requests, not Q&A."]
+  }
+},
+{
+  "id": 231,
+  "q": {
+    "pt": "Quais parâmetros devem ser usados para analisar uma solicitação de acesso?",
+    "en": "Which parameters should be used to analyze an access request?"
+  },
+  "options": {
+    "pt": ["Apenas o cargo do solicitante", "Apenas a aprovação do gerente direto", "Motivo, senioridade para uso, período de tempo, entre outros", "Apenas o período de tempo solicitado"],
+    "en": ["Only the requester’s job title", "Only the direct manager’s approval", "Reason, seniority to use it, timeframe, among others", "Only the requested timeframe"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Insuficiente para avaliar risco.", "Aprovação não substitui análise.", "Correto: avaliação multidimensional.", "Muito limitado."],
+    "en": ["Insufficient for risk assessment.", "Approval does not replace analysis.", "Correct: multi-dimensional assessment.", "Too limited."]
+  }
+},
+{
+  "id": 232,
+  "q": {
+    "pt": "Quantas senhas anteriores o histórico de senhas deve armazenar para sistemas não integrados com SSO?",
+    "en": "How many previous passwords should the history store for systems not integrated with SSO?"
+  },
+  "options": {
+    "pt": ["Últimas 5", "Últimas 10", "Últimas 25 (ou máximo disponível)", "Histórico não é necessário"],
+    "en": ["Last 5", "Last 10", "Last 25 (or the maximum available)", "No history needed"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Pouco para prevenir reciclagem.", "Ainda baixo.", "Correto: 25 senhas (ou máximo).", "Falso: histórico é necessário."],
+    "en": ["Too low to prevent reuse.", "Still low.", "Correct: 25 passwords (or max).", "False: history is required."]
+  }
+},
+{
+  "id": 233,
+  "q": {
+    "pt": "O que é a autenticação multifator (MFA) de acordo com a política de IAM?",
+    "en": "What is multi-factor authentication (MFA) according to the IAM policy?"
+  },
+  "options": {
+    "pt": ["Uso de uma senha forte", "Dois ou mais fatores de identificação/autenticação antes do acesso", "Reconhecimento facial", "Verificação de antecedentes"],
+    "en": ["Using a strong password", "Two or more identification/authentication factors before access", "Facial recognition", "Background check"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Apenas um fator.", "Correto: requer dois ou mais fatores.", "É um fator possível, não MFA sozinho.", "Não é método técnico de autenticação."],
+    "en": ["Only one factor.", "Correct: requires two or more factors.", "One possible factor, not MFA alone.", "Not a technical authentication method."]
+  }
+},
+{
+  "id": 234,
+  "q": {
+    "pt": "Qual seção da SOX exige que a administração e os auditores avaliem e relatem a eficácia dos controles internos sobre os relatórios financeiros?",
+    "en": "Which SOX section requires management and auditors to assess and report on the effectiveness of internal controls over financial reporting?"
+  },
+  "options": {
+    "pt": ["Seção 302", "Seção 404", "Seção 906", "Seção 201"],
+    "en": ["Section 302", "Section 404", "Section 906", "Section 201"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["302 trata de certificações executivas.", "Correto: 404 trata de ICFR.", "906 trata de certificações criminais.", "201 trata de serviços de auditoria."],
+    "en": ["302 addresses executive certifications.", "Correct: 404 covers ICFR.", "906 addresses criminal certifications.", "201 covers audit services."]
+  }
+},
+{
+  "id": 235,
+  "q": {
+    "pt": "A SOX afeta as empresas de capital aberto. Qual o principal objetivo dessa lei para a TI?",
+    "en": "SOX affects public companies. What is the main objective of this law for IT?"
+  },
+  "options": {
+    "pt": ["Melhorar a segurança de dados", "Reduzir os custos de TI", "Garantir a integridade e confiabilidade dos dados financeiros", "Aumentar a velocidade das transações"],
+    "en": ["Improve data security", "Reduce IT costs", "Ensure the integrity and reliability of financial data", "Increase transaction speed"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Muito genérico.", "Não é objetivo da lei.", "Correto: foco em dados financeiros confiáveis.", "Não é objetivo da lei."],
+    "en": ["Too generic.", "Not the goal of the law.", "Correct: focus on reliable financial data.", "Not the law's goal."]
+  }
+},
+{
+  "id": 236,
+  "q": {
+    "pt": "Qual dos seguintes é um controle geral de TI (ITGC) comum que suporta a conformidade com a SOX?",
+    "en": "Which of the following is a common ITGC that supports SOX compliance?"
+  },
+  "options": {
+    "pt": ["Gerenciamento de projetos", "Gerenciamento de incidentes", "Controle de acesso lógico", "Análise de dados financeiros"],
+    "en": ["Project management", "Incident management", "Logical access control", "Financial data analysis"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Não é um ITGC central para SOX.", "Importante, mas não o principal ITGC.", "Correto: controle de acesso lógico é chave.", "Atividade de negócio, não ITGC."],
+    "en": ["Not a core SOX ITGC.", "Important but not the key ITGC.", "Correct: logical access control is key.", "Business activity, not an ITGC."]
+  }
+},
+{
+  "id": 237,
+  "q": {
+    "pt": "O que é um \"controle-chave\" de TI sob a SOX?",
+    "en": "What is an IT \"key control\" under SOX?"
+  },
+  "options": {
+    "pt": ["Qualquer controle de segurança de TI", "Um controle cuja falha pode levar a erro material nos relatórios financeiros", "Um controle de rotina diária", "Um controle que protege contra vírus"],
+    "en": ["Any IT security control", "A control whose failure could lead to a material misstatement in financial reporting", "A daily routine control", "A control that protects against viruses"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Amplitude demais.", "Correto: definição de controle-chave.", "Nem todo controle de rotina é chave.", "Exemplo específico, não definição."],
+    "en": ["Too broad.", "Correct: definition of a key control.", "Not all routine controls are key.", "Specific example, not the definition."]
+  }
+},
+{
+  "id": 238,
+  "q": {
+    "pt": "O gerenciamento de mudanças em TI é um controle crucial para a SOX. O que ele visa?",
+    "en": "Change management in IT is crucial for SOX. What does it aim to ensure?"
+  },
+  "options": {
+    "pt": ["Aumentar a velocidade das mudanças", "Evitar que usuários alterem seus dados", "Garantir que mudanças em sistemas financeiros sejam autorizadas e testadas", "Reduzir o número de mudanças no sistema"],
+    "en": ["Increase change speed", "Prevent users from changing their data", "Ensure that changes to financial systems are authorized and tested", "Reduce the number of system changes"]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": ["Velocidade não é o objetivo.", "Fora do escopo.", "Correto: autorização e testes.", "Quantidade não é o objetivo primário."],
+    "en": ["Speed isn't the goal.", "Out of scope.", "Correct: authorization and testing.", "Quantity isn't the primary goal."]
+  }
+},
+{
+  "id": 239,
+  "q": {
+    "pt": "Por que a segregação de funções (SoD) é importante na TI para a SOX?",
+    "en": "Why is Segregation of Duties (SoD) important in IT for SOX?"
+  },
+  "options": {
+    "pt": ["Acelerar o desenvolvimento de software", "Garantir que nenhum indivíduo tenha controle total sobre um processo e seus dados", "Reduzir o número de funcionários de TI", "Evitar conflitos entre equipes"],
+    "en": ["Speed up software development", "Ensure no single individual has total control over a process and its data", "Reduce the number of IT staff", "Avoid conflicts between teams"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Não é o objetivo.", "Correto: previne fraude/erro material.", "Não é objetivo de controle.", "Secundário e não principal."],
+    "en": ["Not the goal.", "Correct: prevents fraud/material error.", "Not a control objective.", "Secondary, not primary."]
+  }
+},
+{
+  "id": 240,
+  "q": {
+    "pt": "Qual o papel da equipe de TI na avaliação de riscos para a SOX?",
+    "en": "What is IT’s role in risk assessment for SOX?"
+  },
+  "options": {
+    "pt": ["Apenas implementar software", "Identificar riscos de TI que afetam a confiabilidade dos relatórios financeiros", "Apenas criar relatórios de bugs", "Nenhum; é responsabilidade da auditoria interna"],
+    "en": ["Only implement software", "Identify IT risks that affect the reliability of financial reporting", "Only create bug reports", "None; it's internal audit's responsibility"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Muito restrito.", "Correto: identificar riscos que impactam o reporte.", "Não cobre o objetivo de risco.", "TI tem papel ativo na avaliação."],
+    "en": ["Too narrow.", "Correct: identify risks impacting reporting.", "Doesn't address the risk objective.", "IT has an active role."]
+  }
+},
+{
+  "id": 241,
+  "q": {
+    "pt": "Um controle de acesso de usuário que garante que apenas funcionários autorizados possam acessar dados financeiros sensíveis é um exemplo de qual tipo de controle?",
+    "en": "A user access control ensuring only authorized employees can access sensitive financial data is an example of which type of control?"
+  },
+  "options": {
+    "pt": ["Controle preventivo", "Controle detetive", "Controle corretivo", "Controle geral de TI"],
+    "en": ["Preventive control", "Detective control", "Corrective control", "General IT control"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": ["Correto: previne acesso indevido.", "Detecta após o fato.", "Corrige após o fato.", "Categoria ampla demais."],
+    "en": ["Correct: prevents improper access.", "Detects after the fact.", "Corrects after the fact.", "Too broad a category."]
+  }
+},
+{
+  "id": 242,
+  "q": {
+    "pt": "A Lei Sarbanes-Oxley (SOX) foi promulgada em resposta a quais escândalos financeiros?",
+    "en": "The Sarbanes-Oxley (SOX) Act was enacted in response to which financial scandals?"
+  },
+  "options": {
+    "pt": ["Enron e WorldCom", "A Grande Recessão", "Crise do subprime", "Bolha das pontocom"],
+    "en": ["Enron and WorldCom", "The Great Recession", "Subprime crisis", "Dot-com bubble"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": ["Correto.", "Período posterior e diferente.", "Relacionada a 2007–08.", "Anterior e de natureza diferente."],
+    "en": ["Correct.", "Later and different period.", "Related to 2007–08.", "Earlier and different in nature."]
+  }
+},
+{
+  "id": 243,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 244,
+  "q": {
+    "pt": "Qual documento é a base para a maioria das avaliações de controles internos sob a SOX, especialmente para a TI?",
+    "en": "Which document is the basis for most internal control assessments under SOX, especially for IT?"
+  },
+  "options": {
+    "pt": ["COSO Framework", "ISO 27001", "NIST Cybersecurity Framework", "ITIL"],
+    "en": ["COSO Framework", "ISO 27001", "NIST Cybersecurity Framework", "ITIL"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": ["Correto: COSO sustenta ICFR.", "ISO 27001 é SGSI, não base SOX.", "NIST é cibersegurança geral.", "ITIL é operação de TI."],
+    "en": ["Correct: COSO underpins ICFR.", "ISO 27001 is ISMS, not SOX base.", "NIST is general cybersecurity.", "ITIL is IT operations."]
+  }
+},
+{
+  "id": 245,
+  "q": {
+    "pt": "Quais são os três pilares da conformidade SOX para a TI?",
+    "en": "What are the three pillars of SOX compliance for IT?"
+  },
+  "options": {
+    "pt": ["Automação, Big Data, IA", "Controles de acesso, Gestão de mudanças, Operações de TI", "Hardware, Software, Redes", "Servidores, PCs, Smartphones"],
+    "en": ["Automation, Big Data, AI", "Access controls, Change management, IT operations", "Hardware, Software, Networks", "Servers, PCs, Smartphones"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Não são pilares de SOX.", "Correto: tríade típica de SOX em TI.", "Categorias de tecnologia, não de controle.", "Inventário, não controles."],
+    "en": ["Not SOX pillars.", "Correct: typical SOX IT triad.", "Technology categories, not controls.", "Inventory, not controls."]
+  }
+},
+{
+  "id": 246,
+  "q": {
+    "pt": "Um dos principais objetivos da SOX é proteger os...",
+    "en": "One of SOX’s main objectives is to protect..."
+  },
+  "options": {
+    "pt": ["Diretores de empresas", "Acionistas e o público em geral", "Funcionários", "Clientes"],
+    "en": ["Company directors", "Shareholders and the general public", "Employees", "Customers"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Não é o foco principal.", "Correto: investidores e público.", "Não é objetivo central.", "Não é objetivo central da lei."],
+    "en": ["Not the main focus.", "Correct: investors and the public.", "Not the central goal.", "Not the law’s central goal."]
+  }
+},
+{
+  "id": 247,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELL FOR PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 248,
+  "q": {
+    "pt": "A documentação dos processos de TI é crucial para a SOX. Por quê?",
+    "en": "Documentation of IT processes is crucial for SOX. Why?"
+  },
+  "options": {
+    "pt": ["Apenas para facilitar a manutenção", "Para demonstrar que os controles internos operam conforme planejado", "Para treinar novos funcionários", "Para justificar a contratação de mais pessoal"],
+    "en": ["Only to ease maintenance", "To demonstrate that internal controls operate as designed", "To train new employees", "To justify hiring more staff"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Objetivo secundário.", "Correto: evidenciar eficácia dos controles.", "Não é a razão principal.", "Não é objetivo da SOX."],
+    "en": ["Secondary objective.", "Correct: evidence of control effectiveness.", "Not the main reason.", "Not a SOX objective."]
+  }
+},
+{
+  "id": 249,
+  "q": {
+    "pt": "Que tipo de teste um auditor externo pode realizar para verificar se os controles de acesso lógico estão funcionando?",
+    "en": "What kind of test might an external auditor perform to verify logical access controls are working?"
+  },
+  "options": {
+    "pt": ["Teste de penetração", "Análise de logs de acesso", "Entrevista com funcionários", "Verificação de salários"],
+    "en": ["Penetration test", "Access log analysis", "Employee interviews", "Payroll verification"]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": ["Pode ocorrer, mas não é o teste típico para acesso lógico.", "Correto: revisão de logs confirma efetividade.", "Entrevistas são complementares.", "Irrelevante para acesso lógico."],
+    "en": ["May occur, but not the typical test for logical access.", "Correct: log review confirms effectiveness.", "Interviews are complementary.", "Irrelevant to logical access."]
+  }
+},
+{
+  "id": 250,
+  "q": {
+    "pt": "Qual a principal diferença entre um controle preventivo e um controle detectivo na TI?",
+    "en": "What is the main difference between a preventive and a detective control in IT?"
+  },
+  "options": {
+    "pt": ["Preventivo age antes; detectivo age depois", "Preventivo é mais caro; detetive é mais eficaz", "Não há diferença para a SOX", "São sinônimos"],
+    "en": ["Preventive acts before; detective acts after", "Preventive is more expensive; detective is more effective", "There is no difference for SOX", "They are synonyms"]
+  },
+  "correctIndex": 0,
+  "rationales": {
+    "pt": ["Correto.", "Afirmação genérica e falsa.", "Há diferença funcional clara.", "Não são sinônimos."],
+    "en": ["Correct.", "Generic and false claim.", "They differ functionally.", "Not synonyms."]
   }
 }
 ]
