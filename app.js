@@ -1,203 +1,306 @@
-/* =========================
-   Estado
-========================= */
-let QUESTIONS = [];
-const QUESTIONS_MAP = new Map();
-let currentLang = 'pt';
-let currentQuestionId = null;
-let answeredThisQuestion = false; // para não marcar como usada ao voltar sem responder
-const usedIds = new Set();        // traps viram usadas imediatamente
+// === Estado global ===
+let currentLang = 'pt'; // 'pt' | 'en'
+let allQuestions = [];        // array carregado do questions.json
+let questionByIndex = [];     // array 0..449 com perguntas ou null
+let answeredSet = new Set();  // índices 0-based respondidos
+let disabledIndices = new Set(); // traps clicadas/itens removidos do menu
+let currentQuestionIndex = -1;
 
-/* =========================
-   Util
-========================= */
-const $ = (sel) => document.querySelector(sel);
-const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+// === Referências de elementos ===
+const loginPage = document.getElementById('login-page');
+const startPage = document.getElementById('start-page');
+const quizArea = document.getElementById('quiz-area');
 
-function showPage(id){
-  $$('.page').forEach(p => p.classList.remove('active'));
-  $(id).classList.add('active');
+const headerSubtitle = document.getElementById('header-subtitle');
+
+const loginButton = document.getElementById('login-button');
+const loginError = document.getElementById('login-error');
+
+const menuOptions = document.getElementById('menu-options');
+const globalLangSel = document.getElementById('global-lang');
+
+const backTopBtn = document.getElementById('back-to-menu-top');
+const backBottomBtn = document.getElementById('back-to-menu-bottom');
+
+const questionText = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
+const feedbackContainer = document.getElementById('feedback-container');
+const feedbackTitle = document.getElementById('feedback-title');
+const feedbackRationale = document.getElementById('feedback-rationale');
+
+const questionNumberEl = document.getElementById('question-number');
+
+const loadErrorEl = document.getElementById('load-error');
+
+// === Utilidades ===
+function getDisplayText(obj, lang) {
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  if (typeof obj === 'object') {
+    return obj[lang] ?? obj['pt'] ?? '';
+  }
+  return '';
 }
 
-function byId(id){ return QUESTIONS_MAP.get(id) || null; }
+function getOptionsArray(questionObj, lang) {
+  if (!questionObj || !questionObj.options) return [];
+  const opts = Array.isArray(questionObj.options)
+    ? questionObj.options
+    : questionObj.options[lang] || questionObj.options['pt'] || [];
+  return opts;
+}
 
-function renderQidGrid(){
-  const grid = $('#qid-grid');
-  grid.innerHTML = '';
-  for(let i=1;i<=450;i++){
-    const exists = QUESTIONS_MAP.has(i);
+function getRationalesArray(questionObj, lang) {
+  if (!questionObj || !questionObj.rationales) return [];
+  const rats = Array.isArray(questionObj.rationales)
+    ? questionObj.rationales
+    : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
+  return rats;
+}
+
+function isTrap(questionObj) {
+  return questionObj && questionObj.trap === 'phishing';
+}
+
+// === Construção do menu ===
+function buildMenu() {
+  menuOptions.innerHTML = '';
+  const TOTAL = 450;
+
+  for (let i = 0; i < TOTAL; i++) {
     const btn = document.createElement('button');
-    btn.className = `qid-btn ${exists ? 'enabled' : 'disabled'}`;
-    btn.textContent = i;
-    btn.disabled = !exists || usedIds.has(i);
-    btn.style.borderColor = usedIds.has(i) ? '#e5e7eb' : 'var(--accent)';
-    btn.onclick = () => openQuestion(i);
-    grid.appendChild(btn);
+    const labelNum = i + 1;
+
+    btn.textContent = labelNum.toString();
+    btn.className = 'menu-item-button py-2 text-center text-sm font-semibold rounded-lg shadow-sm focus:outline-none focus:ring-4';
+
+    const qObj = questionByIndex[i];
+    const isDisabled = disabledIndices.has(i);
+    const isAnswered = answeredSet.has(i);
+
+    if (!qObj || isDisabled) {
+      btn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
+      btn.disabled = true;
+    } else {
+      if (isAnswered) {
+        btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
+        btn.disabled = true;
+      } else {
+        btn.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-600', 'focus:ring-blue-300');
+        btn.disabled = false;
+        btn.onclick = () => loadQuestion(i);
+      }
+    }
+    menuOptions.appendChild(btn);
   }
 }
 
-function setLang(lang){
-  currentLang = lang;
-  $('#menu-lang').value = lang;
-  $('#question-lang').value = lang;
-  if(currentQuestionId !== null){
-    renderQuestion(currentQuestionId);
+// === Login ===
+function handleLogin() {
+  const username = document.getElementById('username').value;
+  if (username.trim() !== '') {
+    loginPage.classList.add('hidden');
+    headerSubtitle.textContent = "Selecione uma pergunta para testar seus conhecimentos sobre estratégia e responsabilidades de segurança da informação.";
+    showStartPage();
+    loginError.classList.add('hidden');
+  } else {
+    loginError.classList.remove('hidden');
   }
 }
 
-/* =========================
-   Carregar perguntas
-========================= */
-async function loadQuestions(){
-  const res = await fetch('./questions.json', {cache:'no-store'});
-  if(!res.ok) throw new Error('Erro ao carregar questions.json');
-  const data = await res.json();
-  QUESTIONS = Array.isArray(data) ? data : data.questions;
+// === Páginas ===
+function showStartPage() {
+  loginPage.classList.add('hidden');
+  startPage.classList.remove('hidden');
+  quizArea.classList.add('hidden');
+  feedbackContainer.classList.add('hidden');
+  currentQuestionIndex = -1;
+  buildMenu();
+}
 
-  QUESTIONS_MAP.clear();
-  for(const q of QUESTIONS){
-    if(q && typeof q.id === 'number'){
-      QUESTIONS_MAP.set(q.id, q);
+function showQuizArea() {
+  startPage.classList.add('hidden');
+  quizArea.classList.remove('hidden');
+}
+
+// === Carregamento de perguntas (questions.json) ===
+async function loadQuestions() {
+  try {
+    const resp = await fetch('questions.json', { cache: 'no-store' });
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    if (!Array.isArray(data)) throw new Error('JSON não é um array');
+
+    allQuestions = data;
+
+    questionByIndex = new Array(450).fill(null);
+    for (const q of allQuestions) {
+      if (typeof q.id === 'number' && q.id >= 1 && q.id <= 450) {
+        const idx = q.id - 1;
+        questionByIndex[idx] = q;
+      }
     }
+
+    loadErrorEl.classList.add('hidden');
+  } catch (e) {
+    console.error('Falha ao carregar questions.json', e);
+    loadErrorEl.classList.remove('hidden');
   }
 }
 
-/* =========================
-   Login
-========================= */
-function setupLogin(){
-  $('#login-form').addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const name = $('#login-username').value.trim();
-    // senha pode ser qualquer coisa; apenas não bloquear
-    if(!name){
-      alert('Informe um nome de usuário.');
-      return;
-    }
-    showPage('#start-page');
-  });
-}
+// === Renderização de pergunta ===
+function loadQuestion(index) {
+  currentQuestionIndex = index;
+  const qObj = questionByIndex[index];
+  if (!qObj) { showStartPage(); return; }
 
-/* =========================
-   Abrir pergunta
-========================= */
-function openQuestion(id){
-  const q = byId(id);
-  if(!q) return;
-  currentQuestionId = id;
-  answeredThisQuestion = false;
+  const displayId = (typeof qObj.id === 'number') ? qObj.id : (index + 1);
+  if (questionNumberEl) {
+    questionNumberEl.textContent = (currentLang === 'en')
+      ? `Question ${displayId}`
+      : `Pergunta ${displayId}`;
+  }
 
-  // cabeçalho
-  $('#question-number-badge').textContent = `#${id}`;
-  $('#question-lang').value = currentLang;
-
-  // render
-  renderQuestion(id);
-
-  // ir para a página da pergunta
-  showPage('#question-page');
-}
-
-/* =========================
-   Render Pergunta / Trap
-========================= */
-function clearQuestionUI(){
-  $('#question-text').textContent = '';
-  $('#options-container').innerHTML = '';
-  $('#feedback').textContent = '';
-  $('#trap-container').classList.add('hidden');
-  $('#trap-image').src = '';
-  $('#trap-image').alt = 'Trap';
-}
-
-function renderQuestion(id){
-  clearQuestionUI();
-  const q = byId(id);
-  if(!q) return;
-
-  // Trap
-  if(q.trap){
-    const msg = q.trapMessage?.[currentLang] || q.trapMessage?.pt || 'VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!';
-    $('#trap-container').classList.remove('hidden');
-    $('#trap-message').textContent = msg;
-    if(q.image){
-      $('#trap-image').src = q.image;
-      $('#trap-image').classList.remove('hidden');
-    }else{
-      $('#trap-image').classList.add('hidden');
-    }
-    $('#question-text').textContent = ''; // sem enunciado
-    // marcar como usada (trap some do menu após clicar)
-    usedIds.add(id);
-    renderQidGrid();
+  if (isTrap(qObj)) {
+    showQuizArea();
+    renderTrap(qObj);
+    disabledIndices.add(index);
     return;
   }
 
-  // Pergunta normal
-  const text = q.q?.[currentLang] || q.q?.pt || '';
-  $('#question-text').textContent = text;
+  showQuizArea();
+  renderQuestion(qObj);
+}
 
-  const opts = q.options?.[currentLang] || q.options?.pt || [];
-  const correctIndex = q.correctIndex ?? 0;
-  const ration = q.rationales?.[currentLang] || q.rationales?.pt || [];
+// === Renderiza TRAP (phishing) ===
+function renderTrap(qObj) {
+  questionText.textContent = '';
+  optionsContainer.innerHTML = '';
+  feedbackContainer.classList.add('hidden');
 
-  const container = $('#options-container');
-  opts.forEach((opt, idx)=>{
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.textContent = opt;
-    btn.onclick = ()=>{
-      if(answeredThisQuestion) return;
-      answeredThisQuestion = true;
+  const msg = getDisplayText(qObj.trapMessage, currentLang) || (currentLang === 'en'
+    ? 'YOU FELL FOR PHISHING! TRY AGAIN LATER!'
+    : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
+  );
 
-      // feedback
-      const isCorrect = idx === correctIndex;
-      if(isCorrect){
-        $('#feedback').innerHTML = `<span class="text-green-700 font-semibold">Correto!</span>${ration[idx] ? ' — ' + ration[idx] : ''}`;
-      }else{
-        $('#feedback').innerHTML = `<span class="text-red-700 font-semibold">Incorreto.</span>${ration[idx] ? ' — ' + ration[idx] : ''}`;
-      }
+  // Texto vermelho destacado
+  questionText.textContent = msg;
+  questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
-      // marcar como usada apenas após responder
-      usedIds.add(id);
-      renderQidGrid();
-    };
-    container.appendChild(btn);
+  // Imagem centralizada
+  if (qObj.image) {
+    const img = document.createElement('img');
+    img.src = qObj.image;
+    img.alt = 'phishing';
+    img.className = 'mt-4 max-h-72 object-contain rounded-lg border mx-auto block';
+    optionsContainer.appendChild(img);
+  }
+}
+
+// === Renderiza pergunta normal ===
+function renderQuestion(qObj) {
+  const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
+  questionText.textContent = qText;
+  questionText.className = 'text-xl font-semibold text-gray-800 bg-blue-50 p-4 rounded-lg border border-blue-200';
+
+  optionsContainer.innerHTML = '';
+  feedbackContainer.classList.add('hidden');
+  feedbackTitle.textContent = '';
+  feedbackRationale.textContent = '';
+
+  const opts = getOptionsArray(qObj, currentLang);
+  const rats = getRationalesArray(qObj, currentLang);
+  const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
+
+  const shuffled = opts.map((t, i) => ({ text: t, idx: i }))
+    .sort(() => Math.random() - 0.5);
+
+  shuffled.forEach(({ text, idx }) => {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
+    button.onclick = () => checkAnswer(button, idx, { correctIndex, rats, opts });
+    optionsContainer.appendChild(button);
   });
 }
 
-/* =========================
-   Voltar ao menu
-========================= */
-function backToMenu(){
-  // Se não respondeu e não é trap, NÃO marca como usada
-  showPage('#start-page');
-}
-
-/* =========================
-   Bindings
-========================= */
-function setupBindings(){
-  // linguagem
-  $('#menu-lang').addEventListener('change', (e)=> setLang(e.target.value));
-  $('#question-lang').addEventListener('change', (e)=> setLang(e.target.value));
-
-  // voltar
-  $('#back-to-menu').addEventListener('click', backToMenu);
-}
-
-/* =========================
-   Bootstrap
-========================= */
-(async function init(){
-  try{
-    setupLogin();
-    setupBindings();
-    await loadQuestions();
-    renderQidGrid(); // popula grade 1–450
-    setLang('pt');   // idioma padrão
-  }catch(err){
-    alert('Erro ao carregar as perguntas. Verifique o questions.json.');
-    console.error(err);
+// === Verifica resposta ===
+function checkAnswer(selectedButton, selectedIdx, ctx) {
+  if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
+    answeredSet.add(currentQuestionIndex);
   }
-})();
+
+  document.querySelectorAll('.answer-button').forEach(btn => {
+    btn.disabled = true;
+    btn.classList.remove('hover:bg-blue-50');
+  });
+
+  const isCorrect = selectedIdx === ctx.correctIndex;
+
+  if (isCorrect) {
+    selectedButton.classList.remove('border-gray-300');
+    selectedButton.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
+    feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
+    feedbackTitle.textContent = (currentLang === 'en') ? 'Correct!' : 'Correto!';
+    feedbackTitle.className = 'text-lg font-bold text-green-700';
+  } else {
+    selectedButton.classList.remove('border-gray-300');
+    selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
+
+    const correctText = ctx.opts[ctx.correctIndex];
+    document.querySelectorAll('.answer-button').forEach(btn => {
+      if (btn.textContent === correctText) {
+        btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
+      }
+    });
+
+    feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-red-50 border-red-500';
+    feedbackTitle.textContent = (currentLang === 'en')
+      ? 'Incorrect. Review the rationale:'
+      : 'Incorreto. Revise a justificativa:';
+    feedbackTitle.className = 'text-lg font-bold text-red-700';
+  }
+
+  const rationale = ctx.rats[ctx.correctIndex] || '';
+  feedbackRationale.textContent = rationale;
+  feedbackContainer.classList.remove('hidden');
+}
+
+// === Navegação e idioma ===
+function wireEvents() {
+  loginButton.addEventListener('click', handleLogin);
+
+  backTopBtn.addEventListener('click', () => showStartPage());
+  backBottomBtn.addEventListener('click', () => showStartPage());
+
+  globalLangSel.addEventListener('change', (e) => {
+    currentLang = e.target.value;
+
+    if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
+      const qObj = questionByIndex[currentQuestionIndex];
+      if (qObj) {
+        const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
+        if (questionNumberEl) {
+          questionNumberEl.textContent = (currentLang === 'en')
+            ? `Question ${displayId}`
+            : `Pergunta ${displayId}`;
+        }
+        isTrap(qObj) ? renderTrap(qObj) : renderQuestion(qObj);
+      }
+    }
+  });
+}
+
+// === Bootstrap ===
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await loadQuestions();
+  } finally {
+    loginPage.classList.remove('hidden');
+    startPage.classList.add('hidden');
+    quizArea.classList.add('hidden');
+
+    globalLangSel.value = currentLang;
+    wireEvents();
+  }
+});
