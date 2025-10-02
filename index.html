@@ -5,45 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Quiz GRC / InfoSec</title>
 
-  <!-- Tailwind (usado para o layout/cores) -->
+  <!-- Tailwind for quick layout -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    .menu-item-button { min-width: 3rem; }
     .grid-menu { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
+    .btn-primary { @apply bg-purple-600 text-white rounded-lg px-3 py-2 hover:bg-purple-700 disabled:bg-purple-300 disabled:cursor-not-allowed; }
+    .btn-secondary { @apply bg-purple-700 text-white rounded-lg px-3 py-2 hover:bg-purple-800; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-  <!-- Cabeçalho -->
+  <!-- Header -->
   <header class="max-w-5xl mx-auto px-4 py-6">
     <h1 class="text-2xl md:text-3xl font-bold">Quiz GRC / InfoSec</h1>
-    <p id="header-subtitle" class="text-sm text-gray-600 mt-1">
-      Por favor, faça login para começar.
-    </p>
+    <p id="header-subtitle" class="text-sm text-gray-600 mt-1">Faça login para começar.</p>
   </header>
 
   <main class="max-w-5xl mx-auto px-4 pb-12">
 
-    <!-- LOGIN (primeira tela) -->
-    <section id="login-page" class="bg-white rounded-xl shadow p-6">
-      <h2 class="text-lg font-semibold mb-4">Entrar</h2>
-      <div class="flex flex-col gap-3 max-w-md">
-        <div>
-          <label for="username" class="block text-sm text-gray-700 mb-1">Nome de usuário</label>
-          <input id="username" class="border rounded-lg px-3 py-2 w-full" placeholder="Digite seu nome" />
+    <!-- LOGIN (tela inicial) -->
+    <section id="login-page" class="min-h-[60vh] flex items-center justify-center">
+      <div class="bg-white rounded-xl shadow p-6 w-full max-w-lg">
+        <h2 class="text-lg font-semibold mb-4">Entrar</h2>
+
+        <div class="flex flex-col gap-3">
+          <div>
+            <label for="username" class="block text-sm text-gray-700 mb-1">Nome de usuário</label>
+            <input id="username" class="border rounded-lg px-3 py-2 w-full" placeholder="Digite seu nome" />
+          </div>
+          <div>
+            <label for="password" class="block text-sm text-gray-700 mb-1">Senha</label>
+            <input id="password" type="password" class="border rounded-lg px-3 py-2 w-full" placeholder="••••••" />
+          </div>
+
+          <button id="login-button" class="btn-primary">Entrar</button>
+          <p id="login-error" class="text-sm text-red-600 hidden">Informe seu nome para continuar.</p>
         </div>
-        <div>
-          <label for="password" class="block text-sm text-gray-700 mb-1">Senha</label>
-          <input id="password" type="password" class="border rounded-lg px-3 py-2 w-full" placeholder="••••••" />
-          <p class="text-xs text-gray-500 mt-1">Qualquer senha é aceita — o nome não pode ficar em branco.</p>
-        </div>
-        <button id="login-button" class="bg-purple-600 text-white rounded-lg px-4 py-2 hover:bg-purple-700">
-          Entrar
-        </button>
-        <p id="login-error" class="text-sm text-red-600 hidden">
-          Informe seu nome para continuar.
-        </p>
       </div>
     </section>
 
@@ -63,29 +59,23 @@
       </div>
 
       <p class="mt-3 text-sm text-gray-600">
-        Os botões 1–450 aparecem; apenas os IDs existentes no <code>questions.json</code> ficam habilitados.
+        Os botões 1–450 aparecem. Apenas IDs existentes no <code>questions.json</code> ficam habilitados.
       </p>
 
-      <div id="menu-options" class="mt-6 grid grid-menu gap-2">
-        <!-- preenchido pelo app.js -->
-      </div>
+      <div id="menu-options" class="mt-6 grid grid-menu gap-2"></div>
     </section>
 
-    <!-- PERGUNTA -->
+    <!-- TELA DA PERGUNTA -->
     <section id="quiz-area" class="bg-white rounded-xl shadow p-6 mt-6 hidden">
-
-      <!-- Barra superior da pergunta -->
+      <!-- Barra superior -->
       <div class="flex items-center justify-between gap-4 flex-wrap mb-4">
         <div class="flex items-center gap-3">
-          <button id="back-to-menu-button"
-                  class="bg-purple-700 text-white rounded-lg px-3 py-2 hover:bg-purple-800">
-            Voltar ao menu
-          </button>
+          <button id="back-to-menu-button" class="btn-secondary">Voltar ao menu</button>
 
           <div class="flex items-center gap-2">
             <span class="text-sm text-gray-500">Pergunta</span>
             <span id="question-number"
-                  class="inline-block text-sm font-semibold px-2 py-1 rounded bg-gray-100 text-gray-700"></span>
+                  class="inline-block text-sm font-semibold px-2 py-1 rounded bg-gray-100 text-gray-700">#—</span>
           </div>
         </div>
 
@@ -99,23 +89,27 @@
         </div>
       </div>
 
-      <!-- Enunciado -->
-      <h2 id="question-text" class="text-lg md:text-xl font-semibold"></h2>
+      <!-- Conteúdo da pergunta/trap -->
+      <h2 id="question-text" class="text-2xl font-semibold mb-4"></h2>
+
+      <!-- TRAP -->
+      <div id="trap-area" class="hidden text-center">
+        <p id="trap-text" class="text-red-600 font-bold text-xl mb-4"></p>
+        <img id="trap-image" class="mx-auto rounded-lg max-h-72 object-contain" alt="Trap" />
+      </div>
 
       <!-- Opções -->
-      <div id="options-container" class="mt-4 flex flex-col gap-3"></div>
-
-      <!-- Trap (texto + imagem) será injetado aqui pelo JS -->
-      <div id="trap-container" class="mt-6"></div>
+      <div id="options-container" class="flex flex-col gap-3"></div>
 
       <!-- Feedback -->
-      <div id="feedback-container" class="mt-6 p-4 rounded-lg border-l-4 hidden">
-        <div id="feedback-title" class="text-lg font-bold mb-2"></div>
-        <p id="feedback-rationale" class="text-sm"></p>
+      <div id="feedback" class="mt-6 hidden">
+        <p id="feedback-title" class="text-lg font-semibold"></p>
+        <ul id="feedback-list" class="list-disc pl-6 mt-2"></ul>
       </div>
     </section>
+
   </main>
 
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
