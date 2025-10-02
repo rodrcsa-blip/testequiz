@@ -1,107 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>:::Pescaria de GRC:::</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz GRC / InfoSec</title>
+
+  <!-- Tailwind via CDN (opcional, mas recomendado para os estilos usados) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-    .menu-button-grid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0.25rem; }
-    @media (min-width: 640px) { .menu-button-grid { grid-template-columns: repeat(10, minmax(0, 1fr)); } }
-    @media (min-width: 768px) { .menu-button-grid { grid-template-columns: repeat(15, minmax(0, 1fr)); } }
-    .menu-item-button { transition: all 0.1s; }
-    .menu-item-button:enabled:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+    /* Pequenas melhorias visuais */
+    .menu-item-button { min-width: 3rem; }
+    .grid-menu { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
   </style>
 </head>
-<body class="text-gray-800 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-50 text-gray-800">
 
-  <div class="w-full max-w-5xl bg-white p-6 md:p-10 rounded-2xl shadow-xl border border-gray-200">
-    <header class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-      <div class="text-center md:text-left">
-        <h1 class="text-3xl font-extrabold text-gray-900">Pescaria de GRC</h1>
-        <p id="header-subtitle" class="mt-2 text-md text-gray-500">Por favor, faça o login para começar.</p>
-      </div>
-      <!-- ÚNICO seletor de idioma (global) -->
-      <div class="flex items-center justify-center md:justify-end gap-2">
-        <label for="global-lang" class="text-sm text-gray-600">Idioma:</label>
-        <select id="global-lang" class="border rounded-md px-3 py-2 text-sm">
-          <option value="pt">Português</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-    </header>
+  <!-- Cabeçalho -->
+  <header class="max-w-5xl mx-auto px-4 py-6">
+    <h1 class="text-2xl md:text-3xl font-bold">Quiz GRC / InfoSec</h1>
+    <p id="header-subtitle" class="text-sm text-gray-600 mt-1">
+      Selecione uma pergunta para testar seus conhecimentos.
+    </p>
+  </header>
 
-    <main>
-      <!-- Página de Login -->
-      <div id="login-page">
-        <div class="max-w-sm mx-auto">
-          <h2 class="text-xl font-bold mb-6 text-center text-gray-700">Acessar o Quiz</h2>
-          <div class="space-y-4">
-            <div>
-              <label for="username" class="block text-sm font-medium text-gray-700">Nome de Usuário</label>
-              <input type="text" id="username" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Digite seu nome">
-            </div>
-            <div>
-              <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
-              <input type="password" id="password" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="••••••••">
-            </div>
-            <p id="login-error" class="text-red-500 text-sm hidden text-center">Por favor, insira um nome de usuário.</p>
-            <button id="login-button" class="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-150">
-              Entrar
-            </button>
-          </div>
+  <main class="max-w-5xl mx-auto px-4 pb-12">
+
+    <!-- PÁGINA DE LOGIN (opcional) -->
+    <section id="login-page" class="bg-white rounded-xl shadow p-6 hidden">
+      <h2 class="text-lg font-semibold mb-4">Entrar</h2>
+      <div class="flex flex-col gap-3 max-w-md">
+        <label for="username" class="text-sm">Seu nome</label>
+        <input id="username" class="border rounded-lg px-3 py-2" placeholder="Digite seu nome" />
+        <button id="login-button" class="bg-blue-600 text-white rounded-lg px-4 py-2 hover:bg-blue-700">
+          Entrar
+        </button>
+        <p id="login-error" class="text-sm text-red-600 hidden">
+          Informe um nome para continuar.
+        </p>
+      </div>
+    </section>
+
+    <!-- PÁGINA INICIAL / MENU -->
+    <section id="start-page" class="bg-white rounded-xl shadow p-6">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <h2 class="text-xl font-semibold">Selecione uma pergunta</h2>
+
+        <!-- Seletor de idioma (MENU) -->
+        <div class="flex items-center gap-2">
+          <label for="language-select-menu" class="text-sm text-gray-600">Idioma:</label>
+          <select id="language-select-menu" class="border rounded-lg px-2 py-1">
+            <option value="pt" selected>Português</option>
+            <option value="en">English</option>
+          </select>
         </div>
       </div>
 
-      <!-- Página Inicial / Menu -->
-      <div id="start-page" class="hidden">
-        <div class="mb-4">
-          <h2 class="text-xl font-bold text-gray-700">
-            Selecione a Pergunta (1-450 disponíveis):
-          </h2>
-        </div>
-        <div id="menu-options" class="menu-button-grid"></div>
+      <div class="mt-4">
+        <p class="text-sm text-gray-600">
+          Os botões de 1 a 450 aparecem; apenas os IDs que existem no <code>questions.json</code> ficam habilitados.
+        </p>
       </div>
 
-      <!-- Área do Quiz -->
-      <div id="quiz-area" class="space-y-6 hidden">
-        <!-- Barra superior: voltar + número da pergunta -->
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <button id="back-to-menu-top" class="px-4 py-2 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
-            Voltar ao Menu
-          </button>
-          <div class="mb-0">
-            <span id="question-number" class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 border border-gray-200">
-              Pergunta —
-            </span>
-          </div>
+      <!-- GRID DOS BOTÕES 1–450 -->
+      <div id="menu-options"
+           class="mt-6 grid grid-menu gap-2">
+        <!-- preenchido pelo app.js -->
+      </div>
+    </section>
+
+    <!-- ÁREA DO QUIZ / PERGUNTA -->
+    <section id="quiz-area" class="bg-white rounded-xl shadow p-6 mt-6 hidden">
+
+      <!-- Barra superior da pergunta -->
+      <div class="flex items-center justify-between gap-4 flex-wrap mb-3">
+        <div class="flex items-center gap-3">
+          <span class="text-sm text-gray-500">Pergunta</span>
+          <span id="question-number"
+                class="inline-block text-sm font-semibold px-2 py-1 rounded bg-gray-100 text-gray-700">
+            <!-- #ID aparece aqui -->
+          </span>
         </div>
 
-        <h2 id="question-text" class="text-xl font-semibold text-gray-800 bg-blue-50 p-4 rounded-lg border border-blue-200"></h2>
-
-        <div id="options-container" class="space-y-3"></div>
-
-        <div id="feedback-container" class="mt-6 p-4 rounded-lg hidden border-l-4">
-          <h3 id="feedback-title" class="text-lg font-bold"></h3>
-          <p id="feedback-rationale" class="mt-2 text-gray-700"></p>
+        <!-- Seletor de idioma (DENTRO DA PERGUNTA) -->
+        <div class="flex items-center gap-2">
+          <label for="language-select-question" class="text-sm text-gray-600">Idioma:</label>
+          <select id="language-select-question" class="border rounded-lg px-2 py-1 hidden">
+            <option value="pt" selected>Português</option>
+            <option value="en">English</option>
+          </select>
         </div>
+      </div>
 
-        <button id="back-to-menu-bottom" class="w-full py-3 bg-gray-500 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-150">
-          Voltar ao Menu
+      <!-- Enunciado -->
+      <h2 id="question-text" class="text-lg md:text-xl font-semibold"></h2>
+
+      <!-- Opções -->
+      <div id="options-container" class="mt-4 flex flex-col gap-3">
+        <!-- botões criados via JS -->
+      </div>
+
+      <!-- Feedback -->
+      <div id="feedback-container" class="mt-6 p-4 rounded-lg border-l-4 hidden">
+        <div id="feedback-title" class="text-lg font-bold mb-2"></div>
+        <p id="feedback-rationale" class="text-sm"></p>
+      </div>
+
+      <!-- A imagem do TRAP é inserida antes do feedback em um div #trap-container criado pelo JS -->
+
+      <!-- Ações -->
+      <div class="mt-6 flex items-center justify-between">
+        <button id="back-to-menu-button"
+                class="bg-gray-700 text-white rounded-lg px-4 py-2 hover:bg-gray-800 hidden">
+          Voltar ao menu
         </button>
       </div>
+    </section>
+  </main>
 
-      <!-- Aviso de erro ao carregar JSON -->
-      <div id="load-error" class="hidden mt-6 p-4 rounded-lg border border-red-200 bg-red-50 text-red-700">
-        Erro ao carregar as perguntas. Verifique o arquivo <code>questions.json</code>.
-      </div>
-    </main>
-  </div>
-
-  <script defer src="app.js"></script>
+  <!-- App -->
+  <script src="./app.js"></script>
 </body>
 </html>
