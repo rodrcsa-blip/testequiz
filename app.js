@@ -42,20 +42,33 @@ function getDisplayText(obj, lang) {
   return '';
 }
 
+// Divide string de opções caso algum item venha como string "a;b;c" ou "a|b|c"
+function normalizeOptionsMaybeSplit(val) {
+  if (Array.isArray(val)) return val;
+  if (typeof val === 'string') {
+    const parts = val.split(/[\n\r;|]+/).map(s => s.trim()).filter(Boolean);
+    return parts.length > 1 ? parts : [val];
+  }
+  return [];
+}
+
 function getOptionsArray(questionObj, lang) {
   if (!questionObj || !questionObj.options) return [];
-  const opts = Array.isArray(questionObj.options)
-    ? questionObj.options
-    : questionObj.options[lang] || questionObj.options['pt'] || [];
-  return opts;
+  if (Array.isArray(questionObj.options)) {
+    return questionObj.options;
+  }
+  // objeto por idioma
+  const byLang = questionObj.options[lang] || questionObj.options['pt'] || [];
+  return normalizeOptionsMaybeSplit(byLang);
 }
 
 function getRationalesArray(questionObj, lang) {
   if (!questionObj || !questionObj.rationales) return [];
-  const rats = Array.isArray(questionObj.rationales)
-    ? questionObj.rationales
-    : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
-  return rats;
+  if (Array.isArray(questionObj.rationales)) {
+    return questionObj.rationales;
+  }
+  const byLang = questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
+  return Array.isArray(byLang) ? byLang : [byLang];
 }
 
 function isTrap(questionObj) {
@@ -183,7 +196,7 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
-  // Texto vermelho destacado
+  // Texto vermelho destacado e centralizado
   questionText.textContent = msg;
   questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
@@ -224,7 +237,7 @@ function renderQuestion(qObj) {
   });
 }
 
-// === Verifica resposta ===
+// === Verifica resposta (corrigido para mostrar a justificativa da escolha em caso de erro) ===
 function checkAnswer(selectedButton, selectedIdx, ctx) {
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
@@ -261,7 +274,15 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     feedbackTitle.className = 'text-lg font-bold text-red-700';
   }
 
-  const rationale = ctx.rats[ctx.correctIndex] || '';
+  // >>> Ajuste central: qual justificativa mostrar? <<<
+  // - Se ACERTOU: mostrar a justificativa do índice correto.
+  // - Se ERROU: mostrar a justificativa da alternativa selecionada; se não houver, cai para a do índice correto.
+  let rationale = '';
+  if (Array.isArray(ctx.rats) && ctx.rats.length) {
+    rationale = isCorrect
+      ? (ctx.rats[ctx.correctIndex] ?? '')
+      : (ctx.rats[selectedIdx] ?? ctx.rats[ctx.correctIndex] ?? '');
+  }
   feedbackRationale.textContent = rationale;
   feedbackContainer.classList.remove('hidden');
 }
@@ -300,6 +321,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     startPage.classList.add('hidden');
     quizArea.classList.add('hidden');
 
+    globalLangSel.value = currentLang;
+    wireEvents();
+  }
+});
     globalLangSel.value = currentLang;
     wireEvents();
   }
