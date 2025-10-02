@@ -3,113 +3,145 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Quiz GRC / InfoSec</title>
-
-  <!-- Tailwind for quick layout -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Quiz GRC/Infosec</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    .grid-menu { grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); }
-    .btn-primary { @apply bg-purple-600 text-white rounded-lg px-3 py-2 hover:bg-purple-700 disabled:bg-purple-300 disabled:cursor-not-allowed; }
-    .btn-secondary { @apply bg-purple-700 text-white rounded-lg px-3 py-2 hover:bg-purple-800; }
+    :root{
+      --accent:#7C3AED; /* roxo/lilás */
+      --accent-700:#6D28D9;
+      --accent-800:#5B21B6;
+    }
+    .btn-primary{
+      @apply text-white font-semibold rounded-lg px-5 py-3 shadow;
+      background: var(--accent);
+    }
+    .btn-primary:hover{ background: var(--accent-700); }
+    .btn-outline{
+      @apply border rounded-lg px-3 py-2 font-medium;
+      border-color: var(--accent);
+      color: var(--accent-800);
+    }
+    .btn-outline:hover{
+      background: rgba(124,58,237,0.07);
+    }
+    .option-btn{
+      @apply w-full text-left bg-white border rounded-xl px-5 py-4 shadow-sm transition;
+      border-color:#e5e7eb;
+    }
+    .option-btn:hover{
+      box-shadow: 0 8px 20px rgba(124,58,237,.15);
+      border-color: var(--accent);
+    }
+    /* Botões do grid 1–450 */
+    .qid-btn{
+      @apply rounded-md px-3 py-2 text-sm font-medium shadow-sm transition;
+      background: white; border:1px solid #e5e7eb; color:#374151;
+    }
+    .qid-btn.enabled:hover{
+      border-color: var(--accent);
+      box-shadow: 0 6px 14px rgba(124,58,237,.12);
+    }
+    .qid-btn.disabled{
+      @apply opacity-40 cursor-not-allowed;
+    }
+    /* Trap (campo minado) */
+    .trap-box{
+      @apply border-2 rounded-xl p-6 mt-6;
+      border-color:#ef4444; /* red-500 */
+      color:#b91c1c;        /* red-700 */
+      text-align:center;
+    }
+    .trap-box h2{ @apply text-2xl font-bold mb-2; }
+    .trap-img{ @apply mx-auto mt-4 rounded-lg shadow; max-width:420px; }
+    /* Badge */
+    .badge{
+      @apply inline-flex items-center px-2 py-1 rounded-md text-sm font-semibold bg-gray-100 text-gray-700;
+    }
+    /* Esconde páginas */
+    .page{ display:none; }
+    .page.active{ display:block; }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <!-- Header -->
-  <header class="max-w-5xl mx-auto px-4 py-6">
-    <h1 class="text-2xl md:text-3xl font-bold">Quiz GRC / InfoSec</h1>
-    <p id="header-subtitle" class="text-sm text-gray-600 mt-1">Faça login para começar.</p>
-  </header>
+<body class="bg-gray-50 text-gray-900">
+  <div class="max-w-6xl mx-auto p-6">
 
-  <main class="max-w-5xl mx-auto px-4 pb-12">
+    <!-- ===== TELA DE LOGIN ===== -->
+    <section id="login-page" class="page active">
+      <div class="bg-white rounded-2xl shadow p-6 md:p-8">
+        <h1 class="text-2xl md:text-3xl font-bold mb-6">Entrar</h1>
 
-    <!-- LOGIN (tela inicial) -->
-    <section id="login-page" class="min-h-[60vh] flex items-center justify-center">
-      <div class="bg-white rounded-xl shadow p-6 w-full max-w-lg">
-        <h2 class="text-lg font-semibold mb-4">Entrar</h2>
-
-        <div class="flex flex-col gap-3">
+        <form id="login-form" class="space-y-5" autocomplete="off">
           <div>
-            <label for="username" class="block text-sm text-gray-700 mb-1">Nome de usuário</label>
-            <input id="username" class="border rounded-lg px-3 py-2 w-full" placeholder="Digite seu nome" />
+            <label class="block text-sm font-medium mb-1" for="login-username">Nome de usuário</label>
+            <input id="login-username" type="text" class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400" placeholder="Digite seu nome" required>
           </div>
           <div>
-            <label for="password" class="block text-sm text-gray-700 mb-1">Senha</label>
-            <input id="password" type="password" class="border rounded-lg px-3 py-2 w-full" placeholder="••••••" />
+            <label class="block text-sm font-medium mb-1" for="login-password">Senha</label>
+            <input id="login-password" type="password" class="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400" placeholder="•••••">
           </div>
-
-          <button id="login-button" class="btn-primary">Entrar</button>
-          <p id="login-error" class="text-sm text-red-600 hidden">Informe seu nome para continuar.</p>
-        </div>
+          <button type="submit" class="btn-primary w-full md:w-auto">Entrar</button>
+        </form>
       </div>
     </section>
 
-    <!-- MENU -->
-    <section id="start-page" class="bg-white rounded-xl shadow p-6 hidden">
-      <div class="flex items-center justify-between gap-4 flex-wrap">
-        <h2 class="text-xl font-semibold">Selecione uma pergunta</h2>
-
-        <!-- Idioma no menu -->
-        <div class="flex items-center gap-2">
-          <label for="language-select-menu" class="text-sm text-gray-600">Idioma:</label>
-          <select id="language-select-menu" class="border rounded-lg px-2 py-1">
-            <option value="pt" selected>Português</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-      </div>
-
-      <p class="mt-3 text-sm text-gray-600">
-        Os botões 1–450 aparecem. Apenas IDs existentes no <code>questions.json</code> ficam habilitados.
-      </p>
-
-      <div id="menu-options" class="mt-6 grid grid-menu gap-2"></div>
-    </section>
-
-    <!-- TELA DA PERGUNTA -->
-    <section id="quiz-area" class="bg-white rounded-xl shadow p-6 mt-6 hidden">
-      <!-- Barra superior -->
-      <div class="flex items-center justify-between gap-4 flex-wrap mb-4">
-        <div class="flex items-center gap-3">
-          <button id="back-to-menu-button" class="btn-secondary">Voltar ao menu</button>
-
+    <!-- ===== MENU (GRADE 1–450) ===== -->
+    <section id="start-page" class="page">
+      <div class="bg-white rounded-2xl shadow p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <h2 class="text-xl md:text-2xl font-bold">Selecione uma pergunta</h2>
           <div class="flex items-center gap-2">
-            <span class="text-sm text-gray-500">Pergunta</span>
-            <span id="question-number"
-                  class="inline-block text-sm font-semibold px-2 py-1 rounded bg-gray-100 text-gray-700">#—</span>
+            <label class="text-sm text-gray-600">Idioma:</label>
+            <select id="menu-lang" class="border rounded-lg px-3 py-2">
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+            </select>
           </div>
         </div>
 
-        <!-- Idioma dentro da pergunta -->
-        <div class="flex items-center gap-2">
-          <label for="language-select-question" class="text-sm text-gray-600">Idioma:</label>
-          <select id="language-select-question" class="border rounded-lg px-2 py-1">
-            <option value="pt" selected>Português</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Conteúdo da pergunta/trap -->
-      <h2 id="question-text" class="text-2xl font-semibold mb-4"></h2>
-
-      <!-- TRAP -->
-      <div id="trap-area" class="hidden text-center">
-        <p id="trap-text" class="text-red-600 font-bold text-xl mb-4"></p>
-        <img id="trap-image" class="mx-auto rounded-lg max-h-72 object-contain" alt="Trap" />
-      </div>
-
-      <!-- Opções -->
-      <div id="options-container" class="flex flex-col gap-3"></div>
-
-      <!-- Feedback -->
-      <div id="feedback" class="mt-6 hidden">
-        <p id="feedback-title" class="text-lg font-semibold"></p>
-        <ul id="feedback-list" class="list-disc pl-6 mt-2"></ul>
+        <div id="qid-grid" class="mt-6 grid grid-cols-5 sm:grid-cols-8 md:grid-cols-12 gap-2"></div>
       </div>
     </section>
 
-  </main>
+    <!-- ===== TELA DE PERGUNTA ===== -->
+    <section id="question-page" class="page">
+      <div class="bg-white rounded-2xl shadow">
+        <!-- Cabeçalho pergunta -->
+        <div class="flex items-center justify-between p-4 border-b bg-gray-50 rounded-t-2xl">
+          <div class="flex items-center gap-4">
+            <button id="back-to-menu" class="btn-outline">Voltar ao menu</button>
+            <span class="text-sm text-gray-600">Pergunta</span>
+            <span id="question-number-badge" class="badge">#—</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <label class="text-sm text-gray-600">Idioma:</label>
+            <select id="question-lang" class="border rounded-lg px-3 py-2">
+              <option value="pt">Português</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+        </div>
 
-  <script src="app.js"></script>
+        <!-- Corpo pergunta -->
+        <div id="question-content" class="p-6 md:p-8">
+          <h1 id="question-text" class="text-2xl md:text-3xl font-bold leading-snug mb-6"></h1>
+
+          <!-- Trap -->
+          <div id="trap-container" class="trap-box hidden">
+            <h2 id="trap-message">VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!</h2>
+            <img id="trap-image" class="trap-img" src="" alt="Trap">
+          </div>
+
+          <!-- Opções -->
+          <div id="options-container" class="space-y-4"></div>
+
+          <!-- Feedback -->
+          <div id="feedback" class="mt-5 text-base"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
 </body>
 </html>
