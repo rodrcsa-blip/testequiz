@@ -13494,5 +13494,257 @@
       "Paula Papis: Incorrect — she is Senior Manager of GRC & BSEC."
     ]
   }
+},
+  {
+  "id": 441,
+  "q": {
+    "pt": "O que a equipe de BPO deve assegurar junto com a Infosec quando uma operação de BPO já está em andamento?",
+    "en": "What must the BPO team work with Infosec to ensure once a BPO operation is running (in-flight)?"
+  },
+  "options": {
+    "pt": [
+      "Que nenhum monitoramento seja realizado",
+      "Que o novo BPO seja incluído em todas as soluções e cerimônias de monitoramento",
+      "Que apenas o monitoramento do SOC seja utilizado",
+      "Que o próprio BPO gerencie seu monitoramento, sem integração"
+    ],
+    "en": [
+      "That no monitoring is performed",
+      "That the new BPO is included in all monitoring solutions and ceremonies",
+      "That only SOC monitoring is used",
+      "That the BPO manages its own monitoring"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Incorreto: a operação deve ser monitorada para reduzir riscos.",
+      "Correto: inclusão total nas soluções e cerimônias de monitoramento garante visibilidade e resposta a incidentes.",
+      "Incorreto: limitar-se apenas ao SOC não cobre todos os rituais e integrações necessárias.",
+      "Incorreto: monitoramento isolado pelo BPO não atende aos requisitos corporativos."
+    ],
+    "en": [
+      "Incorrect: operations must be monitored to reduce risk.",
+      "Correct: full inclusion in monitoring solutions and ceremonies ensures visibility and incident response.",
+      "Incorrect: restricting to SOC monitoring misses required rituals and integrations.",
+      "Incorrect: standalone vendor monitoring does not meet corporate requirements."
+    ]
+  }
+},
+{
+  "id": 442,
+  "q": {
+    "pt": "O que deve ser avaliado ao revisar as justificativas de risco fornecidas por um fornecedor?",
+    "en": "What must be evaluated when reviewing the risk justifications provided by a vendor?"
+  },
+  "options": {
+    "pt": [
+      "Reputação do fornecedor",
+      "Preço contratual",
+      "Comparação detalhada com boas práticas de segurança da informação e lacunas de controle evidentes",
+      "Apenas o nível de risco declarado"
+    ],
+    "en": [
+      "Vendor reputation",
+      "Contract price",
+      "Detailed comparison with information security best practices and evident control gaps",
+      "Only the stated risk level"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Parcial: reputação ajuda, mas não substitui avaliação técnica contra controles.",
+      "Incorreto: preço não avalia risco de segurança.",
+      "Correto: a revisão deve mapear justificativas vs. boas práticas e evidenciar lacunas.",
+      "Incorreto: considerar só o nível de risco é insuficiente sem evidências e comparação."
+    ],
+    "en": [
+      "Partial: reputation helps but does not replace control-based assessment.",
+      "Incorrect: price does not assess security risk.",
+      "Correct: map justifications to best practices and highlight control gaps.",
+      "Incorrect: the risk level alone is insufficient without evidence and comparison."
+    ]
+  }
+},
+{
+  "id": 443,
+  "q": {
+    "pt": "Qual é o controle de mitigação implementado após registrar o risco de um fornecedor High/Very High que não responde?",
+    "en": "What is the mitigation control implemented after registering the risk of a non-responsive High/Very High vendor?"
+  },
+  "options": {
+    "pt": [
+      "Cancelamento imediato do contrato",
+      "Envio de notificação jurídica",
+      "Inclusão no monitoramento Apura com suporte de Cyber Intelligence",
+      "Realização de auditoria on-site obrigatória"
+    ],
+    "en": [
+      "Immediate contract cancellation",
+      "Sending a legal notice",
+      "Inclusion in Apura monitoring with Cyber Intelligence support",
+      "Conducting a mandatory onsite audit"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Incorreto: cancelamento pode ser consequência posterior, não o primeiro passo padrão.",
+      "Incorreto: notificação jurídica não substitui mitigação técnica/operacional.",
+      "Correto: monitoramento (Apura) com suporte de Cyber Intelligence mitiga risco enquanto se busca resposta.",
+      "Incorreto: auditoria on-site pode ser inviável sem colaboração do fornecedor."
+    ],
+    "en": [
+      "Incorrect: cancellation may occur later, not the default first step.",
+      "Incorrect: legal notice does not replace technical/operational mitigation.",
+      "Correct: Apura monitoring with Cyber Intelligence reduces risk while seeking vendor response.",
+      "Incorrect: onsite audits are impractical without vendor cooperation."
+    ]
+  }
+},
+{
+  "id": 444,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 445,
+  "q": {
+    "pt": "Qual o papel da equipe de TI na preparação para a auditoria SOX?",
+    "en": "What is the role of the IT team in preparing for a SOX audit?"
+  },
+  "options": {
+    "pt": [
+      "Escrever os relatórios financeiros",
+      "Apenas fornecer acesso aos sistemas",
+      "Preparar a documentação dos controles, fornecer evidências e responder aos auditores",
+      "Negar acesso aos auditores"
+    ],
+    "en": [
+      "Write financial reports",
+      "Only provide system access",
+      "Prepare control documentation, provide evidence, and respond to auditors",
+      "Deny access to auditors"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Incorreto: relatórios financeiros são responsabilidade de Finanças.",
+      "Incompleto: acesso é parte do suporte, mas não cobre documentação e evidências.",
+      "Correto: TI prepara documentação de controles, evidências e responde dúvidas.",
+      "Incorreto: auditoria requer cooperação e transparência."
+    ],
+    "en": [
+      "Incorrect: financial reporting is a Finance responsibility.",
+      "Incomplete: access alone does not cover documentation and evidence.",
+      "Correct: IT prepares control documentation, evidence, and answers inquiries.",
+      "Incorrect: audits require cooperation and transparency."
+    ]
+  }
+},
+{
+  "id": 446,
+  "q": {
+    "pt": "Além do Bacen, quais reguladores avaliam o ambiente de controle de segurança (ITSEC)?",
+    "en": "Besides Bacen, which regulators assess the IT security control environment?"
+  },
+  "options": {
+    "pt": [
+      "Ambima e CVM",
+      "BSM",
+      "Ambima, CVM e BSM",
+      "Nenhuma das alternativas"
+    ],
+    "en": [
+      "Ambima and CVM",
+      "BSM",
+      "Ambima, CVM and BSM",
+      "None of the above"
+    ]
+  },
+  "correctIndex": 2,
+  "rationales": {
+    "pt": [
+      "Parcial: faltou BSM.",
+      "Parcial: faltou Ambima e CVM.",
+      "Correto: os três (Ambima, CVM e BSM) podem avaliar aspectos do ambiente.",
+      "Incorreto: há órgãos além do Bacen."
+    ],
+    "en": [
+      "Partial: missing BSM.",
+      "Partial: missing Ambima and CVM.",
+      "Correct: all three (Ambima, CVM, BSM) may assess aspects of the environment.",
+      "Incorrect: there are regulators besides Bacen."
+    ]
+  }
+},
+{
+  "id": 447,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 448,
+  "q": {
+    "pt": "A falta de segregação de funções (SoD) é considerada...",
+    "en": "The lack of Segregation of Duties (SoD) is considered..."
+  },
+  "options": {
+    "pt": [
+      "Um controle preventivo",
+      "Uma deficiência de controle",
+      "Um risco menor",
+      "Uma boa prática de TI"
+    ],
+    "en": [
+      "A preventive control",
+      "A control deficiency",
+      "A minor risk",
+      "An IT best practice"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Incorreto: SoD é um princípio; sua falta não é um controle.",
+      "Correto: ausência de SoD é deficiente e aumenta risco de fraude/erro.",
+      "Incorreto: não é menor — pode causar impacto significativo.",
+      "Incorreto: é o oposto de boa prática."
+    ],
+    "en": [
+      "Incorrect: SoD is a principle; its absence is not a control.",
+      "Correct: lack of SoD is a control deficiency increasing fraud/error risk.",
+      "Incorrect: not minor — it can be significant.",
+      "Incorrect: it is the opposite of a best practice."
+    ]
+  }
+},
+{
+  "id": 449,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
+  }
+},
+{
+  "id": 450,
+  "trap": "phishing",
+  "image": "./images/phishing.jpg",
+  "trapMessage": {
+    "pt": "VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!",
+    "en": "YOU FELT INTO THE PHISHING! TRY AGAIN LATER!"
+  }
 }
 ]
