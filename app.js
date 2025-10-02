@@ -1,281 +1,181 @@
-// Caminho do JSON
-const QUESTIONS_URL = "./questions.json";
+// Estado básico
+let allQuestions = new Map();       // id -> question object
+let availableIds = new Set();       // ids que existem no JSON
+let usedIds = new Set();            // ids já utilizados (respondidos) ou traps já exibidas
+let currentId = null;
+let currentLang = 'pt';
 
-// Estado global
-let allQuestions = [];          // array de objetos (cada item tem id + q/en/pt + etc)
-let availableIds = new Set();   // ids existentes no JSON
-let currentLanguage = "pt";
-let currentQuestionIndex = -1;  // índice dentro de allQuestions (não é o id)
-const answeredQuestions = new Set(); // ids já respondidos (para desabilitar no menu)
+// DOM
+const loginPage = document.getElementById('login-page');
+const startPage = document.getElementById('start-page');
+const quizArea  = document.getElementById('quiz-area');
 
-// Referências de elementos
-const loginPage = document.getElementById("login-page");
-const startPage = document.getElementById("start-page");
-const quizArea = document.getElementById("quiz-area");
+const languageSelectMenu = document.getElementById('language-select-menu');
+const languageSelectQuestion = document.getElementById('language-select-question');
 
-const usernameInput = document.getElementById("username");
-const passwordInput = document.getElementById("password");
-const loginButton = document.getElementById("login-button");
-const loginError = document.getElementById("login-error");
-const headerSubtitle = document.getElementById("header-subtitle");
+const menuContainer = document.getElementById('menu-options');
 
-const menuOptions = document.getElementById("menu-options");
-const languageSelectMenu = document.getElementById("language-select-menu");
-const languageSelectQuestion = document.getElementById("language-select-question");
+const questionNumberEl = document.getElementById('question-number');
+const questionTextEl   = document.getElementById('question-text');
+const optionsContainer = document.getElementById('options-container');
 
-const questionNumber = document.getElementById("question-number");
-const questionText = document.getElementById("question-text");
-const optionsContainer = document.getElementById("options-container");
-const feedbackContainer = document.getElementById("feedback-container");
-const feedbackTitle = document.getElementById("feedback-title");
-const feedbackRationale = document.getElementById("feedback-rationale");
-const backToMenuButton = document.getElementById("back-to-menu-button");
-const trapContainer = document.getElementById("trap-container");
+const trapArea   = document.getElementById('trap-area');
+const trapTextEl = document.getElementById('trap-text');
+const trapImgEl  = document.getElementById('trap-image');
 
-// --------------------- Inicialização ---------------------
-document.addEventListener("DOMContentLoaded", async () => {
-  // Mostra login primeiro
-  loginPage.classList.remove("hidden");
-  startPage.classList.add("hidden");
-  quizArea.classList.add("hidden");
+const feedbackBox  = document.getElementById('feedback');
+const feedbackTitle = document.getElementById('feedback-title');
+const feedbackList  = document.getElementById('feedback-list');
 
-  // Eventos
-  loginButton.addEventListener("click", handleLogin);
-  languageSelectMenu.addEventListener("change", (e) => {
-    currentLanguage = e.target.value;
-    if (quizArea.classList.contains("hidden")) {
-      renderMenu(); // só refaz o menu se estiver no menu
-    } else {
-      // dentro da pergunta: sincroniza o seletor de idioma local
-      languageSelectQuestion.value = currentLanguage;
-      renderQuestion();
-    }
-  });
-  languageSelectQuestion.addEventListener("change", (e) => {
-    currentLanguage = e.target.value;
-    languageSelectMenu.value = currentLanguage;
-    renderQuestion();
-  });
-  backToMenuButton.addEventListener("click", showStartPage);
+const backBtn = document.getElementById('back-to-menu-button');
 
-  // Carrega perguntas
-  await loadQuestions();
-});
-
-// --------------------- Login ---------------------
-function handleLogin() {
-  const username = (usernameInput.value || "").trim();
-  // senha pode ser qualquer coisa; só valida o nome
-  if (!username) {
-    loginError.classList.remove("hidden");
+// LOGIN
+document.getElementById('login-button').addEventListener('click', () => {
+  const name = document.getElementById('username').value.trim();
+  const err  = document.getElementById('login-error');
+  if (!name) {
+    err.classList.remove('hidden');
     return;
   }
-  loginError.classList.add("hidden");
-  headerSubtitle.textContent =
-    "Selecione uma pergunta para testar seus conhecimentos.";
+  err.classList.add('hidden');
+  // entra
+  loginPage.classList.add('hidden');
+  startPage.classList.remove('hidden');
+});
 
-  showStartPage();
-}
+// Idioma
+languageSelectMenu.addEventListener('change', (e) => {
+  currentLang = e.target.value;
+  // Apenas influencia textos exibidos na pergunta. Menu não tem textos variáveis.
+  if (!quizArea.classList.contains('hidden') && currentId) {
+    renderQuestion(currentId);
+  }
+});
+languageSelectQuestion.addEventListener('change', (e) => {
+  currentLang = e.target.value;
+  if (currentId) renderQuestion(currentId);
+});
 
-function showStartPage() {
-  quizArea.classList.add("hidden");
-  startPage.classList.remove("hidden");
-  loginPage.classList.add("hidden");
+// Voltar SEM marcar como usada (se não respondeu)
+backBtn.addEventListener('click', () => {
+  // Volta para o menu
+  quizArea.classList.add('hidden');
+  startPage.classList.remove('hidden');
+  // Atualiza menu (para refletir possível resposta já dada)
   renderMenu();
-}
+});
 
-// --------------------- Carregamento do JSON ---------------------
-async function loadQuestions() {
-  try {
-    const resp = await fetch(QUESTIONS_URL, { cache: "no-store" });
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
+// Carrega JSON
+fetch('questions.json')
+  .then(r => r.json())
+  .then(data => {
+    // Suporta arquivo com {questions:[...]} ou array direto
+    const arr = Array.isArray(data) ? data : (data.questions || []);
+    arr.forEach(q => {
+      allQuestions.set(q.id, q);
+      availableIds.add(q.id);
+    });
+    renderMenu();
+  })
+  .catch(() => {
+    alert('Erro ao carregar as perguntas. Verifique o questions.json.');
+  });
 
-    // Aceita tanto {questions:[...]} quanto um array direto
-    allQuestions = Array.isArray(data) ? data : data.questions || [];
-    allQuestions.sort((a, b) => (a.id ?? 0) - (b.id ?? 0));
-
-    availableIds = new Set(allQuestions.map((q) => q.id));
-  } catch (err) {
-    console.error("Erro ao carregar as perguntas:", err);
-    alert("Erro ao carregar as perguntas. Verifique o questions.json.");
-  }
-}
-
-// --------------------- Menu (1–450) ---------------------
+// Renderiza o menu 1..450 com botões roxos
 function renderMenu() {
-  menuOptions.innerHTML = "";
-  const TOTAL_BUTTONS = 450;
+  menuContainer.innerHTML = '';
+  for (let i = 1; i <= 450; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i;
+    btn.className = 'btn-primary menu-item-button';
+    const enabled = availableIds.has(i) && !usedIds.has(i);
+    btn.disabled = !enabled;
 
-  for (let i = 1; i <= TOTAL_BUTTONS; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i.toString();
-    btn.className =
-      "menu-item-button py-2 text-center text-sm font-semibold rounded-lg shadow-sm " +
-      "focus:outline-none focus:ring-4 disabled:cursor-not-allowed";
+    btn.addEventListener('click', () => {
+      openQuestion(i);
+    });
 
-    const isAvailable = availableIds.has(i);
-    const isAnswered = answeredQuestions.has(i);
-
-    if (isAvailable) {
-      if (isAnswered) {
-        btn.classList.add("bg-gray-400", "text-white", "shadow-inner");
-        btn.disabled = true;
-      } else {
-        btn.classList.add(
-          "bg-purple-600",
-          "text-white",
-          "hover:bg-purple-700",
-          "focus:ring-purple-300"
-        );
-        btn.addEventListener("click", () => openQuestionById(i));
-      }
-    } else {
-      btn.classList.add("bg-gray-200", "text-gray-500", "shadow-inner");
-      btn.disabled = true;
-    }
-
-    menuOptions.appendChild(btn);
+    menuContainer.appendChild(btn);
   }
 }
 
-// --------------------- Abrir Pergunta ---------------------
-function openQuestionById(id) {
-  const idx = allQuestions.findIndex((q) => q.id === id);
-  if (idx === -1) return;
-
-  currentQuestionIndex = idx;
-
-  startPage.classList.add("hidden");
-  quizArea.classList.remove("hidden");
-
-  // Botão “voltar ao menu” já visível ao abrir a pergunta
-  backToMenuButton.classList.remove("hidden");
-
-  renderQuestion();
+// Abre a pergunta
+function openQuestion(id) {
+  currentId = id;
+  startPage.classList.add('hidden');
+  quizArea.classList.remove('hidden');
+  // mostra número
+  questionNumberEl.textContent = `#${id}`;
+  renderQuestion(id);
 }
 
-// --------------------- Render da Pergunta ---------------------
-function renderQuestion() {
-  feedbackContainer.classList.add("hidden");
-  feedbackTitle.textContent = "";
-  feedbackRationale.textContent = "";
-  trapContainer.innerHTML = ""; // limpa trap anterior
-  optionsContainer.innerHTML = "";
+// Renderiza pergunta/trap
+function renderQuestion(id) {
+  feedbackBox.classList.add('hidden');
+  feedbackList.innerHTML = '';
+  optionsContainer.innerHTML = '';
+  trapArea.classList.add('hidden');
+  questionTextEl.textContent = '';
 
-  const q = allQuestions[currentQuestionIndex];
+  const q = allQuestions.get(id);
   if (!q) return;
 
-  // Número da pergunta (id)
-  questionNumber.textContent = `#${q.id}`;
+  // Trap: remove do menu imediatamente
+  if (q.trap) {
+    usedIds.add(id); // trap some automaticamente
+    trapArea.classList.remove('hidden');
 
-  // Se for TRAP
-  if (q.trap === "phishing") {
-    // Texto centralizado e imagem centralizada
-    const wrap = document.createElement("div");
-    wrap.className =
-      "mt-4 p-6 rounded-xl border text-center bg-red-50 border-red-200";
+    // mensagem + imagem centralizadas
+    const msg = q.trapMessage?.[currentLang] || q.trapMessage?.pt || 'TRAP';
+    trapTextEl.textContent = msg;
+    if (q.image) {
+      trapImgEl.src = q.image;
+      trapImgEl.classList.remove('hidden');
+    } else {
+      trapImgEl.classList.add('hidden');
+    }
 
-    const msg = document.createElement("p");
-    msg.className = "font-bold text-red-700 text-lg";
-    msg.textContent = q.trapMessage?.[currentLanguage] || q.trapMessage?.pt || "TRAP!";
-
-    const img = document.createElement("img");
-    img.src = q.image;
-    img.alt = "Trap image";
-    img.className = "mx-auto mt-4 max-h-64 object-contain";
-
-    wrap.appendChild(msg);
-    wrap.appendChild(img);
-
-    trapContainer.appendChild(wrap);
-
-    // marca como “respondida” ao clicar no botão do menu (não aqui),
-    // mas como é trap, desabilitamos no menu ao voltar:
-    answeredQuestions.add(q.id);
+    questionTextEl.textContent = ''; // sem enunciado
+    optionsContainer.innerHTML = '';  // sem opções
+    // Atualiza menu (para já sumir)
+    renderMenu();
     return;
   }
 
   // Pergunta normal
-  const text = q.q?.[currentLanguage] || q.q?.pt || "";
-  questionText.textContent = text;
+  const title = q.q?.[currentLang] || q.q?.pt || '';
+  questionTextEl.textContent = title;
 
-  // Opções (na língua)
-  const opts = q.options?.[currentLanguage] || q.options?.pt || [];
-  const rationales =
-    q.rationales?.[currentLanguage] || q.rationales?.pt || [];
-  const correctIndex = Number(q.correctIndex ?? -1);
-
+  const opts = q.options?.[currentLang] || q.options?.pt || [];
   opts.forEach((optText, idx) => {
-    const btn = document.createElement("button");
+    const btn = document.createElement('button');
+    btn.className = 'w-full text-left border rounded-lg px-4 py-3 hover:bg-gray-50';
     btn.textContent = optText;
-    btn.className =
-      "answer-button w-full text-left p-4 border border-gray-300 rounded-lg " +
-      "hover:bg-purple-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-purple-500";
-    btn.addEventListener("click", () =>
-      checkAnswer(btn, idx, correctIndex, rationales)
-    );
+
+    btn.addEventListener('click', () => {
+      handleAnswer(q, idx);
+    });
+
     optionsContainer.appendChild(btn);
   });
 }
 
-// --------------------- Checar Resposta ---------------------
-function checkAnswer(selectedBtn, selectedIndex, correctIndex, rationales) {
-  const q = allQuestions[currentQuestionIndex];
-  if (!q) return;
+// Resposta
+function handleAnswer(q, chosenIndex) {
+  const correct = Number(q.correctIndex) === Number(chosenIndex);
+  usedIds.add(q.id); // marca como usada APÓS resposta
+  renderMenu();
 
-  // marca como respondida no menu
-  answeredQuestions.add(q.id);
+  feedbackBox.classList.remove('hidden');
+  feedbackTitle.textContent = correct
+    ? (currentLang === 'en' ? 'Correct!' : 'Correto!')
+    : (currentLang === 'en' ? 'Incorrect. Review the rationale:' : 'Incorreto. Revise a justificativa:');
 
-  // desabilita todas as opções
-  const all = optionsContainer.querySelectorAll(".answer-button");
-  all.forEach((b) => {
-    b.disabled = true;
-    b.classList.remove("hover:bg-purple-50");
+  feedbackList.innerHTML = '';
+  const rats = q.rationales?.[currentLang] || q.rationales?.pt || [];
+  rats.forEach(text => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    feedbackList.appendChild(li);
   });
-
-  // pinta correto/incorreto
-  if (selectedIndex === correctIndex) {
-    selectedBtn.classList.remove("border-gray-300");
-    selectedBtn.classList.add(
-      "bg-green-100",
-      "border-green-500",
-      "text-green-800",
-      "font-semibold"
-    );
-    feedbackContainer.className =
-      "mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500";
-    feedbackTitle.textContent = "Correto!";
-    feedbackTitle.className = "text-lg font-bold text-green-700";
-    feedbackRationale.textContent =
-      rationales?.[correctIndex] || "Boa!";
-  } else {
-    selectedBtn.classList.remove("border-gray-300");
-    selectedBtn.classList.add(
-      "bg-red-100",
-      "border-red-500",
-      "text-red-800",
-      "font-semibold"
-    );
-
-    // destaca a correta
-    const correctBtn = all[correctIndex];
-    if (correctBtn) {
-      correctBtn.classList.add(
-        "bg-green-100",
-        "border-green-500",
-        "text-green-800",
-        "font-semibold"
-      );
-    }
-
-    feedbackContainer.className =
-      "mt-6 p-4 rounded-lg border-l-4 bg-red-50 border-red-500";
-    feedbackTitle.textContent = "Incorreto. Revise a justificativa:";
-    feedbackTitle.className = "text-lg font-bold text-red-700";
-    feedbackRationale.textContent =
-      rationales?.[selectedIndex] || "Veja a alternativa correta destacada.";
-  }
-
-  feedbackContainer.classList.remove("hidden");
 }
