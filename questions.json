@@ -12532,5 +12532,967 @@
         "Incorrect: a report may exist but isn’t the primary method."
       ]
     }
+  },
+  {
+    "id": 411,
+    "q": {
+      "pt": "Qual resolução do Bacen exige que as instituições financeiras implementem uma Política de Cibersegurança?",
+      "en": "Which Bacen resolution requires financial institutions to implement a Cybersecurity Policy?"
+    },
+    "options": {
+      "pt": [
+        "Resolução 4.658/2018",
+        "Resolução 4.970/2021",
+        "Resolução 3.380/2006",
+        "Resolução 4.327/2014"
+      ],
+      "en": [
+        "Resolution 4.658/2018",
+        "Resolution 4.970/2021",
+        "Resolution 3.380/2006",
+        "Resolution 4.327/2014"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a Resolução 4.658/2018 trata da Política de Cibersegurança e requisitos correlatos.",
+        "Incorreto: não é a norma-base para a política de cibersegurança.",
+        "Incorreto: esta resolução é anterior e com outro foco.",
+        "Incorreto: trata de outra temática (socioambiental)."
+      ],
+      "en": [
+        "Correct: Resolution 4.658/2018 establishes Cybersecurity Policy requirements.",
+        "Incorrect: not the base rule for cybersecurity policy.",
+        "Incorrect: older rule with a different scope.",
+        "Incorrect: addresses a different topic (ESG)."
+      ]
+    }
+  },
+  {
+    "id": 412,
+    "q": {
+      "pt": "Qual é a frequência mínima de revisão da Política de Cibersegurança segundo as regras do Bacen?",
+      "en": "What is the minimum frequency for reviewing the Cybersecurity Policy under Bacen rules?"
+    },
+    "options": {
+      "pt": ["Anualmente", "A cada 2 anos", "A cada 5 anos", "Apenas após incidentes"],
+      "en": ["Annually", "Every 2 years", "Every 5 years", "Only after incidents"]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: revisão ao menos anual.",
+        "Incorreto: a exigência mínima é anual.",
+        "Incorreto: revisão muito infrequente.",
+        "Incorreto: revisões não devem depender somente de incidentes."
+      ],
+      "en": [
+        "Correct: at least annually.",
+        "Incorrect: minimum requirement is annual.",
+        "Incorrect: too infrequent.",
+        "Incorrect: reviews must not depend solely on incidents."
+      ]
+    }
+  },
+  {
+    "id": 413,
+    "q": {
+      "pt": "Qual órgão de governança deve aprovar a Política de Cibersegurança da instituição de acordo com o Bacen?",
+      "en": "Which governance body must approve the institution’s Cybersecurity Policy in accordance with BACEN?"
+    },
+    "options": {
+      "pt": [
+        "Conselho de Administração ou Alta Administração",
+        "Apenas a equipe de TI",
+        "Auditor Externo",
+        "Departamento Jurídico"
+      ],
+      "en": [
+        "Board of Directors or Senior Management",
+        "IT Team only",
+        "External Auditor",
+        "Legal Department"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a alta governança (Conselho/Alta Administração) deve aprovar.",
+        "Incorreto: TI pode recomendar, mas não aprova formalmente.",
+        "Incorreto: auditor não aprova políticas internas.",
+        "Incorreto: jurídico apoia, mas não aprova em última instância."
+      ],
+      "en": [
+        "Correct: top governance (Board/Senior Management) approves.",
+        "Incorrect: IT may recommend but doesn’t formally approve.",
+        "Incorrect: auditors don’t approve internal policies.",
+        "Incorrect: Legal supports but isn’t the final approver."
+      ]
+    }
+  },
+  {
+    "id": 414,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 415,
+    "q": {
+      "pt": "Qual controle deve estar em vigor para restringir acessos não autorizados a sistemas de acordo com o Bacen?",
+      "en": "Which control must be in place to restrict unauthorized system access as regulated by BACEN"
+    },
+    "options": {
+      "pt": [
+        "Controles de acesso lógico",
+        "Pesquisas de satisfação de clientes",
+        "Aprovações de marketing",
+        "Procedimentos de RH"
+      ],
+      "en": [
+        "Logical access controls",
+        "Customer surveys",
+        "Marketing approvals",
+        "HR procedures"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: controles de acesso lógico restringem acessos indevidos.",
+        "Incorreto: não controla acesso a sistemas.",
+        "Incorreto: sem relação com controle de acesso.",
+        "Incorreto: processos de RH não atendem esse objetivo."
+      ],
+      "en": [
+        "Correct: logical access controls restrict improper access.",
+        "Incorrect: not related to system access control.",
+        "Incorrect: unrelated to access control.",
+        "Incorrect: HR processes don’t fulfill this control."
+      ]
+    }
+  },
+  {
+    "id": 416,
+    "q": {
+      "pt": "Que tipo de testes o BACEN exige para validar medidas de cibersegurança?",
+      "en": "What type of testing is required by BACEN to validate cybersecurity measures?"
+    },
+    "options": {
+      "pt": [
+        "Testes de intrusão periódicos e avaliações de vulnerabilidade",
+        "Revisões anuais de clientes",
+        "Reconciliações financeiras",
+        "Pesquisas de satisfação de fornecedores"
+      ],
+      "en": [
+        "Periodic penetration tests and vulnerability assessments",
+        "Annual customer reviews",
+        "Financial reconciliations",
+        "Supplier satisfaction surveys"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: testes de intrusão e avaliações de vulnerabilidade são requeridos.",
+        "Incorreto: não valida controles técnicos.",
+        "Incorreto: foco financeiro, não técnico.",
+        "Incorreto: não valida segurança cibernética."
+      ],
+      "en": [
+        "Correct: pen tests and vuln assessments are required.",
+        "Incorrect: doesn’t validate technical controls.",
+        "Incorrect: financial focus, not technical.",
+        "Incorrect: not a cybersecurity validation method."
+      ]
+    }
+  },
+  {
+    "id": 417,
+    "q": {
+      "pt": "Qual requisito do Bacen assegura que fornecedores cumpram padrões de segurança?",
+      "en": "Which Bacen requirement ensures suppliers comply with security standards?"
+    },
+    "options": {
+      "pt": [
+        "Política de gestão de riscos de terceiros",
+        "Escolha livre de fornecedores",
+        "Ausência de due diligence",
+        "Terceirização sem restrições"
+      ],
+      "en": [
+        "Third-party risk management policy",
+        "Free vendor choice",
+        "No vendor due diligence",
+        "Outsourcing without restrictions"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: gestão de risco de terceiros impõe critérios e controles.",
+        "Incorreto: escolha livre não garante conformidade.",
+        "Incorreto: due diligence é essencial.",
+        "Incorreto: há controles e limites à terceirização."
+      ],
+      "en": [
+        "Correct: TPRM policy enforces criteria and controls.",
+        "Incorrect: free choice doesn’t ensure compliance.",
+        "Incorrect: due diligence is essential.",
+        "Incorrect: outsourcing is subject to controls."
+      ]
+    }
+  },
+  {
+    "id": 418,
+    "q": {
+      "pt": "O que é exigido pelo Bacen quando houver terceirização de serviços críticos?",
+      "en": "What is required by BACEN from fintechs when outsourcing critical services?"
+    },
+    "options": {
+      "pt": [
+        "Cláusulas contratuais sobre segurança e auditorias",
+        "Sem requisitos",
+        "Exclusividade de marketing",
+        "Apenas aprovação do cliente"
+      ],
+      "en": [
+        "Contractual clauses on security and audits",
+        "No requirements",
+        "Marketing exclusivity",
+        "Only customer approval"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: contratos devem prever segurança e direitos de auditoria.",
+        "Incorreto: há requisitos formais.",
+        "Incorreto: irrelevante para segurança.",
+        "Incorreto: aprovação do cliente não substitui controles."
+      ],
+      "en": [
+        "Correct: contracts must include security and audit rights.",
+        "Incorrect: there are formal requirements.",
+        "Incorrect: irrelevant to security controls.",
+        "Incorrect: customer approval doesn’t replace controls."
+      ]
+    }
+  },
+  {
+    "id": 419,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 420,
+    "q": {
+      "pt": "Que relatórios as instituições devem enviar ao Bacen sobre incidentes de cibersegurança?",
+      "en": "Which reports must institutions send to Bacen regarding cybersecurity incidents?"
+    },
+    "options": {
+      "pt": [
+        "Relatórios de incidentes significativos",
+        "Apenas falhas de marketing",
+        "Relatórios anuais de RH",
+        "Sem obrigação"
+      ],
+      "en": [
+        "Significant incident reports",
+        "Only marketing failures",
+        "Annual HR reports",
+        "No obligation"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: incidentes relevantes devem ser reportados conforme regras vigentes.",
+        "Incorreto: marketing não se aplica.",
+        "Incorreto: RH não é o foco.",
+        "Incorreto: há obrigação de reporte."
+      ],
+      "en": [
+        "Correct: significant incidents must be reported per rules.",
+        "Incorrect: marketing is not applicable.",
+        "Incorrect: HR reports are unrelated.",
+        "Incorrect: there is a reporting obligation."
+      ]
+    }
+  },
+  {
+    "id": 421,
+    "q": {
+      "pt": "O que as fintechs devem estabelecer para resposta a incidentes segundo o Bacen?",
+      "en": "What must fintechs establish for incident response according to Bacen?"
+    },
+    "options": {
+      "pt": [
+        "Plano de Resposta a Incidentes e de Gestão de Crises",
+        "Apenas ferramentas antivírus",
+        "Backup básico",
+        "Avisos legais (disclaimers)"
+      ],
+      "en": [
+        "Incident Response and Crisis Management Plan",
+        "Only antivirus tools",
+        "Basic backup",
+        "Legal disclaimers"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: é exigido um plano formal de resposta a incidentes e gestão de crises.",
+        "Incorreto: ferramentas isoladas não substituem um plano.",
+        "Incorreto: backup é necessário, mas não suficiente.",
+        "Incorreto: avisos legais não são um plano de resposta."
+      ],
+      "en": [
+        "Correct: a formal incident response and crisis management plan is required.",
+        "Incorrect: tools alone don’t replace a plan.",
+        "Incorrect: backups are needed but insufficient.",
+        "Incorrect: legal disclaimers are not an IR plan."
+      ]
+    }
+  },
+  {
+    "id": 422,
+    "q": {
+      "pt": "Qual framework é requerido pelo Bacen para definir a estrutura de gestão de riscos de TI?",
+      "en": "Which framework is required by Bacen to fintechs use to define their IT risk management structure?"
+    },
+    "options": {
+      "pt": [
+        "Circular Bacen 3.978/2020",
+        "Apenas COSO",
+        "GDPR",
+        "ITIL"
+      ],
+      "en": [
+        "Bacen Circular 3.978/2020",
+        "COSO only",
+        "GDPR",
+        "ITIL"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a Circular 3.978/2020 estabelece diretrizes de gestão de riscos.",
+        "Incorreto: COSO é útil, mas não substitui a diretriz do Bacen.",
+        "Incorreto: GDPR trata de privacidade, não do framework de risco de TI do Bacen.",
+        "Incorreto: ITIL é de serviços de TI, não o framework regulatório exigido."
+      ],
+      "en": [
+        "Correct: Circular 3.978/2020 sets risk management guidelines.",
+        "Incorrect: COSO helps but doesn’t replace Bacen guidance.",
+        "Incorrect: GDPR is privacy-focused, not Bacen’s IT risk framework.",
+        "Incorrect: ITIL is IT service management, not the required framework."
+      ]
+    }
+  },
+  {
+    "id": 423,
+    "q": {
+      "pt": "O que é exigido quanto à continuidade de negócios para serviços de TI segundo o Bacen?",
+      "en": "What is required regarding business continuity for IT services under Bacen rules?"
+    },
+    "options": {
+      "pt": [
+        "Planos de Continuidade de Negócios e Recuperação de Desastres (BCP/DRP)",
+        "Somente backups em nuvem",
+        "Nenhuma exigência formal",
+        "Contratação de seguro"
+      ],
+      "en": [
+        "Business Continuity and Disaster Recovery Plans (BCP/DRP)",
+        "Only cloud backups",
+        "No formal requirements",
+        "Buying insurance"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: requer-se BCP/DRP formais e testados.",
+        "Incorreto: backups isolados não substituem planos.",
+        "Incorreto: há exigências explícitas.",
+        "Incorreto: seguro não substitui capacidade de continuidade."
+      ],
+      "en": [
+        "Correct: formal, tested BCP/DRP are required.",
+        "Incorrect: backups alone don’t replace plans.",
+        "Incorrect: there are explicit requirements.",
+        "Incorrect: insurance doesn’t replace continuity capability."
+      ]
+    }
+  },
+  {
+    "id": 424,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 425,
+    "q": {
+      "pt": "Qual tipo de autenticação é enfatizado nas diretrizes de cibersegurança do Bacen?",
+      "en": "Which type of authentication is emphasized in Bacen cybersecurity guidelines?"
+    },
+    "options": {
+      "pt": [
+        "Autenticação multifator (MFA)",
+        "Senha simples",
+        "Apenas single sign-on (SSO)",
+        "Biometria opcional"
+      ],
+      "en": [
+        "Multi-factor authentication (MFA)",
+        "Simple password",
+        "Single sign-on only",
+        "Optional biometrics"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: MFA eleva a segurança de acesso.",
+        "Incorreto: senhas simples são fracas.",
+        "Incorreto: SSO não substitui MFA.",
+        "Incorreto: biometria pode ajudar, mas a ênfase é em MFA."
+      ],
+      "en": [
+        "Correct: MFA increases access security.",
+        "Incorrect: simple passwords are weak.",
+        "Incorrect: SSO doesn’t replace MFA.",
+        "Incorrect: biometrics can help but emphasis is on MFA."
+      ]
+    }
+  },
+  {
+    "id": 426,
+    "q": {
+      "pt": "O que as fintechs devem manter para registrar e acompanhar incidentes de TI conforme as regras do Bacen?",
+      "en": "What should fintechs maintain to register and track IT incidents following Bacen rules?"
+    },
+    "options": {
+      "pt": [
+        "Registro centralizado de incidentes",
+        "Apenas planilhas Excel",
+        "Relatos verbais",
+        "Tickets de RH"
+      ],
+      "en": [
+        "Centralized incident log",
+        "Excel spreadsheets only",
+        "Verbal reports",
+        "HR tickets"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: um repositório centralizado garante rastreabilidade e análise.",
+        "Incorreto: planilhas isoladas não garantem integridade e trilha de auditoria.",
+        "Incorreto: relatos verbais não são auditáveis.",
+        "Incorreto: RH não é o canal adequado para incidentes de TI."
+      ],
+      "en": [
+        "Correct: centralized logging supports traceability and analysis.",
+        "Incorrect: standalone spreadsheets lack integrity/audit trail.",
+        "Incorrect: verbal reports aren’t auditable.",
+        "Incorrect: HR is not the proper channel for IT incidents."
+      ]
+    }
+  },
+  {
+    "id": 427,
+    "q": {
+      "pt": "Qual é o papel do Responsável por Segurança da Informação segundo o Bacen?",
+      "en": "What is the role of the Information Security Officer under Bacen rules?"
+    },
+    "options": {
+      "pt": [
+        "Coordenar o SGSI e reportar à alta administração",
+        "Aprovar planos de marketing",
+        "Gerenciar contabilidade",
+        "Liderar projetos de RH"
+      ],
+      "en": [
+        "Coordinate ISMS and report to top management",
+        "Approve marketing plans",
+        "Manage accounting",
+        "Lead HR projects"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: coordenação do SGSI e reporte executivo são responsabilidades-chave.",
+        "Incorreto: marketing não é atribuição do RSI.",
+        "Incorreto: contabilidade não é função do RSI.",
+        "Incorreto: RH não é a função do RSI."
+      ],
+      "en": [
+        "Correct: coordinating ISMS and executive reporting are key duties.",
+        "Incorrect: marketing isn’t the ISO’s role.",
+        "Incorrect: accounting isn’t the ISO’s function.",
+        "Incorrect: HR leadership isn’t part of the ISO’s duties."
+      ]
+    }
+  },
+  {
+    "id": 428,
+    "q": {
+      "pt": "Quais políticas devem ser implementadas segundo o Bacen?",
+      "en": "Which policies must fintechs implement according to Bacen?"
+    },
+    "options": {
+      "pt": [
+        "Política de Segurança da Informação e Política de Cibersegurança",
+        "Apenas Política de Marketing",
+        "Apenas Política de RH",
+        "Apenas Política Ambiental"
+      ],
+      "en": [
+        "Information Security Policy and Cybersecurity Policy",
+        "Marketing Policy only",
+        "HR Policy only",
+        "Environmental Policy only"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: ambas são requeridas pelo arcabouço regulatório.",
+        "Incorreto: marketing não cobre segurança.",
+        "Incorreto: RH não substitui políticas de segurança.",
+        "Incorreto: política ambiental é outro tema."
+      ],
+      "en": [
+        "Correct: both are required by the regulatory framework.",
+        "Incorrect: marketing doesn’t cover security.",
+        "Incorrect: HR doesn’t replace security policies.",
+        "Incorrect: environmental policy is unrelated here."
+      ]
+    }
+  },
+  {
+    "id": 429,
+    "q": {
+      "pt": "Qual resolução do Banco Central do Brasil exige a classificação de risco do processamento de dados terceirizado?",
+      "en": "Which Bacen resolution requires risk classification of outsourced data processing?"
+    },
+    "options": {
+      "pt": [
+        "Resolução 4.658/2018",
+        "Resolução 4.970/2021",
+        "Circular 3.681/2013",
+        "Resolução 4.281/2013"
+      ],
+      "en": [
+        "Resolution 4.658/2018",
+        "Resolution 4.970/2021",
+        "Circular 3.681/2013",
+        "Resolution 4.281/2013"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: 4.658/2018 aborda terceirização e classificação de risco.",
+        "Incorreto: não é a base para esse requisito específico.",
+        "Incorreto: trata de outro assunto.",
+        "Incorreto: não cobre essa exigência."
+      ],
+      "en": [
+        "Correct: 4.658/2018 covers outsourcing and risk classification.",
+        "Incorrect: not the basis for this specific requirement.",
+        "Incorrect: addresses a different topic.",
+        "Incorrect: does not cover this requirement."
+      ]
+    }
+  },
+  {
+    "id": 430,
+    "q": {
+      "pt": "O que é exigido quanto ao armazenamento de dados para fintechs?",
+      "en": "What is required regarding data storage for fintechs?"
+    },
+    "options": {
+      "pt": [
+        "Controles adequados para confidencialidade, integridade e disponibilidade",
+        "Sem restrições",
+        "Armazenamento livre no exterior sem salvaguardas",
+        "Apenas backups em papel"
+      ],
+      "en": [
+        "Adequate controls for confidentiality, integrity, and availability",
+        "No restrictions",
+        "Free storage abroad without safeguards",
+        "Paper backups only"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: é necessário assegurar CIA dos dados.",
+        "Incorreto: há requisitos formais.",
+        "Incorreto: armazenamento externo exige salvaguardas.",
+        "Incorreto: não atende às exigências atuais."
+      ],
+      "en": [
+        "Correct: data CIA must be ensured.",
+        "Incorrect: there are formal requirements.",
+        "Incorrect: offshore storage requires safeguards.",
+        "Incorrect: paper-only backups don’t meet requirements."
+      ]
+    }
+  },
+  {
+    "id": 431,
+    "q": {
+      "pt": "O que é exigido quanto às revisões de acesso de usuários nas diretrizes do Bacen?",
+      "en": "What is required regarding user access reviews in Bacen guidelines?"
+    },
+    "options": {
+      "pt": [
+        "Revisões periódicas de acesso",
+        "Concessão de acesso única",
+        "Apenas aprovação verbal",
+        "Nenhuma revisão necessária"
+      ],
+      "en": [
+        "Periodic access reviews",
+        "One-time access granting",
+        "Only verbal approval",
+        "No reviews required"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: revisões periódicas ajudam a manter acessos adequados.",
+        "Incorreto: concessões únicas não garantem manutenção segura.",
+        "Incorreto: aprovação verbal não atende aos requisitos.",
+        "Incorreto: revisões são obrigatórias."
+      ],
+      "en": [
+        "Correct: periodic reviews ensure proper access.",
+        "Incorrect: one-time granting doesn’t ensure ongoing security.",
+        "Incorrect: verbal approval isn’t compliant.",
+        "Incorrect: reviews are mandatory."
+      ]
+    }
+  },
+  {
+    "id": 432,
+    "q": {
+      "pt": "Quais controles de monitoramento as fintechs devem aplicar segundo a regulação do Bacen?",
+      "en": "Which monitoring controls must fintechs apply under Bacen regulation?"
+    },
+    "options": {
+      "pt": [
+        "Monitoramento contínuo de redes e sistemas",
+        "Análises anuais de índices financeiros",
+        "Pesquisas diárias de RH",
+        "Compliance de marketing de fornecedores"
+      ],
+      "en": [
+        "Continuous monitoring of networks and systems",
+        "Annual financial ratio analysis",
+        "Daily HR surveys",
+        "Vendor marketing compliance"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: monitoramento contínuo é requisito central.",
+        "Incorreto: índices financeiros não substituem controles técnicos.",
+        "Incorreto: pesquisas de RH não têm relação com cibersegurança.",
+        "Incorreto: compliance de marketing não é foco regulatório."
+      ],
+      "en": [
+        "Correct: continuous monitoring is a core requirement.",
+        "Incorrect: financial ratios don’t replace security controls.",
+        "Incorrect: HR surveys are unrelated.",
+        "Incorrect: vendor marketing compliance isn’t the focus."
+      ]
+    }
+  },
+  {
+    "id": 433,
+    "q": {
+      "pt": "Que tipo de treinamento as fintechs devem fornecer aos funcionários em segurança?",
+      "en": "What type of training must fintechs provide employees regarding security?"
+    },
+    "options": {
+      "pt": [
+        "Treinamentos regulares de conscientização e cibersegurança",
+        "Treinamento apenas no onboarding",
+        "Treinamento apenas de marketing",
+        "Workshops opcionais de RH"
+      ],
+      "en": [
+        "Regular awareness and cybersecurity training",
+        "Only onboarding training",
+        "Marketing-only training",
+        "Optional HR workshops"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a capacitação contínua é exigida pelo Bacen.",
+        "Incorreto: apenas onboarding não é suficiente.",
+        "Incorreto: marketing não atende aos requisitos.",
+        "Incorreto: não pode ser opcional."
+      ],
+      "en": [
+        "Correct: continuous awareness training is required.",
+        "Incorrect: onboarding alone isn’t enough.",
+        "Incorrect: marketing training isn’t applicable.",
+        "Incorrect: it cannot be optional."
+      ]
+    }
+  },
+  {
+    "id": 434,
+    "q": {
+      "pt": "Qual diretriz do Bacen exige alinhamento do apetite de risco de TI à estratégia de negócios?",
+      "en": "Which Bacen guideline requires alignment of IT risk appetite with business strategy?"
+    },
+    "options": {
+      "pt": [
+        "Risk Appetite Framework (RAF)",
+        "Programa de Satisfação de Clientes",
+        "Programa de Conformidade Tributária",
+        "Plano Estratégico de RH"
+      ],
+      "en": [
+        "Risk Appetite Framework (RAF)",
+        "Customer Satisfaction Program",
+        "Tax Compliance Program",
+        "HR Strategy Plan"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o RAF garante alinhamento entre risco e estratégia.",
+        "Incorreto: satisfação de clientes não substitui RAF.",
+        "Incorreto: conformidade tributária não cobre riscos de TI.",
+        "Incorreto: RH não trata de apetite de risco tecnológico."
+      ],
+      "en": [
+        "Correct: RAF aligns risk appetite with business strategy.",
+        "Incorrect: customer satisfaction doesn’t replace RAF.",
+        "Incorrect: tax compliance doesn’t cover IT risk.",
+        "Incorrect: HR strategy isn’t about IT risk appetite."
+      ]
+    }
+  },
+  {
+    "id": 435,
+    "trap": "phishing",
+    "image": "./images/phishing.jpg",
+    "trapMessage": {
+      "pt": "VOCÊ CAIU NA ARMADILHA! ESSA QUESTÃO É UMA TRAP!",
+      "en": "YOU FELL INTO THE TRAP! THIS QUESTION IS A TRAP!"
+    }
+  },
+  {
+    "id": 436,
+    "q": {
+      "pt": "O que é exigido para o gerenciamento de chaves criptográficas?",
+      "en": "What is required for cryptographic key management?"
+    },
+    "options": {
+      "pt": [
+        "Políticas e procedimentos para todo o ciclo de vida da chave",
+        "Nenhum requisito",
+        "Gestão ad-hoc",
+        "Apenas gestão pelo fornecedor"
+      ],
+      "en": [
+        "Policies and procedures for key lifecycle",
+        "No requirements",
+        "Ad-hoc management",
+        "Vendor-managed only"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: é necessário cobrir o ciclo de vida completo das chaves.",
+        "Incorreto: há exigências explícitas.",
+        "Incorreto: gestão ad-hoc não é segura.",
+        "Incorreto: delegar apenas ao fornecedor não cumpre exigências."
+      ],
+      "en": [
+        "Correct: full key lifecycle management is required.",
+        "Incorrect: there are explicit requirements.",
+        "Incorrect: ad-hoc management isn’t secure.",
+        "Incorrect: vendor-only doesn’t meet requirements."
+      ]
+    }
+  },
+  {
+    "id": 437,
+    "q": {
+      "pt": "Qual resolução do Bacen exige avaliar o impacto de incidentes cibernéticos nos clientes?",
+      "en": "Which Bacen rule requires institutions to evaluate the impact of cyber incidents on customers?"
+    },
+    "options": {
+      "pt": [
+        "Resolução 4.658/2018",
+        "Resolução 4.327/2014",
+        "Circular 3.223/2006",
+        "Resolução 3.380/2006"
+      ],
+      "en": [
+        "Resolution 4.658/2018",
+        "Resolution 4.327/2014",
+        "Circular 3.223/2006",
+        "Resolution 3.380/2006"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: a 4.658/2018 trata explicitamente de impactos aos clientes.",
+        "Incorreto: não é o foco da 4.327/2014.",
+        "Incorreto: a circular não cobre este ponto.",
+        "Incorreto: a 3.380/2006 não trata de impactos cibernéticos."
+      ],
+      "en": [
+        "Correct: 4.658/2018 explicitly addresses customer impacts.",
+        "Incorrect: 4.327/2014 doesn’t focus on this.",
+        "Incorrect: the circular doesn’t cover it.",
+        "Incorrect: 3.380/2006 doesn’t apply."
+      ]
+    }
+  },
+  {
+    "id": 438,
+    "q": {
+      "pt": "Qual processo garante que fintechs possam se recuperar de ataques cibernéticos?",
+      "en": "Which process ensures fintechs can recover from cyberattacks?"
+    },
+    "options": {
+      "pt": [
+        "Plano de Recuperação de Desastres (DRP)",
+        "Backup de RH",
+        "Campanha de clientes",
+        "Revisão contábil"
+      ],
+      "en": [
+        "Disaster Recovery Plan (DRP)",
+        "HR Backup",
+        "Customer Campaign",
+        "Accounting Review"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: o DRP assegura recuperação após incidentes.",
+        "Incorreto: RH não substitui DRP.",
+        "Incorreto: campanhas não recuperam sistemas.",
+        "Incorreto: revisão contábil não aborda continuidade."
+      ],
+      "en": [
+        "Correct: DRP ensures recovery after incidents.",
+        "Incorrect: HR doesn’t replace DRP.",
+        "Incorrect: campaigns don’t restore systems.",
+        "Incorrect: accounting review isn’t continuity planning."
+      ]
+    }
+  },
+  {
+    "id": 439,
+    "q": {
+      "pt": "O que é exigido para logging e auditoria segundo as regras do Bacen?",
+      "en": "What is required for logging and auditing under Bacen rules?"
+    },
+    "options": {
+      "pt": [
+        "Logs centralizados e à prova de adulteração",
+        "Apenas anotações manuais",
+        "Planilhas de RH",
+        "Rastreamento opcional"
+      ],
+      "en": [
+        "Centralized, tamper-proof logs",
+        "Only manual notes",
+        "HR spreadsheets",
+        "Optional tracking"
+      ]
+    },
+    "correctIndex": 0,
+    "rationales": {
+      "pt": [
+        "Correto: logs centralizados e imutáveis são obrigatórios.",
+        "Incorreto: anotações manuais não atendem requisitos.",
+        "Incorreto: planilhas de RH não são adequadas.",
+        "Incorreto: rastreamento não pode ser opcional."
+      ],
+      "en": [
+        "Correct: centralized, tamper-proof logs are mandatory.",
+        "Incorrect: manual notes don’t comply.",
+        "Incorrect: HR spreadsheets aren’t suitable.",
+        "Incorrect: tracking cannot be optional."
+      ]
+    }
+  },
+  {
+  "id": 440,
+  "q": {
+    "pt": "Quem é o CISO do Nubank no Brasil para temas do Bacen?",
+    "en": "Who is the CISO of Nubank in Brazil for Bacen matters?"
+  },
+  "options": {
+    "pt": [
+      "Dave Hannigan",
+      "Rodrigo Santos",
+      "Gabriela Gopfert",
+      "Paula Papis"
+    ],
+    "en": [
+      "Dave Hannigan",
+      "Rodrigo Santos",
+      "Gabriela Gopfert",
+      "Paula Papis"
+    ]
+  },
+  "correctIndex": 1,
+  "rationales": {
+    "pt": [
+      "Incorreto: o Dave é o CISO Global do Nubank",
+      "Correto: Rodrigo Santos é o CISO no Brasil.",
+      "Incorreto: Gabriela Gopfert é Manager de Governance e Compliance",
+      "Incorreto: Paula Papis é Senior Manager de GRC & BSEC."
+    ],
+    "en": [
+      "Incorrect: Dave is the Global CISO of Nubank.",
+      "Correct: Rodrigo Santos is the CISO in Brazil.",
+      "Incorrect: Gabriela Gopfert is a Governance and Compliance Manager.",
+      "Incorrect: Paula Papis is Senior Manager of GRC & BSEC."
+      ]
+    }
   }
 ]
