@@ -13482,17 +13482,17 @@
   "correctIndex": 1,
   "rationales": {
     "pt": [
-      "Incorreto: o Dave é o CISO Global do Nubank",
-      "Correto: Rodrigo Santos é o CISO no Brasil.",
-      "Incorreto: Gabriela Gopfert é Manager de Governance e Compliance",
-      "Incorreto: Paula Papis é Senior Manager de GRC & BSEC."
+      "Dave Hannigan: Incorreto, ele é o CISO Global do Nubank.",
+      "Rodrigo Santos: Correto, ele é o CISO no Brasil para temas do Bacen.",
+      "Gabriela Gopfert: Incorreto, ela é Manager de Governance e Compliance.",
+      "Paula Papis: Incorreto, ela é Senior Manager de GRC & BSEC."
     ],
     "en": [
-      "Incorrect: Dave is the Global CISO of Nubank.",
-      "Correct: Rodrigo Santos is the CISO in Brazil.",
-      "Incorrect: Gabriela Gopfert is a Governance and Compliance Manager.",
-      "Incorrect: Paula Papis is Senior Manager of GRC & BSEC."
-      ]
-    }
+      "Dave Hannigan: Incorrect, he is the Global CISO of Nubank.",
+      "Rodrigo Santos: Correct, he is the CISO in Brazil for Bacen matters.",
+      "Gabriela Gopfert: Incorrect, she is a Governance and Compliance Manager.",
+      "Paula Papis: Incorrect, she is Senior Manager of GRC & BSEC."
+    ]
   }
+}
 ]
