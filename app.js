@@ -86,7 +86,8 @@ function buildMenu() {
         btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
         btn.disabled = true;
       } else {
-        btn.classList.add('bg-blue-500', 'text-white', 'hover:bg-blue-600', 'focus:ring-blue-300');
+        // Ajuste de cor do menu fica à sua escolha (roxos/azuis etc.)
+        btn.classList.add('bg-purple-500', 'text-white', 'hover:bg-purple-600', 'focus:ring-purple-300');
         btn.disabled = false;
         btn.onclick = () => loadQuestion(i);
       }
@@ -197,7 +198,7 @@ function renderTrap(qObj) {
   }
 }
 
-// === Renderiza pergunta normal (corrigido para comparar por TEXTO) ===
+// === Renderiza pergunta normal (sem embaralhar; valida por TEXTO) ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
@@ -212,14 +213,14 @@ function renderQuestion(qObj) {
   const rats = getRationalesArray(qObj, currentLang);
   const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
 
-  // Fonte de verdade baseada em TEXTO
+  // Fonte de verdade baseada em TEXTO (mantendo ordem original do JSON)
   const correctText = (correctIndex >= 0 && correctIndex < opts.length) ? opts[correctIndex] : '';
   const correctRationale = (correctIndex >= 0 && correctIndex < rats.length) ? rats[correctIndex] : '';
 
-  // Embaralhar apenas os TEXTOS das opções
-  const shuffledTexts = opts.slice().sort(() => Math.random() - 0.5);
+  // NÃO embaralha: usa a ordem do JSON
+  const orderedTexts = opts.slice();
 
-  shuffledTexts.forEach((text) => {
+  orderedTexts.forEach((text) => {
     const button = document.createElement('button');
     button.textContent = text;
     button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
@@ -228,7 +229,7 @@ function renderQuestion(qObj) {
   });
 }
 
-// === Verifica resposta por TEXTO (robusto a embaralhamento) ===
+// === Verifica resposta por TEXTO (robusto; sem dependência de índice) ===
 function checkAnswerByText(selectedButton, selectedText, ctx) {
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
