@@ -197,7 +197,7 @@ function renderTrap(qObj) {
   }
 }
 
-// === Renderiza pergunta normal ===
+// === Renderiza pergunta normal (corrigido para comparar por TEXTO) ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
@@ -212,30 +212,35 @@ function renderQuestion(qObj) {
   const rats = getRationalesArray(qObj, currentLang);
   const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
 
-  const shuffled = opts.map((t, i) => ({ text: t, idx: i }))
-    .sort(() => Math.random() - 0.5);
+  // Fonte de verdade baseada em TEXTO
+  const correctText = (correctIndex >= 0 && correctIndex < opts.length) ? opts[correctIndex] : '';
+  const correctRationale = (correctIndex >= 0 && correctIndex < rats.length) ? rats[correctIndex] : '';
 
-  shuffled.forEach(({ text, idx }) => {
+  // Embaralhar apenas os TEXTOS das opções
+  const shuffledTexts = opts.slice().sort(() => Math.random() - 0.5);
+
+  shuffledTexts.forEach((text) => {
     const button = document.createElement('button');
     button.textContent = text;
     button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
-    button.onclick = () => checkAnswer(button, idx, { correctIndex, rats, opts });
+    button.onclick = () => checkAnswerByText(button, text, { correctText, correctRationale });
     optionsContainer.appendChild(button);
   });
 }
 
-// === Verifica resposta ===
-function checkAnswer(selectedButton, selectedIdx, ctx) {
+// === Verifica resposta por TEXTO (robusto a embaralhamento) ===
+function checkAnswerByText(selectedButton, selectedText, ctx) {
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
   }
 
-  document.querySelectorAll('.answer-button').forEach(btn => {
+  const allButtons = document.querySelectorAll('.answer-button');
+  allButtons.forEach(btn => {
     btn.disabled = true;
     btn.classList.remove('hover:bg-blue-50');
   });
 
-  const isCorrect = selectedIdx === ctx.correctIndex;
+  const isCorrect = selectedText === ctx.correctText;
 
   if (isCorrect) {
     selectedButton.classList.remove('border-gray-300');
@@ -247,9 +252,9 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
 
-    const correctText = ctx.opts[ctx.correctIndex];
-    document.querySelectorAll('.answer-button').forEach(btn => {
-      if (btn.textContent === correctText) {
+    // Destacar a correta PELO TEXTO
+    allButtons.forEach(btn => {
+      if (btn.textContent === ctx.correctText) {
         btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
       }
     });
@@ -261,8 +266,7 @@ function checkAnswer(selectedButton, selectedIdx, ctx) {
     feedbackTitle.className = 'text-lg font-bold text-red-700';
   }
 
-  const rationale = ctx.rats[ctx.correctIndex] || '';
-  feedbackRationale.textContent = rationale;
+  feedbackRationale.textContent = ctx.correctRationale || '';
   feedbackContainer.classList.remove('hidden');
 }
 
