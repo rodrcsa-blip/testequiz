@@ -26,15 +26,25 @@
         <p id="header-subtitle" class="mt-2 text-md text-gray-500">Por favor, faça o login para começar.</p>
       </div>
 
-      <!-- Coluna direita: botão sair (topo) e idioma (abaixo) -->
+      <!-- Coluna direita: reset/sair (topo) e idioma (abaixo) -->
       <div class="flex flex-col items-end gap-3 w-full md:w-auto">
-        <button
-          id="logout-button"
-          class="hidden px-4 py-2 bg-gray-100 text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-200 transition"
-          title="Encerrar sessão"
-        >
-          Sair
-        </button>
+        <div class="flex items-center gap-2">
+          <button
+            id="reset-button"
+            class="hidden px-4 py-2 bg-red-100 text-red-700 rounded-lg border border-red-300 hover:bg-red-200 transition"
+            title="Liberar todas as perguntas novamente"
+          >
+            Resetar Quiz
+          </button>
+
+          <button
+            id="logout-button"
+            class="hidden px-4 py-2 bg-gray-100 text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-200 transition"
+            title="Encerrar sessão"
+          >
+            Sair
+          </button>
+        </div>
 
         <div class="flex items-center justify-end gap-2">
           <label for="global-lang" class="text-sm text-gray-600">Idioma:</label>
@@ -60,7 +70,7 @@
               <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
               <input type="password" id="password" class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm" placeholder="••••••••">
             </div>
-            <p id="login-error" class="text-red-500 text-sm hidden text-center">Por favor, insira um nome de usuário.</p>
+            <p id="login-error" class="text-red-500 text-sm hidden text-center">Por favor, verifique os campos.</p>
             <button id="login-button" class="w-full py-3 bg-purple-500 text-white font-semibold rounded-lg shadow-md hover:bg-purple-600 transition duration-150">
               Entrar
             </button>
