@@ -1,9 +1,9 @@
 // === Estado global ===
 let currentLang = 'pt'; // 'pt' | 'en'
-let allQuestions = [];        // array carregado do questions.json
-let questionByIndex = [];     // array 0..449 com perguntas ou null
-let answeredSet = new Set();  // índices 0-based respondidos
-let disabledIndices = new Set(); // traps clicadas/itens removidos do menu
+let allQuestions = [];
+let questionByIndex = [];
+let answeredSet = new Set();
+let disabledIndices = new Set();
 let currentQuestionIndex = -1;
 
 // === Credenciais fixas (usuário único) ===
@@ -33,6 +33,7 @@ const feedbackTitle = document.getElementById('feedback-title');
 const feedbackRationale = document.getElementById('feedback-rationale');
 
 const questionNumberEl = document.getElementById('question-number');
+const logoutButton = document.getElementById('logout-button');
 
 const loadErrorEl = document.getElementById('load-error');
 
@@ -40,15 +41,10 @@ const loadErrorEl = document.getElementById('load-error');
 function storageKeyForUser(username) {
   return `quizProgress:${username}`;
 }
-
 function saveProgress(username, answeredIdsArray) {
-  try {
-    localStorage.setItem(storageKeyForUser(username), JSON.stringify(answeredIdsArray));
-  } catch (e) {
-    console.warn('Falha ao salvar progresso:', e);
-  }
+  try { localStorage.setItem(storageKeyForUser(username), JSON.stringify(answeredIdsArray)); }
+  catch (e) { console.warn('Falha ao salvar progresso:', e); }
 }
-
 function loadProgress(username) {
   try {
     const raw = localStorage.getItem(storageKeyForUser(username));
@@ -61,40 +57,25 @@ function loadProgress(username) {
   }
 }
 
-function clearProgress(username) {
-  try {
-    localStorage.removeItem(storageKeyForUser(username));
-  } catch (e) {
-    console.warn('Falha ao limpar progresso:', e);
-  }
-}
-
 // === Utilidades ===
 function getDisplayText(obj, lang) {
   if (!obj) return '';
   if (typeof obj === 'string') return obj;
-  if (typeof obj === 'object') {
-    return obj[lang] ?? obj['pt'] ?? '';
-  }
+  if (typeof obj === 'object') return obj[lang] ?? obj['pt'] ?? '';
   return '';
 }
-
 function getOptionsArray(questionObj, lang) {
   if (!questionObj || !questionObj.options) return [];
-  const opts = Array.isArray(questionObj.options)
+  return Array.isArray(questionObj.options)
     ? questionObj.options
     : questionObj.options[lang] || questionObj.options['pt'] || [];
-  return opts;
 }
-
 function getRationalesArray(questionObj, lang) {
   if (!questionObj || !questionObj.rationales) return [];
-  const rats = Array.isArray(questionObj.rationales)
+  return Array.isArray(questionObj.rationales)
     ? questionObj.rationales
     : questionObj.rationales[lang] || questionObj.rationales['pt'] || [];
-  return rats;
 }
-
 function isTrap(questionObj) {
   return questionObj && questionObj.trap === 'phishing';
 }
@@ -118,22 +99,20 @@ function buildMenu() {
     if (!qObj || isDisabled) {
       btn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
       btn.disabled = true;
+    } else if (isAnswered) {
+      btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
+      btn.disabled = true;
     } else {
-      if (isAnswered) {
-        btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
-        btn.disabled = true;
-      } else {
-        // Cor do menu (roxo) conforme ajuste anterior
-        btn.classList.add('bg-purple-500', 'text-white', 'hover:bg-purple-600', 'focus:ring-purple-300');
-        btn.disabled = false;
-        btn.onclick = () => loadQuestion(i);
-      }
+      btn.classList.add('bg-purple-500', 'text-white', 'hover:bg-purple-600', 'focus:ring-purple-300');
+      btn.disabled = false;
+      btn.onclick = () => loadQuestion(i);
     }
+
     menuOptions.appendChild(btn);
   }
 }
 
-// === Login (com usuário único e recuperação do progresso) ===
+// === Login (usuário único + restauração de progresso) ===
 function handleLogin() {
   const username = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value.trim();
@@ -145,12 +124,11 @@ function handleLogin() {
   }
 
   if (username === VALID_USER && password === VALID_PASS) {
-    // Salva usuário logado para sessão persistente
     localStorage.setItem("loggedUser", username);
 
-    // Recarrega progresso salvo (IDs → índices)
+    // Restaura progresso salvo (IDs → índices)
     answeredSet = new Set();
-    const answeredIds = loadProgress(username); // ex.: [1, 3, 10]
+    const answeredIds = loadProgress(username);
     for (const id of answeredIds) {
       const idx = id - 1;
       if (idx >= 0 && idx < questionByIndex.length && questionByIndex[idx]) {
@@ -158,8 +136,14 @@ function handleLogin() {
       }
     }
 
+    // Mensagem solicitada
+    headerSubtitle.textContent =
+      "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
+
+    // Exibe botão Sair
+    logoutButton.classList.remove('hidden');
+
     loginPage.classList.add('hidden');
-    headerSubtitle.textContent = `Bem-vindo, ${username}! Selecione uma pergunta.`;
     showStartPage();
     loginError.classList.add('hidden');
   } else {
@@ -168,16 +152,18 @@ function handleLogin() {
   }
 }
 
-// (Opcional) Logout – mantém aqui para uso futuro se desejar expor um botão "Sair"
+// === Logout (não apaga progresso; apenas encerra sessão) ===
 function handleLogout() {
   const username = localStorage.getItem("loggedUser");
-  // Se quiser apagar também o progresso, descomente:
-  // if (username) clearProgress(username);
-
+  // Não limpar progresso para manter respostas ao relogar
   localStorage.removeItem("loggedUser");
+
   answeredSet = new Set();
   disabledIndices = new Set();
 
+  // Volta ao login e oculta botão Sair
+  logoutButton.classList.add('hidden');
+  headerSubtitle.textContent = "Por favor, faça o login para começar.";
   loginPage.classList.remove('hidden');
   startPage.classList.add('hidden');
   quizArea.classList.add('hidden');
@@ -192,13 +178,12 @@ function showStartPage() {
   currentQuestionIndex = -1;
   buildMenu();
 }
-
 function showQuizArea() {
   startPage.classList.add('hidden');
   quizArea.classList.remove('hidden');
 }
 
-// === Carregamento de perguntas (questions.json) ===
+// === Carregamento de perguntas ===
 async function loadQuestions() {
   try {
     const resp = await fetch('questions.json', { cache: 'no-store' });
@@ -247,7 +232,7 @@ function loadQuestion(index) {
   renderQuestion(qObj);
 }
 
-// === Renderiza TRAP (phishing) ===
+// === Renderiza TRAP ===
 function renderTrap(qObj) {
   questionText.textContent = '';
   optionsContainer.innerHTML = '';
@@ -258,11 +243,9 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
-  // Texto vermelho destacado
   questionText.textContent = msg;
   questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
-  // Imagem centralizada
   if (qObj.image) {
     const img = document.createElement('img');
     img.src = qObj.image;
@@ -287,19 +270,15 @@ function renderQuestion(qObj) {
   const rats = getRationalesArray(qObj, currentLang);
   const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
 
-  // Fonte de verdade baseada em TEXTO (ordem original do JSON)
   const correctText = (correctIndex >= 0 && correctIndex < opts.length) ? opts[correctIndex] : '';
   const correctRationale = (correctIndex >= 0 && correctIndex < rats.length) ? rats[correctIndex] : '';
 
-  // Mapa texto -> justificativa correspondente (para exibir a do item ESCOLHIDO quando errar)
   const rationaleMap = new Map();
   for (let i = 0; i < opts.length; i++) {
     rationaleMap.set(opts[i], rats[i] || '');
   }
 
-  // NÃO embaralha: usa a ordem do JSON
   const orderedTexts = opts.slice();
-
   orderedTexts.forEach((text) => {
     const button = document.createElement('button');
     button.textContent = text;
@@ -329,13 +308,11 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
     feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
     feedbackTitle.textContent = (currentLang === 'en') ? 'Correct!' : 'Correto!';
     feedbackTitle.className = 'text-lg font-bold text-green-700';
-    // justificativa da ALTERNATIVA CORRETA
     feedbackRationale.textContent = ctx.correctRationale || '';
   } else {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
 
-    // Destacar a correta PELO TEXTO
     allButtons.forEach(btn => {
       if (btn.textContent === ctx.correctText) {
         btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
@@ -347,15 +324,14 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
       ? 'Incorrect. Review the rationale:'
       : 'Incorreto. Revise a justificativa:';
     feedbackTitle.className = 'text-lg font-bold text-red-700';
-    // justificativa da ALTERNATIVA ESCOLHIDA (por texto)
+
     const chosenRationale = ctx.rationaleMap.get(selectedText) || '';
     feedbackRationale.textContent = chosenRationale;
   }
 
-  // >>> SALVAR PROGRESSO <<<
+  // Salvar progresso
   const username = localStorage.getItem("loggedUser");
   if (username) {
-    // converte answeredSet (de índices) para IDs 1..450 e ordena
     const answeredIds = Array.from(answeredSet)
       .map(idx => {
         const qObj = questionByIndex[idx];
@@ -368,9 +344,10 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
   feedbackContainer.classList.remove('hidden');
 }
 
-// === Navegação e idioma ===
+// === Eventos / idioma ===
 function wireEvents() {
   loginButton.addEventListener('click', handleLogin);
+  logoutButton.addEventListener('click', handleLogout);
 
   backTopBtn.addEventListener('click', () => showStartPage());
   backBottomBtn.addEventListener('click', () => showStartPage());
@@ -398,10 +375,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
   } finally {
-    // Se já houver usuário logado previamente, pula o login e restaura progresso
     const savedUser = localStorage.getItem("loggedUser");
     if (savedUser === VALID_USER) {
-      // Restaura progresso do usuário salvo
+      // Restaura progresso e mostra a mensagem solicitada
       answeredSet = new Set();
       const answeredIds = loadProgress(savedUser);
       for (const id of answeredIds) {
@@ -410,11 +386,17 @@ document.addEventListener('DOMContentLoaded', async () => {
           answeredSet.add(idx);
         }
       }
+      headerSubtitle.textContent =
+        "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
+      logoutButton.classList.remove('hidden');
+
       loginPage.classList.add('hidden');
-      headerSubtitle.textContent = `Bem-vindo de volta, ${savedUser}!`;
       showStartPage();
     } else {
       // Fluxo normal de login
+      headerSubtitle.textContent = "Por favor, faça o login para começar.";
+      logoutButton.classList.add('hidden');
+
       loginPage.classList.remove('hidden');
       startPage.classList.add('hidden');
       quizArea.classList.add('hidden');
