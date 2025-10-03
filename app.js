@@ -6,9 +6,11 @@ let answeredSet = new Set();
 let disabledIndices = new Set();
 let currentQuestionIndex = -1;
 
-// === Credenciais fixas (usuário único) ===
-const VALID_USER = "pescariagrc";
-const VALID_PASS = "Governanca01!";
+// === Usuários (normais e master) ===
+const USERS = {
+  "pescariagrc": "Governanca01!",       // usuário normal (progresso salvo)
+  "bombeiro": "salvesequempuder01!"     // usuário master (não grava progresso, sempre libera tudo)
+};
 
 // === Referências de elementos ===
 const loginPage = document.getElementById('login-page');
@@ -85,6 +87,8 @@ function isTrap(questionObj) {
 function buildMenu() {
   menuOptions.innerHTML = '';
   const TOTAL = 450;
+  const username = localStorage.getItem("loggedUser");
+  const isMaster = username === "bombeiro";
 
   for (let i = 0; i < TOTAL; i++) {
     const btn = document.createElement('button');
@@ -100,7 +104,7 @@ function buildMenu() {
     if (!qObj || isDisabled) {
       btn.classList.add('bg-gray-200', 'text-gray-500', 'cursor-not-allowed', 'shadow-inner');
       btn.disabled = true;
-    } else if (isAnswered) {
+    } else if (!isMaster && isAnswered) {
       btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
       btn.disabled = true;
     } else {
@@ -113,7 +117,7 @@ function buildMenu() {
   }
 }
 
-// === Login (usuário único + restauração de progresso) ===
+// === Login (usuário normal vs master) ===
 function handleLogin() {
   const username = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value.trim();
@@ -124,24 +128,26 @@ function handleLogin() {
     return;
   }
 
-  if (username === VALID_USER && password === VALID_PASS) {
+  if (USERS[username] && USERS[username] === password) {
     localStorage.setItem("loggedUser", username);
 
-    // Restaura progresso salvo (IDs → índices)
     answeredSet = new Set();
-    const answeredIds = loadProgress(username);
-    for (const id of answeredIds) {
-      const idx = id - 1;
-      if (idx >= 0 && idx < questionByIndex.length && questionByIndex[idx]) {
-        answeredSet.add(idx);
+    disabledIndices = new Set();
+
+    // Apenas usuários normais carregam progresso
+    if (username !== "bombeiro") {
+      const answeredIds = loadProgress(username);
+      for (const id of answeredIds) {
+        const idx = id - 1;
+        if (idx >= 0 && idx < questionByIndex.length && questionByIndex[idx]) {
+          answeredSet.add(idx);
+        }
       }
     }
 
-    // Mensagem solicitada
     headerSubtitle.textContent =
       "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
 
-    // Exibe botões Resetar e Sair
     resetButton.classList.remove('hidden');
     logoutButton.classList.remove('hidden');
 
@@ -154,14 +160,13 @@ function handleLogin() {
   }
 }
 
-// === Logout (não apaga progresso; apenas encerra sessão) ===
+// === Logout (não apaga progresso, só encerra sessão) ===
 function handleLogout() {
   localStorage.removeItem("loggedUser");
 
   answeredSet = new Set();
   disabledIndices = new Set();
 
-  // Volta ao login e oculta botões
   resetButton.classList.add('hidden');
   logoutButton.classList.add('hidden');
   headerSubtitle.textContent = "Por favor, faça o login para começar.";
@@ -173,19 +178,16 @@ function handleLogout() {
 // === Resetar progresso do usuário atual (com confirmação) ===
 function resetProgress() {
   const username = localStorage.getItem("loggedUser");
-  if (!username) return;
+  if (!username || username === "bombeiro") return;
 
   const confirmReset = confirm("Tem certeza que deseja resetar todas as questões respondidas?");
   if (!confirmReset) return;
 
-  // Remove progresso salvo
   localStorage.removeItem(storageKeyForUser(username));
 
-  // Zera memória atual
   answeredSet = new Set();
   disabledIndices = new Set();
 
-  // Reconstrói menu liberando tudo
   buildMenu();
   feedbackContainer.classList.add('hidden');
 }
@@ -276,7 +278,7 @@ function renderTrap(qObj) {
   }
 }
 
-// === Renderiza pergunta normal (ordem do JSON; valida por TEXTO; rationale correto/selecionado) ===
+// === Renderiza pergunta normal ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
@@ -309,7 +311,7 @@ function renderQuestion(qObj) {
   });
 }
 
-// === Verifica resposta por TEXTO (exibe rationale do correto se acertar; do escolhido se errar) ===
+// === Verifica resposta ===
 function checkAnswerByText(selectedButton, selectedText, ctx) {
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
@@ -324,35 +326,30 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
   const isCorrect = selectedText === ctx.correctText;
 
   if (isCorrect) {
-    selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
     feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
     feedbackTitle.textContent = (currentLang === 'en') ? 'Correct!' : 'Correto!';
     feedbackTitle.className = 'text-lg font-bold text-green-700';
     feedbackRationale.textContent = ctx.correctRationale || '';
   } else {
-    selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
-
     allButtons.forEach(btn => {
       if (btn.textContent === ctx.correctText) {
         btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-semibold');
       }
     });
-
     feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-red-50 border-red-500';
     feedbackTitle.textContent = (currentLang === 'en')
       ? 'Incorrect. Review the rationale:'
       : 'Incorreto. Revise a justificativa:';
     feedbackTitle.className = 'text-lg font-bold text-red-700';
-
     const chosenRationale = ctx.rationaleMap.get(selectedText) || '';
     feedbackRationale.textContent = chosenRationale;
   }
 
-  // Salvar progresso
+  // Salvar progresso (exceto master)
   const username = localStorage.getItem("loggedUser");
-  if (username) {
+  if (username && username !== "bombeiro") {
     const answeredIds = Array.from(answeredSet)
       .map(idx => {
         const qObj = questionByIndex[idx];
@@ -376,16 +373,13 @@ function wireEvents() {
 
   globalLangSel.addEventListener('change', (e) => {
     currentLang = e.target.value;
-
     if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
       const qObj = questionByIndex[currentQuestionIndex];
       if (qObj) {
         const displayId = (typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
-        if (questionNumberEl) {
-          questionNumberEl.textContent = (currentLang === 'en')
-            ? `Question ${displayId}`
-            : `Pergunta ${displayId}`;
-        }
+        questionNumberEl.textContent = (currentLang === 'en')
+          ? `Question ${displayId}`
+          : `Pergunta ${displayId}`;
         isTrap(qObj) ? renderTrap(qObj) : renderQuestion(qObj);
       }
     }
@@ -394,12 +388,12 @@ function wireEvents() {
 
 // === Bootstrap ===
 document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    await loadQuestions();
-  } finally {
-    const savedUser = localStorage.getItem("loggedUser");
-    if (savedUser === VALID_USER) {
-      // Restaura progresso e mostra a mensagem solicitada
+  await loadQuestions();
+
+  const savedUser = localStorage.getItem("loggedUser");
+  if (savedUser && USERS[savedUser]) {
+    // Se não for master, restaura progresso
+    if (savedUser !== "bombeiro") {
       answeredSet = new Set();
       const answeredIds = loadProgress(savedUser);
       for (const id of answeredIds) {
@@ -408,26 +402,22 @@ document.addEventListener('DOMContentLoaded', async () => {
           answeredSet.add(idx);
         }
       }
-      headerSubtitle.textContent =
-        "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
-
-      resetButton.classList.remove('hidden');
-      logoutButton.classList.remove('hidden');
-
-      loginPage.classList.add('hidden');
-      showStartPage();
-    } else {
-      // Fluxo normal de login
-      headerSubtitle.textContent = "Por favor, faça o login para começar.";
-      resetButton.classList.add('hidden');
-      logoutButton.classList.add('hidden');
-
-      loginPage.classList.remove('hidden');
-      startPage.classList.add('hidden');
-      quizArea.classList.add('hidden');
     }
-
-    globalLangSel.value = currentLang;
-    wireEvents();
+    headerSubtitle.textContent =
+      "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
+    resetButton.classList.remove('hidden');
+    logoutButton.classList.remove('hidden');
+    loginPage.classList.add('hidden');
+    showStartPage();
+  } else {
+    headerSubtitle.textContent = "Por favor, faça o login para começar.";
+    resetButton.classList.add('hidden');
+    logoutButton.classList.add('hidden');
+    loginPage.classList.remove('hidden');
+    startPage.classList.add('hidden');
+    quizArea.classList.add('hidden');
   }
+
+  globalLangSel.value = currentLang;
+  wireEvents();
 });
