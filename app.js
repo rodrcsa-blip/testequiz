@@ -86,7 +86,7 @@ function buildMenu() {
         btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
         btn.disabled = true;
       } else {
-        // Ajuste de cor do menu fica à sua escolha (roxos/azuis etc.)
+        // Cor do menu (roxo)
         btn.classList.add('bg-purple-500', 'text-white', 'hover:bg-purple-600', 'focus:ring-purple-300');
         btn.disabled = false;
         btn.onclick = () => loadQuestion(i);
@@ -184,11 +184,9 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
-  // Texto vermelho destacado
   questionText.textContent = msg;
   questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
-  // Imagem centralizada
   if (qObj.image) {
     const img = document.createElement('img');
     img.src = qObj.image;
@@ -198,7 +196,7 @@ function renderTrap(qObj) {
   }
 }
 
-// === Renderiza pergunta normal (sem embaralhar; valida por TEXTO) ===
+// === Renderiza pergunta normal (ordem do JSON; valida por TEXTO) ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
@@ -217,6 +215,12 @@ function renderQuestion(qObj) {
   const correctText = (correctIndex >= 0 && correctIndex < opts.length) ? opts[correctIndex] : '';
   const correctRationale = (correctIndex >= 0 && correctIndex < rats.length) ? rats[correctIndex] : '';
 
+  // Mapa texto -> justificativa correspondente (para exibir a do item ESCOLHIDO quando errar)
+  const rationaleMap = new Map();
+  for (let i = 0; i < opts.length; i++) {
+    rationaleMap.set(opts[i], rats[i] || '');
+  }
+
   // NÃO embaralha: usa a ordem do JSON
   const orderedTexts = opts.slice();
 
@@ -224,12 +228,12 @@ function renderQuestion(qObj) {
     const button = document.createElement('button');
     button.textContent = text;
     button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
-    button.onclick = () => checkAnswerByText(button, text, { correctText, correctRationale });
+    button.onclick = () => checkAnswerByText(button, text, { correctText, correctRationale, rationaleMap });
     optionsContainer.appendChild(button);
   });
 }
 
-// === Verifica resposta por TEXTO (robusto; sem dependência de índice) ===
+// === Verifica resposta por TEXTO (exibe rationale do correto se acertar; do escolhido se errar) ===
 function checkAnswerByText(selectedButton, selectedText, ctx) {
   if (currentQuestionIndex !== -1 && !answeredSet.has(currentQuestionIndex)) {
     answeredSet.add(currentQuestionIndex);
@@ -249,6 +253,8 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
     feedbackContainer.className = 'mt-6 p-4 rounded-lg border-l-4 bg-green-50 border-green-500';
     feedbackTitle.textContent = (currentLang === 'en') ? 'Correct!' : 'Correto!';
     feedbackTitle.className = 'text-lg font-bold text-green-700';
+    // justificativa da ALTERNATIVA CORRETA
+    feedbackRationale.textContent = ctx.correctRationale || '';
   } else {
     selectedButton.classList.remove('border-gray-300');
     selectedButton.classList.add('bg-red-100', 'border-red-500', 'text-red-800', 'font-semibold');
@@ -265,9 +271,11 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
       ? 'Incorrect. Review the rationale:'
       : 'Incorreto. Revise a justificativa:';
     feedbackTitle.className = 'text-lg font-bold text-red-700';
+    // justificativa da ALTERNATIVA ESCOLHIDA (por texto)
+    const chosenRationale = ctx.rationaleMap.get(selectedText) || '';
+    feedbackRationale.textContent = chosenRationale;
   }
 
-  feedbackRationale.textContent = ctx.correctRationale || '';
   feedbackContainer.classList.remove('hidden');
 }
 
