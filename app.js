@@ -34,6 +34,7 @@ const feedbackRationale = document.getElementById('feedback-rationale');
 
 const questionNumberEl = document.getElementById('question-number');
 const logoutButton = document.getElementById('logout-button');
+const resetButton = document.getElementById('reset-button');
 
 const loadErrorEl = document.getElementById('load-error');
 
@@ -140,7 +141,8 @@ function handleLogin() {
     headerSubtitle.textContent =
       "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
 
-    // Exibe botão Sair
+    // Exibe botões Resetar e Sair
+    resetButton.classList.remove('hidden');
     logoutButton.classList.remove('hidden');
 
     loginPage.classList.add('hidden');
@@ -154,19 +156,38 @@ function handleLogin() {
 
 // === Logout (não apaga progresso; apenas encerra sessão) ===
 function handleLogout() {
-  const username = localStorage.getItem("loggedUser");
-  // Não limpar progresso para manter respostas ao relogar
   localStorage.removeItem("loggedUser");
 
   answeredSet = new Set();
   disabledIndices = new Set();
 
-  // Volta ao login e oculta botão Sair
+  // Volta ao login e oculta botões
+  resetButton.classList.add('hidden');
   logoutButton.classList.add('hidden');
   headerSubtitle.textContent = "Por favor, faça o login para começar.";
   loginPage.classList.remove('hidden');
   startPage.classList.add('hidden');
   quizArea.classList.add('hidden');
+}
+
+// === Resetar progresso do usuário atual (com confirmação) ===
+function resetProgress() {
+  const username = localStorage.getItem("loggedUser");
+  if (!username) return;
+
+  const confirmReset = confirm("Tem certeza que deseja resetar todas as questões respondidas?");
+  if (!confirmReset) return;
+
+  // Remove progresso salvo
+  localStorage.removeItem(storageKeyForUser(username));
+
+  // Zera memória atual
+  answeredSet = new Set();
+  disabledIndices = new Set();
+
+  // Reconstrói menu liberando tudo
+  buildMenu();
+  feedbackContainer.classList.add('hidden');
 }
 
 // === Páginas ===
@@ -259,7 +280,7 @@ function renderTrap(qObj) {
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
-  questionText.className = 'text-xl font-semibold text-gray-800 bg-blue-50 p-4 rounded-lg border border-blue-200';
+  questionText.className = 'text-xl font-semibold text-gray-800 bg-purple-50 p-4 rounded-lg border border-purple-200';
 
   optionsContainer.innerHTML = '';
   feedbackContainer.classList.add('hidden');
@@ -282,7 +303,7 @@ function renderQuestion(qObj) {
   orderedTexts.forEach((text) => {
     const button = document.createElement('button');
     button.textContent = text;
-    button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-blue-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-blue-500';
+    button.className = 'answer-button w-full text-left p-4 border border-gray-300 rounded-lg hover:bg-purple-50 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-purple-500';
     button.onclick = () => checkAnswerByText(button, text, { correctText, correctRationale, rationaleMap });
     optionsContainer.appendChild(button);
   });
@@ -297,7 +318,7 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
   const allButtons = document.querySelectorAll('.answer-button');
   allButtons.forEach(btn => {
     btn.disabled = true;
-    btn.classList.remove('hover:bg-blue-50');
+    btn.classList.remove('hover:bg-purple-50');
   });
 
   const isCorrect = selectedText === ctx.correctText;
@@ -348,6 +369,7 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
 function wireEvents() {
   loginButton.addEventListener('click', handleLogin);
   logoutButton.addEventListener('click', handleLogout);
+  resetButton.addEventListener('click', resetProgress);
 
   backTopBtn.addEventListener('click', () => showStartPage());
   backBottomBtn.addEventListener('click', () => showStartPage());
@@ -388,6 +410,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
       headerSubtitle.textContent =
         "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
+
+      resetButton.classList.remove('hidden');
       logoutButton.classList.remove('hidden');
 
       loginPage.classList.add('hidden');
@@ -395,6 +419,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
       // Fluxo normal de login
       headerSubtitle.textContent = "Por favor, faça o login para começar.";
+      resetButton.classList.add('hidden');
       logoutButton.classList.add('hidden');
 
       loginPage.classList.remove('hidden');
