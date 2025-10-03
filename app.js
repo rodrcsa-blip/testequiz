@@ -6,6 +6,10 @@ let answeredSet = new Set();  // índices 0-based respondidos
 let disabledIndices = new Set(); // traps clicadas/itens removidos do menu
 let currentQuestionIndex = -1;
 
+// === Credenciais fixas (usuário único) ===
+const VALID_USER = "pescariagrc";
+const VALID_PASS = "Governanca01!";
+
 // === Referências de elementos ===
 const loginPage = document.getElementById('login-page');
 const startPage = document.getElementById('start-page');
@@ -31,6 +35,39 @@ const feedbackRationale = document.getElementById('feedback-rationale');
 const questionNumberEl = document.getElementById('question-number');
 
 const loadErrorEl = document.getElementById('load-error');
+
+// ===== Persistência de progresso por usuário (localStorage) =====
+function storageKeyForUser(username) {
+  return `quizProgress:${username}`;
+}
+
+function saveProgress(username, answeredIdsArray) {
+  try {
+    localStorage.setItem(storageKeyForUser(username), JSON.stringify(answeredIdsArray));
+  } catch (e) {
+    console.warn('Falha ao salvar progresso:', e);
+  }
+}
+
+function loadProgress(username) {
+  try {
+    const raw = localStorage.getItem(storageKeyForUser(username));
+    if (!raw) return [];
+    const arr = JSON.parse(raw);
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) {
+    console.warn('Falha ao carregar progresso:', e);
+    return [];
+  }
+}
+
+function clearProgress(username) {
+  try {
+    localStorage.removeItem(storageKeyForUser(username));
+  } catch (e) {
+    console.warn('Falha ao limpar progresso:', e);
+  }
+}
 
 // === Utilidades ===
 function getDisplayText(obj, lang) {
@@ -86,7 +123,7 @@ function buildMenu() {
         btn.classList.add('bg-gray-400', 'text-white', 'cursor-not-allowed', 'shadow-inner');
         btn.disabled = true;
       } else {
-        // Cor do menu (roxo)
+        // Cor do menu (roxo) conforme ajuste anterior
         btn.classList.add('bg-purple-500', 'text-white', 'hover:bg-purple-600', 'focus:ring-purple-300');
         btn.disabled = false;
         btn.onclick = () => loadQuestion(i);
@@ -96,17 +133,54 @@ function buildMenu() {
   }
 }
 
-// === Login ===
+// === Login (com usuário único e recuperação do progresso) ===
 function handleLogin() {
-  const username = document.getElementById('username').value;
-  if (username.trim() !== '') {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (username === '' || password === '') {
+    loginError.textContent = "Por favor, preencha todos os campos.";
+    loginError.classList.remove('hidden');
+    return;
+  }
+
+  if (username === VALID_USER && password === VALID_PASS) {
+    // Salva usuário logado para sessão persistente
+    localStorage.setItem("loggedUser", username);
+
+    // Recarrega progresso salvo (IDs → índices)
+    answeredSet = new Set();
+    const answeredIds = loadProgress(username); // ex.: [1, 3, 10]
+    for (const id of answeredIds) {
+      const idx = id - 1;
+      if (idx >= 0 && idx < questionByIndex.length && questionByIndex[idx]) {
+        answeredSet.add(idx);
+      }
+    }
+
     loginPage.classList.add('hidden');
-    headerSubtitle.textContent = "Selecione uma pergunta para testar seus conhecimentos sobre estratégia e responsabilidades de segurança da informação.";
+    headerSubtitle.textContent = `Bem-vindo, ${username}! Selecione uma pergunta.`;
     showStartPage();
     loginError.classList.add('hidden');
   } else {
+    loginError.textContent = "Usuário ou senha incorretos.";
     loginError.classList.remove('hidden');
   }
+}
+
+// (Opcional) Logout – mantém aqui para uso futuro se desejar expor um botão "Sair"
+function handleLogout() {
+  const username = localStorage.getItem("loggedUser");
+  // Se quiser apagar também o progresso, descomente:
+  // if (username) clearProgress(username);
+
+  localStorage.removeItem("loggedUser");
+  answeredSet = new Set();
+  disabledIndices = new Set();
+
+  loginPage.classList.remove('hidden');
+  startPage.classList.add('hidden');
+  quizArea.classList.add('hidden');
 }
 
 // === Páginas ===
@@ -184,9 +258,11 @@ function renderTrap(qObj) {
     : 'VOCÊ CAIU NO PHISHING! TENTE NOVAMENTE MAIS TARDE!'
   );
 
+  // Texto vermelho destacado
   questionText.textContent = msg;
   questionText.className = 'text-xl font-semibold text-red-600 bg-red-50 p-4 rounded-lg border border-red-300 text-center';
 
+  // Imagem centralizada
   if (qObj.image) {
     const img = document.createElement('img');
     img.src = qObj.image;
@@ -196,7 +272,7 @@ function renderTrap(qObj) {
   }
 }
 
-// === Renderiza pergunta normal (ordem do JSON; valida por TEXTO) ===
+// === Renderiza pergunta normal (ordem do JSON; valida por TEXTO; rationale correto/selecionado) ===
 function renderQuestion(qObj) {
   const qText = getDisplayText(qObj.q, currentLang) || getDisplayText(qObj.question, currentLang) || '';
   questionText.textContent = qText;
@@ -211,7 +287,7 @@ function renderQuestion(qObj) {
   const rats = getRationalesArray(qObj, currentLang);
   const correctIndex = typeof qObj.correctIndex === 'number' ? qObj.correctIndex : -1;
 
-  // Fonte de verdade baseada em TEXTO (mantendo ordem original do JSON)
+  // Fonte de verdade baseada em TEXTO (ordem original do JSON)
   const correctText = (correctIndex >= 0 && correctIndex < opts.length) ? opts[correctIndex] : '';
   const correctRationale = (correctIndex >= 0 && correctIndex < rats.length) ? rats[correctIndex] : '';
 
@@ -276,6 +352,19 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
     feedbackRationale.textContent = chosenRationale;
   }
 
+  // >>> SALVAR PROGRESSO <<<
+  const username = localStorage.getItem("loggedUser");
+  if (username) {
+    // converte answeredSet (de índices) para IDs 1..450 e ordena
+    const answeredIds = Array.from(answeredSet)
+      .map(idx => {
+        const qObj = questionByIndex[idx];
+        return (qObj && typeof qObj.id === 'number') ? qObj.id : (idx + 1);
+      })
+      .sort((a, b) => a - b);
+    saveProgress(username, answeredIds);
+  }
+
   feedbackContainer.classList.remove('hidden');
 }
 
@@ -309,9 +398,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     await loadQuestions();
   } finally {
-    loginPage.classList.remove('hidden');
-    startPage.classList.add('hidden');
-    quizArea.classList.add('hidden');
+    // Se já houver usuário logado previamente, pula o login e restaura progresso
+    const savedUser = localStorage.getItem("loggedUser");
+    if (savedUser === VALID_USER) {
+      // Restaura progresso do usuário salvo
+      answeredSet = new Set();
+      const answeredIds = loadProgress(savedUser);
+      for (const id of answeredIds) {
+        const idx = id - 1;
+        if (idx >= 0 && idx < questionByIndex.length && questionByIndex[idx]) {
+          answeredSet.add(idx);
+        }
+      }
+      loginPage.classList.add('hidden');
+      headerSubtitle.textContent = `Bem-vindo de volta, ${savedUser}!`;
+      showStartPage();
+    } else {
+      // Fluxo normal de login
+      loginPage.classList.remove('hidden');
+      startPage.classList.add('hidden');
+      quizArea.classList.add('hidden');
+    }
 
     globalLangSel.value = currentLang;
     wireEvents();
