@@ -6,6 +6,12 @@ let answeredSet = new Set();
 let disabledIndices = new Set();
 let currentQuestionIndex = -1;
 
+// Registros de resultado por questão (index -> { id, correct, selectedText, correctText, ts })
+let resultsMap = new Map();
+
+// Botão de exportação (criado dinamicamente)
+let exportBtn = null;
+
 // === Usuários (normais e master) ===
 const USERS = {
   "pescariagrc": "Governanca01!",       // usuário normal (progresso salvo)
@@ -44,6 +50,9 @@ const loadErrorEl = document.getElementById('load-error');
 function storageKeyForUser(username) {
   return `quizProgress:${username}`;
 }
+function storageResultsKeyForUser(username) {
+  return `quizResults:${username}`;
+}
 function saveProgress(username, answeredIdsArray) {
   try { localStorage.setItem(storageKeyForUser(username), JSON.stringify(answeredIdsArray)); }
   catch (e) { console.warn('Falha ao salvar progresso:', e); }
@@ -57,6 +66,34 @@ function loadProgress(username) {
   } catch (e) {
     console.warn('Falha ao carregar progresso:', e);
     return [];
+  }
+}
+function saveResults(username) {
+  try {
+    const arr = [];
+    for (const [idx, rec] of resultsMap.entries()) {
+      arr.push(rec);
+    }
+    localStorage.setItem(storageResultsKeyForUser(username), JSON.stringify(arr));
+  } catch (e) {
+    console.warn('Falha ao salvar resultados:', e);
+  }
+}
+function loadResults(username) {
+  resultsMap = new Map();
+  try {
+    const raw = localStorage.getItem(storageResultsKeyForUser(username));
+    if (!raw) return;
+    const arr = JSON.parse(raw);
+    if (Array.isArray(arr)) {
+      for (const rec of arr) {
+        if (rec && typeof rec.id === 'number' && typeof rec.index === 'number') {
+          resultsMap.set(rec.index, rec);
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('Falha ao carregar resultados:', e);
   }
 }
 
@@ -117,6 +154,101 @@ function buildMenu() {
   }
 }
 
+// === Exportação de progresso em CSV (novo) ===
+function collectAnsweredIdsSorted() {
+  return Array.from(answeredSet)
+    .map(idx => {
+      const qObj = questionByIndex[idx];
+      return (qObj && typeof qObj.id === 'number') ? qObj.id : (idx + 1);
+    })
+    .sort((a, b) => a - b);
+}
+function csvEscape(val) {
+  const s = String(val ?? '');
+  // coloca entre aspas e escapa aspas internas
+  return `"${s.replace(/"/g, '""')}"`;
+}
+function exportProgressCSV() {
+  const username = localStorage.getItem("loggedUser");
+  if (!username) {
+    alert('Faça login para exportar seu progresso.');
+    return;
+  }
+
+  const answeredIds = collectAnsweredIdsSorted();
+
+  // Deriva corretos/incorretos a partir do resultsMap
+  const correctIds = [];
+  const incorrectIds = [];
+  for (const idx of answeredIds.map(id => id - 1)) {
+    const rec = resultsMap.get(idx);
+    if (rec && typeof rec.correct === 'boolean') {
+      if (rec.correct) correctIds.push(rec.id);
+      else incorrectIds.push(rec.id);
+    }
+    // Caso não haja registro (respostas antigas), fica fora das listas.
+  }
+
+  const availableCount = questionByIndex.filter(Boolean).length;
+  const correctCount = correctIds.length;
+  const incorrectCount = incorrectIds.length;
+
+  const header = [
+    'user', 'lang', 'answered_ids', 'correct_ids', 'incorrect_ids',
+    'answered_count', 'correct_count', 'incorrect_count', 'exported_at'
+  ].join(',');
+
+  const row = [
+    csvEscape(username),
+    csvEscape(currentLang),
+    csvEscape(answeredIds.join(';')),
+    csvEscape(correctIds.join(';')),
+    csvEscape(incorrectIds.join(';')),
+    answeredIds.length,
+    correctCount,
+    incorrectCount,
+    csvEscape(new Date().toISOString())
+  ].join(',');
+
+  const csv = `${header}\n${row}\n`;
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const dateTag = new Date().toISOString().replace(/[:.]/g, '-');
+  a.href = url;
+  a.download = `quiz-progress-${username}-${dateTag}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+function ensureExportButton() {
+  if (exportBtn && document.body.contains(exportBtn)) {
+    exportBtn.classList.remove('hidden');
+    return;
+  }
+  const anchor = resetButton || logoutButton || headerSubtitle || startPage;
+  if (!anchor) return;
+
+  exportBtn = document.createElement('button');
+  exportBtn.id = 'export-button';
+  exportBtn.type = 'button';
+  exportBtn.className = 'ml-2 px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-300';
+  exportBtn.textContent = (currentLang === 'en') ? 'Export progress (CSV)' : 'Exportar progresso (CSV)';
+  exportBtn.addEventListener('click', exportProgressCSV);
+
+  if (resetButton && resetButton.parentNode) {
+    resetButton.parentNode.insertBefore(exportBtn, resetButton.nextSibling);
+  } else if (startPage) {
+    startPage.insertBefore(exportBtn, startPage.firstChild);
+  } else {
+    document.body.appendChild(exportBtn);
+  }
+}
+function hideExportButton() {
+  if (exportBtn) exportBtn.classList.add('hidden');
+}
+
 // === Login (usuário normal vs master) ===
 function handleLogin() {
   const username = document.getElementById('username').value.trim();
@@ -134,7 +266,7 @@ function handleLogin() {
     answeredSet = new Set();
     disabledIndices = new Set();
 
-    // Apenas usuários normais carregam progresso
+    // Apenas usuários normais carregam progresso + resultados
     if (username !== "bombeiro") {
       const answeredIds = loadProgress(username);
       for (const id of answeredIds) {
@@ -143,6 +275,9 @@ function handleLogin() {
           answeredSet.add(idx);
         }
       }
+      loadResults(username); // carrega corretos/incorretos salvos
+    } else {
+      resultsMap = new Map(); // master não persiste
     }
 
     headerSubtitle.textContent =
@@ -153,6 +288,8 @@ function handleLogin() {
 
     loginPage.classList.add('hidden');
     showStartPage();
+    ensureExportButton();
+    exportBtn.textContent = (currentLang === 'en') ? 'Export progress (CSV)' : 'Exportar progresso (CSV)';
     loginError.classList.add('hidden');
   } else {
     loginError.textContent = "Usuário ou senha incorretos.";
@@ -166,9 +303,12 @@ function handleLogout() {
 
   answeredSet = new Set();
   disabledIndices = new Set();
+  resultsMap = new Map();
 
   resetButton.classList.add('hidden');
   logoutButton.classList.add('hidden');
+  hideExportButton();
+
   headerSubtitle.textContent = "Por favor, faça o login para começar.";
   loginPage.classList.remove('hidden');
   startPage.classList.add('hidden');
@@ -184,9 +324,11 @@ function resetProgress() {
   if (!confirmReset) return;
 
   localStorage.removeItem(storageKeyForUser(username));
+  localStorage.removeItem(storageResultsKeyForUser(username));
 
   answeredSet = new Set();
   disabledIndices = new Set();
+  resultsMap = new Map();
 
   buildMenu();
   feedbackContainer.classList.add('hidden');
@@ -347,16 +489,24 @@ function checkAnswerByText(selectedButton, selectedText, ctx) {
     feedbackRationale.textContent = chosenRationale;
   }
 
-  // Salvar progresso (exceto master)
+  // REGISTRA resultado desta questão e persiste (exceto master)
   const username = localStorage.getItem("loggedUser");
+  const qObj = questionByIndex[currentQuestionIndex];
+  const id = (qObj && typeof qObj.id === 'number') ? qObj.id : (currentQuestionIndex + 1);
+  const rec = {
+    index: currentQuestionIndex,
+    id,
+    correct: isCorrect,
+    selectedText,
+    correctText: ctx.correctText,
+    ts: new Date().toISOString()
+  };
+  resultsMap.set(currentQuestionIndex, rec);
+
   if (username && username !== "bombeiro") {
-    const answeredIds = Array.from(answeredSet)
-      .map(idx => {
-        const qObj = questionByIndex[idx];
-        return (qObj && typeof qObj.id === 'number') ? qObj.id : (idx + 1);
-      })
-      .sort((a, b) => a - b);
+    const answeredIds = collectAnsweredIdsSorted();
     saveProgress(username, answeredIds);
+    saveResults(username);
   }
 
   feedbackContainer.classList.remove('hidden');
@@ -373,6 +523,9 @@ function wireEvents() {
 
   globalLangSel.addEventListener('change', (e) => {
     currentLang = e.target.value;
+    if (exportBtn) {
+      exportBtn.textContent = (currentLang === 'en') ? 'Export progress (CSV)' : 'Exportar progresso (CSV)';
+    }
     if (!quizArea.classList.contains('hidden') && currentQuestionIndex >= 0) {
       const qObj = questionByIndex[currentQuestionIndex];
       if (qObj) {
@@ -392,7 +545,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const savedUser = localStorage.getItem("loggedUser");
   if (savedUser && USERS[savedUser]) {
-    // Se não for master, restaura progresso
+    // Se não for master, restaura progresso + resultados
     if (savedUser !== "bombeiro") {
       answeredSet = new Set();
       const answeredIds = loadProgress(savedUser);
@@ -402,17 +555,24 @@ document.addEventListener('DOMContentLoaded', async () => {
           answeredSet.add(idx);
         }
       }
+      loadResults(savedUser);
+    } else {
+      resultsMap = new Map();
     }
+
     headerSubtitle.textContent =
       "Selecione uma pergunta para testar seus conhecimentos sobre Governança, Compliance, TPRM e as melhores práticas de Segurança da Informação do Nubank";
     resetButton.classList.remove('hidden');
     logoutButton.classList.remove('hidden');
     loginPage.classList.add('hidden');
     showStartPage();
+    ensureExportButton();
+    exportBtn.textContent = (currentLang === 'en') ? 'Export progress (CSV)' : 'Exportar progresso (CSV)';
   } else {
     headerSubtitle.textContent = "Por favor, faça o login para começar.";
     resetButton.classList.add('hidden');
     logoutButton.classList.add('hidden');
+    hideExportButton();
     loginPage.classList.remove('hidden');
     startPage.classList.add('hidden');
     quizArea.classList.add('hidden');
